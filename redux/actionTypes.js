@@ -1,0 +1,28 @@
+//BreadCrumgb Action Types
+export const SET_PRODUCT_CATEGORY = "SET_PRODUCT_CATEGORY";
+export const RESET_BREADCRUMB_DATA = "RESET_BREADCRUMB_DATA";
+
+// Product Categories Types 
+export const FETCH_SET_PRODUCT_CATEGORIES = "FETCH_SET_PRODUCT_CATEGORIES";
+export const RESET_PRODUCT_CATEGORIES = "RESET_PRODUCT_CATEGORIES";
+
+// Cart Types
+export const FETCH_CART = "FETCH_CART";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_FROM_CART = "DELETE_FROM_CART";
+export const FETCH_COMPARISON = "FETCH_COMPARISON";
+export const TOGGLE_COMPARISON = "TOGGLE_COMPARISON";
+
+// UserInfo
+
+export const FETCH_SET_USER_INFO = "FETCH_SET_USER_INFO";
+export const REMOVE_USER_INFO = "REMOVE_USER_INFO"
+
+// Compare
+
+export const COMPARE_TOGGLE = "COMPARE_TOGGLE"
+export const FETCH_COMPARE = "FETCH_COMPARE"
+
+// Favourites
+
+export const FETCH_FAVOURITES = "FETCH_FAVOURITES"
