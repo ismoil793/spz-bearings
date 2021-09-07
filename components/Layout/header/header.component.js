@@ -10,15 +10,11 @@ const uuidv1 = require("uuid/v1");
 import Cookies from "universal-cookie";
 
 import url from "../../url";
-import Register from "../../Auth/Register";
-import Login from "../../Auth/Login";
 import { connect } from "react-redux"
 import { fetchSetUserInfo } from '../../../redux/actions/userInfo'
-import CartPopup from '../../Cart/popupCart'
-import AsideCategory from "../../Categories/sidecategories";
-import SearchMobile from '../../Search/search_mobile'
 import { fetchCompare } from "../../../redux/actions/compare";
 import { fetchFavorites } from "../../../redux/actions/favorites";
+import { Nav } from "reactstrap";
  class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -212,353 +208,269 @@ import { fetchFavorites } from "../../../redux/actions/favorites";
 
    
         <header id="header" className="u-header u-header-left-aligned-nav">
-          <div className="u-header__section">
-            <div className="u-header-topbar py-2 d-xl-block">
-              <div className="container">
-                <div className="d-flex align-items-center">
-                  {/* <button onClick={() => console.log(this.props.favourites)}>favourites</button> */}
-                  <div className="topbar-left">
-                  <li className="header_icons-list col d-xl-none px-2 px-sm-3 position-static">
-                                            <a onClick={this.handleMobileSearch} id="searchClassicInvoker" className="font-size-22 text-gray-90 text-lh-1 btn-text-secondary active" href="javascript:;" role="button" data-toggle="tooltip" data-placement="top" title="" aria-controls="searchClassic" aria-haspopup="true" aria-expanded="true" data-unfold-target="#searchClassic" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut" data-original-title="Search">
-                                                <span className="ec ec-search"></span>
-                                            </a>
-
-                                          {this.state.isMobileSearch ? (
-                                            <SearchMobile/>
-                                            ) : null}
-                                         
-                  </li>
-                    <a
-                      href="#"
-                      className="text-gray-110  d-none font-size-13 hover-on-dark"
-                    >
-                      Огромный ассортимент кухонного оборудования
-                    </a>
-                  </div>
-                  <div className="topbar-right ml-auto">
-                    <ul className="list-inline mb-0">
-                      <li className=" list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border d-none">
-                      <Link href="/contact">
-                        <a className="u-header-topbar__nav-link">
-                          <i className="ec ec-map-pointer mr-1"></i> 
-                          Наши магазины
-                        </a>
-                        </Link>
-                      </li>
-                     {/* <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                      <Link href="/tracking">
-                        <a className="u-header-topbar__nav-link" >
-                          <i className="ec ec-transport mr-1"></i> 
-                          Следить за заказом
-                        </a>
-                        </Link>
-                      </li>  */}
-   
-                      
-                      { !this.props.user.user.id ? 
-                      <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                        <a
-                          id="sidebarNavToggler"
-                          href="javascript:;"
-                          role="button"
-                          className="u-header-topbar__nav-link"
-                          aria-controls="sidebarContent"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          data-unfold-event="click"
-                          data-unfold-hide-on-scroll="false"
-                          data-unfold-target="#sidebarContent"
-                          data-unfold-type="css-animation"
-                          data-unfold-animation-in="fadeInRight"
-                          data-unfold-animation-out="fadeOutRight"
-                          data-unfold-duration="500"
-                        >
-                          
-                          <i className="ec ec-user mr-1"></i>{" "}
-                          <span onClick={this.Register}>Регистрация</span>
-                          <span className="text-gray-50">{" "} или</span>{" "}
-                          <span onClick={this.Login}>Логин</span> 
-                        </a>
-                      </li>
-                    : <div className="header_user-info_block">
-                      <span className="header_user-info_span">                        
-                        <span className="header_user-info_text">
-                          <Link href='/user'>
-                            <span className="header_profile_link">
-                              <p className="header_name name">{this.props.user.user.first_name} </p><p className="header_name surname">{this.props.user.user.last_name}</p>
-                            </span>
-                          </Link>
-                        </span>                        
-                        <div className="header_img-block">
-                        <Link href='/user'>
-                          <img className="header_user_img" src={this.props.user.user.image ? this.props.user.user.image.url : '../../../static/assets/img/userProfile.png'} alt='photo'/>
-                          </Link>
-                          </div>
-                      </span>
-                      
-                    {/* <button onClick={()=>console.log(this.props.user.user)}>props</button> */}
+        <div className="header_big_logo">
+            {this.props.isHome ? 
+              <div className="header_top">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-12">
+                      <ul className="list-unstyled menu_contact_info">
+                        <li>
+                          <a href="mailto:gpz-uz@mail.ru">
+                            {" "}
+                            <i className="far fa-envelope-open"></i>
+                            gpz-uz@mail.ru
+                          </a>{" "}
+                        </li>
+                        <li>
+                          <a href="tell:451951127851">
+                            <i className="fas fa-phone"></i>+(99874) 755-23-59,
+                            755-18-57
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="far fa-clock"></i>7/7: 9:00 - 18:00
+                          </a>
+                        </li>
+                      </ul>
                     </div>
-                    } 
+                  </div>
+                </div>
+              </div> : null }
+
+              <Nav className="navbar navbar-expand-lg" id="header">
+                <div className="container">
+                  {" "}
+                  <Link href="/"><a className={`navbar-brand big_logo ${this.props.isHome ? '' : 'mt-0'}`}>
+                    <img
+                      src="/static/assets/img/img/home-14/logo.png"
+                      alt="logo"
+                    />
+                  </a></Link>{" "}
+                  <Link href="/"><a className="navbar-brand">
+                    <img
+                      src="/static/assets/img/img/home-one/logo.png"
+                      alt="logo"
+                    />
+                  </a></Link>
+                  <div className="collapse navbar-collapse">
+                    <ul className="navbar-nav menu">
+                      <li className="nav-item">
+                        {" "}
+                        <Link  href="/"><a className="nav-link">
+                          Главная
+                        </a></Link>{" "}
+                      </li>
+                      <li className="nav-item dropdown submenu">
+                        {" "}
+                        <Link href="/about" ><a className="nav-link">
+                          {" "}
+                          О Нас{" "}
+                        </a></Link>
+                        <ul className="dropdown-menu">
+                          <li className="nav-item active">
+                            {" "}
+                            <Link href="/about" ><a className="nav-link">
+                              История Завода
+                            </a></Link>
+                          </li>
+                          <li className="nav-item">
+                            {" "}
+                            <Link href="/team" ><a className="nav-link">
+                              Наша Команда
+                            </a></Link>{" "}
+                          </li>
+                          <li className="nav-item">
+                            {" "}
+                            <Link href="/service-details" ><a className="nav-link">
+                              Технический Центр
+                            </a></Link>{" "}
+                          </li>
+                        </ul>
+                      </li>
+                    <li className="nav-item dropdown submenu">
+                      {" "}
+                      <Link href="/services" ><a className="nav-link">
+                        {" "}
+                        Сервисы{" "}
+                      </a></Link>
+                      <ul className="dropdown-menu">
+                        <li className="nav-item">
+                          {" "}
+                          <Link href="/services" ><a className="nav-link">
+                            Сервисы
+                          </a></Link>{" "}
+                        </li>
+                        <li className="nav-item">
+                          {" "}
+                          <Link Link
+                                href={{
+                                  pathname: "/services/[singlenservice]"
+                                }}
+                                as={`/services/1`} ><a className="nav-link">
+                            Детально Сервисы
+                          </a></Link>{" "}
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="nav-item dropdown submenu">
+                      {" "}
+                      <Link  href="/news"><a className="nav-link">
+                        {" "}
+                        Новости{" "}
+                      </a></Link>
+                      <ul className="dropdown-menu">
+                        <li className="nav-item">
+                          {" "}
+                          <Link href="/news" ><a className="nav-link">
+                            Новости
+                          </a></Link>{" "}
+                        </li>
+                        <li className="nav-item">
+                          {" "}
+                          <Link href={{
+                                  pathname: "/news/[singlenews]"
+                                }}
+                                as={`/news/1`}  ><a className="nav-link">
+                            Детально Новости
+                          </a></Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="nav-item dropdown submenu">
+                      {" "}
+                      <Link  href="/shop"><a className="nav-link">
+                        {" "}
+                        Продукция{" "}
+                      </a></Link>
+                      <ul className="dropdown-menu">
+                        <li className="nav-item">
+                          {" "}
+                          <Link href="/shop" ><a className="nav-link">
+                            Продукция
+                          </a></Link>{" "}
+                        </li>
+                        <li className="nav-item">
+                          {" "}
+                          <Link href={{
+                                  pathname: "/product/[product]"
+                                }}
+                                as={`/product/1`}  ><a className="nav-link">
+                            Детально продукция
+                          </a></Link>{" "}
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="nav-item">
+                      {" "}
+                      <Link  href="/contacts"><a className="nav-link">
+                        Контакты
+                      </a></Link>{" "}
+                    </li>
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="py-2 py-xl-5">
-              <div className="container my-0dot5 my-xl-0">
-                <div className="row align-items-center">
-                  <div className="col-auto">
-                    <nav className="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
-                      <Link href="/">
-                        <a
-                          className="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center"
-                          href="#"
-                        >
-                          <img src="/static/assets/img/75X75/logo.png" />
-                        </a>
-                      </Link>
-                      <button
-                      onClick={this.AsideCategory}
-                        id="sidebarHeaderInvokerMenu"
-                        type="button"
-                        className={this.state.isAside ? "navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0 target-of-invoker-has-unfolds active" : "navbar-toggler d-block btn u-hamburger mr-3 mr-xl-0 target-of-invoker-has-unfolds"}
-                        aria-controls="sidebarHeader"
-                        aria-haspopup="true"
-                        aria-expanded={this.state.isAside ? " true" : "false"}
-                        data-unfold-event="click"
-                        data-unfold-hide-on-scroll="false"
-                        data-unfold-target="#sidebarHeader1"
-                        data-unfold-type="css-animation"
-                        data-unfold-animation-in="fadeInLeft"
-                        data-unfold-animation-out="fadeOutLeft"
-                        data-unfold-duration="500"
-                      >
-                        <span
-                        
-                          id="hamburgerTriggerMenu"
-                          className="u-hamburger__box"
-                        >
-                          <span className="u-hamburger__inner"></span>
-                        </span>
-                      </button>
-                    </nav>
-                    {this.state.isAside ? <AsideCategory hide={this.HideAside}/>  : null}
-               
-                   
-                  </div>
-
-                 <Search />
-
-                  <div className="col col-xl-auto text-right text-xl-left pl-0 pl-xl-3 position-static header_icons-wrapper">
-                    <div className="d-inline-flex">
-                      <ul className="d-flex list-unstyled mb-0 align-items-center">
-                    
-                      <li className="header_icons-list col d-xl-block">
-                        <Link href="/compare">
-                          <a
-                            href=""
-                            className="text-gray-90 position-relative d-flex"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Compare"
-                          >
-                            <i className="icon-header font-size-22 ec ec-compare"></i>
-                            <span className="header_count bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">
-                                                      {!this.props.compare.length ? 0
-                                                            : this.props.compare.length
-                                                      }
-                                                </span>
-                          </a>
-                          </Link>
-                        </li>
-                        <li className="header_icons-list col d-xl-block">
-                        <Link href="/wishlist">
-                          <a
-                            href=""
-                            className="text-gray-90"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Favorites"
-                          >
-                            <i className="icon-header font-size-22 ec ec-favorites"></i>
-                            { this.props.user.user.id ?
-                            <span className="header_count bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle top-8 font-weight-bold font-size-12 favourites-count">
-                                                      {!this.props.favourites.length ? 0
-                                                            : this.props.favourites.length
-                                                      }
-                            </span> : null }
-                          </a>
-                          </Link>
-                        </li>
-                        <li className="header_icons-list col d-xl-block px-2 px-sm-3">
-                        <Link href={this.props.user.user.id ? '/user' : '/login'}>
-                          <a
-                            className="text-gray-90"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="My Account"
-                          >
-                            <i className="icon-header font-size-22 ec ec-user"></i>
-                          </a>
-                          </Link>
-                        </li>
-
-                  
-
-                        <Link href="/cart"> 
-                      <li className="header_icons-list col pr-xl-0 px-2 px-sm-3 d-xl-none">
-                                            <a  className="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
-                                                <i className="icon-header font-size-22 ec ec-shopping-bag"></i>
-                                                <span className="header_count bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">
-                                                      {!this.props.cart.cart ? 0
-                                                            : this.props.cart.cart.total_count
-                                                      }
-                                                </span>
-                                              
-                                            </a>
-                                        </li>
-                                        </Link>
-                                        <li  className="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
-                                            <div onClick={this.PopupCart} id="basicDropdownHoverInvoker" className="text-gray-90 position-relative d-flex pointer" data-toggle="tooltip" data-placement="top" title="Cart"
-                                                aria-controls="basicDropdownHover"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                                data-unfold-event="click"
-                                                data-unfold-target="#basicDropdownHover"
-                                                data-unfold-type="css-animation"
-                                                data-unfold-duration="300"
-                                                data-unfold-delay="300"
-                                                data-unfold-hide-on-scroll="true"
-                                                data-unfold-animation-in="slideInUp"
-                                                data-unfold-animation-out="fadeOut">
-                                                <i className="icon-header font-size-22 ec ec-shopping-bag"></i>
-                                                <span className="header_count bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12"> {
-                                                         !this.props.cart.cart ? 0
-                                                            : this.props.cart.cart.total_count
-                                                      }</span>
-                                                {/* <span className="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span> */}
-                                            </div>
-                                            {this.state.isPopupCart ? <CartPopup hide={this.HidePopUp} /> : null }
-                                         </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="d-none d-xl-block container">
-              <div className="row">
-                <div className="col-md-auto d-none d-xl-block">
-                  <div className="max-width-270 min-width-270">
-                    <div onClick={this.Categories} id="basicsAccordion">
-                      <div className="card border-0">
-                        <div
-                          className="card-header card-collapse border-0"
-                          id="basicsHeadingOne"
-                        >
-                          <button
-                            type="button"
-                            className="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                            data-toggle="collapse"
-                            data-target="#basicsCollapseOne"
-                            aria-expanded="true"
-                            aria-controls="basicsCollapseOne"
-                          >
-                            <span className="ml-0 text-gray-90 mr-2">
-                              <span className="fa fa-list-ul"></span>
-                            </span>
-                            <span  className="pl-1 text-gray-90">Все Категории</span>
-                          </button>
+                <ul className="list-unstyled navbar-nav navright cart_navbar">
+                  <li className="shoping-cart">
+                    {" "}
+                    <Link href="/cart"><a>
+                      <i className="fas fa-cart-arrow-down"></i>
+                    </a></Link>
+                    <ul className="dropdown-menu">
+                      <li className="cart-single-item clearfix">
+                        <div className="cart-img">
+                          {" "}
+                          <img
+                            src="/static/assets/img/img/cart1.jpg"
+                            alt="styler"
+                          />{" "}
                         </div>
-                     {this.state.isCategories ? <Category hide={this.HideCategories} /> : null} 
+                        <div className="cart-content text-left">
+                          <p className="cart-title">
+                            <Link href="/product-details"><a>Lorem, ipsum dolor.</a></Link>
+                          </p>
+                          <p>
+                            <del>$10.00</del> - $8.50
+                          </p>
+                        </div>
+                        <div className="cart-remove">
+                          {" "}
+                          <a href="#" className="action">
+                            X
+                          </a>{" "}
+                        </div>
+                      </li>
+                      <li className="cart-single-item clearfix">
+                        <div className="cart-img">
+                          {" "}
+                          <img
+                            src="/static/assets/img/img/cart2.jpg"
+                            alt="styler"
+                          />{" "}
+                        </div>
+                        <div className="cart-content text-left">
+                          <p className="cart-title">
+                            <Link href="/product-details"><a>Lorem, ipsum dolor.</a></Link>
+                          </p>
+                          <p>$12.00</p>
+                        </div>
+                        <div className="cart-remove">
+                          {" "}
+                          <a href="#" className="action">
+                            X
+                          </a>{" "}
+                        </div>
+                      </li>
+                      <li className="cart_f">
+                        <div className="cart-pricing">
+                          <p className="total">
+                            Subtotal :
+                            <span className="p-total text-right">$20.50</span>
+                          </p>
+                        </div>
+                        <div className="cart-button">
+                          {" "}
+                          <button className="theme_btn hover_style1">
+                            Посмотреть в корзину
+                          </button>
+                          <button className="theme_btn theme_btn_three hover_style1">
+                            Оформить заказ
+                          </button>{" "}
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="search">
+                    {" "}
+                    <a href="javascript:void(0);">
+                      <i className="icon-bikini60s_search"></i>
+                    </a>
+                    <form action="#" method="get" className="search-form">
+                      <div className="input-group">
+                        {" "}
+                        <input
+                          type="search"
+                          className="form-control"
+                          placeholder="Searching for..."
+                        />{" "}
+                        <button type="submit">
+                          <i className="fas fa-search"></i>
+                        </button>{" "}
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col">
-                  <nav className="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
-                    <div
-                      id="navBar"
-                      className="collapse navbar-collapse u-header__navbar-collapse"
-                    >
-                      <ul className="navbar-nav u-header__navbar-nav">
-                        <li
-                          className="nav-item hs-has-mega-menu u-header__nav-item"
-                          data-event="click"
-                          data-animation-in="slideInUp"
-                          data-animation-out="fadeOut"
-                          data-position="left"
-                        >
-                        <Link href="/about">
-                          <a
-                            id="homeMegaMenu"
-                            className="nav-link u-header__nav-link"
-                            href="#"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            О нас
-                          </a>
-                        </Link>
-                       
-                        </li> 
-
-                        <li className="nav-item u-header__nav-item">
-                        <Link href="/news">
-                          <a
-                            className="nav-link u-header__nav-link"
-                            href="#"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-labelledby="pagesSubMenu"
-                          >
-                            Новости
-                          </a>
-                          </Link>
-                        </li>
-
-                        <li className="nav-item u-header__nav-item">
-                        <Link href="/contact">
-                          <a
-                            className="nav-link u-header__nav-link"
-                            href="#"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            aria-labelledby="blogSubMenu"
-                          >
-                            Контакты
-                          </a>
-                          </Link>
-                        </li>
-
-                        {/* <li className="nav-item u-header__nav-item">
-                          <a
-                            className="nav-link u-header__nav-link"
-                            href="#"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Ремонт оборудования
-                          </a>
-                        </li> */}
-
-                        <li className="nav-item u-header__nav-last-item">
-                          <a className="text-gray-90" href="#" target="_blank">
-                            Бесплатная доставка по городу Ташкент
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </nav>
-                </div>
-              </div>
+                    </form>
+                  </li>
+                  <li>
+                    {" "}
+                    <a href="#" className="menu_btn">
+                      <i className="icon-bikini60s_menu"></i>
+                    </a>{" "}
+                  </li>
+                </ul>
+              </Nav>
             </div>
-          </div>
         </header>
-{this.state.isLogin || this.state.isRegister ? (
+{/* {this.state.isLogin || this.state.isRegister ? (
         <aside id="sidebarContent" className="u-sidebar u-sidebar__lg" aria-labelledby="sidebarNavToggler">
             <div className="u-sidebar__scroller">
                 <div className="u-sidebar__container">
@@ -627,14 +539,14 @@ import { fetchFavorites } from "../../../redux/actions/favorites";
                                         </div>
                                     </div>
                                    */}
-                                </form>
+                                {/* </form>
                             </div>
                         </div>
                 
                     </div>
                 </div>
             </div>
-        </aside>) : null}
+        </aside>) : null} */} 
 
     
       </>

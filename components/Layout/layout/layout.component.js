@@ -4,6 +4,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {fetchCart} from "../../../redux/actions/cart"
 import { fetchCompare } from "../../../redux/actions/compare";
+import HeaderSecondary from "../header/headersecondary";
 
 class Layout extends React.Component {
  
@@ -36,7 +37,9 @@ class Layout extends React.Component {
         <Header
           compareNumber={this.props.compareNumber}
           cartNumber={this.props.cartNumber}
+          isHome={this.props.isHome ? this.props.isHome : false}
         />
+        { this.props.isHome ? null : <HeaderSecondary title={this.props.title} pageInfo={this.props.pageInfo} /> }
         {/* <YMInitializer accounts={[61408678]} options={{webvisor: true}}/> */}
         {this.props.children}
         <Footer />

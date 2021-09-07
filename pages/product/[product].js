@@ -1,85 +1,28 @@
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 
-import * as actions from "../../redux/actions";
+import * as actions from "../../redux/actions/";
 import BreadCrumb from "../../components/BreadCrumb";
-
 import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
-import ProductCard from "../../components/ProductCard/productCardcomponents";
 import React, { useEffect } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../../components/url";
+import Link from "next/link";
 
-const mapDispatchToProps = dispatch => ({
-  setProductCategory: (obj) => dispatch(actions.setProductCategory(obj))
-});
 
-function PostProduct({ data, setProductCategory }) {
-  const router = useRouter();
-  const [cartNumber, setCartNumber] = React.useState(0);
-  const [compareNumber, setCompareNumber] = React.useState(0);
-
-  // var id = parseInt(router.asPath.split("=").pop())
-  let slug = router.asPath.split("/").pop();
-  console.log(data)
-
-  useEffect(() => {
-    setProductCategory(data.categories[0]);
-    const cookies = new Cookies();
-    axios
-      .get(`${url}/api/cart/show`, {
-        params: {
-          device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type")
-        }
-      })
-      .then(response => {
-        setCartNumber(response.data.data.items.length);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-
-    axios
-      .get(`${url}/api/comparison/features`, {
-        params: {
-          device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type")
-        }
-      })
-      .then(response => {
-        setCompareNumber(response.data.data.products.length);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
-
-  function grandHandler() {
-    setCartNumber(cartNumber + 1);
-  }
-
-  function handleCompareGrand() {
-    setCompareNumber(compareNumber + 1);
-  }
-
+function PostProduct() {
 
 
   return (
     <>
       <Head>
-        <title>{data.meta_title ? data.meta_title : 'Продукт'}</title>
+        <title>{'Продукт'}</title>
         <meta charset="UTF-8" />
-        <meta name="description" content={data.meta_description} />
-        <meta name="keywords" content={data.meta_keywords} />
-{/* 
-        <meta property="og:title" content={data.meta_title}/>
-        <meta property="og:description" content={data.meta_description}/>
-        <meta property="og:image" content={data.images ? data.images[0].url : null}/>
-        <meta property="og:url" content={data.web_url}/> */}
-        
+        <meta name="description" content={'Продукт'} />
+        <meta name="keywords" content={'Продукт'} />
+          
         <meta
           name="google-site-verification"
           content="3kTZ1AFA-Ys6DV-oZgCXUqlfNqsP6r2YJ0mpAmcaL-k"
@@ -90,7 +33,6 @@ function PostProduct({ data, setProductCategory }) {
           href="/static/assets/template/avtech/images/favicon.png"
           type="image/x-icon"
         />
-      
         <link
           rel="stylesheet"
           type="text/css"
@@ -98,32 +40,139 @@ function PostProduct({ data, setProductCategory }) {
         />
       </Head>
       <div className="super_container">
-        <Layout compareNumber={compareNumber} cartNumber={cartNumber}>
-        <main id="content" role="main">
-          <BreadCrumb/>
-         
-            <ProductCard
-              compare={handleCompareGrand}
-              compareNumber={compareNumber}
-              grand={grandHandler}
-              cartNumber={cartNumber}
-              data={data}
-              slug={slug}
-            />
-         </main>
+        <Layout title={'Продукт'} pageInfo={['Главная', "Магазин", "Продукт"]}>
+          <>
+          <section class="product_details_area pt_200">
+            <div class="container">
+                <div class="row product_details_inner">
+                    <div class="col-lg-6">
+                        <div class="project_details_img"> <img class="img-fluid"
+                                src="/static/assets/img/img/product/product-details-1.jpg" alt=""/> </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p_details_text">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <h5>$14</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et iure tenetur explicabo at
+                                eos beatae.</p>
+                            <div class="product_count"> <input type="text" name="qty" id="sst" maxlength="12" value="1"
+                                    title="Quantity:" class="input-text qty"/> <button
+                                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                    class="reduced items-count" type="button"><i>-</i></button> <button
+                                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                    class="increase items-count" type="button"><i>+</i></button> </div> <a
+                                class="theme_btn_two hover_style1" href="#">Добавить в корзину</a>
+                            <ul class="nav flex-column team_list">
+                                <li>Номенклатура:<a href="#"> 3009829</a></li>
+                                <li>Категория:<a href="#"> Валлы</a></li>
+                                <li>Тэги:<a href="#"> Валлы</a></li>
+                            </ul>
+                            <ul class="nav share_icon">
+                                <li>Поделиться:</li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="p_details_tab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation"> <a class="nav-link active" id="home-tab"
+                                data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                                aria-selected="true">Описание</a> </li>
+                        <li class="nav-item" role="presentation"> <a class="nav-link" id="profile-tab" data-toggle="tab"
+                                href="#profile" role="tab" aria-controls="profile"
+                                aria-selected="false">Характеристики</a> </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h4>Описание</h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolore
+                                        adipisci sapiente quidem eius, aliquam impedit nesciunt harum, ut consectetur
+                                        rerum, et quam delectus accusamus!</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate at neque
+                                        illo deserunt quaerat aliquid, rerum dignissimos, similique id laudantium magnam
+                                        repellat dolores facilis corporis?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h4>Характеристики</h4>
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h4>Описание</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolore
+                                            adipisci sapiente quidem eius, aliquam impedit nesciunt harum, ut consectetur
+                                            rerum, et quam delectus accusamus!</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate at neque
+                                            illo deserunt quaerat aliquid, rerum dignissimos, similique id laudantium magnam
+                                            repellat dolores facilis corporis?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="interested_product">
+            <div class="container">
+                <div class="section_title_one">
+                    <h2 class="title_head">Возможно Вас заинтересуют</h2>
+                </div>
+                <div class="row product_inner">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="product_item">
+                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-7.jpg"
+                                    alt=""/> <i class="far fa-heart heart_icon"></i> <a
+                                    class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
+                            <div class="product_text">
+                                <h4>Lorem ipsum dolor sit amet.</h4>
+                                <p>$11</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="product_item">
+                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-8.jpg"
+                                    alt=""/> <i class="far fa-heart heart_icon"></i> <a
+                                    class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
+                            <div class="product_text">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <p>$5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="product_item">
+                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-9.jpg"
+                                    alt=""/> <i class="far fa-heart heart_icon"></i> <a
+                                    class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
+                            <div class="product_text">
+                                <h4>Lorem ipsum dolor sit.</h4>
+                                <p>$13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          </>
         </Layout>
       </div>
     </>
   );
 }
 
-// This gets called on every request
-export async function getServerSideProps({ params }) {
-  // Fetch data from external API
-  const res = await axios.get(`${url}/api/products?slug=${params.product}`);
-  const data = await res.data.data;
-  // Pass data to the page via props
-  return { props: { data } }; 
-}
 
-export default connect(null, mapDispatchToProps)(PostProduct);
+
+export default PostProduct;

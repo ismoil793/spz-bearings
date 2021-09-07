@@ -9,6 +9,7 @@ import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
 import NextSeo from 'next-seo';
 import '../static/assets/css/globals.css'
+import '../static/assets/css/globally.scss'
 // import * as gtag from '../lib/gtag'
 // import ReactGA from 'react-ga'
 
@@ -19,30 +20,32 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 
 
-// let's create a configuration for next-seo
-// const DEFAULT_SEO = {
-//     title: 'Интернет-магазин компьютерной техники в Ташкенте | Kitmach Premium.UZ',
-//     description: 'Купить ноутбуки, мониторы, видеокарты, комплектующие, wi-fi в Ташкенте по доступной цене и бесплатной доставкой? Легко на Kitmach Premium.uz!',
-//     openGraph: {
-//       type: 'website',
-//       locale: 'ru_ru',
-//       url: 'https://www.Kitmach Premium.uz',
-//       title: 'Интернет-магазин компьютерной техники в Ташкенте | Kitmach Premium.UZ',
-//       description: 'Купить ноутбуки, мониторы, видеокарты, комплектующие, wi-fi в Ташкенте по доступной цене и бесплатной доставкой? Легко на Kitmach Premium.uz!',
-//       image:
-//         '/static/assets/template/avtech/images/ogimage.png',
-//       site_name: 'Kitmach Premium.uz',
-//       imageWidth: 600,
-//       imageHeight: 600
-//     },
-//     twitter: {
-//       handle: '@garmeeh',
-//       cardType: 'summary_large_image'
-//     }
-//   };
+const Loader = (props) => {
+    return (
+        <div className="main_loader">
+            <div class="preloader">
+                <div class="preloader__square"></div>
+                <div class="preloader__square"></div>
+                <div class="preloader__square"></div>
+                <div class="preloader__square"></div>
+            </div>
+        </div>
+    )
+}
 
 
 class MyApp extends App {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoading: false
+        }
+        Router.events.on("routeChangeStart", () => {this.setState({isLoading: true}); console.log('routerstart')});
+        Router.events.on('routeChangeComplete', () => {this.setState({isLoading: false}); console.log('routercompleted')}); 
+    }
+    componentWillMount() {
+        console.log('app mount')
+    }
 
     static async getInitialProps({Component, ctx}) {
         const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
@@ -50,35 +53,21 @@ class MyApp extends App {
         //Anything returned here can be accessed by the client
         return {...pageProps};
     }
-    // router = this.props.router
-    
-    // componentDidMount() {
-    //     ReactGA.initialize('G-G6XDJS8DJQ')
-    //     ReactGA.set({page: Router.pathname})
-    //     ReactGA.pageview(Router.pathname)
-    // }
 
-    // componentDidUpdate(prevprops) {
-    //         console.log('prevprops')
-    //         if (this.props.router !== prevprops.router) {
-    //         const handleRouteChange = (url) => {
-    //             gtag.pageview(url)
-    //         }
-    //         this.props.router.events.on('routeChangeComplete', handleRouteChange);
-    //         return () =>{
-    //             this.props.router.events.off('routeChangeComplete', handleRouteChange)
-    //         }
-    //     }
-    // }
+
 
     render() {
+        console.log('progress', NProgress)
         console.log(this.props)
         
         //Page props that were returned  from 'getInitialProps' are stored in the props i.e. pageprops
         const {Component, pageProps, store} = this.props;
 
         return (
-            <Provider store={store}>
+            <Provider store={store}> 
+            { this.state.isLoading ?
+                <Loader/> : ''
+            }
                 <Component {...pageProps}/>
            </Provider>
         );
