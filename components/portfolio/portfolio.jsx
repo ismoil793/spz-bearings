@@ -176,9 +176,6 @@ export default class Portfolio extends React.Component {
 
   </div>
 </div>
-
-
-<a href="https://abubakersaeed.netlify.app/designs/d4-flip-card" class="abs-site-link" rel="nofollow noreferrer" target="_blank">abs/designs/d4-flip-card</a>
       </>
     );
   }

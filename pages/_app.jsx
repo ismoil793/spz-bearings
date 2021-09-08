@@ -38,7 +38,7 @@ class MyApp extends App {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            isLoading: true
         }
         Router.events.on("routeChangeStart", () => {this.setState({isLoading: true}); console.log('routerstart')});
         Router.events.on('routeChangeComplete', () => {this.setState({isLoading: false}); console.log('routercompleted')}); 
