@@ -42,6 +42,7 @@ class MyApp extends App {
         }
         Router.events.on("routeChangeStart", () => {this.setState({isLoading: true}); console.log('routerstart')});
         Router.events.on('routeChangeComplete', () => {this.setState({isLoading: false}); console.log('routercompleted')}); 
+        Router.events.on('routeChangeError', () => {this.setState({isLoading: false}); console.log('routercompleted')}); 
     }
     componentWillMount() {
         console.log('app mount')
@@ -66,9 +67,9 @@ class MyApp extends App {
         return (
             <Provider store={store}> 
             { this.state.isLoading ?
-                <Loader/> : ''
+                <Loader/> : <Component {...pageProps}/>
             }
-                <Component {...pageProps}/>
+                
            </Provider>
         );
     }
