@@ -17,6 +17,7 @@ body {
   font-weight: 400;
   font-family: Montserrat, sans-serif;
   color: #7e8288;
+  background-color: #fff;
   height: 100%;
 }
 :focus {
@@ -9967,8 +9968,7 @@ ul.circle_list {
 	font-size: calc(16px + (32 - 16)*(100vw - 320px)/(2560 - 320));
 }
 body {
-	background-image: linear-gradient(145deg,var(--shade3),var(--shade2));
-	color: var(--fg);
+	background-color: #fff;
 	display: flex;
 	font: 1em/1.5 Hind, sans-serif;
 	flex-direction: column;
@@ -10801,4 +10801,16 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.cons_contact_info_two {
+  p {
+    color: #fff;
+  }
+}
+
+.main_custom_loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
 }
