@@ -27,11 +27,14 @@ class MyApp extends App {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            isLoading: true
         }
         Router.events.on("routeChangeStart", () => {this.changeLoadingStatus(true); console.log('isLoading', this.state.isLoading)});
         Router.events.on('routeChangeComplete', () => {this.changeLoadingStatus(false); console.log('isLoading', this.state.isLoading)}); 
         Router.events.on('routeChangeError', () => {this.changeLoadingStatus(false); console.log('isLoading', this.state.isLoading)}); 
+    }
+    componentDidMount() {
+        this.changeLoadingStatus(false)
     }
 
     changeLoadingStatus = (boolean) => {
