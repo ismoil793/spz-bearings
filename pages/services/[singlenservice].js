@@ -12,7 +12,7 @@ import url from "../../components/url";
 import Link from "next/link";
 
 
-function PostService({ data, setProductCategory }) {
+function PostService({ data, setProductCategory, isLoading }) {
 
 
   return (
@@ -40,6 +40,9 @@ function PostService({ data, setProductCategory }) {
         />
       </Head>
       <div className="super_container">
+            <div id={`preloader`} className={`preloader ${isLoading ? '' : "load_coplate"}`}>
+              <div class="product_name">Bearings</div>
+            </div>  
         <Layout title={'Технический центр'} pageInfo={['Главная', "Сервисы", "Технический Центр"]}>
           <>
           <section class="service_details_area pt_200">

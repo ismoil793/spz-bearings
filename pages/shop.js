@@ -6,13 +6,13 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
-export default function servicesPage() { 
+export default function servicesPage(props) { 
 
 	const [cartNumber, setCartNumber] = React.useState(0)
 	const [compareNumber, setCompareNumber] = React.useState(0);
 
   return (
-<>
+    <>
     <Head>
         <title>Сервисы</title>
         <link rel="icon" href="/static/assets/template/avtech/images/favicon.png" type="image/x-icon"/>
@@ -27,6 +27,9 @@ export default function servicesPage() {
 
      </Head>
 		 <div className="super_container">
+            <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
+                    <div class="product_name">Bearings</div>
+            </div>  
     <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Магазин`} pageInfo={["Главная", "Магазин"]}>
 	
         <main id="content" role="main">

@@ -283,7 +283,11 @@ import { Nav } from "reactstrap";
                           </li>
                           <li className="nav-item">
                             {" "}
-                            <Link href="/service-details" ><a className="nav-link">
+                            <Link
+                                href={{
+                                  pathname: "/services/[singlenservice]"
+                                }}
+                                as={`/services/1`} ><a className="nav-link">
                               Технический Центр
                             </a></Link>{" "}
                           </li>

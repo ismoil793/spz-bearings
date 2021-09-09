@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
-export default function aboutPage() {
+export default function aboutPage(props) {
 
 	const [cartNumber, setCartNumber] = React.useState(0)
 	const [compareNumber, setCompareNumber] = React.useState(0);
@@ -46,7 +46,7 @@ export default function aboutPage() {
 
 	}, []);
   return (
-<>
+    <>
     <Head>
         <title>О нас</title>
         <link rel="icon" href="/static/assets/template/avtech/images/favicon.png" type="image/x-icon"/>
@@ -61,9 +61,13 @@ export default function aboutPage() {
 
      </Head>
 		 <div className="super_container">
+         <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
+              <div class="product_name">Bearings</div>
+        </div>   
     <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`История Завода`} pageInfo={["Главная", "О Нас"]}>
 	
         <main id="content" role="main">
+            
         <section class="about_main_area about_page">
             <div class="container">
                 <div class="about_inner">

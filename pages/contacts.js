@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
-export default function Contact() {
+export default function Contact(props) {
 
 	const [cartNumber, setCartNumber] = React.useState(0)
 	const [compareNumber, setCompareNumber] = React.useState(0);
@@ -61,6 +61,9 @@ export default function Contact() {
 
      </Head>
 		 <div className="super_container">
+      <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
+                <div class="product_name">Bearings</div>
+      </div>  
     <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Контакты`} pageInfo={["Главная", "Контакты"]}>
 	
         <main id="content" role="main">

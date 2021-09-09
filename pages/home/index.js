@@ -360,7 +360,10 @@ class Home extends React.Component {
         </Head>
         <div>
           
-          <div className="body_wrapper main_index">            
+          <div className="body_wrapper main_index">    
+            <div id={`preloader`} className={`preloader ${this.props.isLoading ? '' : "load_coplate"}`}>
+              <div class="product_name">Bearings</div>
+            </div>        
           </div>
           <Layout isHome={true}>
           <Slider className="slider-home_page" {...settings2}>

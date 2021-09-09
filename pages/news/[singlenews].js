@@ -3,7 +3,7 @@ import Head from "next/head";
 import React, { useEffect } from "react";
 
 
-function PostNews({ data, setProductCategory }) {
+function PostNews({ data, setProductCategory, isLoading }) {
 
 
   return (
@@ -31,6 +31,9 @@ function PostNews({ data, setProductCategory }) {
         />
       </Head>
       <div className="super_container">
+           <div id={`preloader`} className={`preloader ${isLoading ? '' : "load_coplate"}`}>
+                <div class="product_name">Bearings</div>
+            </div>  
         <Layout title={'Технический Центр'} pageInfo={['Главная', "Новости", "Технический Центр"]}>
           <>
           <section class="blog_details_area pt_200">

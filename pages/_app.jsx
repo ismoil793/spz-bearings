@@ -20,18 +20,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 
 
-const Loader = (props) => {
-    return (
-        <div className="main_loader">
-            <div class="preloader">
-                <div class="preloader__square"></div>
-                <div class="preloader__square"></div>
-                <div class="preloader__square"></div>
-                <div class="preloader__square"></div>
-            </div>
-        </div>
-    )
-}
+
 
 
 class MyApp extends App {
@@ -76,10 +65,7 @@ class MyApp extends App {
 
         return (
             <Provider store={store}> 
-            { this.state.isLoading ?
-                <Loader/> : <Component {...pageProps}/>
-            }
-                
+                <Component isLoading={this.state.isLoading} {...pageProps}/>                
            </Provider>
         );
     }

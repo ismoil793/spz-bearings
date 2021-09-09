@@ -12,7 +12,7 @@ import url from "../../components/url";
 import Link from "next/link";
 
 
-function PostProduct() {
+function PostProduct(props) {
 
 
   return (
@@ -40,6 +40,9 @@ function PostProduct() {
         />
       </Head>
       <div className="super_container">
+            <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
+                <div class="product_name">Bearings</div>
+            </div>  
         <Layout title={'Продукт'} pageInfo={['Главная', "Магазин", "Продукт"]}>
           <>
           <section class="product_details_area pt_200">
