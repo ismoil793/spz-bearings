@@ -45,7 +45,7 @@ export default function servicesPage(props) {
                 <div class="row product_inner">
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-1.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-1.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -56,7 +56,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-2.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-2.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -67,7 +67,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-3.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-3.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -78,7 +78,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-4.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-4.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -89,7 +89,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-5.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-5.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -100,7 +100,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-6.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-6.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -111,7 +111,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-7.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-7.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -122,7 +122,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-8.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-8.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">
@@ -133,7 +133,7 @@ export default function servicesPage(props) {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="product_item">
-                            <div class="product_img"> <img class="img-fluid" src="/static/assets/img/img/product/product-9.jpg"
+                            <div class="product_img"> <img class="img-fluid shop_fluid_img" src="/static/assets/img/img/product/product-9.jpg"
                                     alt=""/> <i class="far fa-heart heart_icon"></i> <a
                                     class="theme_btn_two hover_style1" href="#">Добавить в корзину</a> </div>
                             <div class="product_text">

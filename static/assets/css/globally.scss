@@ -10362,3 +10362,11 @@ ul.circle_list {
 .slider-home_page {
   margin-top: 140px;
 }
+
+.product_item {
+  .product_img {
+    .img-fluid {
+        height: 33vmin !important;
+    }
+  }
+}
