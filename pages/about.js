@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
+import OverlayComponent from '../components/Layout/overlay/overlay.component';
 export default function aboutPage(props) {
 
 	const [cartNumber, setCartNumber] = React.useState(0)
@@ -71,7 +72,7 @@ export default function aboutPage(props) {
     <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`История Завода`} pageInfo={["Главная", "О Нас"]}>
 	
         <main id="content" role="main">
-            
+        <OverlayComponent/> 
         <section class="about_main_area about_page">
             <div class="container">
                 <div class="about_inner">

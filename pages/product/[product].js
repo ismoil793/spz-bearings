@@ -10,6 +10,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../../components/url";
 import Link from "next/link";
+import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
 
 function PostProduct(props) {
@@ -40,6 +41,7 @@ function PostProduct(props) {
         />
       </Head>
       <div className="super_container">
+      <OverlayComponent/>
         <div class={`pace ${props.isLoading ? 'pace-active' : 'pace-inactive'}`}><div class="pace-progress" data-progress-text="100%" data-progress="99" style={{'transform': 'translate3d(100%, 0px, 0px)'}}>
             <div class="pace-progress-inner"></div>
                 </div>

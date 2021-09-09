@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
+import OverlayComponent from '../components/Layout/overlay/overlay.component';
 export default function Contact(props) {
 
 	const [cartNumber, setCartNumber] = React.useState(0)
@@ -71,6 +72,7 @@ export default function Contact(props) {
     <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Контакты`} pageInfo={["Главная", "Контакты"]}>
 	
         <main id="content" role="main">
+        <OverlayComponent/>
         <section class="cons_contact_area_two map_area"> <img class="map img-fluid" src="/static/assets/img/img/home-six/map.png"
                 alt=""/>
             <div class="container">

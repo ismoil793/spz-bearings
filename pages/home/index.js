@@ -10,6 +10,7 @@ import url from "../../components/url";
 import { connect } from "react-redux";
 import { fetchCompare } from "../../redux/actions/compare";
 import Portfolio from "../../components/portfolio/portfolio";
+import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
 const BrandLink = (props) => (
   <Link
@@ -407,98 +408,7 @@ class Home extends React.Component {
                 })
               : null}
           </Slider>
-          <div className="mobile_menu d-flex flex-wrap align-items-end">
-            <div onClick={()=>document.body.className = 'menu-is-closed'} className="close_btn">X</div>
-            <ul className="list-unstyled mb_menu wd_scroll">
-              <li>
-                <a href="index.html">Главная</a>
-              </li>
-              <li className="menu-item-has-children">
-                {" "}
-                <a href="/"> О Нас </a>
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="/about">История Завода</a>
-                  </li>
-                  <li>
-                    <a href="team.html">Руководство</a>
-                  </li>
-                  <li>
-                    <a href="service-details.html">Технический Центр</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                {" "}
-                <a href="#"> Сервисы</a>
-                <ul className="list-unstyled">
-                  <li>
-                    {" "}
-                    <a href="services.html">Сервисы</a>{" "}
-                  </li>
-                  <li>
-                    {" "}
-                    <a href="service-details.html">Детально Сервисы</a>{" "}
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                {" "}
-                <a href="#"> Новости </a>
-                <ul className="list-unstyled">
-                  <li>
-                    {" "}
-                    <a href="blog.html">Новости</a>{" "}
-                  </li>
-                  <li>
-                    {" "}
-                    <a href="single-blog.html">Детально Новости</a>{" "}
-                  </li>
-                </ul>
-              </li>
-              <li className="menu-item-has-children">
-                {" "}
-                <a href="#"> Продукция </a>
-                <ul className="list-unstyled">
-                  <li>
-                    {" "}
-                    <a href="shop.html">Продукция</a>{" "}
-                  </li>
-                  <li>
-                    {" "}
-                    <a href="product-details.html">Детально продукция</a>{" "}
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact.html">Контакты</a>
-              </li>
-            </ul>
-            <ul className="list-unstyled social_links">
-              <li>
-                <a href="#" title="">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  <i className="fab fa-dribbble"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="body_capture"></div>
-
+          <OverlayComponent/>
           <div className="services_area main_page pt_200">
             <div className="container">
               <div className="div_title_one title_two text-center">

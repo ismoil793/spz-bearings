@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
+import OverlayComponent from '../components/Layout/overlay/overlay.component';
 export default function teamPage(props) {
 
 	const [cartNumber, setCartNumber] = React.useState(0)
@@ -70,6 +71,7 @@ export default function teamPage(props) {
     <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Наша Команда`} pageInfo={["Главная", "О Нас", "Наше Руководство"]}>
 	
         <main id="content" role="main">
+        <OverlayComponent/>
         <section class="our_founder_area pt_100 team_page_animation_section team_page-animated_part">
             <h2 class="title_head">Наше Руководство</h2>
         </section>

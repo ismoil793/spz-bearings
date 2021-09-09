@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
 import axios from 'axios'
 import url from '../components/url';
+import OverlayComponent from '../components/Layout/overlay/overlay.component';
 export default function servicesPage(props) { 
 
 	const [cartNumber, setCartNumber] = React.useState(0)
@@ -38,6 +39,7 @@ export default function servicesPage(props) {
     <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Сервисы`} pageInfo={["Главная", "Сервисы"]}>
 	
         <main id="content" role="main">
+        <OverlayComponent/>
         <section class="business_card pt_100">
             <div class="container">
                 <div class="section_title_one title_two text-center">

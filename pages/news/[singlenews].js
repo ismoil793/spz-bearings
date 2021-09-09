@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
 import React, { useEffect } from "react";
+import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
 
 function PostNews({ data, setProductCategory, isLoading }) {
@@ -31,6 +32,7 @@ function PostNews({ data, setProductCategory, isLoading }) {
         />
       </Head>
       <div className="super_container">
+      <OverlayComponent/>
           <div class={`pace ${isLoading ? 'pace-active' : 'pace-inactive'}`}><div class="pace-progress" data-progress-text="100%" data-progress="99" style={{'transform': 'translate3d(100%, 0px, 0px)'}}>
               <div class="pace-progress-inner"></div>
                 </div>

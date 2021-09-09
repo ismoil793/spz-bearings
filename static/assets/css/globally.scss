@@ -1023,8 +1023,7 @@ header + section {
 }
 .mb_menu {
   width: 100%;
-  overflow-y: auto;
-  height: 460px;
+  height: 600px;
 }
 .mb_menu li {
   margin-bottom: 28px;
@@ -10374,4 +10373,8 @@ ul.circle_list {
 .wrapper_list_dropdown {
   margin-left: 0;
   margin-right: 40px;
+}
+
+.dropdown_list_display_block {
+  display: block !important;
 }
