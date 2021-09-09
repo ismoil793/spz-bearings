@@ -408,17 +408,17 @@ class Home extends React.Component {
               : null}
           </Slider>
           <div className="mobile_menu d-flex flex-wrap align-items-end">
-            <div className="close_btn">X</div>
+            <div onClick={()=>document.body.className = 'menu-is-closed'} className="close_btn">X</div>
             <ul className="list-unstyled mb_menu wd_scroll">
               <li>
                 <a href="index.html">Главная</a>
               </li>
               <li className="menu-item-has-children">
                 {" "}
-                <a href="#"> О Нас </a>
+                <a href="/"> О Нас </a>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="about.html">История Завода</a>
+                    <a href="/about">История Завода</a>
                   </li>
                   <li>
                     <a href="team.html">Руководство</a>

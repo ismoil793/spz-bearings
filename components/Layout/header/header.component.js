@@ -30,7 +30,9 @@ import { Nav } from "reactstrap";
       isPopupCart: false,
       isCategories: false,
       isMobileSearch: false,
-      userInfo: {}
+      userInfo: {},
+      search_is_open: false,
+      menu_is_opened: false
     };
   
   }
@@ -192,6 +194,12 @@ import { Nav } from "reactstrap";
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.menu_is_opened !== this.state.menu_is_opened) {
+      document.body.className = this.state.menu_is_opened ? 'menu-is-opened' : 'menu-is-closed'
+    }
+  }
+
   render() {
 
     const cookies = new Cookies();
@@ -204,9 +212,12 @@ import { Nav } from "reactstrap";
     }
 
     return (
-      <>
-
-   
+      <> 
+      <style jsx global>{`
+        body {
+          overflow: hidden;
+        }
+      `}</style>  
         <header id="header" className="u-header u-header-left-aligned-nav">
         <div className={`header_big_logo ${this.props.isLoading ? '' : 'header_fixed'}`}>
             {this.props.isHome ? 
@@ -375,7 +386,7 @@ import { Nav } from "reactstrap";
                     </ul>
                   </div>
                 </div>
-                <ul className="list-unstyled navbar-nav navright cart_navbar">
+                <ul className="list-unstyled navbar-nav navright cart_navbar wrapper_list_dropdown">
                   <li className="shoping-cart">
                     {" "}
                     <Link href="/cart"><a>
@@ -445,10 +456,10 @@ import { Nav } from "reactstrap";
                       </li>
                     </ul>
                   </li>
-                  <li className="search">
+                  <li onClick={() => this.setState({search_is_open: !this.state.search_is_open})} className={`search ${this.state.search_is_open ? 'open' : ''}`}>
                     {" "}
                     <a href="javascript:void(0);">
-                      <i className="icon-bikini60s_search"></i>
+                      <i class="fas fa-search"></i>
                     </a>
                     <form action="#" method="get" className="search-form">
                       <div className="input-group">
@@ -464,10 +475,10 @@ import { Nav } from "reactstrap";
                       </div>
                     </form>
                   </li>
-                  <li>
+                  <li onClick={()=>this.setState({menu_is_opened: !this.state.menu_is_opened})}>
                     {" "}
                     <a href="#" className="menu_btn">
-                      <i className="icon-bikini60s_menu"></i>
+                    <i class="fas fa-align-justify"></i>
                     </a>{" "}
                   </li>
                 </ul>
