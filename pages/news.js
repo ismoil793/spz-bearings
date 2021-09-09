@@ -64,7 +64,7 @@ export default function NewsPage(props) {
             <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
                     <div class="product_name">Bearings</div>
             </div>  
-    <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Главная`} pageInfo={["Главная", "Новости"]}>
+    <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Главная`} pageInfo={["Главная", "Новости"]}>
 	
         <main id="content" role="main">
         <section class="blog_list_area pt_200">

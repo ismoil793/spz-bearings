@@ -64,7 +64,7 @@ export default function aboutPage(props) {
          <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
               <div class="product_name">Bearings</div>
         </div>   
-    <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`История Завода`} pageInfo={["Главная", "О Нас"]}>
+    <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`История Завода`} pageInfo={["Главная", "О Нас"]}>
 	
         <main id="content" role="main">
             

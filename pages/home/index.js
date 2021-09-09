@@ -365,7 +365,7 @@ class Home extends React.Component {
               <div class="product_name">Bearings</div>
             </div>        
           </div>
-          <Layout isHome={true}>
+          <Layout isLoading={this.props.isLoading} isHome={true}>
           <Slider className="slider-home_page" {...settings2}>
             {bannersImg
               ? bannersImg.map((imgEl) => {

@@ -43,7 +43,7 @@ function PostProduct(props) {
             <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
                 <div class="product_name">Bearings</div>
             </div>  
-        <Layout title={'Продукт'} pageInfo={['Главная', "Магазин", "Продукт"]}>
+        <Layout isLoading={props.isLoading} title={'Продукт'} pageInfo={['Главная', "Магазин", "Продукт"]}>
           <>
           <section class="product_details_area pt_200">
             <div class="container">

@@ -38,6 +38,7 @@ class Layout extends React.Component {
           compareNumber={this.props.compareNumber}
           cartNumber={this.props.cartNumber}
           isHome={this.props.isHome ? this.props.isHome : false}
+          isLoading={this.props.isLoading}
         />
         { this.props.isHome ? null : <HeaderSecondary title={this.props.title} pageInfo={this.props.pageInfo} /> }
         {/* <YMInitializer accounts={[61408678]} options={{webvisor: true}}/> */}

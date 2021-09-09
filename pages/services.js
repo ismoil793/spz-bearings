@@ -31,7 +31,7 @@ export default function servicesPage(props) {
             <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
                 <div class="product_name">Bearings</div>
             </div>  
-    <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Сервисы`} pageInfo={["Главная", "Сервисы"]}>
+    <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Сервисы`} pageInfo={["Главная", "Сервисы"]}>
 	
         <main id="content" role="main">
         <section class="business_card pt_100">

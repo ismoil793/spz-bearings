@@ -64,7 +64,7 @@ export default function Contact(props) {
       <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
                 <div class="product_name">Bearings</div>
       </div>  
-    <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Контакты`} pageInfo={["Главная", "Контакты"]}>
+    <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Контакты`} pageInfo={["Главная", "Контакты"]}>
 	
         <main id="content" role="main">
         <section class="cons_contact_area_two map_area"> <img class="map img-fluid" src="/static/assets/img/img/home-six/map.png"

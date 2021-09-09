@@ -208,7 +208,7 @@ import { Nav } from "reactstrap";
 
    
         <header id="header" className="u-header u-header-left-aligned-nav">
-        <div className="header_big_logo">
+        <div className={`header_big_logo ${this.props.isLoading ? '' : 'header_fixed'}`}>
             {this.props.isHome ? 
               <div className="header_top">
                 <div className="container">

@@ -63,7 +63,7 @@ export default function teamPage(props) {
          <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
               <div class="product_name">Bearings</div>
         </div>   
-    <Layout compareNumber={compareNumber} cartNumber={cartNumber} title={`Наша Команда`} pageInfo={["Главная", "О Нас", "Наше Руководство"]}>
+    <Layout isLoading={props.isLoading} compareNumber={compareNumber} cartNumber={cartNumber} title={`Наша Команда`} pageInfo={["Главная", "О Нас", "Наше Руководство"]}>
 	
         <main id="content" role="main">
         <section class="our_founder_area pt_100 team_page_animation_section team_page-animated_part">
