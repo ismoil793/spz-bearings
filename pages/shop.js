@@ -27,6 +27,10 @@ export default function servicesPage(props) {
 
      </Head>
 		 <div className="super_container">
+            <div class={`pace ${props.isLoading ? 'pace-active' : 'pace-inactive'}`}><div class="pace-progress" data-progress-text="100%" data-progress="99" style={{'transform': 'translate3d(100%, 0px, 0px)'}}>
+            <div class="pace-progress-inner"></div>
+                </div>
+            <div class="pace-activity"></div></div>
             <div id={`preloader`} className={`preloader ${props.isLoading ? '' : "load_coplate"}`}>
                     <div class="product_name">Bearings</div>
             </div>  

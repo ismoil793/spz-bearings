@@ -359,10 +359,14 @@ class Home extends React.Component {
           />
         </Head>
         <div>
+        <div class={`pace ${this.props.isLoading ? 'pace-active' : 'pace-inactive'}`}><div class="pace-progress" data-progress-text="100%" data-progress="99" style={{'transform': 'translate3d(100%, 0px, 0px)'}}>
+          <div class="pace-progress-inner"></div>
+            </div>
+        <div class="pace-activity"></div></div>
           
           <div className="body_wrapper main_index">    
             <div id={`preloader`} className={`preloader ${this.props.isLoading ? '' : "load_coplate"}`}>
-              <div class="product_name">Bearings</div>
+              <div class={`product_name ${this.props.isLoading ? '' : "load_coplate"}`}>Bearings</div>
             </div>        
           </div>
           <Layout isLoading={this.props.isLoading} isHome={true}>
