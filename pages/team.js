@@ -74,7 +74,7 @@ export default function teamPage(props) {
             <h2 class="title_head">Наше Руководство</h2>
         </section>
         <section class="our_founder_area pt_100 second_wrapper team_page_animation_section team_page-animated_part">
-            <div class="container team_page_animation_wrapper">
+            <div class="team_page_animation_wrapper">
 
                 <ul>
                     <li value="Генеральный Директор" data="Васильев Антон">

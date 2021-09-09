@@ -7255,6 +7255,12 @@ header .collapse.navbar-collapse {
   animation: r 8s forwards;
 }
 
+.team_page_animation_wrapper {
+  width: 75vh !important;
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes r {
   from {
     transform: rotate(180deg);
