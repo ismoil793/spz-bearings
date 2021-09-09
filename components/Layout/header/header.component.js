@@ -213,11 +213,6 @@ import { Nav } from "reactstrap";
 
     return (
       <> 
-      <style jsx global>{`
-        body {
-          overflow: hidden;
-        }
-      `}</style>  
         <header id="header" className="u-header u-header-left-aligned-nav">
         <div className={`header_big_logo ${this.props.isLoading ? '' : 'header_fixed'}`}>
             {this.props.isHome ? 
