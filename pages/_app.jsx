@@ -40,12 +40,20 @@ class MyApp extends App {
         this.state = {
             isLoading: false
         }
+        Router.events.on("routeChangeStart", () => {this.changeLoadingStatus(true); console.log('isLoading', this.state.isLoading)});
+        Router.events.on('routeChangeComplete', () => {this.changeLoadingStatus(false); console.log('isLoading', this.state.isLoading)}); 
+        Router.events.on('routeChangeError', () => {this.changeLoadingStatus(false); console.log('isLoading', this.state.isLoading)}); 
     }
-    componentWillMount() {
-        Router.events.on("routeChangeStart", () => {this.setState({isLoading: true}); console.log('isLoading', isLoading)});
-        Router.events.on('routeChangeComplete', () => {this.setState({isLoading: false}); console.log('isLoading', isLoading)}); 
-        Router.events.on('routeChangeError', () => {this.setState({isLoading: false}); console.log('isLoading', isLoading)}); 
+
+    changeLoadingStatus = (boolean) => {
+        if (boolean) {
+            this.setState({isLoading: boolean})
+        }
+        else setTimeout(() => {
+            this.setState({isLoading: boolean})
+        }, 300);
     }
+
     componentWillMount() {
         console.log('app mount')
     }
