@@ -82,21 +82,21 @@ function PostNews({ data, setProductCategory, isLoading }) {
                         <div class="row justify-content-center">
                             <div class="col-md-4 col-sm-6">
                                 <div class="cons_blog_item"> <a href="#" class="img_hover"> <img
-                                            src="/static/assets/img/img/blog/like-post-1.jpg" alt=""/> </a> <a
+                                            src="/static/assets/img/img/blog/blog-1.jpg" alt=""/> </a> <a
                                         href="single-blog.html">
                                         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
                                     </a> </div>
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <div class="cons_blog_item"> <a href="#" class="img_hover"> <img
-                                            src="/static/assets/img/img/blog/like-post-2.jpg" alt=""/> </a> <a
+                                            src="/static/assets/img/img/blog/blog-2.jpg" alt=""/> </a> <a
                                         href="single-blog.html">
                                         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
                                     </a> </div>
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <div class="cons_blog_item"> <a href="#" class="img_hover"> <img
-                                            src="/static/assets/img/img/blog/like-post-3.jpg" alt=""/> </a> <a
+                                            src="/static/assets/img/img/blog/blog-3.jpg" alt=""/> </a> <a
                                         href="single-blog.html">
                                         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
                                     </a> </div>

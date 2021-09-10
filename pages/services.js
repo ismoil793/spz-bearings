@@ -143,7 +143,7 @@ export default function servicesPage(props) {
                     <a href="#" class="text_btn" data-text="Контакты">Контакты</a>
                 </div>
             </div>
-            <div class="cons_work_right"> <img src="/static/assets/img/img/home-six/video_img.jpg" alt=""/> <a href="#"
+            <div class="cons_work_right"> <img src="/static/assets/img/img/services/video_img.jpg" alt=""/> <a href="#"
                     class="video_icon"><span><i class="fas fa-play"></i></span></a> </div>
         </section>
 
