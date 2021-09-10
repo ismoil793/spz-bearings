@@ -10605,3 +10605,10 @@ ul.circle_list {
     transform: rotateY(180deg);
   }
 }
+
+.main_logo_container {
+  display: contents !important; 
+  img {
+    margin-left: 20px;
+  }
+}

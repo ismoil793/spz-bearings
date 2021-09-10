@@ -246,7 +246,7 @@ import { Nav } from "reactstrap";
               </div> : null }
 
               <Nav className="navbar navbar-expand-lg" id="header">
-                <div className="container">
+                <div className="container main_logo_container">
                   {" "}
                   <Link href="/"><a className={`navbar-brand big_logo ${this.props.isHome ? '' : 'mt-0'}`}>
                     <img
