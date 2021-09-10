@@ -10378,3 +10378,230 @@ ul.circle_list {
 .dropdown_list_display_block {
   display: block !important;
 }
+
+.services-business_card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  * {
+    margin:0;
+    padding:0;
+    
+  }
+  body {
+    padding-top:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .title {
+    position:absolute;
+    bottom:100px;
+    text-align:center;
+    width:100%;
+    font-weight:100;
+  }
+  .card-container {
+    width:500px;
+    height:300px;
+    border-radius:15px;
+    perspective: 600px;
+  }
+  .card {
+    position:relative;
+    width: 100%;
+    height:100%;
+    transition:1s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius:5px;
+    box-shadow: 0px 0px 50px #000;
+    
+  }
+  .card-faces {
+    position:absolute;
+    height:100%;
+    width:100%;
+    border-radius:1px;
+    backface-visibility: hidden;
+      -webkit-backface-visibility: hidden; /* Safari */
+  }
+  
+  /*  FRONT STYLES */
+  /* alternative background "http://www.desktopimages.org/pictures/2014/0303/1/small-black-hexagon-pattern-wallpaper-60021.jpg" */
+  .front {
+    background-color:#000;
+    background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg");
+    background-size:cover;
+    background-position:250px 150px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 200px 350px #000;
+  }
+  .logo {
+    width:10%;
+    height:16.5%;
+    border-radius:50%;
+    border-top:3px solid #3A3A3C;
+    border-left:3px solid #3A3A3C;
+    border-right:3px solid #00ADEF;
+    border-bottom:3px solid #3A3A3C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    top:40%;
+    left:9%;
+    transform: scale(1.5);
+  }
+  .business_card_logo_main {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .business_card_logo {
+    width: 20px;
+    height: 20px;
+  }
+  .front-title {
+    position:absolute;
+    top:32%;
+    left: 25%;
+    text-align:center;
+    color:#3A3A3C;
+    font-size:188%;
+    letter-spacing:2px;
+    font-family: 'Open Sans', sans-serif;
+    border-left:2px solid #3A3A3C;
+    padding-left:1.75%;
+    line-height:340%;
+    align-self:flex-end;
+    text-transform:uppercase;
+    font-weight:800;
+  }
+  
+  .front-sub-title {
+    color:#00ADEF;
+    align-self:flex-start;
+    position:absolute;
+    bottom:40%;
+    left: 30.5%;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  
+  
+  /*  BACK STYLES */
+  .back {
+    background-color:#000;
+    background-image: url("https://i.pinimg.com/originals/db/59/4b/db594b739eb9f298a7c9dfeb64eb4e16.jpg");
+    background-size:cover;
+    background-position:-250px 150px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 200px 350px #000;
+    transform: rotateY(180deg);
+  }
+  .logo-back {
+    margin-right:10px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border-top:3px solid #3A3A3C;
+    border-left:3px solid #3A3A3C;
+    border-right:3px solid #00ADEF;
+    border-bottom:3px solid #3A3A3C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    top:20px;
+    left:20px;
+    transform: scale(.75);
+  }
+  .jedi-icon-back {
+    color:#00ADEF;
+    font-size:24px;
+  }
+  .back-title {
+    position:absolute;
+    top:8px;
+    left: 40px;
+    text-align:center;
+    color:#3A3A3C;
+    font-size:30px;
+    letter-spacing:2px;
+    font-family: 'Open Sans', sans-serif;
+    border-left:2px solid #3A3A3C;
+    padding-left:10px;
+    line-height:80px;
+    align-self:flex-end;
+    text-transform:uppercase;
+    backface-visibility: hidden;
+    transform: scale(.75);
+    font-weight:700;
+  }
+  .back-sub-title {
+    color:#00ADEF;
+    align-self:flex-start;
+    position:absolute;
+    top:54px;
+    left: 62px;
+    letter-spacing: 3px;
+    backface-visibility: hidden;
+    transform: scale(.75);
+    text-transform: uppercase;
+    font-weight:600;
+  }
+  
+  .back-name {
+    position:absolute;
+    right:5%;
+    top:35%;
+    color:#fff;
+    font-weight:300;
+    text-transform:uppercase;
+  }
+  .wizard {
+    color: #00ADEF;
+  }
+  .back-sub-name {
+    position:absolute;
+    right:5%;
+    top:43%;
+    color:#3A3A3C;
+  /*   font-weight:300; */
+    font-size: 1em;
+  }
+  
+  .back-list {
+    list-style:none;
+    position:absolute;
+    right:5%;
+    top: 55%;
+  }
+  .back-list-item {
+    color:#fff;
+    font-size:70%;
+  }
+  .list-icon {
+    color:#00ADEF;
+    padding:4px 5px 4px 0px;
+  }
+  
+  .blue-bar {
+    position:absolute;
+    top:13%;
+    right:0;
+    width:10px;
+    height:220px;
+    background: #00ADEF;
+  }
+  
+  
+  
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+}

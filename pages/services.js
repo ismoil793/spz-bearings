@@ -46,49 +46,39 @@ export default function servicesPage(props) {
                     <h6 class="title_top">Сервисы</h6>
                     </div></div></section>
         <div class="container business_card visit_main_wrapper">
-        <section class="services_visit_wrapper">            
-            <div class="col-md-12 container2">
-            <div class={`card card--front ${toggle ? 'card--front--flip' : ''}`}>
-              <div class="logo">
-                <img src="/static/assets/img/img/home-one/logo_footer.png" class="logo__img"/>
-              </div>
-              <div onClick={()=>setToggle(true)} class="text">
-                <div class="head">
-                  <h1 class="head__name">
-                    <b class="name__fn">Визитка</b>                    
-                  </h1>
-                  <p class="head__subtitle">Ахунбабаевский <br/> подшипниковый завод-27</p>
-                  <p class="description">Информация по сервисам в обратной стороне</p>
-                  <div class="our_f_item">
-                    <div class="team_name">
-                        <ul class="nav">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>  
-                    </div> 
-                  </div>           
-                </div>
-                <div class="border-right"></div>
-              </div>
-            </div>
-            
-            <div class={`card card--back ${toggle ? 'card--back--flip' : ''}`}>
-              <div class="card__content">
-                <ul class="contact" onClick={()=>setToggle(false)}>
-                  <li><a href="#">Помощь в расчетах</a></li>
-                  <li><a href="#">Помощь в составлении тех задания</a></li>                  
-                  <li><a href="#">Производство необходимой продукции в срок</a></li>
-                  <li><a href="#">Доставка готовых изделий в любую точку мира</a></li>
-                  </ul>
-              </div>
-            </div>
-              
-              <div class="card-shadow"></div>
-              
-            </div>
-              </section>
+        <section className="services-business_card">
+        <h1 class="title">SPZ-BEARINGS</h1>
+<div class="card-container">
+  <div onClick={()=>setToggle(!toggle)} class={`card ${toggle? 'is-flipped' : ''}`}>
+    <div class="card-faces back">
+      <div class="logo-back">
+        <img className="business_card_logo_main" src="/static/assets/img/img/logo.png"/>
+      </div>
+      <h4 class="back-title">SPZ-BEARINGS</h4>
+      <h4 class="back-sub-title">Подшипниковый Завод</h4>
+      {/* <h3 class="back-name">Adam <span class="wizard">Whiz</span></h3>
+      <h6 class="back-sub-name">Front-end developer</h6> */}
+      <ul class="back-list">
+        <li class="back-list-item"><i class="list-icon fas fa-calculator"></i> Помощь в расчетах</li>
+        <li class="back-list-item"><i class="list-icon fas fa-file-image"></i> Помощь в составлении тех задания</li>
+        <li class="back-list-item"><i class="list-icon fas fa-cogs"></i> Производство необходимой продукции в срок</li>
+        <li class="back-list-item"><i class="list-icon fas fa-truck"></i>Доставка готовых изделий в любую точку мира</li>
+      </ul>
+      <div class="blue-bar"></div>
+    </div>
+    <div class="card-faces front">
+      <div class="logo">
+        <img class="business_card_logo" src="/static/assets/img/img/logo.png"/>
+      </div>
+      <h4 class="front-title">SPZ-BEARINGS</h4>
+      <h4 class="front-sub-title">Подшипниковый Завод</h4>
+    </div>
+  </div>
+</div>
+        </section>
         </div>
+
+
         
         <section class="services_area description_without-business_card pt_200">
             <div class="container">
