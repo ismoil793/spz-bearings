@@ -17,13 +17,13 @@ export default function aboutPage() {
       .get(`${url}/api/cart/show`, {
         params: {
           device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type")
-        }
+          device_type: cookies.get("device_type"),
+        },
       })
-      .then(response => {
+      .then((response) => {
         setCartNumber(response.data.data.items.length);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
 
@@ -31,13 +31,13 @@ export default function aboutPage() {
       .get(`${url}/api/comparison/features`, {
         params: {
           device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type")
-        }
+          device_type: cookies.get("device_type"),
+        },
       })
-      .then(response => {
+      .then((response) => {
         setCompareNumber(response.data.data.products.length);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }, []);
@@ -47,7 +47,7 @@ export default function aboutPage() {
         <title>Kitmach Premium - Акция </title>
         <link
           rel="icon"
-          href="/static/assets/template/avtech/images/favicon.png"
+          href="/static/assets/img/img/favicon.ico"
           type="image/x-icon"
         />
         <meta charset="utf-8" />
@@ -90,13 +90,15 @@ export default function aboutPage() {
                           <br />
                           <span style={{ fontWeight: "500" }}>
                             <a href="https://www.instagram.com/Kitmach Premiumuzofficial/">
-                              https://www.instagram.com/Kitmach Premiumuzofficial/{" "}
+                              https://www.instagram.com/Kitmach
+                              Premiumuzofficial/{" "}
                             </a>{" "}
                           </span>
                           <br />
                           <span style={{ fontWeight: "500" }}>
                             <a href="https://www.facebook.com/Kitmach Premiumuzofficial/">
-                              https://www.facebook.com/Kitmach Premiumuzofficial/{" "}
+                              https://www.facebook.com/Kitmach
+                              Premiumuzofficial/{" "}
                             </a>{" "}
                           </span>
                           <br />

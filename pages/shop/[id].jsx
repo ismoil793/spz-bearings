@@ -11,8 +11,8 @@ import url from "../../components/url";
 import Product from "../../components/Products/catalog";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
-const mapDispatchToProps = dispatch => ({
-  setProductCategory: obj => dispatch(actions.setProductCategory(obj))
+const mapDispatchToProps = (dispatch) => ({
+  setProductCategory: (obj) => dispatch(actions.setProductCategory(obj)),
 });
 
 const override = css`
@@ -32,7 +32,7 @@ function Post(data) {
     volume: null,
     cartnum: 0,
     value: { min: null, max: null },
-    show_filter: false
+    show_filter: false,
   });
 
   const [cartNumber, setCartNumber] = React.useState(0);
@@ -46,10 +46,10 @@ function Post(data) {
     axios
       .get(`${url}/api/categories`, {
         params: {
-          slug: router.query.id
-        }
+          slug: router.query.id,
+        },
       })
-      .then(response => {
+      .then((response) => {
         setCategoryID(response.data.data.id);
         setCategoryName(response.data.data.name);
         setCategoryImage(
@@ -59,7 +59,7 @@ function Post(data) {
         );
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }, [router.query.id]);
@@ -113,7 +113,7 @@ function Post(data) {
     <>
       <Head>
         {router.query.searching ? (
-          <title>Kitmach Premium поиск {router.query.searching} </title>
+          <title>SPZ-Bearings {router.query.searching} </title>
         ) : (
           <title>{data.data.meta_title ? data.data.meta_title : ""}</title>
         )}
@@ -125,7 +125,7 @@ function Post(data) {
         <meta name="description" content={data.data.meta_description} />
         <meta name="keywords" content={data.data.meta_keywords} />
 
-        <meta name="author" content="Kitmach Premium" />
+        <meta name="author" content="SPZ-Bearings" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="super_container">
@@ -135,7 +135,7 @@ function Post(data) {
 
             <div class="container">
               <div class="row mb-8">
-                <Filter 
+                <Filter
                   onChange={onChangeOption}
                   option={option}
                   category={category_id}
@@ -162,8 +162,4 @@ export async function getServerSideProps({ params }) {
   return { props: { data } };
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Post);
-
+export default connect(null, mapDispatchToProps)(Post);

@@ -10,12 +10,12 @@ const uuidv1 = require("uuid/v1");
 import Cookies from "universal-cookie";
 
 import url from "../../url";
-import { connect } from "react-redux"
-import { fetchSetUserInfo } from '../../../redux/actions/userInfo'
+import { connect } from "react-redux";
+import { fetchSetUserInfo } from "../../../redux/actions/userInfo";
 import { fetchCompare } from "../../../redux/actions/compare";
 import { fetchFavorites } from "../../../redux/actions/favorites";
 import { Nav } from "reactstrap";
- class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,44 +32,43 @@ import { Nav } from "reactstrap";
       isMobileSearch: false,
       userInfo: {},
       search_is_open: false,
-      menu_is_opened: false
+      menu_is_opened: false,
     };
-  
   }
 
   Callback = () => {
-    this.setState(prevState => ({
-      mobile_menu: !prevState.mobile_menu
+    this.setState((prevState) => ({
+      mobile_menu: !prevState.mobile_menu,
     }));
   };
 
   HideRegister = (data) => {
     this.setState({
-     isRegister: data
+      isRegister: data,
     });
   };
 
   HideAside = (data) => {
     this.setState({
-     isAside: data
+      isAside: data,
     });
   };
 
   HideCategories = (data) => {
     this.setState({
-     isCategories: data
+      isCategories: data,
     });
   };
 
   HideLogin = (data) => {
     this.setState({
-     isLogin: data
+      isLogin: data,
     });
   };
 
   HidePopUp = (data) => {
     this.setState({
-     isPopupCart: data
+      isPopupCart: data,
     });
   };
 
@@ -77,17 +76,17 @@ import { Nav } from "reactstrap";
     axios
       .get(`${url}/api/search`, {
         params: {
-          search: this.state.searching
-        }
+          search: this.state.searching,
+        },
       })
-      .then(response => {
+      .then((response) => {
         //   this.setState({ searched: response.data.products });
         let products = [];
         if (response.data.products.length) {
           for (let i = 0; i < response.data.products.length; i++) {
             products.push({
               value: response.data.products[i].id,
-              text: response.data.products[i].name
+              text: response.data.products[i].name,
             });
           }
         }
@@ -95,55 +94,55 @@ import { Nav } from "reactstrap";
           this.setState({ products: products });
         }, 100);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     {
       e.target.value
         ? Router.push({
             pathname: `/productPage/${e.target.text}`,
-            query: { product_id: e.target.value }
+            query: { product_id: e.target.value },
           })
         : null;
     }
   };
 
-  Register = e => {
-    this.setState(prevState => ({
-      isRegister: !prevState.isRegister
+  Register = (e) => {
+    this.setState((prevState) => ({
+      isRegister: !prevState.isRegister,
     }));
   };
 
-  handleMobileSearch = e => {
-    this.setState(prevState => ({
-      isMobileSearch: !prevState.isMobileSearch
+  handleMobileSearch = (e) => {
+    this.setState((prevState) => ({
+      isMobileSearch: !prevState.isMobileSearch,
     }));
   };
 
-  Login = e => {
-    this.setState(prevState => ({
-      isLogin: !prevState.isLogin
+  Login = (e) => {
+    this.setState((prevState) => ({
+      isLogin: !prevState.isLogin,
     }));
   };
 
-  AsideCategory = e => {
-    this.setState(prevState => ({
-      isAside: !prevState.isAside
+  AsideCategory = (e) => {
+    this.setState((prevState) => ({
+      isAside: !prevState.isAside,
     }));
   };
 
-  PopupCart = e => {
-    this.setState(prevState => ({
-      isPopupCart: !prevState.isPopupCart
+  PopupCart = (e) => {
+    this.setState((prevState) => ({
+      isPopupCart: !prevState.isPopupCart,
     }));
   };
 
-  Categories = e => {
-    this.setState(prevState => ({
-      isCategories: !prevState.isCategories
+  Categories = (e) => {
+    this.setState((prevState) => ({
+      isCategories: !prevState.isCategories,
     }));
   };
 
@@ -152,11 +151,11 @@ import { Nav } from "reactstrap";
     const current = new Date();
     const nextYear = new Date();
     if (!this.props.compare) {
-      this.props.getCompare()
+      this.props.getCompare();
     }
 
     if (!this.props.user.user.id) {
-      this.props.getFavourites()
+      this.props.getFavourites();
     }
 
     nextYear.setFullYear(current.getFullYear() + 1);
@@ -165,7 +164,7 @@ import { Nav } from "reactstrap";
       let device_id = uuidv1();
       cookies.set("device_token", device_id, {
         path: "/",
-        expires: nextYear
+        expires: nextYear,
       });
       cookies.set("device_type", "web");
     }
@@ -175,33 +174,33 @@ import { Nav } from "reactstrap";
       data: {
         device_token: cookies.get("device_token"),
         device_type: cookies.get("device_type"),
-        user_id: cookies.get("user_id")
-      }
+        user_id: cookies.get("user_id"),
+      },
     })
-      .then(response => {})
-      .catch(error => {});
+      .then((response) => {})
+      .catch((error) => {});
     if (Object.keys(this.props.user.user).length === 0) {
       axios
-      .get(`${url}/api/user/info`)
-      .then(response => {
-        this.props.setUserInfo(response.data.data)
-        // this.setState({ userInfo: response.data.data });
-        
-      })
-      .catch(error => {
-        console.log(error)
-      }); 
+        .get(`${url}/api/user/info`)
+        .then((response) => {
+          this.props.setUserInfo(response.data.data);
+          // this.setState({ userInfo: response.data.data });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.menu_is_opened !== this.state.menu_is_opened) {
-      document.body.className = this.state.menu_is_opened ? 'menu-is-opened' : 'menu-is-closed'
+      document.body.className = this.state.menu_is_opened
+        ? "menu-is-opened"
+        : "menu-is-closed";
     }
   }
 
   render() {
-
     const cookies = new Cookies();
     let { url } = this.state;
 
@@ -212,10 +211,14 @@ import { Nav } from "reactstrap";
     }
 
     return (
-      <> 
+      <>
         <header id="header" className="u-header u-header-left-aligned-nav">
-        <div className={`header_big_logo ${this.props.isLoading ? '' : 'header_fixed'}`}>
-            {this.props.isHome ? 
+          <div
+            className={`header_big_logo ${
+              this.props.isLoading ? "" : "header_fixed"
+            }`}
+          >
+            {this.props.isHome ? (
               <div className="header_top">
                 <div className="container">
                   <div className="row">
@@ -243,244 +246,277 @@ import { Nav } from "reactstrap";
                     </div>
                   </div>
                 </div>
-              </div> : null }
+              </div>
+            ) : null}
 
-              <Nav className="navbar navbar-expand-lg" id="header">
-                <div className="container main_logo_container">
-                  {" "}
-                  <Link href="/"><a className={`navbar-brand big_logo ${this.props.isHome ? '' : 'mt-0'}`}>
+            <Nav className="navbar navbar-expand-lg" id="header">
+              <div className="container main_logo_container">
+                {" "}
+                <Link href="/">
+                  <a
+                    className={`navbar-brand big_logo ${
+                      this.props.isHome ? "" : "mt-0"
+                    }`}
+                  >
                     <img
                       src="/static/assets/img/img/home-14/logo.png"
                       alt="logo"
                     />
-                  </a></Link>{" "}
-                  <Link href="/"><a className="navbar-brand">
+                  </a>
+                </Link>{" "}
+                <Link href="/">
+                  <a className="navbar-brand">
                     <img
                       src="/static/assets/img/img/home-one/logo.png"
                       alt="logo"
                     />
-                  </a></Link>
-                  <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav menu">
-                      <li className="nav-item">
-                        {" "}
-                        <Link  href="/"><a className="nav-link">
-                          Главная
-                        </a></Link>{" "}
-                      </li>
-                      <li className="nav-item dropdown submenu">
-                        {" "}
-                        <Link href="/about" ><a className="nav-link">
-                          {" "}
-                          О Нас{" "}
-                        </a></Link>
-                        <ul className="dropdown-menu">
-                          <li className="nav-item active">
-                            {" "}
-                            <Link href="/about" ><a className="nav-link">
-                              История Завода
-                            </a></Link>
-                          </li>
-                          <li className="nav-item">
-                            {" "}
-                            <Link href="/team" ><a className="nav-link">
-                              Наша Команда
-                            </a></Link>{" "}
-                          </li>
-                          <li className="nav-item">
-                            {" "}
-                            <Link
-                                href={{
-                                  pathname: "/services/[singlenservice]"
-                                }}
-                                as={`/services/1`} ><a className="nav-link">
-                              Технический Центр
-                            </a></Link>{" "}
-                          </li>
-                        </ul>
-                      </li>
+                  </a>
+                </Link>
+                <div className="collapse navbar-collapse">
+                  <ul className="navbar-nav menu">
+                    <li className="nav-item">
+                      {" "}
+                      <Link href="/">
+                        <a className="nav-link">Главная</a>
+                      </Link>{" "}
+                    </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/services" ><a className="nav-link">
-                        {" "}
-                        Сервисы{" "}
-                      </a></Link>
+                      <Link href="/about">
+                        <a className="nav-link"> О Нас </a>
+                      </Link>
                       <ul className="dropdown-menu">
-                        <li className="nav-item">
+                        <li className="nav-item active">
                           {" "}
-                          <Link href="/services" ><a className="nav-link">
-                            Сервисы
-                          </a></Link>{" "}
+                          <Link href="/about">
+                            <a className="nav-link">История Завода</a>
+                          </Link>
                         </li>
                         <li className="nav-item">
                           {" "}
-                          <Link Link
-                                href={{
-                                  pathname: "/services/[singlenservice]"
-                                }}
-                                as={`/services/1`} ><a className="nav-link">
-                            Детально Сервисы
-                          </a></Link>{" "}
+                          <Link href="/team">
+                            <a className="nav-link">Наша Команда</a>
+                          </Link>{" "}
+                        </li>
+                        <li className="nav-item">
+                          {" "}
+                          <Link
+                            href={{
+                              pathname: "/services/[singlenservice]",
+                            }}
+                            as={`/services/1`}
+                          >
+                            <a className="nav-link">Технический Центр</a>
+                          </Link>{" "}
                         </li>
                       </ul>
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link  href="/news"><a className="nav-link">
-                        {" "}
-                        Новости{" "}
-                      </a></Link>
+                      <Link href="/services">
+                        <a className="nav-link"> Сервисы </a>
+                      </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           {" "}
-                          <Link href="/news" ><a className="nav-link">
-                            Новости
-                          </a></Link>{" "}
+                          <Link href="/services">
+                            <a className="nav-link">Сервисы</a>
+                          </Link>{" "}
                         </li>
                         <li className="nav-item">
                           {" "}
-                          <Link href={{
-                                  pathname: "/news/[singlenews]"
-                                }}
-                                as={`/news/1`}  ><a className="nav-link">
-                            Детально Новости
-                          </a></Link>
+                          <Link
+                            Link
+                            href={{
+                              pathname: "/services/[singlenservice]",
+                            }}
+                            as={`/services/1`}
+                          >
+                            <a className="nav-link">Детально Сервисы</a>
+                          </Link>{" "}
                         </li>
                       </ul>
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link  href="/shop"><a className="nav-link">
-                        {" "}
-                        Продукция{" "}
-                      </a></Link>
+                      <Link href="/news">
+                        <a className="nav-link"> Новости </a>
+                      </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           {" "}
-                          <Link href="/shop" ><a className="nav-link">
-                            Продукция
-                          </a></Link>{" "}
+                          <Link href="/news">
+                            <a className="nav-link">Новости</a>
+                          </Link>{" "}
                         </li>
                         <li className="nav-item">
                           {" "}
-                          <Link href={{
-                                  pathname: "/product/[product]"
-                                }}
-                                as={`/product/1`}  ><a className="nav-link">
-                            Детально продукция
-                          </a></Link>{" "}
+                          <Link
+                            href={{
+                              pathname: "/news/[singlenews]",
+                            }}
+                            as={`/news/1`}
+                          >
+                            <a className="nav-link">Детально Новости</a>
+                          </Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="nav-item dropdown submenu">
+                      {" "}
+                      <Link href="/shop">
+                        <a className="nav-link"> Продукция </a>
+                      </Link>
+                      <ul className="dropdown-menu">
+                        <li className="nav-item">
+                          {" "}
+                          <Link href="/shop">
+                            <a className="nav-link">Продукция</a>
+                          </Link>{" "}
+                        </li>
+                        <li className="nav-item">
+                          {" "}
+                          <Link
+                            href={{
+                              pathname: "/product/[product]",
+                            }}
+                            as={`/product/1`}
+                          >
+                            <a className="nav-link">Детально продукция</a>
+                          </Link>{" "}
                         </li>
                       </ul>
                     </li>
                     <li className="nav-item">
                       {" "}
-                      <Link  href="/contacts"><a className="nav-link">
-                        Контакты
-                      </a></Link>{" "}
+                      <Link href="/contacts">
+                        <a className="nav-link">Контакты</a>
+                      </Link>{" "}
                     </li>
-                    </ul>
-                  </div>
+                  </ul>
                 </div>
-                <ul className="list-unstyled navbar-nav navright cart_navbar wrapper_list_dropdown">
-                  <li className="shoping-cart">
-                    {" "}
-                    <Link href="/cart"><a>
+              </div>
+              <ul className="list-unstyled navbar-nav navright cart_navbar wrapper_list_dropdown">
+                <li className="shoping-cart">
+                  {" "}
+                  <Link href="/cart">
+                    <a>
                       <i className="fas fa-cart-arrow-down"></i>
-                    </a></Link>
-                    <ul className="dropdown-menu">
-                      <li className="cart-single-item clearfix">
-                        <div className="cart-img">
-                          {" "}
-                          <img
-                            src="/static/assets/img/img/cart1.jpg"
-                            alt="styler"
-                          />{" "}
-                        </div>
-                        <div className="cart-content text-left">
-                          <p className="cart-title">
-                            <Link href="/product-details"><a>Lorem, ipsum dolor.</a></Link>
-                          </p>
-                          <p>
-                            <del>$10.00</del> - $8.50
-                          </p>
-                        </div>
-                        <div className="cart-remove">
-                          {" "}
-                          <a href="#" className="action">
-                            X
-                          </a>{" "}
-                        </div>
-                      </li>
-                      <li className="cart-single-item clearfix">
-                        <div className="cart-img">
-                          {" "}
-                          <img
-                            src="/static/assets/img/img/cart2.jpg"
-                            alt="styler"
-                          />{" "}
-                        </div>
-                        <div className="cart-content text-left">
-                          <p className="cart-title">
-                            <Link href="/product-details"><a>Lorem, ipsum dolor.</a></Link>
-                          </p>
-                          <p>$12.00</p>
-                        </div>
-                        <div className="cart-remove">
-                          {" "}
-                          <a href="#" className="action">
-                            X
-                          </a>{" "}
-                        </div>
-                      </li>
-                      <li className="cart_f">
-                        <div className="cart-pricing">
-                          <p className="total">
-                            Subtotal :
-                            <span className="p-total text-right">$20.50</span>
-                          </p>
-                        </div>
-                        <div className="cart-button">
-                          {" "}
-                          <button className="theme_btn hover_style1">
-                            Посмотреть в корзину
-                          </button>
-                          <button className="theme_btn theme_btn_three hover_style1">
-                            Оформить заказ
-                          </button>{" "}
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li onClick={() => this.setState({search_is_open: !this.state.search_is_open})} className={`search ${this.state.search_is_open ? 'open' : ''}`}>
-                    {" "}
-                    <a href="javascript:void(0);">
-                      <i class="fas fa-search"></i>
                     </a>
-                    <form action="#" method="get" className="search-form">
-                      <div className="input-group">
+                  </Link>
+                  <ul className="dropdown-menu">
+                    <li className="cart-single-item clearfix">
+                      <div className="cart-img">
                         {" "}
-                        <input
-                          type="search"
-                          className="form-control"
-                          placeholder="Searching for..."
+                        <img
+                          src="/static/assets/img/img/cart1.jpg"
+                          alt="styler"
                         />{" "}
-                        <button type="submit">
-                          <i className="fas fa-search"></i>
+                      </div>
+                      <div className="cart-content text-left">
+                        <p className="cart-title">
+                          <Link href="/product-details">
+                            <a>Lorem, ipsum dolor.</a>
+                          </Link>
+                        </p>
+                        <p>
+                          <del>$10.00</del> - $8.50
+                        </p>
+                      </div>
+                      <div className="cart-remove">
+                        {" "}
+                        <a href="#" className="action">
+                          X
+                        </a>{" "}
+                      </div>
+                    </li>
+                    <li className="cart-single-item clearfix">
+                      <div className="cart-img">
+                        {" "}
+                        <img
+                          src="/static/assets/img/img/cart2.jpg"
+                          alt="styler"
+                        />{" "}
+                      </div>
+                      <div className="cart-content text-left">
+                        <p className="cart-title">
+                          <Link href="/product-details">
+                            <a>Lorem, ipsum dolor.</a>
+                          </Link>
+                        </p>
+                        <p>$12.00</p>
+                      </div>
+                      <div className="cart-remove">
+                        {" "}
+                        <a href="#" className="action">
+                          X
+                        </a>{" "}
+                      </div>
+                    </li>
+                    <li className="cart_f">
+                      <div className="cart-pricing">
+                        <p className="total">
+                          Subtotal :
+                          <span className="p-total text-right">$20.50</span>
+                        </p>
+                      </div>
+                      <div className="cart-button">
+                        {" "}
+                        <button className="theme_btn hover_style1">
+                          Посмотреть в корзину
+                        </button>
+                        <button className="theme_btn theme_btn_three hover_style1">
+                          Оформить заказ
                         </button>{" "}
                       </div>
-                    </form>
-                  </li>
-                  <li onClick={()=>this.setState({menu_is_opened: !this.state.menu_is_opened})}>
-                    {" "}
-                    <a href="#" className="menu_btn">
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  onClick={() =>
+                    this.setState({
+                      search_is_open: !this.state.search_is_open,
+                    })
+                  }
+                  className={`search ${
+                    this.state.search_is_open ? "open" : ""
+                  }`}
+                >
+                  {" "}
+                  <a href="javascript:void(0);">
+                    <i class="fas fa-search"></i>
+                  </a>
+                  <form action="#" method="get" className="search-form">
+                    <div className="input-group">
+                      {" "}
+                      <input
+                        type="search"
+                        className="form-control"
+                        placeholder="Searching for..."
+                      />{" "}
+                      <button type="submit">
+                        <i className="fas fa-search"></i>
+                      </button>{" "}
+                    </div>
+                  </form>
+                </li>
+                <li
+                  onClick={() =>
+                    this.setState({
+                      menu_is_opened: !this.state.menu_is_opened,
+                    })
+                  }
+                >
+                  {" "}
+                  <a href="#" className="menu_btn">
                     <i class="fas fa-align-justify"></i>
-                    </a>{" "}
-                  </li>
-                </ul>
-              </Nav>
-            </div>
+                  </a>{" "}
+                </li>
+              </ul>
+            </Nav>
+          </div>
         </header>
-{/* {this.state.isLogin || this.state.isRegister ? (
+        {/* {this.state.isLogin || this.state.isRegister ? (
         <aside id="sidebarContent" className="u-sidebar u-sidebar__lg" aria-labelledby="sidebarNavToggler">
             <div className="u-sidebar__scroller">
                 <div className="u-sidebar__container">
@@ -549,16 +585,14 @@ import { Nav } from "reactstrap";
                                         </div>
                                     </div>
                                    */}
-                                {/* </form>
+        {/* </form>
                             </div>
                         </div>
                 
                     </div>
                 </div>
             </div>
-        </aside>) : null} */} 
-
-    
+        </aside>) : null} */}
       </>
     );
   }
@@ -566,18 +600,18 @@ import { Nav } from "reactstrap";
 
 function mapStateToProps(state) {
   return {
-     cart: state.cart,
-     user: state.userInfo,
-     compare: state.compare.compare,
-     favourites: state.favourites.favourites
-  }
+    cart: state.cart,
+    user: state.userInfo,
+    compare: state.compare.compare,
+    favourites: state.favourites.favourites,
+  };
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     setUserInfo: (userInfo) => dispatch(fetchSetUserInfo(userInfo)),
     getCompare: () => dispatch(fetchCompare()),
-    getFavourites: () => dispatch(fetchFavorites())
-  }
-}
+    getFavourites: () => dispatch(fetchFavorites()),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

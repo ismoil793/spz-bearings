@@ -1,4 +1,4 @@
-import Header from "../header/header.component";
+import Header from "../header/header.component.jsx";
 import Footer from "../footer/footer.componenet";
 import React from "react";
 import {connect} from "react-redux";
