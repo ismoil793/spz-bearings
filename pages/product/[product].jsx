@@ -80,39 +80,13 @@ function PostProduct(props) {
                   <div class="col-lg-6">
                     <div class="p_details_text">
                       <h3>Lorem, ipsum dolor.</h3>
-                      <h5>$14</h5>
                       <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Et iure tenetur explicabo at eos beatae.
                       </p>
-                      <div class="product_count">
-                        {" "}
-                        <input
-                          type="text"
-                          name="qty"
-                          id="sst"
-                          maxlength="12"
-                          value="1"
-                          title="Quantity:"
-                          class="input-text qty"
-                        />{" "}
-                        <button
-                          onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                          class="reduced items-count"
-                          type="button"
-                        >
-                          <i>-</i>
-                        </button>{" "}
-                        <button
-                          onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                          class="increase items-count"
-                          type="button"
-                        >
-                          <i>+</i>
-                        </button>{" "}
-                      </div>{" "}
+
                       <a class="theme_btn_two hover_style1" href="#">
-                        Добавить в корзину
+                        Заказать
                       </a>
                       <ul class="nav flex-column team_list">
                         <li>
@@ -261,12 +235,11 @@ function PostProduct(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
                         <h4>Lorem ipsum dolor sit amet.</h4>
-                        <p>$11</p>
                       </div>
                     </div>
                   </div>
@@ -281,12 +254,11 @@ function PostProduct(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$5</p>
                       </div>
                     </div>
                   </div>
@@ -301,12 +273,11 @@ function PostProduct(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
                         <h4>Lorem ipsum dolor sit.</h4>
-                        <p>$13</p>
                       </div>
                     </div>
                   </div>

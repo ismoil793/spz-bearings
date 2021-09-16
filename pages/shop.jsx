@@ -81,7 +81,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$5</p>
                       </div>
                     </div>
                   </div>
@@ -101,7 +100,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$7</p>
                       </div>
                     </div>
                   </div>
@@ -121,7 +119,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$4</p>
                       </div>
                     </div>
                   </div>
@@ -141,7 +138,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$10</p>
                       </div>
                     </div>
                   </div>
@@ -161,7 +157,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$14</p>
                       </div>
                     </div>
                   </div>
@@ -181,7 +176,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$22</p>
                       </div>
                     </div>
                   </div>
@@ -201,7 +195,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$26</p>
                       </div>
                     </div>
                   </div>
@@ -221,7 +214,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$13</p>
                       </div>
                     </div>
                   </div>
@@ -241,7 +233,6 @@ export default function servicesPage(props) {
                       </div>
                       <div class="product_text">
                         <h4>Lorem, ipsum dolor.</h4>
-                        <p>$5</p>
                       </div>
                     </div>
                   </div>
