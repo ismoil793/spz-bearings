@@ -8,9 +8,11 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+import ModalImage from "../components/ModalImage/modalImage";
 export default function aboutPage(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
+  const [modalImgUrl, setModalImgUrl] = React.useState('')
 
   useEffect(() => {
     const cookies = new Cookies();
@@ -91,6 +93,7 @@ export default function aboutPage(props) {
         >
           <main id="content" role="main">
             <OverlayComponent />
+            
             <section class="about_main_area about_page">
               <div class="container">
                 <div class="about_inner">
@@ -282,32 +285,32 @@ export default function aboutPage(props) {
                   <div class="about_page images_container">
                     <div class="col-md-3 col-sm-6 order-md-2 order-sm-4 item-sertificates clearfix image_item_wrapper">
                       {" "}
-                      <img
-                        class="img-fluid"
+                      <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate4.jpg")}
+                        class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate4.jpg"
                         alt=""
                       />{" "}
                     </div>
                     <div class="col-md-3 col-sm-6 order-md-4 order-sm-1 item-sertificates clearfix image_item_wrapper">
                       {" "}
-                      <img
-                        class="img-fluid"
+                      <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate1.jpg")}
+                        class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate1.jpg"
                         alt=""
                       />{" "}
                     </div>
                     <div class="col-md-3 col-sm-6 order-md-1 order-sm-2 item-sertificates clearfix image_item_wrapper">
                       {" "}
-                      <img
-                        class="img-fluid"
+                      <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate2.jpg")}
+                        class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate2.jpg"
                         alt=""
                       />{" "}
                     </div>
                     <div class="col-md-3 col-sm-6  order-md-3 order-sm-3 item-sertificates clearfix image_item_wrapper">
                       {" "}
-                      <img
-                        class="img-fluid"
+                      <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate3.jpg")}
+                        class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate3.jpg"
                         alt=""
                       />{" "}
@@ -316,6 +319,8 @@ export default function aboutPage(props) {
                 </div>
               </div>
             </section>
+
+            {modalImgUrl ? <ModalImage src={modalImgUrl} hide={()=>setModalImgUrl('')}/> : null}
 
             <section class="cons_contact_area_four work_offers about_page">
               <div class="container">

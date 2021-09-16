@@ -58,11 +58,11 @@ export default class Portfolio extends React.Component {
       </figure>
 
       <ul>
-        <li>Деталь 1</li>
-        <li>Деталь 2</li>
-        <li>Деталь 3</li>
-        <li>Деталь 4</li>
-        <li>Деталь 5</li>
+        <li>Подшипники</li>
+        <li>Валлы</li>
+        <li>Шестерни</li>
+        <li>Гайки</li>
+        <li>Болты</li>
       </ul>
     </div>
 
@@ -100,11 +100,11 @@ export default class Portfolio extends React.Component {
       </figure>
 
       <ul>
-        <li>Деталь 1</li>
-        <li>Деталь 2</li>
-        <li>Деталь 3</li>
-        <li>Деталь 4</li>
-        <li>Деталь 5</li>
+        <li>Подшипники</li>
+        <li>Валлы</li>
+        <li>Шестерни</li>
+        <li>Гайки</li>
+        <li>Болты</li>
       </ul>
     </div>
 
@@ -144,11 +144,11 @@ export default class Portfolio extends React.Component {
       </figure>
 
       <ul>
-        <li>Деталь 1</li>
-        <li>Деталь 2</li>
-        <li>Деталь 3</li>
-        <li>Деталь 4</li>
-        <li>Деталь 5</li>
+        <li>Подшипники</li>
+        <li>Валлы</li>
+        <li>Шестерни</li>
+        <li>Гайки</li>
+        <li>Болты</li>
       </ul>
     </div>
 

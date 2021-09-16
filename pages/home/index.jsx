@@ -189,6 +189,11 @@ class Home extends React.Component {
       "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
       "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
     ];
+    const sliderText = [
+      {title: 'Завод функционирует с 1986 - года', description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок"},
+      {title: 'Изготовим подшипники любой сложности', description: "Высочайшее качество, старая закалка и современные технологии подарят вам бесценный опыт работы с настоящими профессионалами Ахунбабаевского подшипникового завода."},
+      {title: 'Поможем с консультацией по приобретению', description: "Мы можем оказать вам любую консультацию по приобретении, использовании и замене любой подшипниковой продукции. Наши инженеры с радостью проконсультируют ваших технических специалистов по этому поводу"}
+    ]
 
     const categoriesPng = [
       "..//static/assets/img/home_categories/baking.png",
@@ -205,7 +210,7 @@ class Home extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 10000,
+      autoplaySpeed: 10000000,
       nextArrow: (
         <button class="arrow left">
           <svg width="60px" height="80px" viewBox="0 0 50 80">
@@ -318,8 +323,7 @@ class Home extends React.Component {
       <>
         <Head>
           <title>
-            Интернет-магазин кухонного оборудования в Ташкенте | Kitmach
-            Premium.UZ
+            Ахунбабаевский подшипниковый завод
           </title>
 
           <meta charSet="UTF-8" />
@@ -413,14 +417,14 @@ class Home extends React.Component {
           <Layout isLoading={this.props.isLoading} isHome={true}>
             <Slider className="slider-home_page" {...settings2}>
               {bannersImg
-                ? bannersImg.map((imgEl) => {
+                ? bannersImg.map((imgEl, index) => {
                     return (
                       <div
                         className="js-slick-carousel"
                         data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0  justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1"
                       >
                         <div
-                          className="slider_item pt-0 d-flex align-items-center js-slide bg-img-hero-center"
+                          className="slider_item pt-0 d-flex align-items-center js-slide bg-img-hero-center slider_bg-img-hero-center"
                           style={{
                             backgroundImage: `url('/static/assets/img/img/podshipniki_proizvodstvo.jpg')`,
                           }}
@@ -429,13 +433,11 @@ class Home extends React.Component {
                             <div className="slider_text slider_text_width">
                               <h2 data-animation="fadeInUp" data-delay="0.1s">
                                 {" "}
-                                Завод функционирует <br /> с 1986 - года{" "}
+                                {sliderText[index].title}
                               </h2>
                               <p data-animation="fadeInUp" data-delay="0.3s">
                                 {" "}
-                                Обеспечивает своей продукцией не только
-                                внутренний рынок Узбекистана, а также внешний
-                                рынок
+                                {sliderText[index].description}
                               </p>{" "}
                               <a
                                 href="#"

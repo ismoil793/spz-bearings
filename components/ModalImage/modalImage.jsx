@@ -15,10 +15,7 @@ const ModalImage = (props) => {
             onClick={() => props.hide()}
             type="button"
             className="modal-button close"
-          >
-            <span aria-hidden="true">
-              <i className="ec ec-close-remove text-gray-90 font-size-20"></i>
-            </span>
+          >X
           </button>
           <div className="zoomed-image">
           <Magnifier src={props.src}  /></div>

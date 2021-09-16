@@ -70,7 +70,7 @@ export default function servicesPage(props) {
             <div class="container business_card visit_main_wrapper">
               <section className="services-business_card">
                 <h1 class="title">SPZ-BEARINGS</h1>
-                <div class="card-container">
+                <div class="card-container business_card_wrapper">
                   <div
                     onClick={() => setToggle(!toggle)}
                     class={`card ${toggle ? "is-flipped" : ""}`}

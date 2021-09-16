@@ -76,7 +76,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -96,7 +96,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -116,7 +116,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -136,7 +136,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -156,7 +156,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -176,7 +176,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -196,7 +196,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -216,7 +216,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
@@ -236,7 +236,7 @@ export default function servicesPage(props) {
                         />{" "}
                         <i class="far fa-heart heart_icon"></i>{" "}
                         <a class="theme_btn_two hover_style1" href="#">
-                          Добавить в корзину
+                          Описание
                         </a>{" "}
                       </div>
                       <div class="product_text">
