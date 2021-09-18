@@ -8,8 +8,16 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
-import ModalImage from "../components/ModalImage/modalImage";
+// import ModalImage from "../components/ModalImage/modalImage";
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {locale}, // will be passed to the page component as props
+  }
+}
+
 export default function aboutPage(props) {
+
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
   const [modalImgUrl, setModalImgUrl] = React.useState('')

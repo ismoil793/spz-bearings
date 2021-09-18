@@ -8,7 +8,6 @@ import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
 import '../static/assets/css/globals.css'
 import '../static/assets/css/globally.scss'
-import { useTranslation } from 'next-i18next';
 // import * as gtag from '../lib/gtag'
 // import ReactGA from 'react-ga'
 
@@ -16,8 +15,6 @@ import { useTranslation } from 'next-i18next';
 Router.events.on('routeChangeStart', () => NProgress.start()); 
 Router.events.on('routeChangeComplete', () => NProgress.done()); 
 Router.events.on('routeChangeError', () => NProgress.done());
-
-
 
 
 
@@ -66,7 +63,9 @@ class MyApp extends App {
         const {Component, pageProps, store} = this.props;
 
         return (
-                <Component isLoading={this.state.isLoading} {...pageProps}/>                
+            <>
+                <Component isLoading={this.state.isLoading} {...pageProps}/>  
+            </>              
         );
     }
 }

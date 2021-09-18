@@ -381,8 +381,6 @@ class Home extends React.Component {
               <div className="container">
                 <div className="div_title_one title_two text-center">
                   <h6 className="title_top">Наши преимущества</h6>
-                  <SampleNextArrow/>
-                  <button onClick={()=>console.log(this.props)}>test</button>
                 </div>
                 <div className="row services_inner">
                   <div className="col-md-4">
