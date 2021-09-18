@@ -14,29 +14,12 @@ class Layout extends React.Component {
  };
 
   componentDidMount() {
-    if (this.props.cart.cart && !this.props.cart.cart.items) {
-      this.props.fetchCart();
-   }
   }
-
-
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-
-    if (nextProps.cart.cart && nextProps.cart.cart.items) {
-       return {
-          cartNumber: nextProps.cart.cart.total_count,
-       }
-    }
-    return null
- }
 
   render() {
     return (
       <>
         <Header
-          compareNumber={this.props.compareNumber}
-          cartNumber={this.props.cartNumber}
           isHome={this.props.isHome ? this.props.isHome : false}
           isLoading={this.props.isLoading}
         />
@@ -61,4 +44,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout)
+export default Layout

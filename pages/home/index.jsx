@@ -12,27 +12,18 @@ import { fetchCompare } from "../../redux/actions/compare";
 import Portfolio from "../../components/portfolio/portfolio";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
-const BrandLink = (props) => (
-  <Link
-    href={{
-      pathname: `/shop/[id]`,
-      query: { brand_id: props.brandID },
-    }}
-    as={`/shop/${props.id}`}
-  >
-    <div className="brand_image">
-      <img style={{ width: "100%" }} src={props.image} alt="" />
-    </div>
-  </Link>
-);
+export function getStaticProps({locale}) {
+  return {
+    props: {
+      locale
+    }
+  }
+}
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  
   return (
-    <div
-      onClick={onClick}
-      className="js-next d-none d-sm-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-right u-slick__arrow-classic-inner--right slick-arrow mr-5 arrow-left"
-    ></div>
+<div onClick={()=>console.log(props)}>arrow{props.locale}</div>
   );
 }
 
@@ -64,76 +55,6 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getCompare();
-    this.setState({
-      width: window.innerWidth,
-    });
-
-    const cookies = new Cookies();
-    axios
-      .get(`${url}/api/posts`, {
-        params: {
-          per_page: 3,
-        },
-      })
-      .then((response) => {
-        this.setState({
-          news: response.data.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get(`${url}/api/home`)
-      .then((response) => {
-        this.setState({
-          home_data: response.data.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get(`${url}/api/comparison/features`, {
-        params: {
-          device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type"),
-        },
-      })
-      .then((response) => {
-        this.setState({ compareNumber: response.data.data.products.length });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get(`${url}/api/banners`)
-      .then((response) => {
-        this.setState({
-          banners: response.data.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get(`${url}/api/cart/show`, {
-        params: {
-          device_token: cookies.get("device_token"),
-          device_type: cookies.get("device_type"),
-        },
-      })
-      .then((response) => {
-        this.setState({ cartNumber: response.data.data.items.length });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 
   handleGrand = () => {
@@ -460,6 +381,8 @@ class Home extends React.Component {
               <div className="container">
                 <div className="div_title_one title_two text-center">
                   <h6 className="title_top">Наши преимущества</h6>
+                  <SampleNextArrow/>
+                  <button onClick={()=>console.log(this.props)}>test</button>
                 </div>
                 <div className="row services_inner">
                   <div className="col-md-4">
@@ -716,4 +639,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+export default Home;

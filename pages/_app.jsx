@@ -1,15 +1,14 @@
 import App from 'next/app';
 import { Provider } from 'react-redux';
-import { useRouter, withRouter } from 'next/router'
 import React from 'react';
 import withRedux from "next-redux-wrapper";
 import store from '../redux/store';
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
-import NextSeo from 'next-seo';
 import '../static/assets/css/globals.css'
 import '../static/assets/css/globally.scss'
+import { useTranslation } from 'next-i18next';
 // import * as gtag from '../lib/gtag'
 // import ReactGA from 'react-ga'
 
@@ -67,9 +66,7 @@ class MyApp extends App {
         const {Component, pageProps, store} = this.props;
 
         return (
-            <Provider store={store}> 
                 <Component isLoading={this.state.isLoading} {...pageProps}/>                
-           </Provider>
         );
     }
 }
@@ -78,4 +75,4 @@ class MyApp extends App {
 const makeStore = () => store;
 
 //withRedux wrapper that passes the store to the App Component
-export default withRedux(makeStore)(MyApp);
+export default MyApp;

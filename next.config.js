@@ -1,4 +1,9 @@
 const withCSS = require('@zeit/next-css');
-const withSass = require('@zeit/next-sass')
+const withSass = require('@zeit/next-sass');
 
-module.exports = withCSS(withSass());
+module.exports = withCSS(withSass({
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'ru'
+  }
+}));

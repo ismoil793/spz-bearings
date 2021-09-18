@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import "../../../plugins/axios";
 import Link from "next/link";
-import Chat from "../../Chat/chat"
 import url from "../../url";
 import { connect } from "react-redux";
 
@@ -136,4 +135,4 @@ const mapStateToProps = ({userInfo}) => {
   }
 }
 
-export default connect(mapStateToProps, null)(Footer);
+export default Footer;

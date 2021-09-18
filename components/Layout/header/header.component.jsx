@@ -147,49 +147,7 @@ class Header extends React.Component {
   };
 
   componentDidMount() {
-    const cookies = new Cookies();
-    const current = new Date();
-    const nextYear = new Date();
-    if (!this.props.compare) {
-      this.props.getCompare();
-    }
 
-    if (!this.props.user.user.id) {
-      this.props.getFavourites();
-    }
-
-    nextYear.setFullYear(current.getFullYear() + 1);
-
-    if (!cookies.get("device_token") || !cookies.get("device_type")) {
-      let device_id = uuidv1();
-      cookies.set("device_token", device_id, {
-        path: "/",
-        expires: nextYear,
-      });
-      cookies.set("device_type", "web");
-    }
-    axios({
-      method: "post",
-      url: `${url}/api/device/create`,
-      data: {
-        device_token: cookies.get("device_token"),
-        device_type: cookies.get("device_type"),
-        user_id: cookies.get("user_id"),
-      },
-    })
-      .then((response) => {})
-      .catch((error) => {});
-    if (Object.keys(this.props.user.user).length === 0) {
-      axios
-        .get(`${url}/api/user/info`)
-        .then((response) => {
-          this.props.setUserInfo(response.data.data);
-          // this.setState({ userInfo: response.data.data });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -252,7 +210,7 @@ class Header extends React.Component {
             <Nav className="navbar navbar-expand-lg" id="header">
               <div className="container main_logo_container">
                 {" "}
-                <Link href="/">
+                <Link href="/" locale="en">
                   <a
                     className={`navbar-brand big_logo ${
                       this.props.isHome ? "" : "mt-0"
@@ -264,7 +222,7 @@ class Header extends React.Component {
                     />
                   </a>
                 </Link>{" "}
-                <Link href="/">
+                <Link href="/" locale="en">
                   <a className="navbar-brand">
                     <img
                       src="/static/assets/img/img/home-one/logo.png"
@@ -276,25 +234,25 @@ class Header extends React.Component {
                   <ul className="navbar-nav menu">
                     <li className="nav-item">
                       {" "}
-                      <Link href="/">
+                      <Link href="/" locale="en">
                         <a className="nav-link">Главная</a>
                       </Link>{" "}
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/about">
+                      <Link href="/about" locale="en">
                         <a className="nav-link"> О Нас </a>
                       </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item active">
                           {" "}
-                          <Link href="/about">
+                          <Link href="/about" locale="en">
                             <a className="nav-link">История Завода</a>
                           </Link>
                         </li>
                         <li className="nav-item">
                           {" "}
-                          <Link href="/team">
+                          <Link href="/team" locale="en">
                             <a className="nav-link">Наша Команда</a>
                           </Link>{" "}
                         </li>
@@ -313,13 +271,13 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/services">
+                      <Link href="/services" locale="en">
                         <a className="nav-link"> Сервисы </a>
                       </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           {" "}
-                          <Link href="/services">
+                          <Link href="/services" locale="en">
                             <a className="nav-link">Сервисы</a>
                           </Link>{" "}
                         </li>
@@ -339,13 +297,13 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/news">
+                      <Link href="/news" locale="en">
                         <a className="nav-link"> Новости </a>
                       </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           {" "}
-                          <Link href="/news">
+                          <Link href="/news" locale="en">
                             <a className="nav-link">Новости</a>
                           </Link>{" "}
                         </li>
@@ -364,13 +322,13 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/shop">
+                      <Link href="/shop" locale="en">
                         <a className="nav-link"> Продукция </a>
                       </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           {" "}
-                          <Link href="/shop">
+                          <Link href="/shop" locale="en">
                             <a className="nav-link">Продукция</a>
                           </Link>{" "}
                         </li>
@@ -389,7 +347,7 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item">
                       {" "}
-                      <Link href="/contacts">
+                      <Link href="/contacts" locale="en">
                         <a className="nav-link">Контакты</a>
                       </Link>{" "}
                     </li>
@@ -539,4 +497,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
