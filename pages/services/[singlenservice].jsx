@@ -1,15 +1,6 @@
-import { useRouter } from "next/router";
-import { connect } from "react-redux";
-
-import * as actions from "../../redux/actions";
-import BreadCrumb from "../../components/BreadCrumb";
 import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
 import React, { useEffect } from "react";
-import Cookies from "universal-cookie";
-import axios from "axios";
-import url from "../../components/url";
-import Link from "next/link";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
 function PostService({ data, setProductCategory, isLoading }) {

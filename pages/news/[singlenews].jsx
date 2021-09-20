@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
 function PostNews({ data, setProductCategory, isLoading }) {

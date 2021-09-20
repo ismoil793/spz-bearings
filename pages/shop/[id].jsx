@@ -5,12 +5,10 @@ import Head from "next/head";
 import Filter from "../../components/Filter/Filter";
 import axios from "axios";
 import BreadCrumb from "../../components/BreadCrumb";
-import Cookies from "universal-cookie";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import url from "../../components/url";
 import Product from "../../components/Products/catalog";
 import { css } from "@emotion/core";
-import ClipLoader from "react-spinners/ClipLoader";
 const mapDispatchToProps = (dispatch) => ({
   setProductCategory: (obj) => dispatch(actions.setProductCategory(obj)),
 });
