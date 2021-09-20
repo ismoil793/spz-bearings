@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+import ServicesText from "../static/locales/services";
 export default function servicesPage(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
@@ -14,7 +15,7 @@ export default function servicesPage(props) {
   return (
     <>
       <Head>
-        <title>Сервисы</title>
+        <title>{ServicesText.[props.locale].pageTitle}</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -64,7 +65,7 @@ export default function servicesPage(props) {
             <section class="business_card pt_100">
               <div class="container">
                 <div class="section_title_one title_two text-center">
-                  <h6 class="title_top">Сервисы</h6>
+                  <h6 class="title_top">{ServicesText.[props.locale].pageTitle}</h6>
                 </div>
               </div>
             </section>
@@ -84,25 +85,21 @@ export default function servicesPage(props) {
                         />
                       </div>
                       <h4 class="back-title">SPZ-BEARINGS</h4>
-                      <h4 class="back-sub-title">Подшипниковый Завод</h4>
+                      <h4 class="back-sub-title">{ServicesText.[props.locale].business_card}</h4>
                       {/* <h3 class="back-name">Adam <span class="wizard">Whiz</span></h3>
       <h6 class="back-sub-name">Front-end developer</h6> */}
                       <ul class="back-list">
                         <li class="back-list-item">
-                          <i class="list-icon fas fa-calculator"></i> Помощь в
-                          расчетах
+                          <i class="list-icon fas fa-calculator"></i> {ServicesText.[props.locale].services_array[0]}
                         </li>
                         <li class="back-list-item">
-                          <i class="list-icon fas fa-file-image"></i> Помощь в
-                          составлении тех задания
+                          <i class="list-icon fas fa-file-image"></i> {ServicesText.[props.locale].services_array[1]}
                         </li>
                         <li class="back-list-item">
-                          <i class="list-icon fas fa-cogs"></i> Производство
-                          необходимой продукции в срок
+                          <i class="list-icon fas fa-cogs"></i> {ServicesText.[props.locale].services_array[2]}
                         </li>
                         <li class="back-list-item">
-                          <i class="list-icon fas fa-truck"></i>Доставка готовых
-                          изделий в любую точку мира
+                          <i class="list-icon fas fa-truck"></i>{ServicesText.[props.locale].services_array[3]}
                         </li>
                       </ul>
                       <div class="blue-bar"></div>
@@ -115,7 +112,7 @@ export default function servicesPage(props) {
                         />
                       </div>
                       <h4 class="front-title">SPZ-BEARINGS</h4>
-                      <h4 class="front-sub-title">Подшипниковый Завод</h4>
+                      <h4 class="front-sub-title">{ServicesText.[props.locale].business_card}</h4>
                     </div>
                   </div>
                 </div>
@@ -125,9 +122,9 @@ export default function servicesPage(props) {
             <section class="services_area description_without-business_card pt_200">
               <div class="container">
                 <div class="section_title_one title_two text-center">
-                  <h6 class="title_top">Сервисы</h6>
-                  <h2 class="title_head">Чем мы можем быть полезны</h2>
-                  <p class="title_p">Перечень сервисов</p>
+                  <h6 class="title_top">{ServicesText.[props.locale].pageTitle}</h6>
+                  <h2 class="title_head">{ServicesText.[props.locale].title_second_section_not_main}</h2>
+                  <p class="title_p">{ServicesText.[props.locale].title_second_section_paragraph}</p>
                 </div>
                 <div class="row services_inner">
                   <div class="col-md-6">
@@ -140,7 +137,7 @@ export default function servicesPage(props) {
                         />
                         <div class="media-body">
                           {" "}
-                          Помощь в составлении тех задания{" "}
+                          {ServicesText.[props.locale].services_array[1]}{" "}
                         </div>
                       </div>
                       <a
@@ -148,7 +145,7 @@ export default function servicesPage(props) {
                         class="theme_btn_two hover_style1"
                         tabindex="0"
                       >
-                        Подробнее
+                        {ServicesText.[props.locale].services_array_button}
                       </a>
                     </div>
                   </div>
@@ -160,14 +157,14 @@ export default function servicesPage(props) {
                           class="icon-modern-architecture"
                           src="/static/assets/img/img/services/2431398_calculater_calculation_calculator_finance_math_icon.png"
                         />
-                        <div class="media-body"> Помощь в расчетах </div>
+                        <div class="media-body"> {ServicesText.[props.locale].services_array[0]} </div>
                       </div>
                       <a
                         href="#"
                         class="theme_btn_two hover_style1"
                         tabindex="0"
                       >
-                        Подробнее
+                        {ServicesText.[props.locale].services_array_button}
                       </a>
                     </div>
                   </div>
@@ -181,7 +178,7 @@ export default function servicesPage(props) {
                         />
                         <div class="media-body">
                           {" "}
-                          Производство необходимой продукции в срок{" "}
+                          {ServicesText.[props.locale].services_array[2]}
                         </div>
                       </div>
                       <a
@@ -189,7 +186,7 @@ export default function servicesPage(props) {
                         class="theme_btn_two hover_style1"
                         tabindex="0"
                       >
-                        Подробнее
+                        {ServicesText.[props.locale].services_array_button}
                       </a>
                     </div>
                   </div>
@@ -202,8 +199,7 @@ export default function servicesPage(props) {
                           src="/static/assets/img/img/services/1054949_truck_delivery_shipping_transportation_icon.png"
                         />
                         <div class="media-body">
-                          {" "}
-                          Доставка готовых изделий в любую точку мира{" "}
+                        {ServicesText.[props.locale].services_array[3]}
                         </div>
                       </div>
                       <a
@@ -211,7 +207,7 @@ export default function servicesPage(props) {
                         class="theme_btn_two hover_style1"
                         tabindex="0"
                       >
-                        Подробнее
+                        {ServicesText.[props.locale].services_array_button}
                       </a>
                     </div>
                   </div>
@@ -223,15 +219,14 @@ export default function servicesPage(props) {
               <div class="cons_work_left">
                 <div class="cons_about_content">
                   <h6 class="title_top">
-                    Подробное видео чем мы можем быть полезны
+                  {ServicesText.[props.locale].video_section_title}
                   </h6>
-                  <h2 class="title_head">Посмотреть видео </h2>
+                  <h2 class="title_head">{ServicesText.[props.locale].video_section_title_not_main} </h2>
                   <p>
-                    Исходя от полученного опыта в производстве в течении 30 лет
-                    мы обещаем Вам, что Вы будете довольны от сотрудничества{" "}
+                  {ServicesText.[props.locale].video_section_description}
                   </p>
                   <a href="#" class="text_btn" data-text="Контакты">
-                    Контакты
+                  {ServicesText.[props.locale].video_section_button}
                   </a>
                 </div>
               </div>
@@ -252,7 +247,7 @@ export default function servicesPage(props) {
             <section class="cons_logo_area_four pt_200">
               <div class="container">
                 <div class="section_title_three title_three text-center">
-                  <h6 class="title_top services_title_margin">Наши партнеры</h6>
+                  <h6 class="title_top services_title_margin">{ServicesText.[props.locale].partners_title}</h6>
                   <div class="clients_logo_inner">
                     {" "}
                     <a href="#" class="clients_logo">
@@ -328,10 +323,10 @@ export default function servicesPage(props) {
             <section class="cons_contact_area_four work_offers">
               <div class="container">
                 <div class="cons_contact_info_two bg_gradient text-center">
-                  <h4>Заинтересовали Наши Сервисы?</h4>
-                  <p>Свяжитесь с Нами, мы будем рады новому сотрудничеству</p>
+                  <h4>{ServicesText.[props.locale].redirect_card_title}</h4>
+                  <p>{ServicesText.[props.locale].redirect_card_title_second}</p>
                   <a class="theme_btn theme_btn_three hover_style1" href="#">
-                    Контакты
+                  {ServicesText.[props.locale].redirect_card_button}
                   </a>
                 </div>
               </div>

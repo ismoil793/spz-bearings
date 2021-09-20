@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+import TeamText from "../static/locales/team";
 export default function teamPage(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
@@ -43,7 +44,7 @@ export default function teamPage(props) {
   return (
     <>
       <Head>
-        <title>О нас</title>
+        <title>{TeamText.[props.locale].pageTitle}</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -91,37 +92,37 @@ export default function teamPage(props) {
           <main id="content" role="main">
             <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
             <section class="our_founder_area pt_100 team_page_animation_section team_page-animated_part">
-              <h2 class="title_head">Наше Руководство</h2>
+              <h2 class="title_head">{TeamText.[props.locale].title}</h2>
             </section>
             <section class="our_founder_area pt_100 second_wrapper team_page_animation_section team_page-animated_part">
               <div class="team_page_animation_wrapper">
                 <ul>
-                  <li value="Генеральный Директор" data="Васильев Антон">
+                  <li value={`${TeamText.[props.locale].colegues_animated[0].position}`} data={`${TeamText.[props.locale].colegues_animated[0].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-1.jpg" />
                     </a>
                   </li>
-                  <li value="Зам. Ген. Директора" data="Новиков Роман">
+                  <li value={`${TeamText.[props.locale].colegues_animated[1].position}`} data={`${TeamText.[props.locale].colegues_animated[1].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-3.jpg" />
                     </a>
                   </li>
-                  <li value="Зам. Ген. Директора" data="Левина Екатерина">
+                  <li value={`${TeamText.[props.locale].colegues_animated[2].position}`} data={`${TeamText.[props.locale].colegues_animated[2].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-2.jpg" />
                     </a>
                   </li>
-                  <li value="Зам. Ген. Директора" data="Андреев Анатолий">
+                  <li value={`${TeamText.[props.locale].colegues_animated[3].position}`} data={`${TeamText.[props.locale].colegues_animated[3].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-3.jpg" />
                     </a>
                   </li>
-                  <li value="Зам. Ген. Директора" data="Румянцева Софья">
+                  <li value={`${TeamText.[props.locale].colegues_animated[4].position}`} data={`${TeamText.[props.locale].colegues_animated[4].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-2.jpg" />
                     </a>
                   </li>
-                  <li value="Зам. Ген. Директора" data="Степанов Владислав">
+                  <li value={`${TeamText.[props.locale].colegues_animated[5].position}`} data={`${TeamText.[props.locale].colegues_animated[5].full_name}`}>
                     <a href="#">
                       <img src="/static/assets/img/img/about/team-1.jpg" />
                     </a>
@@ -132,7 +133,7 @@ export default function teamPage(props) {
             <section class="our_founder_area pt_200 team_page-not_animated_part">
               <div class="container">
                 <div class="section_title_one">
-                  <h2 class="title_head">Наше Руководство</h2>
+                  <h2 class="title_head">{TeamText.[props.locale].title}</h2>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-md-6 col-6 photo_team">
@@ -146,8 +147,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Генеральный директор</h6>
-                        <h3>Сорокин Михаил Иванович</h3>
+                        <h6>{TeamText.[props.locale].colegues_not_animated[0].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[0].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -179,8 +180,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Главный инженер</h6>
-                        <h3>Дмитриева Анна Ильинична</h3>
+                      <h6>{TeamText.[props.locale].colegues_not_animated[1].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[1].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -208,7 +209,7 @@ export default function teamPage(props) {
             <section class="our_founder_area pt_200 pb_100 team_page-not_animated_part">
               <div class="container">
                 <div class="section_title_one">
-                  <h2 class="title_head">Заместители Генерального Директора</h2>
+                  <h2 class="title_head">{TeamText.[props.locale].title_second}</h2>
                 </div>
                 <div class="row">
                   <div class="col-lg-3 col-md-4 col-6">
@@ -222,8 +223,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Зам. Ген. Директора</h6>
-                        <h3>Комарова Ксения</h3>
+                      <h6>{TeamText.[props.locale].colegues_not_animated[2].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[2].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -255,8 +256,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Зам. Ген. Директора</h6>
-                        <h3>Соколова Екатерина</h3>
+                      <h6>{TeamText.[props.locale].colegues_not_animated[3].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[3].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -288,8 +289,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Зам. Ген. Директора</h6>
-                        <h3>Никулин Михаил</h3>
+                      <h6>{TeamText.[props.locale].colegues_not_animated[4].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[4].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -321,8 +322,8 @@ export default function teamPage(props) {
                         />
                       </div>
                       <div class="team_name">
-                        <h6>Зам. Ген. Директора</h6>
-                        <h3>Николаева Анастасия</h3>
+                      <h6>{TeamText.[props.locale].colegues_not_animated[5].position}</h6>
+                        <h3>{TeamText.[props.locale].colegues_not_animated[5].full_name}</h3>
                         <ul class="nav">
                           <li>
                             <a href="#">
@@ -349,14 +350,12 @@ export default function teamPage(props) {
             <section class="cons_contact_area_four work_offers">
               <div class="container">
                 <div class="cons_contact_info_two bg_gradient text-center">
-                  <h4>Хотите Попасть В Нашу Команду?</h4>
+                  <h4>{TeamText.[props.locale].redirect_card.title}</h4>
                   <p>
-                    Мы Набираем Целеустремленных Сотрудников
-                    <br />
-                    Вы Можете Присоединиться В Нашу Команду
+                  {TeamText.[props.locale].redirect_card.title_second}
                   </p>{" "}
                   <a class="theme_btn theme_btn_three hover_style1" href="#">
-                    Посмотреть Вакансии
+                  {TeamText.[props.locale].redirect_card.button}
                   </a>
                 </div>
               </div>

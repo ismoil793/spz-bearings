@@ -2,12 +2,13 @@ import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
 import React, { useEffect } from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
+import ServiceDetailedText from "../../static/locales/services_details";
 
-function PostService({ data, setProductCategory, isLoading }) {
+function PostService({ data, setProductCategory, isLoading, locale }) {
   return (
     <>
       <Head>
-        <title>{"Технический центр"}</title>
+        <title>{`${ServiceDetailedText.[locale].pageTitle}`}</title>
         <meta charset="UTF-8" />
         <meta name="description" content={"Технический центр"} />
         <meta name="keywords" content={"Технический центр"} />
@@ -29,7 +30,7 @@ function PostService({ data, setProductCategory, isLoading }) {
         />
       </Head>
       <div className="super_container">
-        <OverlayComponent />
+        <OverlayComponent isLoading={isLoading} locale={locale} />
         <div class={`pace ${isLoading ? "pace-active" : "pace-inactive"}`}>
           <div
             class="pace-progress"
@@ -49,8 +50,9 @@ function PostService({ data, setProductCategory, isLoading }) {
         </div>
         <Layout
           isLoading={isLoading}
-          title={"Технический центр"}
+          title={`${ServiceDetailedText.[locale].title}`}
           pageInfo={["Главная", "Сервисы", "Технический Центр"]}
+          locale={locale}
         >
           <>
             <section class="service_details_area pt_200">
@@ -93,49 +95,35 @@ function PostService({ data, setProductCategory, isLoading }) {
                   <div class="row">
                     <div class="col-lg-7 col-md-7">
                       <div class="left">
-                        <h3>Технический Центр</h3>
+                        <h3>{ServiceDetailedText.[locale].title}</h3>
                         <p>
-                          На заводе имеется технический отдел и конструкторское
-                          бюро, состоящие из высококвалифицированных
-                          специалистов, которые ведут разработку и
-                          совершенствование продукции на основе современных
-                          инженерных решений.
+                          {ServiceDetailedText.[locale].paragraphs[0]}
                         </p>
                         <p>
-                          Высококвалифицированные специалисты нашего предприятия
-                          выполняют комплекс работ, связанных с проектированием,
-                          изготовлением, монтажом, накладкой и пуском в работу
-                          разных оборудований в соответствии со стандартом,
-                          изучая потребности потребителя.
+                        {ServiceDetailedText.[locale].paragraphs[1]}
                         </p>
                         <p>
-                          Значительный исследовательский потенциал позволяет
-                          предприятию постоянно расширять номенклатуру своей
-                          продукции, производить подшипниковую и иную продукцию
-                          по чертежам заказчика.
+                        {ServiceDetailedText.[locale].paragraphs[2]}
                         </p>
                         <p>
-                          Предприятие имеет возможность изготовления разных
-                          роликов, шариков, валы, шестерни и другие детали
-                          сложной конфигурации, нестандартное оборудование,
-                          поддерживающие конвейерные ролики и опорные ролики.
+                        {ServiceDetailedText.[locale].paragraphs[3]}
                         </p>
                         <a
                           class="theme_btn theme_btn_three hover_style1"
                           href="#"
                         >
-                          Контакты
+                          {ServiceDetailedText.[locale].button_main}
                         </a>
                       </div>
                     </div>
                     <div class="col-lg-5 col-md-5">
                       <div class="right_brochure">
-                        <h5>Примеры</h5>{" "}
+                        <h5>{ServiceDetailedText.[locale].title_second}</h5>{" "}
                         <a href="#">
-                          Скачать примеры работ<i class="fas fa-download"></i>
+                        {ServiceDetailedText.[locale].button_download_works}<i class="fas fa-download"></i>
                         </a>{" "}
                         <a href="#">
-                          Скачать пример тех задания{" "}
+                        {ServiceDetailedText.[locale].button_download_tech}
                           <i class="fas fa-download"></i>
                         </a>{" "}
                         <img
