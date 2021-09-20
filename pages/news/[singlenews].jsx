@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
-function PostNews({ data, setProductCategory, isLoading }) {
+function PostNews({ data, setProductCategory, isLoading, locale }) {
   return (
     <>
       <Head>
@@ -29,7 +29,7 @@ function PostNews({ data, setProductCategory, isLoading }) {
         />
       </Head>
       <div className="super_container">
-        <OverlayComponent />
+        <OverlayComponent isLoading={isLoading} locale={locale}/>
         <div class={`pace ${isLoading ? "pace-active" : "pace-inactive"}`}>
           <div
             class="pace-progress"
@@ -51,6 +51,7 @@ function PostNews({ data, setProductCategory, isLoading }) {
           isLoading={isLoading}
           title={"Технический Центр"}
           pageInfo={["Главная", "Новости", "Технический Центр"]}
+          locale={locale}
         >
           <>
             <section class="blog_details_area pt_200">

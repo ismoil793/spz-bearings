@@ -57,9 +57,10 @@ export default function servicesPage(props) {
           cartNumber={cartNumber}
           title={`Сервисы`}
           pageInfo={["Главная", "Сервисы"]}
+          locale={props.locale}
         >
           <main id="content" role="main">
-            <OverlayComponent />
+            <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
             <section class="business_card pt_100">
               <div class="container">
                 <div class="section_title_one title_two text-center">

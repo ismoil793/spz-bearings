@@ -86,9 +86,10 @@ export default function teamPage(props) {
           cartNumber={cartNumber}
           title={`Наша Команда`}
           pageInfo={["Главная", "О Нас", "Наше Руководство"]}
+          locale={props.locale}
         >
           <main id="content" role="main">
-            <OverlayComponent />
+            <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
             <section class="our_founder_area pt_100 team_page_animation_section team_page-animated_part">
               <h2 class="title_head">Наше Руководство</h2>
             </section>

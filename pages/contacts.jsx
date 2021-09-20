@@ -99,9 +99,10 @@ export default function Contact(props) {
           cartNumber={cartNumber}
           title={`Контакты`}
           pageInfo={["Главная", "Контакты"]}
+          locale={props.locale}
         >
           <main id="content" role="main">
-            <OverlayComponent />
+            <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
             <section class="cons_contact_area_two map_area">
               {" "}
               <img

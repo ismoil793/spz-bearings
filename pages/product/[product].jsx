@@ -29,7 +29,7 @@ function PostProduct(props) {
         />
       </Head>
       <div className="super_container">
-        <OverlayComponent />
+        <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
         <div
           class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}
         >
@@ -53,6 +53,7 @@ function PostProduct(props) {
           isLoading={props.isLoading}
           title={"Продукт"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
+          locale={props.locale}
         >
           <>
             <section class="product_details_area pt_200">

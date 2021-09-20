@@ -88,9 +88,10 @@ export default function NewsPage(props) {
           cartNumber={cartNumber}
           title={`Главная`}
           pageInfo={["Главная", "Новости"]}
+          locale={props.locale}
         >
           <main id="content" role="main">
-            <OverlayComponent />
+            <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
             <section class="blog_list_area pt_200">
               <div class="container">
                 <div class="blog_list_inner">
