@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+import AboutText from "../static/locales/about";
 // import ModalImage from "../components/ModalImage/modalImage";
 
 export async function getStaticProps({locale}) {
@@ -55,7 +56,7 @@ export default function aboutPage(props) {
   return (
     <>
       <Head>
-        <title>О нас</title>
+        <title>{AboutText.[props.locale].pageTitle}</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -106,8 +107,8 @@ export default function aboutPage(props) {
             <section class="about_main_area about_page">
               <div class="container">
                 <div class="about_inner">
-                  <h6 class="title_top">Как всё начиналось</h6>
-                  <h2 class="title_head">О Заводе </h2>
+                  <h6 class="title_top">{AboutText.[props.locale].main_area_section.mainTitle}</h6>
+                  <h2 class="title_head">{AboutText.[props.locale].main_area_section.title}</h2>
                   <div class="about_img">
                     {" "}
                     <img
@@ -117,38 +118,16 @@ export default function aboutPage(props) {
                     />{" "}
                   </div>
                   <p>
-                    {" "}
-                    Ахунбабаевский подшипниковый завод-27 (ГПЗ-27) был построен
-                    и запущен в производство подшипников в 1986 году. Это
-                    единственный в Узбекистане подшипниковый завод,
-                    специализированный по выпуску роликовых и шариковых
-                    подшипников качения для разных отраслей промышленности, для
-                    горнодобывающих отраслей, химической и нефтегазовой
-                    промышленности, металлургических комбинатов, министерства
-                    сельского хозяйства, тепловых и гидроэлектростанций,
-                    автомобилестроения и народного хозяйства.
+                  {AboutText.[props.locale].main_area_section.description[0]}
                   </p>
                   <p>
-                    Подшипниковую промышленность имеют только высокоразвитые
-                    страны мира: Германия, Япония, США, Китай, Швеция, Россия,
-                    ещё несколько стран. Среди этих стран есть и Узбекистан.
-                    Поэтому наличие в Узбекистане подшипникового завода всегда
-                    будет символом высокой технической культуры народа,
-                    флагманом его промышленности.{" "}
+                  {AboutText.[props.locale].main_area_section.description[1]}
                   </p>
                   <p>
-                    В 2004 году на базе российских и узбекских производителей
-                    подшипниковой продукции было создано совместное предприятие
-                    “SPZ-BEARINGS”. Благодаря финансовой и технической поддержке
-                    российских партнёров на сегодняшний день успешно развивается
-                    производство подшипников качения, других узлов и механизмов
-                    для автомобилестроения, а также запасных частей для
-                    различных областей промышленности Республики Узбекистан.{" "}
+                  {AboutText.[props.locale].main_area_section.description[2]}
                   </p>
                   <p>
-                    СП “SPZ-BEARINGS” является единственным производителем
-                    подшипников качения в Узбекистане и работает на мировом
-                    рынке более 30 лет.{" "}
+                  {AboutText.[props.locale].main_area_section.description[3]}
                   </p>
                 </div>
               </div>
@@ -157,7 +136,7 @@ export default function aboutPage(props) {
             <section class="cons_vision_area pad_btm about_page">
               <div class="container">
                 <div class="section_title_one">
-                  <h6 class="title_top">Our way of thinking</h6>
+                  <h6 class="title_top">{AboutText.[props.locale].specificity_section.sectionTitle}</h6>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
@@ -171,27 +150,10 @@ export default function aboutPage(props) {
                       </a>
                       <div class="content pr_100">
                         <h3 class="page_head">
-                          Производственная программа СП “SPZ-BEARINGS” включает
-                          в себя изготовление:
+                        {AboutText.[props.locale].specificity_section.elements[0].title}
                         </h3>
                         <ul className="circle_list">
-                          <li>
-                            шариковых однорядных и двухрядных – радиальных
-                            подшипников;
-                          </li>
-                          <li>
-                            радиально – сферических, радиально – упорных
-                            подшипников;
-                          </li>
-                          <li>
-                            упорных, роликовых однорядных и двухрядных —
-                            радиальных подшипников с короткими цилиндрическими
-                            роликами;
-                          </li>
-                          <li>
-                            радиально-упорных конических, радиально –
-                            сферических, радиально – упорных, подшипников.
-                          </li>
+                        {AboutText.[props.locale].specificity_section.elements[0].descriptionList.map(element => (<li>{element}</li>))}
                         </ul>
                       </div>
                     </div>
@@ -207,16 +169,10 @@ export default function aboutPage(props) {
                       </a>
                       <div class="content">
                         <h3 class="page_head">
-                          Подшипниковая продукция Ахунбабаевского подшипникового
-                          завода применяется:
+                        {AboutText.[props.locale].specificity_section.elements[1].title}
                         </h3>
                         <ul className="circle_list">
-                          <li>Горно-металлургической промышленности;</li>
-                          <li>Химической промышленности;</li>
-                          <li>
-                            Нефтегазодобывающих отраслях, предприятиях входящих
-                            в состав ГАК «Узбекэнерго»;
-                          </li>
+                        {AboutText.[props.locale].specificity_section.elements[1].descriptionList.map(element => (<li>{element}</li>))}
                         </ul>
                       </div>
                     </div>
@@ -239,19 +195,12 @@ export default function aboutPage(props) {
                   </div>
                   <div class="col-lg-6 col-md-7">
                     <div class="cons_about_content">
-                      <h6 class="title_top">Мы развиваемся</h6>
+                      <h6 class="title_top">{AboutText.[props.locale].service_section[0].mainTitle}</h6>
                       <h2 class="title_head">
-                        С самого открытия <br />
-                        Завода мы не останавливались в развитии{" "}
+                      {AboutText.[props.locale].service_section[0].title}
                       </h2>
                       <p>
-                        Имеющийся на подшипниковом заводе производственный и
-                        интеллектуальный потенциал позволяет подшипниковому
-                        заводу выйти на высший уровень развития. Высокий уровень
-                        технического персонала, технологии и модернизированные
-                        оборудования позволяют обеспечивать выпуск подшипников
-                        по международным стандартам ISO, разрабатывать и
-                        осваивать новые типы подшипников.
+                      {AboutText.[props.locale].service_section[0].description}
                       </p>
                     </div>
                   </div>
@@ -263,21 +212,12 @@ export default function aboutPage(props) {
                 <div class="row flex-row-reverse align-items-center service_teb_item">
                   <div class="col-lg-6 col-md-7">
                     <div class="cons_about_content">
-                      <h6 class="title_top">Качество</h6>
+                      <h6 class="title_top">{AboutText.[props.locale].service_section[1].mainTitle}</h6>
                       <h2 class="title_head">
-                        На предприятии действует система качества в соответствии
-                        со стандартами ISO 9001
+                      {AboutText.[props.locale].service_section[1].title}
                       </h2>
                       <p>
-                        Все подшипники компании имеют сертификат соответствия
-                        федерального агентства по техническому регулированию и
-                        метрологии Российской Федерации и Национальной системы
-                        сертификации республики Узбекистан, а также другие
-                        необходимые сертификаты соответствия Госстандарта
-                        Республики Узбекистан и гигиенические удостоверения.
-                        Инженерно-технические работники предприятия, изучая
-                        спрос потребителей, ведут постоянную работу по
-                        расширению номенклатуры продукции завода.
+                      {AboutText.[props.locale].service_section[1].description}
                       </p>
                     </div>
                   </div>
@@ -334,10 +274,10 @@ export default function aboutPage(props) {
             <section class="cons_contact_area_four work_offers about_page">
               <div class="container">
                 <div class="cons_contact_info_two bg_gradient text-center">
-                  <h4>Готовы С Нами Сотрудничать?</h4>
-                  <p>Мы готовы реализовать заказ любой трудности.</p>{" "}
+                  <h4>{AboutText.[props.locale].redirect_card.mainTitle}</h4>
+                  <p>{AboutText.[props.locale].redirect_card.title}</p>{" "}
                   <a class="theme_btn theme_btn_three hover_style1" href="#">
-                    Написать на почту
+                  {AboutText.[props.locale].redirect_card.button}
                   </a>
                 </div>
               </div>

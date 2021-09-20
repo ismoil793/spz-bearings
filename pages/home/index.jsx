@@ -116,22 +116,7 @@ class Home extends React.Component {
       "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
       "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
     ];
-    const sliderText = [
-      {title: 'Завод функционирует с 1986 - года', description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок"},
-      {title: 'Изготовим подшипники любой сложности', description: "Высочайшее качество, старая закалка и современные технологии подарят вам бесценный опыт работы с настоящими профессионалами Ахунбабаевского подшипникового завода."},
-      {title: 'Поможем с консультацией по приобретению', description: "Мы можем оказать вам любую консультацию по приобретении, использовании и замене любой подшипниковой продукции. Наши инженеры с радостью проконсультируют ваших технических специалистов по этому поводу"}
-    ]
 
-    const categoriesPng = [
-      "..//static/assets/img/home_categories/baking.png",
-      "..//static/assets/img/home_categories/refrigerator.png",
-      "..//static/assets/img/home_categories/meatGrinder.png",
-      "..//static/assets/img/home_categories/waffle.png",
-      "..//static/assets/img/home_categories/meatGrinderM.png",
-      "..//static/assets/img/home_categories/cooking.png",
-      "",
-      "..//static/assets/img/home_categories/vending-machine.png",
-    ];
     var settings2 = {
       speed: 2000,
       slidesToShow: 1,
@@ -250,7 +235,7 @@ class Home extends React.Component {
       <>
         <Head>
           <title>
-            Ахунбабаевский подшипниковый завод
+          {homeText.[this.props.locale].pageTitle}
           </title>
 
           <meta charSet="UTF-8" />

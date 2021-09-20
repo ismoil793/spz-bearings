@@ -8,8 +8,8 @@ const HeaderText = {
 
 
   uz: {
-    nav: ["БОШ САХИФА", {dropdown: "БИЗ ХАКИМИЗДА", elements: ["Завод тарихи", "Бизнинг Команда", "Техник марказ"]}, "СЕРВИСЛАР", "ХАБАРЛАР", "МАХСУЛОТЛАРИМИЗ", "КОНТАКТЛАР"],
-    footer: ["Фойдали линклар", "Алока", "email - Биз сиз билан богланамиз", "Биз хамкорликга таййормиз", "Тепага чикиш"]
+    nav: ["BOSH SAHIFA", {dropdown: "BIZ HAQIMIZDA", elements: ["Zavod tarihi", "Bizning Komanda", "Tehnik markaz"]}, "SERVISLAR", "HABARLAR", "MAHSULOTLARIMIZ", "KONTAKTLAR"],
+    footer: ["Foydali linklar", "Aloqa", "email - Biz siz bilan bog'lanamiz", "Biz hamkorlikga tayyormiz", "Tepaga chiqish"]
   }
 }
 

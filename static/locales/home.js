@@ -1,5 +1,6 @@
 const homeText = {
   ru: {
+    pageTitle: 'Ахунбабаевский подшипниковый завод',
     slider: [{
         title: "Завод функционирует с 1986-года",
         description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок"
@@ -62,60 +63,61 @@ const homeText = {
 
 
   uz: {
+    pageTitle: "Ohunboboev Podshipnik Zavodi",
     slider: [{
-        title: "Завод 1986-йилидан фаолият олиб боради",
-        description: "Завод уз махсулоти билан нафакат Узбекистон эхтиёжини кондиради"
+        title: "Zavod 1986-yilidan faoliyat olib boradi",
+        description: "Zavod o'z mahsuloti bilan nafaqat O'zbekiston ekhtiyojini qondiradi"
       },
       {
-        title: "Таййорланиши кийинчилиги буйича хар кандан подшипниклар таййорлаймиз",
-        description: "Бизнинг махсулот сифатлилиги, юкори технологияларда таййорланганлиги ва ишини усталари билан таййорлангани билан ажралиб туради"
+        title: "Tayyorlanishi qiyinchiligi bo'yicha har qanday podshipniklar tayorlaymiz",
+        description: "Bizning mahsulot sifatliligi, yuqori tehnologiyalarda tayyorlanganligi va ishini ustalari bilan tayyorlangani bilan ajralib turadi"
       },
       {
-        title: "Сотиб олиш буйича маслахат билан йордамлашамиз",
-        description: "Биз хар кандай маслахат билан йордамлашамиз - подшипник махсулотларини алмаштириш, янги куйиш буйича Бизнинг мутахассислар йордам беришади"
+        title: "Sotib olish bo'yicha maslahat bilan yordamlashamiz",
+        description: "Biz har qanday maslahat bilan yordamlashamiz - podshipnik mahsulotlarini almashtirish, yangi qo'yish bo'yicha Bizning mutahassislar yordam berishadi"
       },
     ],
     benefits: {
-      title: 'Бизнинг устунликларимиз',
-      descriptions: ['Факатгина сифатли махсулот', 'Юкори сифат ишончлилик ва макбул нарх уйгунлиги', 'Тулик технологик цикл']
+      title: 'Bizning ustunliklarimiz',
+      descriptions: ['Faqatgina sifatli mahsulot', "Yukori sifat ishonchlilik va maqbul narh uyg'unligi", "To'liq tehnologik tsikl"]
     },
     product_demand: {
-      mainTitle: "Махсулотларимизга талаб катта булган секторлар",
+      mainTitle: "Maxsulotlarimizga talab katta bo'lgan sektorlar",
       cards: [{
-          title: 'Темир-йул саноати',
-          details: ["Подшипниклар", "Валлар", "Шестернялар", "Гайкалар", "Болтлар"]
+          title: "Temir-yo'l sanoati",
+          details: ["Podshipniklar", "Vallar", "SHesternyalar", "Gaykalar", "Boltlar"]
         },
         {
-          title: 'Авто саноати',
-          details: ["Подшипниклар", "Валлар", "Шестернялар", "Гайкалар", "Болтлар"]
+          title: 'Avto sanoati',
+          details: ["Podshipniklar", "Vallar", "SHesternyalar", "Gaykalar", "Boltlar"]
         },
         {
-          title: 'Энергетика',
-          details: ["Подшипниклар", "Валлар", "Шестернялар", "Гайкалар", "Болтлар"]
+          title: 'Energetika',
+          details: ["Podshipniklar", "Vallar", "SHesternyalar", "Gaykalar", "Boltlar"]
         },
         {
-          title: 'Огир саноати',
-          details: ["Подшипниклар", "Валлар", "Шестернялар", "Гайкалар", "Болтлар"]
+          title: "Og'ir sanoati",
+          details: ["Podshipniklar", "Vallar", "SHesternyalar", "Gaykalar", "Boltlar"]
         }
       ],
-      button: 'Буюртма килиш'
+      button: 'Buyurtma qilish'
     },
     redirect_card: {
-      title: "Махсулотларимизга бошка секторлардаям талаб бор",
-      button: "Батафсил маълумот олиш"
+      title: "Mahsulotlarimizga boshqa sektorlardayam talab bor",
+      button: "Batafsil ma'lumot olish"
     },
     technologies_section: {
-      sectionTitle: 'Биз энг замонавий технологиялардан фойдаланамиз',
-      title: 'Биз янги инновациялар пойгасидамиз',
-      description: 'Бозордаги етакчи мавкеимизни саклаб колиш максадида доимо хам технологияларда, хам махсулот асортиментида мукамалликка интиламиз.',
-      button: 'Батафсил маълумот'
+      sectionTitle: 'Biz eng zamonaviy tehnologiyalardan foydalanamiz',
+      title: 'Biz yangi innovatsiyalar poygasidamiz',
+      description: 'Bozordagi yetakchi mavqeimizni saqlab qolish maqsadida doimo ham tekhnologiyalarda, ham mahsulot asortimentida mukamallikka intilamiz.',
+      button: 'Batafsil ma"lumot'
     },
     news_section: {
-      sectionTitle: 'Хабарлар',
-      title: "Сунгги хабарлар", 
+      sectionTitle: 'Habarlar',
+      title: "So'nggi habarlar", 
       news: [
-        {title: 'Кенгайиш', description: "Биз ишлаб чикарадиган махсулот асортиментини кенгайтирдик"},
-        {title: 'Фаолият', description: "Бизнинг Завод катта хажмли заказни амалга оширди..."}
+        {title: 'Kengayish', description: "Biz ishlab chiqaradigan mahsulot asortimentini kengaytirdik"},
+        {title: 'Faoliyat', description: "Bizning Zavod katta hajmli zakazni amalga oshirdi..."}
       ]
     }
   }
