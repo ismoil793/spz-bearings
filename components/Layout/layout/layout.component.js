@@ -1,9 +1,6 @@
 import Header from "../header/header.component.jsx";
 import Footer from "../footer/footer.componenet";
 import React from "react";
-import {connect} from "react-redux";
-import {fetchCart} from "../../../redux/actions/cart"
-import { fetchCompare } from "../../../redux/actions/compare";
 import HeaderSecondary from "../header/headersecondary";
 
 class Layout extends React.Component {
@@ -21,27 +18,17 @@ class Layout extends React.Component {
       <>
         <Header
           isHome={this.props.isHome ? this.props.isHome : false}
-          isLoading={this.props.isLoading}
+          isLoading={this.props.isLoading} locale={this.props.locale}
         />
+        <button onClick={()=>console.log(this.props)}>test</button>
         { this.props.isHome ? null : <HeaderSecondary title={this.props.title} pageInfo={this.props.pageInfo} /> }
         {/* <YMInitializer accounts={[61408678]} options={{webvisor: true}}/> */}
         {this.props.children}
-        <Footer />
+        <Footer locale={this.props.locale}/>
       </>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setProductCategory: (obj) => dispatch(actions.setProductCategory(obj)),
-  fetchCart: () => dispatch(fetchCart()),
-  fetchCompare: () => dispatch(fetchCompare())
-});
-
-function mapStateToProps(state) {
-  return {
-     cart: state.cart,
-  }
-}
 
 export default Layout

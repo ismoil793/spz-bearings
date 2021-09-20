@@ -98,9 +98,10 @@ export default function aboutPage(props) {
           cartNumber={cartNumber}
           title={`История Завода`}
           pageInfo={["Главная", "О Нас"]}
+          locale={props.locale}
         >
           <main id="content" role="main">
-            <OverlayComponent />
+            <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
             
             <section class="about_main_area about_page">
               <div class="container">

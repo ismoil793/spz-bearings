@@ -3,14 +3,11 @@ import Layout from "../../components/Layout/layout/layout.component";
 import Head from "next/head";
 import "react-tabs/style/react-tabs.css";
 import Slider from "react-slick";
-import axios from "axios";
-import Link from "next/link";
-import Cookies from "universal-cookie";
-import url from "../../components/url";
-import { connect } from "react-redux";
 import { fetchCompare } from "../../redux/actions/compare";
 import Portfolio from "../../components/portfolio/portfolio";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
+import homeText from "../../static/locales/home";
+
 
 export function getStaticProps({locale}) {
   return {
@@ -38,7 +35,7 @@ function SamplePrevArrow(props) {
 }
 
 class Home extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       slider: [],
@@ -53,8 +50,12 @@ class Home extends React.Component {
       news: [],
     };
   }
+  componentWillMount() {
+    console.log('mount home',this.props)
+  }
 
   componentDidMount() {
+    console.log('mount home',this.props)
   }
 
   handleGrand = () => {
@@ -64,6 +65,11 @@ class Home extends React.Component {
   handleCompareGrand = () => {
     this.setState({ compareNumber: this.state.compareNumber + 1 });
   };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.locale !== this.props.locale) {
+    console.log('locale', this.props.locale)
+    }
+  }
 
   render() {
     const { news } = this.state;
@@ -335,7 +341,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <Layout isLoading={this.props.isLoading} isHome={true}>
+          <Layout locale={this.props.locale} isLoading={this.props.isLoading} isHome={true}>
             <Slider className="slider-home_page" {...settings2}>
               {bannersImg
                 ? bannersImg.map((imgEl, index) => {
@@ -354,11 +360,11 @@ class Home extends React.Component {
                             <div className="slider_text slider_text_width">
                               <h2 data-animation="fadeInUp" data-delay="0.1s">
                                 {" "}
-                                {sliderText[index].title}
+                                {homeText.[this.props.locale].slider[index].title}
                               </h2>
                               <p data-animation="fadeInUp" data-delay="0.3s">
                                 {" "}
-                                {sliderText[index].description}
+                                {homeText.[this.props.locale].slider[index].description}
                               </p>{" "}
                               <a
                                 href="#"
@@ -376,11 +382,12 @@ class Home extends React.Component {
                   })
                 : null}
             </Slider>
-            <OverlayComponent />
+            <OverlayComponent isLoading={this.props.isLoading} locale={this.props.locale}/>
             <div className="services_area main_page pt_200">
+            
               <div className="container">
                 <div className="div_title_one title_two text-center">
-                  <h6 className="title_top">Наши преимущества</h6>
+                  <h6 className="title_top">{homeText.[this.props.locale].benefits.title}</h6>
                 </div>
                 <div className="row services_inner">
                   <div className="col-md-4">
@@ -390,8 +397,7 @@ class Home extends React.Component {
                         <i className="icon-modern-architecture"></i>
                         <div className="media-body">
                           {" "}
-                          Только <br />
-                          качественные комплектующие
+                          {homeText.[this.props.locale].benefits.descriptions[0]}
                         </div>
                       </div>
                     </div>
@@ -402,9 +408,7 @@ class Home extends React.Component {
                         {" "}
                         <i className="icon-technical"></i>
                         <div className="media-body">
-                          {" "}
-                          Сочетание высокого <br /> качества, надёжности и
-                          обоснованной цены{" "}
+                        {homeText.[this.props.locale].benefits.descriptions[1]}
                         </div>
                       </div>
                     </div>
@@ -415,8 +419,7 @@ class Home extends React.Component {
                         {" "}
                         <i className="icon-vector"></i>
                         <div className="media-body">
-                          {" "}
-                          Полный <br /> технологический цикл{" "}
+                        {homeText.[this.props.locale].benefits.descriptions[2]}
                         </div>
                       </div>
                     </div>
@@ -430,11 +433,11 @@ class Home extends React.Component {
                 <div className="div_title_one home_page">
                   <h6 className="title_top">Галлерея</h6>
                   <h2 className="title_head">
-                    Продукция восстребована в секторах
+                  {homeText.[this.props.locale].product_demand.mainTitle}
                   </h2>
                 </div>
                 <div className="row div_home-page-portfolio">
-                  <Portfolio />
+                  <Portfolio homeText={homeText} locale={this.props.locale}/>
                   {/* <div className="col-lg-6">
                   <div
                     className="portfolio_item"
@@ -531,13 +534,13 @@ class Home extends React.Component {
                 <div className="cons_action_info cons_action_info_white justify-content-between">
                   <div className="text">
                     {" "}
-                    Наша продукция восстребована и в других секторах.
+                    {homeText.[this.props.locale].redirect_card.title}
                   </div>{" "}
                   <a
                     href="#"
                     className="theme_btn theme_btn_three hover_style1"
                   >
-                    Узнать больше
+                    {homeText.[this.props.locale].redirect_card.button}
                   </a>
                 </div>
               </div>
@@ -549,6 +552,7 @@ class Home extends React.Component {
                     <div className="service_img">
                       {" "}
                       <img
+                        loading="lazy"
                         src="/static/assets/img/img/home-14/inovation_img.jpg"
                         alt=""
                       />{" "}
@@ -557,20 +561,18 @@ class Home extends React.Component {
                   <div className="col-lg-6 col-md-7">
                     <div className="cons_about_content pr_100">
                       <h6 className="title_top">
-                        Мы используем самые современные технологии
+                      {homeText.[this.props.locale].technologies_section.sectionTitle}
                       </h6>
-                      <h2 className="title_head">Мы в погоне за иновациями </h2>
+                      <h2 className="title_head">{homeText.[this.props.locale].technologies_section.title} </h2>
                       <p>
-                        Для поддержания лидерских позиций на рынке мы постоянно
-                        стремимся к совершенству так и в технолгиях, так и в
-                        ассортименте продукции.{" "}
+                      {homeText.[this.props.locale].technologies_section.description}
                       </p>{" "}
                       <a
                         href="#"
                         className="text_btn"
                         data-text="Подробнее ..."
                       >
-                        Подробнее ...
+                        {homeText.[this.props.locale].technologies_section.button}
                       </a>
                     </div>
                   </div>
@@ -580,8 +582,8 @@ class Home extends React.Component {
             <div className="cons_blog_area">
               <div className="container">
                 <div className="div_title_one">
-                  <h6 className="title_top">Новости</h6>
-                  <h2 className="title_head">Последние новости</h2>
+                  <h6 className="title_top">{homeText.[this.props.locale].news_section.sectionTitle}</h6>
+                  <h2 className="title_head">{homeText.[this.props.locale].news_section.title}</h2>
                 </div>
                 <div className="row">
                   <div className="col-md-6">
@@ -590,14 +592,15 @@ class Home extends React.Component {
                       <a href="#" className="img_hover">
                         {" "}
                         <img
+                          loading="lazy"
                           src="/static/assets/img/img/home-14/blog_2.jpg"
                           alt=""
                         />{" "}
                       </a>
-                      <div className="post_date">Расширение</div>{" "}
+                      <div className="post_date">{homeText.[this.props.locale].news_section.news[0].title}</div>{" "}
                       <a href="single-blog.html">
                         <h3>
-                          Мы выпускаем <br /> ещё одну линейку продуктов
+                        {homeText.[this.props.locale].news_section.news[0].description}
                         </h3>
                       </a>
                     </div>
@@ -608,15 +611,15 @@ class Home extends React.Component {
                       <a href="#" className="img_hover">
                         {" "}
                         <img
+                        loading="lazy"
                           src="/static/assets/img/img/home-14/blog_2.jpg"
                           alt=""
                         />{" "}
                       </a>
-                      <div className="post_date">Деятельность</div>{" "}
+                      <div className="post_date">{homeText.[this.props.locale].news_section.news[1].title}</div>{" "}
                       <a href="single-blog.html">
                         <h3>
-                          Наш завод выполнил <br /> крупный заказ для Компании
-                          ...
+                        {homeText.[this.props.locale].news_section.news[1].description}
                         </h3>
                       </a>
                     </div>

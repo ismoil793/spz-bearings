@@ -3,7 +3,7 @@ import axios from "axios";
 import "../../../plugins/axios";
 import Link from "next/link";
 import url from "../../url";
-import { connect } from "react-redux";
+import HeaderText from "../../../static/locales/header";
 
 const PopularLink = props => (
   <Link
@@ -52,7 +52,7 @@ class Footer extends React.Component {
             <div className="col-lg-4 col-md-6">
               <div className="f_widget f_about_widget pr_100">
                 {" "}
-                <a href="index.html" className="f_logo">
+                <a href="/" locale={this.props.locale} className="f_logo">
                   {" "}
                   <img
                     src="/static/assets/img/img/home-one/logo_footer.png"
@@ -63,44 +63,56 @@ class Footer extends React.Component {
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="f_widget f_link_widget">
-                <h3 className="f_title">Полезные Ссылки</h3>
+                <h3 className="f_title">{HeaderText.[this.props.locale].footer[0]}</h3>
                 <ul className="list-unstyled f_link f_link_two">
                   <li>
-                    <a href="#">Главная</a>
+                    <Link href="/" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[0]}</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Продукция</a>
+                    <Link href="/shop" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[4]}</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">О Нас</a>
+                    <Link href="/about" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[1].dropdown}</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Сервисы</a>
+                    <Link href="/services" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[2]}</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Контакты</a>
+                    <Link href="contacts" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[5]}</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Партнеры</a>
+                    <Link href="news" locale={this.props.locale}>
+                    <a>{HeaderText.[this.props.locale].nav[3]}</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="f_widget f_subscribe_widget">
-                <h3 className="f_title">Обратная связь</h3>
+                <h3 className="f_title">{HeaderText.[this.props.locale].footer[1]}</h3>
                 <form action="#" className="f_subscribe">
                   {" "}
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Ваш email - мы свяжемся"
+                    placeholder={`${HeaderText.[this.props.locale].footer[2]}`}
                   />{" "}
                   <button type="submit" className="s_btn">
                     <i className="icon-email"></i>
                   </button>{" "}
                 </form>
-                <p>Мы готовы к сотрудничеству</p>
+                <p>{HeaderText.[this.props.locale].footer[3]}</p>
               </div>
             </div>
           </div>
@@ -112,14 +124,17 @@ class Footer extends React.Component {
             <div className="col-sm-7">
               <p className="copy_text">
                 {" "}
-                <a href="index.html">Главная</a>
+                <Link href="/" locale={this.props.locale}>
+                <a>{HeaderText.[this.props.locale].nav[0]}</a>
+                </Link>
               </p>
             </div>
             <div className="col-sm-5 text-right">
               {" "}
+             
               <a href="#" className="go_top">
-                go back up <i className="fas fa-angle-up"></i>
-              </a>{" "}
+              {HeaderText.[this.props.locale].footer[4]}<i className="fas fa-angle-up"></i>
+              </a>
             </div>
           </div>
         </div>

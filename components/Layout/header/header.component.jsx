@@ -5,6 +5,7 @@ import "../../../plugins/axios";
 import Link from "next/link";
 import Search from "../../Search/search.component";
 import Router from "next/router";
+import HeaderText from "../../../static/locales/header";
 const uuidv1 = require("uuid/v1");
 
 import Cookies from "universal-cookie";
@@ -210,7 +211,7 @@ class Header extends React.Component {
             <Nav className="navbar navbar-expand-lg" id="header">
               <div className="container main_logo_container">
                 {" "}
-                <Link href="/" locale="en">
+                <Link href="/" locale={this.props.locale}>
                   <a
                     className={`navbar-brand big_logo ${
                       this.props.isHome ? "" : "mt-0"
@@ -222,7 +223,7 @@ class Header extends React.Component {
                     />
                   </a>
                 </Link>{" "}
-                <Link href="/" locale="en">
+                <Link href="/" locale={this.props.locale}>
                   <a className="navbar-brand">
                     <img
                       src="/static/assets/img/img/home-one/logo.png"
@@ -234,26 +235,26 @@ class Header extends React.Component {
                   <ul className="navbar-nav menu">
                     <li className="nav-item">
                       {" "}
-                      <Link href="/" locale="en">
-                        <a className="nav-link">Главная</a>
+                      <Link href="/" locale={this.props.locale}>
+                        <a className="nav-link">{HeaderText.[this.props.locale].nav[0]}</a>
                       </Link>{" "}
                     </li>
                     <li className="nav-item dropdown submenu">
                       {" "}
-                      <Link href="/about" locale="en">
-                        <a className="nav-link"> О Нас </a>
+                      <Link href="/about" locale={this.props.locale}>
+                        <a className="nav-link">{HeaderText.[this.props.locale].nav[1].dropdown} </a>
                       </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item active">
                           {" "}
-                          <Link href="/about" locale="en">
-                            <a className="nav-link">История Завода</a>
+                          <Link href="/about" locale={this.props.locale}>
+                            <a className="nav-link">{HeaderText.[this.props.locale].nav[1].elements[0]}</a>
                           </Link>
                         </li>
                         <li className="nav-item">
                           {" "}
-                          <Link href="/team" locale="en">
-                            <a className="nav-link">Наша Команда</a>
+                          <Link href="/team" locale={this.props.locale}>
+                            <a className="nav-link">{HeaderText.[this.props.locale].nav[1].elements[1]}</a>
                           </Link>{" "}
                         </li>
                         <li className="nav-item">
@@ -264,91 +265,33 @@ class Header extends React.Component {
                             }}
                             as={`/services/1`}
                           >
-                            <a className="nav-link">Технический Центр</a>
-                          </Link>{" "}
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="nav-item dropdown submenu">
-                      {" "}
-                      <Link href="/services" locale="en">
-                        <a className="nav-link"> Сервисы </a>
-                      </Link>
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          {" "}
-                          <Link href="/services" locale="en">
-                            <a className="nav-link">Сервисы</a>
-                          </Link>{" "}
-                        </li>
-                        <li className="nav-item">
-                          {" "}
-                          <Link
-                            Link
-                            href={{
-                              pathname: "/services/[singlenservice]",
-                            }}
-                            as={`/services/1`}
-                          >
-                            <a className="nav-link">Детально Сервисы</a>
-                          </Link>{" "}
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="nav-item dropdown submenu">
-                      {" "}
-                      <Link href="/news" locale="en">
-                        <a className="nav-link"> Новости </a>
-                      </Link>
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          {" "}
-                          <Link href="/news" locale="en">
-                            <a className="nav-link">Новости</a>
-                          </Link>{" "}
-                        </li>
-                        <li className="nav-item">
-                          {" "}
-                          <Link
-                            href={{
-                              pathname: "/news/[singlenews]",
-                            }}
-                            as={`/news/1`}
-                          >
-                            <a className="nav-link">Детально Новости</a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="nav-item dropdown submenu">
-                      {" "}
-                      <Link href="/shop" locale="en">
-                        <a className="nav-link"> Продукция </a>
-                      </Link>
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          {" "}
-                          <Link href="/shop" locale="en">
-                            <a className="nav-link">Продукция</a>
-                          </Link>{" "}
-                        </li>
-                        <li className="nav-item">
-                          {" "}
-                          <Link
-                            href={{
-                              pathname: "/product/[product]",
-                            }}
-                            as={`/product/1`}
-                          >
-                            <a className="nav-link">Детально продукция</a>
+                            <a className="nav-link">{HeaderText.[this.props.locale].nav[1].elements[2]}</a>
                           </Link>{" "}
                         </li>
                       </ul>
                     </li>
                     <li className="nav-item">
                       {" "}
-                      <Link href="/contacts" locale="en">
-                        <a className="nav-link">Контакты</a>
+                      <Link href="/services" locale={this.props.locale}>
+                        <a className="nav-link"> {HeaderText.[this.props.locale].nav[2]} </a>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      {" "}
+                      <Link href="/news" locale={this.props.locale}>
+                        <a className="nav-link"> {HeaderText.[this.props.locale].nav[3]} </a>
+                      </Link>
+                    </li>
+                    <li className="nav-item dropdown submenu">
+                      {" "}
+                      <Link href="/shop" locale={this.props.locale}>
+                        <a className="nav-link"> {HeaderText.[this.props.locale].nav[4]} </a>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      {" "}
+                      <Link href="/contacts" locale={this.props.locale}>
+                        <a className="nav-link">{HeaderText.[this.props.locale].nav[5]}</a>
                       </Link>{" "}
                     </li>
                   </ul>
@@ -481,20 +424,5 @@ class Header extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    cart: state.cart,
-    user: state.userInfo,
-    compare: state.compare.compare,
-    favourites: state.favourites.favourites,
-  };
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setUserInfo: (userInfo) => dispatch(fetchSetUserInfo(userInfo)),
-    getCompare: () => dispatch(fetchCompare()),
-    getFavourites: () => dispatch(fetchFavorites()),
-  };
-};
 
 export default Header;

@@ -12,15 +12,11 @@ export default class Portfolio extends React.Component {
       <figure>
         <div class="img-bg"></div>
         <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="Brohm Lake"/>
-        <figcaption>Железнодорожная-промышленность</figcaption>
+        <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[0].title}</figcaption>
       </figure>
 
       <ul>
-        <li>Подшипники</li>
-        <li>Валлы</li>
-        <li>Шестерни</li>
-        <li>Гайки</li>
-        <li>Болты</li>
+      {this.props.homeText.[this.props.locale].product_demand.cards[0].details.map(item => (<li>{item}</li>))}
       </ul>
     </div>
 
@@ -30,7 +26,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="Brohm Lake"/>
       </figure>
 
-      <button>Заказать</button>
+      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
 
       <div class="design-container">
         <span class="design design--1"></span>
@@ -54,15 +50,11 @@ export default class Portfolio extends React.Component {
       <figure>
         <div class="img-bg"></div>
         <img src="/static/assets/img/img/home-14/auto.jpg" alt="Image 2"/>
-        <figcaption>Авто-промышленность</figcaption>
+        <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[1].title}</figcaption>
       </figure>
 
       <ul>
-        <li>Подшипники</li>
-        <li>Валлы</li>
-        <li>Шестерни</li>
-        <li>Гайки</li>
-        <li>Болты</li>
+      {this.props.homeText.[this.props.locale].product_demand.cards[1].details.map(item => (<li>{item}</li>))}
       </ul>
     </div>
 
@@ -72,7 +64,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/auto.jpg" alt="image-2"/>
       </figure>
 
-      <button>Заказать</button>
+      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
 
       <div class="design-container">
         <span class="design design--1"></span>
@@ -96,15 +88,11 @@ export default class Portfolio extends React.Component {
       <figure>
         <div class="img-bg"></div>
         <img src="/static/assets/img/img/home-14/energy.jpg" alt="Brohm Lake"/>
-        <figcaption>Энергетика</figcaption>
+        <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[2].title}</figcaption>
       </figure>
 
       <ul>
-        <li>Подшипники</li>
-        <li>Валлы</li>
-        <li>Шестерни</li>
-        <li>Гайки</li>
-        <li>Болты</li>
+      {this.props.homeText.[this.props.locale].product_demand.cards[2].details.map(item => (<li>{item}</li>))}
       </ul>
     </div>
 
@@ -115,7 +103,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/energy.jpg" alt="Brohm Lake"/>
       </figure>
 
-      <button>Заказать</button>
+      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
 
 
       <div class="design-container">
@@ -140,15 +128,11 @@ export default class Portfolio extends React.Component {
       <figure>
         <div class="img-bg"></div>
         <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="Brohm Lake"/>
-        <figcaption>Тяжелая промышленность</figcaption>
+        <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[3].title}</figcaption>
       </figure>
 
       <ul>
-        <li>Подшипники</li>
-        <li>Валлы</li>
-        <li>Шестерни</li>
-        <li>Гайки</li>
-        <li>Болты</li>
+      {this.props.homeText.[this.props.locale].product_demand.cards[3].details.map(item => (<li>{item}</li>))}
       </ul>
     </div>
 
@@ -159,7 +143,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="Brohm Lake"/>
       </figure>
 
-      <button>Заказать</button>
+      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
 
 
       <div class="design-container">

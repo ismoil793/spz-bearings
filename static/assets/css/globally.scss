@@ -10708,3 +10708,19 @@ ul.circle_list {
 .slider_bg-img-hero-center {
   height: 600px;
 }
+
+.contacts_ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  .contacts_li {
+    font-weight: 600;
+  }
+  .contacts_li_phones {
+    font-style: italic;
+    cursor: pointer;
+  }
+  .contacts_li_phones::before {
+    content: none !important;
+  }
+}

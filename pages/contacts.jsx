@@ -8,9 +8,20 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+
+export function getStaticProps({locale}) {
+  return {
+    props: {
+      locale
+    }
+  }
+}
+
+
 export default function Contact(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
+
 
   useEffect(() => {
     const cookies = new Cookies();
@@ -112,12 +123,19 @@ export default function Contact(props) {
                         Республика Узбекистан, Андижанская обл., Жалакудукский
                         р-н, г. Ахунбабаев, Карасу, 3{" "}
                       </h2>
+                      <h6 className="title_top">Список Телефонных номеров</h6>
+                      <ul className="contacts_ul">
+                        <li className="contacts_li">Ген Директор</li>
+                        <li className="contacts_li_phones text_btn">+(99874) 755-20-04</li>
+                        <li className="contacts_li">Бухгалтерия</li>
+                        <li className="contacts_li_phones text_btn">+(99874) 755-18-57</li>
+                        <li className="contacts_li">Экономический отдел и отдел продаж</li>
+                        <li className="contacts_li_phones text_btn">+(99874) 755-23-59</li>
+                        <li className="contacts_li_phones text_btn">+(99899) 557-77-75</li>
+                      </ul>
                       <p>
                         <i class="far fa-clock"></i> 7/7: 9:00 - 18:00
                       </p>{" "}
-                      <a href="#" class="text_btn" data-text="Позвонить">
-                        Позвонить
-                      </a>
                     </div>
                   </div>
                   <div class="col-lg-6">

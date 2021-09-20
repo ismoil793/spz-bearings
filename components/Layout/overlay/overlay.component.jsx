@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { withRouter } from "next/router";
+import HeaderText from "../../../static/locales/header";
 
 class OverlayComponent extends React.Component {
   constructor() {
@@ -16,6 +17,10 @@ class OverlayComponent extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log('mount overlay')
+  }
+
   changeListOpened = (type) => {
     this.setState({
       lists_is_opened: {
@@ -25,9 +30,15 @@ class OverlayComponent extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps) {
+    console.log(prevProps.router.pathname)
+    if (prevProps.isLoading !== this.props.isLoading) {
+      document.body.className = "menu-is-closed";
+    }
+  }
+
   handleRouterPush = (e, href) => {
     e.preventDefault();
-    document.body.className = "menu-is-closed";
     this.props.router.push({
       pathname: `${href.url}`,
       query: { [href.as]: href.url.description },
@@ -47,14 +58,23 @@ class OverlayComponent extends React.Component {
           </div>
           <ul className="list-unstyled mb_menu wd_scroll">
             <li>
-              <a href="/">Главная</a>
+              <Link href="/" locale={this.props.locale}>
+              <a>
+                {HeaderText[this.props.locale].nav[0]}
+              </a>
+              </Link>
             </li>
             <li
               onClick={() => this.changeListOpened("about")}
               className="menu-item-has-children"
             >
               {" "}
-              <a href="#"> О Нас </a>
+              <Link locale={this.props.locale} href="#">
+              <a >
+                {" "}
+                {HeaderText[this.props.locale].nav[1].dropdown}{" "}
+              </a>
+              </Link>
               <ul
                 className={`list-unstyled ${
                   this.state.lists_is_opened.about
@@ -63,107 +83,81 @@ class OverlayComponent extends React.Component {
                 }`}
               >
                 <li>
-                  <a href="/about">История Завода</a>
+                  <Link locale={this.props.locale} href="/about">
+                  <a>
+                    {HeaderText[this.props.locale].nav[1].elements[0]}
+                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/team">Руководство</a>
+                  <Link locale={this.props.locale} href="/team">
+                  <a>
+                    {HeaderText[this.props.locale].nav[1].elements[1]}
+                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/services/1"> Технический Центр</a>
+                  <Link locale={this.props.locale} href="/services/1">
+                  <a>
+                    {HeaderText[this.props.locale].nav[1].elements[2]}
+                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
-            <li
-              onClick={() => this.changeListOpened("services")}
-              className="menu-item-has-children"
-            >
+            <li onClick={() => this.changeListOpened("services")}>
               {" "}
-              <a href="#"> Сервисы</a>
-              <ul
-                className={`list-unstyled ${
-                  this.state.lists_is_opened.services
-                    ? "dropdown_list_display_block"
-                    : ""
-                }`}
-              >
-                <li>
-                  {" "}
-                  <a href="/services">Сервисы</a>
-                </li>
-                <li>
-                  {" "}
-                  <a href="/services/1">Детально Сервисы</a>
-                </li>
-              </ul>
+              <Link locale={this.props.locale} href="/services">
+              <a>
+                {" "}
+                {HeaderText[this.props.locale].nav[2]}
+              </a>
+              </Link>
             </li>
-            <li
-              onClick={() => this.changeListOpened("news")}
-              className="menu-item-has-children"
-            >
+            <li onClick={() => this.changeListOpened("news")}>
               {" "}
-              <a href="#"> Новости </a>
-              <ul
-                className={`list-unstyled ${
-                  this.state.lists_is_opened.news
-                    ? "dropdown_list_display_block"
-                    : ""
-                }`}
-              >
-                <li>
-                  {" "}
-                  <a href="/news">Новости</a>
-                </li>
-                <li>
-                  {" "}
-                  <a href="/news/1">Детально Новости</a>
-                </li>
-              </ul>
+              <Link locale={this.props.locale} href="/news">
+              <a >
+                {" "}
+                {HeaderText[this.props.locale].nav[3]}{" "}
+              </a>
+              </Link>
             </li>
-            <li
-              onClick={() => this.changeListOpened("production")}
-              className="menu-item-has-children"
-            >
+            <li onClick={() => this.changeListOpened("production")}>
               {" "}
-              <a href="#"> Продукция </a>
-              <ul
-                className={`list-unstyled ${
-                  this.state.lists_is_opened.production
-                    ? "dropdown_list_display_block"
-                    : ""
-                }`}
-              >
-                <li>
-                  {" "}
-                  <a href="/shop">Продукция</a>
-                </li>
-                <li>
-                  {" "}
-                  <a href="/product/1">Детально продукция</a>
-                </li>
-              </ul>
+              <Link locale={this.props.locale} href="/shop">
+              <a>
+                {" "}
+                {HeaderText[this.props.locale].nav[4]}{" "}
+              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contacts">Контакты</a>
+              <Link locale={this.props.locale} href="/contacts">
+              <a>
+                {HeaderText[this.props.locale].nav[5]}
+              </a>
+              </Link>
             </li>
           </ul>
           <ul className="list-unstyled social_links">
             <li>
-              <a href="#" title="">
+              <a locale={this.props.locale} href="#" title="">
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="#" title="">
+              <a locale={this.props.locale} href="#" title="">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#" title="">
+              <a locale={this.props.locale} href="#" title="">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="#" title="">
+              <a locale={this.props.locale} href="#" title="">
                 <i className="fab fa-dribbble"></i>
               </a>
             </li>
