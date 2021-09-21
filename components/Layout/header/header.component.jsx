@@ -1,9 +1,7 @@
 import React from "react";
-import Category from "../../Categories/categories";
 import axios from "axios";
 import "../../../plugins/axios";
 import Link from "next/link";
-import Search from "../../Search/search.component";
 import Router from "next/router";
 import HeaderText from "../../../static/locales/header";
 const uuidv1 = require("uuid/v1");
@@ -11,10 +9,6 @@ const uuidv1 = require("uuid/v1");
 import Cookies from "universal-cookie";
 
 import url from "../../url";
-import { connect } from "react-redux";
-import { fetchSetUserInfo } from "../../../redux/actions/userInfo";
-import { fetchCompare } from "../../../redux/actions/compare";
-import { fetchFavorites } from "../../../redux/actions/favorites";
 import { Nav } from "reactstrap";
 class Header extends React.Component {
   constructor(props) {

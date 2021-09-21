@@ -7,7 +7,17 @@ import { fetchCompare } from "../../redux/actions/compare";
 import Portfolio from "../../components/portfolio/portfolio";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 import homeText from "../../static/locales/home";
+import YouTube from 'react-youtube';
+import ServicesText from "../../static/locales/services";
 
+const opts = {
+  height: '390',
+  width: '640',
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+  },
+};
 
 export function getStaticProps({locale}) {
   return {
@@ -48,6 +58,7 @@ class Home extends React.Component {
       compareNumber: 0,
       width: null,
       news: [],
+      showPlayer: false
     };
   }
   componentWillMount() {
@@ -71,6 +82,12 @@ class Home extends React.Component {
     }
   }
 
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    console.log('event onready', event)
+  }
+
+  
   render() {
     const { news } = this.state;
     const filterPrice = ["5 000 000", "3 000 000", "1 000 000"];
@@ -413,10 +430,48 @@ class Home extends React.Component {
               </div>
             </div>
 
+            <h6 className="title_top section_video_title">Галлерея</h6>
+            {this.state.showPlayer ? 
+              <div className="modal_youtube_wrapper">
+                <div className="youtube_button_player_wrapper">
+                  <button onClick={()=>this.setState({showPlayer: false})} className="youtube_close_button">X</button>
+                  <YouTube className="youtube_player" videoId="qrG0N3bC9iU" opts={opts} onReady={this._onReady} />
+                </div>
+              </div> : null}
+            <section class="cons_work_area cons_video_area p-0">                  
+              <div class="cons_work_left">
+                <div class="cons_about_content">
+                  <h6 class="title_top">
+                  {ServicesText.[this.props.locale].video_section_title}
+                  </h6>
+                  <h2 class="title_head">{ServicesText.[this.props.locale].video_section_title_not_main} </h2>
+                  <p>
+                  {ServicesText.[this.props.locale].video_section_description}
+                  </p>
+                  <a href="#" class="text_btn" data-text="Контакты">
+                  {ServicesText.[this.props.locale].video_section_button}
+                  </a>
+                </div>
+              </div>
+              <div class="cons_work_right">
+                {" "}
+                <img
+                  src="/static/assets/img/img/services/video_img.jpg"
+                  alt=""
+                />{" "}
+                <a onClick={(e)=>{e.preventDefault(); this.setState({showPlayer: true})}} href="#" class="video_icon">
+                  <span>
+                    <i class="fas fa-play"></i>
+                  </span>
+                </a>{" "}
+              </div>
+            </section>
+
             <div className="portfolio_area_three">
               <div className="container">
                 <div className="div_title_one home_page">
-                  <h6 className="title_top">Галлерея</h6>
+                  
+
                   <h2 className="title_head">
                   {homeText.[this.props.locale].product_demand.mainTitle}
                   </h2>

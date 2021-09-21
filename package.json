@@ -54,6 +54,7 @@
     "react-window-size": "^1.2.2",
     "react-yandex-maps": "^4.6.0",
     "react-yandex-metrika": "^2.6.0",
+    "react-youtube": "^7.13.1",
     "reactstrap": "^8.10.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",

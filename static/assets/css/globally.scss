@@ -10724,3 +10724,55 @@ ul.circle_list {
     content: none !important;
   }
 }
+
+.section_video_title {
+  text-align: center;
+  margin: 50px 0 80px;
+}
+
+.modal_youtube_wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  backdrop-filter: blur(5px);
+  background-color: #01223770;
+}
+
+.youtube_button_player_wrapper {
+  position: relative;
+}
+
+.youtube_close_button {
+  position: absolute;
+  cursor: pointer;
+  color: #fff;
+  outline: 0;
+  line-height: inherit;
+  text-align: inherit;
+  font-size: 100%;
+  right: 0;
+  opacity: .7;
+  top: -13px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  transition: all 0.5s ease;
+}
+
+.youtube_close_button:hover {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.youtube_player {
+  margin-top: 15px;
+}

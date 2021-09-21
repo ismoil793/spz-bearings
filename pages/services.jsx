@@ -2,15 +2,32 @@ import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
 
 import React, { useState, useEffect } from "react";
-import Cookies from "universal-cookie";
-import axios from "axios";
-import url from "../components/url";
+import YouTube from 'react-youtube';
+
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
 import ServicesText from "../static/locales/services";
+
+
+const opts = {
+  height: '390',
+  width: '640',
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+  },
+};
+
+
 export default function servicesPage(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
   const [toggle, setToggle] = React.useState(false);
+  const [showPlayer, setShowPlayer] = React.useState(false)
+
+  function _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }
 
   return (
     <>
@@ -215,6 +232,14 @@ export default function servicesPage(props) {
               </div>
             </section>
 
+            {showPlayer ? 
+              <div className="modal_youtube_wrapper">
+                <div className="youtube_button_player_wrapper">
+                  <button onClick={()=>setShowPlayer(false)} className="youtube_close_button">X</button>
+                  <YouTube className="youtube_player" videoId="qrG0N3bC9iU" opts={opts} onReady={_onReady} />
+                </div>
+              </div> : null}
+
             <section class="cons_work_area cons_video_area p-0">
               <div class="cons_work_left">
                 <div class="cons_about_content">
@@ -236,7 +261,7 @@ export default function servicesPage(props) {
                   src="/static/assets/img/img/services/video_img.jpg"
                   alt=""
                 />{" "}
-                <a href="#" class="video_icon">
+                <a onClick={(e)=>{e.preventDefault(); setShowPlayer(true)}} href="#" class="video_icon">
                   <span>
                     <i class="fas fa-play"></i>
                   </span>
