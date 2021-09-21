@@ -54,7 +54,7 @@ class Footer extends React.Component {
                 {" "}
                 <a href="/" locale={this.props.locale} className="f_logo">
                   {" "}
-                  <img
+                  <img className="footer-logo_main"
                     src="/static/assets/img/img/home-one/logo_footer.png"
                     alt=""
                   />{" "}

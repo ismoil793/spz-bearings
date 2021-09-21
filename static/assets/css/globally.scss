@@ -10797,4 +10797,23 @@ ul.circle_list {
   top: 0 !important;
 }
 
+.footer-logo_main {
+  width: 330px;
+  height: 150px;
+}
+
+.animated_rotate-logo {
+  transform: rotate(720deg);
+  transition: all 5s ease;
+}
+
+.is-flipped .front .logo .business_card_logo {
+  transform: scaleX(-1) scale(1.5);
+  transition: all 0.5s ease;
+}
+
+.front .logo .business_card_logo {
+  transform: scale(1.5);
+}
+
 

@@ -27,7 +27,8 @@ class Header extends React.Component {
       isMobileSearch: false,
       userInfo: {},
       search_is_open: false,
-      menu_is_opened: false
+      menu_is_opened: false,
+      rotate_logo: false
     };
   }
 
@@ -142,7 +143,7 @@ class Header extends React.Component {
   };
 
   componentDidMount() {
-
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -150,6 +151,9 @@ class Header extends React.Component {
       document.body.className = this.state.menu_is_opened
         ? "menu-is-opened"
         : "menu-is-closed";
+    }
+    if (prevProps.isLoading !== this.props.isLoading) {
+      this.setState({rotate_logo: true})
     }
   }
 
@@ -211,7 +215,7 @@ class Header extends React.Component {
                       this.props.isHome ? "" : "mt-0"
                     }`}
                   >
-                    <img
+                    <img className={`${this.state.rotate_logo ? 'animated_rotate-logo' : ''} `}
                       src="/static/assets/img/img/home-14/logo.png"
                       alt="logo"
                     />

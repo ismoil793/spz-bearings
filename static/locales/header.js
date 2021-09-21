@@ -14,7 +14,7 @@ const HeaderText = {
 
 
   en: {
-    nav: ["Home", {dropdown: "About us", elements: ["About us", "Our Team", "Technical Center"]}, "SERVICES", "NEWS", "PRODUCTS", "CONTACTS"],
+    nav: ["HOME", {dropdown: "ABOUT US", elements: ["About us", "Our Team", "Technical Center"]}, "SERVICES", "NEWS", "PRODUCTS", "CONTACTS"],
     footer: ["Useful links", "Feedback", "Email - we will contact", "We are ready to cooperate", "Up"]
   },
 
