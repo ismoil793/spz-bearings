@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
+import NewsText from "../static/locales/news";
 export default function NewsPage(props) {
   const [cartNumber, setCartNumber] = React.useState(0);
   const [compareNumber, setCompareNumber] = React.useState(0);
@@ -45,7 +46,7 @@ export default function NewsPage(props) {
   return (
     <>
       <Head>
-        <title>Новости</title>
+        <title>{NewsText.[props.locale].pageTitle}</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -95,144 +96,41 @@ export default function NewsPage(props) {
             <section class="blog_list_area pt_200">
               <div class="container">
                 <div class="blog_list_inner">
+                {NewsText.[props.locale].news.map((item, index) => (
                   <div class="row blog_l_item">
                     <div class="col-lg-6">
                       <div class="blog_l_img">
                         {" "}
                         <img
                           class="img-fluid"
-                          src="/static/assets/img/img/blog/blog-1.jpg"
+                          src={`/static/assets/img/img/blog/blog-${index <= 2 ? (index+1) : 1}.jpg`}
                           alt=""
                         />
                       </div>
                     </div>
                     <div class="col-lg-6">
+                   
                       <div class="blog_l_text">
-                        <h6>Опубликовано 1 месяц назад</h6>{" "}
+                        <h6>{item.date}</h6>{" "}
                         <a href="#">
-                          <h4>Мы запустили технический центр</h4>
+                          <h4>{item.title}</h4>
                         </a>
                         <p>
-                          Мы уверены что это поможет нам в реализации новых
-                          проектов
+                          {item.description}
                         </p>{" "}
                         <a class="more_btn" href="#">
-                          Подробнее<i class="fas fa-arrow-right"></i>
+                          {item.button}<i class="fas fa-arrow-right"></i>
                         </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="row blog_l_item">
-                    <div class="col-lg-6">
-                      <div class="blog_l_img">
-                        {" "}
-                        <img
-                          class="img-fluid"
-                          src="/static/assets/img/img/blog/blog-2.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="blog_l_text">
-                        <h6>Опубликовано 2 месяца назад</h6>{" "}
-                        <a href="#">
-                          <h4>Мы выпускаем ещё одну линейку продуктов</h4>
-                        </a>
-                        <p>Довольных клиентов станет ещё больше</p>{" "}
-                        <a class="more_btn" href="#">
-                          Подробнее <i class="fas fa-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row blog_l_item">
-                    <div class="col-lg-6">
-                      <div class="blog_l_img">
-                        {" "}
-                        <img
-                          class="img-fluid"
-                          src="/static/assets/img/img/blog/blog-3.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="blog_l_text">
-                        <h6>Опубликовано 3 месяца назад</h6>{" "}
-                        <a href="#">
-                          <h4>
-                            Наш завод выполнил крупный заказ для Компании ...
-                          </h4>
-                        </a>
-                        <p>
-                          За поджимающий срок для заказчика мы успели выполнить
-                          заказ. Итог: ещё один довольный заказчик
-                        </p>{" "}
-                        <a class="more_btn" href="#">
-                          Подробнее <i class="fas fa-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row blog_l_item">
-                    <div class="col-lg-6">
-                      <div class="blog_l_img">
-                        {" "}
-                        <img
-                          class="img-fluid"
-                          src="/static/assets/img/img/blog/blog-1.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="blog_l_text">
-                        <h6>Опубликовано 4 месяца назад</h6>{" "}
-                        <a href="#">
-                          <h4>Мы запустили технический центр</h4>
-                        </a>
-                        <p>
-                          Мы уверены что это поможет нам в реализации новых
-                          проектов
-                        </p>{" "}
-                        <a class="more_btn" href="#">
-                          Подробнее<i class="fas fa-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row blog_l_item">
-                    <div class="col-lg-6">
-                      <div class="blog_l_img">
-                        {" "}
-                        <img
-                          class="img-fluid"
-                          src="/static/assets/img/img/blog/blog-2.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="blog_l_text">
-                        <h6>Опубликовано 5 месяцев назад</h6>{" "}
-                        <a href="#">
-                          <h4>Мы выпускаем ещё одну линейку продуктов</h4>
-                        </a>
-                        <p>Довольных клиентов станет ещё больше</p>{" "}
-                        <a class="more_btn" href="#">
-                          Подробнее <i class="fas fa-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  </div>))}
                 </div>
                 <div class="pagination_area">
                   <nav aria-label="Page navigation example">
                     <ul class="pagination">
                       <li class="page-item">
                         <a class="page-link" href="#">
-                          Prev
+                        {NewsText.[props.locale].pagination[0]}
                         </a>
                       </li>
                       <li class="page-item">
@@ -267,7 +165,7 @@ export default function NewsPage(props) {
                       </li>
                       <li class="page-item">
                         <a class="page-link" href="#">
-                          Next
+                        {NewsText.[props.locale].pagination[1]}
                         </a>
                       </li>
                     </ul>

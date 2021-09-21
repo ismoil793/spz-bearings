@@ -30,7 +30,25 @@ const ServiceDetailedText = {
     title_second: 'Namunalar',
     button_download_works: 'Ish namunalarini yuklab olish',
     button_download_tech: "Tex zadaniya namunasini yuklab olish"
-  }
+  },
+
+
+  en: {
+    pageTitle: 'Technical Centre',
+    title: "Technical Centre",
+    paragraphs: [
+      'The plant has a technical department and a design bureau, consisting of highly qualified specialists who develop and improve products based on modern engineering solutions.',
+      'Highly qualified specialists of our company carry out a complex of works related to the design, manufacture, installation, and commissioning of various equipment following the standard, сonsidering the needs of the consumer.',
+      'Significant research potential allows the company to constantly expand the range of its products, produce bearings and other products according to customer drawings.',
+      'The enterprise can manufacture various rollers, balls, shafts, gears and other parts of complex configuration, non-standard equipment, supporting conveyor rollers and support rollers.'
+    ],
+    title_second: 'Examples',
+    button_main: 'Contacts',
+    button_download_works: 'Download examples of works',
+    button_download_tech: "Download an example of a technical task"
+  },
+
+
 }
 
 export default ServiceDetailedText;

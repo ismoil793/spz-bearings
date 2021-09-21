@@ -80,7 +80,50 @@ const TeamText = {
       {position: 'Bosh Direktor o\'rinbosari', full_name: 'Nikolayeva Anastasiya'},
     ],
     redirect_card: {title: "Bizning Jamoamizga qo'shilmoqchimisiz?", title_second: "Biz o'z jamoamizga izlanuvchan, intiluvchan ishchilarni yollayapmiz", button: "Vakansiyalarni ko'rish"}
-  }
+  },
+
+
+  en: {
+    pageTitle: 'Our Team',
+    title: 'Our Leadership',
+    colegues_animated: [{
+        position: 'General Director',
+        full_name: "Vasilyev Anton"
+      },
+      {
+        position: 'Deputy General Director',
+        full_name: "Novikov Roman"
+      },
+      {
+        position: 'Deputy General Director',
+        full_name: "Levina Ekaterina"
+      },
+      {
+        position: 'Deputy General Director',
+        full_name: "Andreev Anatoliy"
+      },
+      {
+        position: 'Deputy General Director',
+        full_name: "Rumyantseva Sofya"
+      },
+      {
+        position: 'Deputy General Director',
+        full_name: "Stepanov Vladislav"
+      },
+    ],
+    title_second: 'Заместители Генерального Директора',
+    colegues_not_animated: [
+      {position: 'General Director', full_name: 'Sorokin Mixail Ivanovich'},
+      {position: 'Chief Engineer', full_name: 'Dmitrieva Anna Ilinichna'},
+      {position: 'Deputy General Director', full_name: 'Komarova Kseniya'},
+      {position: 'Deputy General Director', full_name: 'Sokolova Ekaterina'},
+      {position: 'Deputy General Director', full_name: 'Nikulin Mikhail'},
+      {position: 'Deputy General Director', full_name: 'Nikolayeva Anastasiya'},
+    ],
+    redirect_card: {title: "Want To Join Our Team?", title_second: "We Are Recruiting Committed Employees You Can Join Our Team", button: "View Vacancies"}
+  },
+
+
 }
 
 export default TeamText;

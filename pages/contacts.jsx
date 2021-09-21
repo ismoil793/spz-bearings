@@ -9,6 +9,8 @@ import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
 
+import ContactsText from '../static/locales/contacts'
+
 export function getStaticProps({locale}) {
   return {
     props: {
@@ -56,7 +58,7 @@ export default function Contact(props) {
   return (
     <>
       <Head>
-        <title>Контакты</title>
+        <title>{ContactsText.[props.locale].pageTitle}</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -119,18 +121,17 @@ export default function Contact(props) {
                   </div>
                   <div class="col-lg-6">
                     <div class="cons_about_content pr_100">
-                      <h6 class="title_top">Адрес:</h6>
+                      <h6 class="title_top">{ContactsText.[props.locale].adress_section.title}</h6>
                       <h2 class="title_head">
-                        Республика Узбекистан, Андижанская обл., Жалакудукский
-                        р-н, г. Ахунбабаев, Карасу, 3{" "}
+                      {ContactsText.[props.locale].adress_section.adress}
                       </h2>
-                      <h6 className="title_top">Список Телефонных номеров</h6>
+                      <h6 className="title_top">{ContactsText.[props.locale].phone_section.title}</h6>
                       <ul className="contacts_ul">
-                        <li className="contacts_li">Ген Директор</li>
+                        <li className="contacts_li">{ContactsText.[props.locale].phone_section.numbers[0].position}</li>
                         <li className="contacts_li_phones text_btn">+(99874) 755-20-04</li>
-                        <li className="contacts_li">Бухгалтерия</li>
+                        <li className="contacts_li">{ContactsText.[props.locale].phone_section.numbers[1].position}</li>
                         <li className="contacts_li_phones text_btn">+(99874) 755-18-57</li>
-                        <li className="contacts_li">Экономический отдел и отдел продаж</li>
+                        <li className="contacts_li">{ContactsText.[props.locale].phone_section.numbers[2].position}</li>
                         <li className="contacts_li_phones text_btn">+(99874) 755-23-59</li>
                         <li className="contacts_li_phones text_btn">+(99899) 557-77-75</li>
                       </ul>
@@ -146,7 +147,7 @@ export default function Contact(props) {
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="Имя"
+                          placeholder={`${ContactsText.[props.locale].form_section[0]}`}
                         />{" "}
                       </div>
                       <div class="form-group">
@@ -154,7 +155,7 @@ export default function Contact(props) {
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="Email"
+                          placeholder={`${ContactsText.[props.locale].form_section[1]}`}
                         />{" "}
                       </div>
                       <div class="form-group">
@@ -165,7 +166,7 @@ export default function Contact(props) {
                           id="message"
                           cols="30"
                           rows="10"
-                          placeholder="Message"
+                          placeholder={`${ContactsText.[props.locale].form_section[2]}`}
                         ></textarea>{" "}
                       </div>
                       <div class="form-group">
@@ -174,7 +175,7 @@ export default function Contact(props) {
                           type="submit"
                           class="theme_btn theme_btn_three hover_style1"
                         >
-                          Отправить Сообщение
+                          {`${ContactsText.[props.locale].form_section[3]}`}
                         </button>{" "}
                       </div>
                     </form>

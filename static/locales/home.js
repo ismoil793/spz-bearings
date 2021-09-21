@@ -22,19 +22,19 @@ const homeText = {
       mainTitle: "Продукция восстребована в секторах",
       cards: [{
           title: 'Железнодорожная-промышленность',
-          details: ["Подшипники", "Валлы", "Шестерни", "Гайки", "Болты"]
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         },
         {
           title: 'Авто-промышленность',
-          details: ["Подшипники", "Валлы", "Шестерни", "Гайки", "Болты"]
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         },
         {
           title: 'Энергетика',
-          details: ["Подшипники", "Валлы", "Шестерни", "Гайки", "Болты"]
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         },
         {
           title: 'Тяжелая промышленность',
-          details: ["Подшипники", "Валлы", "Шестерни", "Гайки", "Болты"]
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         }
       ],
       button: "Заказать"
@@ -79,7 +79,7 @@ const homeText = {
     ],
     benefits: {
       title: 'Bizning ustunliklarimiz',
-      descriptions: ['Faqatgina sifatli mahsulot', "Yukori sifat ishonchlilik va maqbul narh uyg'unligi", "To'liq tehnologik tsikl"]
+      descriptions: ['Faqatgina sifatli mahsulot', "Yuqori sifat ishonchlilik va maqbul narh uyg'unligi", "To'liq tehnologik tsikl"]
     },
     product_demand: {
       mainTitle: "Maxsulotlarimizga talab katta bo'lgan sektorlar",
@@ -120,7 +120,71 @@ const homeText = {
         {title: 'Faoliyat', description: "Bizning Zavod katta hajmli zakazni amalga oshirdi..."}
       ]
     }
-  }
+  },
+
+
+  en: {
+    pageTitle: 'Akhunbabaevsk Bearing Plant',
+    slider: [{
+        title: "The plant has been operating since 1986",
+        description: "Provides its products not only to the domestic market of Uzbekistan but also to the foreign market"
+      },
+      {
+        title: "We will make bearings of any complexity",
+        description: "The highest quality, old schooling and, modern technologies will give you invaluable experience working with real professionals of the Akhunbabaevsk Bearing Plant."
+      },
+      {
+        title: "We will help with purchase advice",
+        description: "We can provide you with any advice on the purchase, use and, replacement of any bearing products. Our engineers will be happy to advise your technicians on this matter."
+      },
+    ],
+    benefits: {
+      title: 'Our advantages',
+      descriptions: ['Only high-quality components','Combination of high quality, reliability and reasonable price','Full technological cycle']
+    },
+    product_demand: {
+      mainTitle: "Products are in demand in sectors",
+      cards: [{
+          title: 'Railway industry',
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
+        },
+        {
+          title: 'Auto industry',
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
+        },
+        {
+          title: 'Energy Produce Industry',
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
+        },
+        {
+          title: 'Heavy industry',
+          details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
+        }
+      ],
+      button: "Order"
+    },
+    redirect_card: {
+      title: "Our products are in demand in other sectors as well.",
+      button: "More about it"
+    },
+    technologies_section: {
+      sectionTitle: 'WE USE THE MOST MODERN TECHNOLOGIES',
+      title: "We are in pursuit of innovation",
+      description: 'To maintain our leadership position in the market, we are constantly striving for excellence in technology and the range of products.',
+      button: 'More about it'
+    },
+    news_section: {
+      sectionTitle: 'News',
+      title: "Last News", 
+      news: [
+        {title: 'Expansion', description: "We release another product line"},
+        {title: 'Activity', description: "Our plant has completed a large order for the Company...."}
+      ]
+    }
+  },
+
+
+
 }
 
 export default homeText;

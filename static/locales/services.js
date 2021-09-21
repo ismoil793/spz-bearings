@@ -48,7 +48,35 @@ const ServicesText = {
     redirect_card_title: 'Сервисларимиз сизни кизиктира олдими?',
     redirect_card_title_second: "Biz bilan bog'laning, biz yangi hamkorlikdan xursand bo'lamiz",
     redirect_card_button: 'Kontaktlar'
-  }
+  },
+
+
+
+  en: {
+    pageTitle: 'Services',
+    title_main_section: 'Services',
+    business_card: 'Bearing Factory',
+    services_array: [
+      "Help with calculations",
+      "Assistance in drawing up those assignments",
+      "Production of the required products on time",
+      "Delivery of finished products anywhere in the world"
+    ],
+    services_array_button: "More details",
+    title_second_section: 'Services',
+    title_second_section_not_main: 'How can we be useful',
+    title_second_section_paragraph: "List of services",
+    video_section_title: 'DETAILED VIDEO HOW WE CAN BE USEFUL',
+    video_section_title_not_main: 'Watch the video',
+    video_section_description: 'Based on the experience gained in production for 30 years, we promise you that you will be satisfied with cooperation',
+    video_section_button: 'Contacts',
+    partners_title: 'OUR PARTNERS',
+    redirect_card_title: 'Interested in Our Services?',
+    redirect_card_title_second: 'Contact Us, we will be glad to new cooperation',
+    redirect_card_button: 'Contacts'
+  },
+
+
 }
 
 export default ServicesText;

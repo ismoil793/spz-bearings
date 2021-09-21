@@ -10,7 +10,14 @@ const HeaderText = {
   uz: {
     nav: ["BOSH SAHIFA", {dropdown: "BIZ HAQIMIZDA", elements: ["Zavod tarihi", "Bizning Komanda", "Tehnik markaz"]}, "SERVISLAR", "HABARLAR", "MAHSULOTLARIMIZ", "KONTAKTLAR"],
     footer: ["Foydali linklar", "Aloqa", "email - Biz siz bilan bog'lanamiz", "Biz hamkorlikga tayyormiz", "Tepaga chiqish"]
-  }
+  },
+
+
+  en: {
+    nav: ["Home", {dropdown: "About us", elements: ["About us", "Our Team", "Technical Center"]}, "SERVICES", "NEWS", "PRODUCTS", "CONTACTS"],
+    footer: ["Useful links", "Feedback", "Email - we will contact", "We are ready to cooperate", "Up"]
+  },
+
 }
 
 export default HeaderText;
