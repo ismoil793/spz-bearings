@@ -65,10 +65,6 @@ class Home extends React.Component {
     console.log('mount home',this.props)
   }
 
-  componentDidMount() {
-    console.log('mount home',this.props)
-  }
-
   handleGrand = () => {
     this.setState({ cartNumber: this.state.cartNumber + 1 });
   };
@@ -76,11 +72,7 @@ class Home extends React.Component {
   handleCompareGrand = () => {
     this.setState({ compareNumber: this.state.compareNumber + 1 });
   };
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.locale !== this.props.locale) {
-    console.log('locale', this.props.locale)
-    }
-  }
+
 
   _onReady(event) {
     // access to player in all event handlers via event.target

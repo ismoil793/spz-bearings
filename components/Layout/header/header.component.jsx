@@ -27,7 +27,7 @@ class Header extends React.Component {
       isMobileSearch: false,
       userInfo: {},
       search_is_open: false,
-      menu_is_opened: false,
+      menu_is_opened: false
     };
   }
 
@@ -225,6 +225,11 @@ class Header extends React.Component {
                     />
                   </a>
                 </Link>
+                <select value={this.props.locale.toUpperCase()} onChange={(e)=>Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: e.target.value.toLowerCase()})} class={`language_picker ${this.props.isHome ? 'select-language_top-0' : ''}`} data-width="fit">
+                    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>RU</option>
+                    <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>EN</option>
+                    <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>UZ</option>
+                </select>
                 <div className="collapse navbar-collapse">
                   <ul className="navbar-nav menu">
                     <li className="nav-item">

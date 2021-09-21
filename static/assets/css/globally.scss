@@ -10776,3 +10776,25 @@ ul.circle_list {
 .youtube_player {
   margin-top: 15px;
 }
+
+.language_picker {
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  padding: 2px 10px 2px 10px;
+  z-index: 999999;
+  border-radius: 15px;
+  transition: all 0.5s ease; 
+}
+
+.language_picker:hover {
+  border-radius: 0px;
+  transition: all 0.5s ease; 
+}
+
+.select-language_top-0 {
+  top: 0 !important;
+}
+
+

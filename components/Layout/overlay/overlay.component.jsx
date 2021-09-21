@@ -31,7 +31,6 @@ class OverlayComponent extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps.router.pathname)
     if (prevProps.isLoading !== this.props.isLoading) {
       document.body.className = "menu-is-closed";
     }
