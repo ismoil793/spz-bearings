@@ -20,7 +20,6 @@ class Layout extends React.Component {
           isHome={this.props.isHome ? this.props.isHome : false}
           isLoading={this.props.isLoading} locale={this.props.locale}
         />
-        <button onClick={()=>console.log(this.props)}>test</button>
         { this.props.isHome ? null : <HeaderSecondary title={this.props.title} pageInfo={this.props.pageInfo} /> }
         {/* <YMInitializer accounts={[61408678]} options={{webvisor: true}}/> */}
         {this.props.children}

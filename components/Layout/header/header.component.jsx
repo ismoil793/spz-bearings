@@ -215,18 +215,11 @@ class Header extends React.Component {
                       this.props.isHome ? "" : "mt-0"
                     }`}
                   >
-                    <img className={`${this.state.rotate_logo ? 'animated_rotate-logo' : ''} `}
-                      src="/static/assets/img/img/home-14/logo.png"
-                      alt="logo"
-                    />
                   </a>
                 </Link>{" "}
                 <Link href="/" locale={this.props.locale}>
                   <a className="navbar-brand">
-                    <img
-                      src="/static/assets/img/img/home-one/logo.png"
-                      alt="logo"
-                    />
+
                   </a>
                 </Link>
                 <select value={this.props.locale.toUpperCase()} onChange={(e)=>Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: e.target.value.toLowerCase()})} class={`language_picker ${this.props.isHome ? 'select-language_top-0' : ''}`} data-width="fit">

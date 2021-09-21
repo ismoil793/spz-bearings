@@ -722,6 +722,11 @@ header + section {
 @media (min-width: 991px) {
   .main_menu .navbar .navbar-brand {
     display: none;
+    
+  }
+  .main_logo_container .navbar-brand {
+    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
+    scroll center 0 / cover !important;
   }
 }
 .main_menu .navbar .menu > .nav-item > .nav-link {
@@ -927,6 +932,7 @@ header + section {
 }
 .header_big_logo .navbar-brand {
   margin-right: 0;
+
 }
 .header_big_logo .navbar-brand + .navbar-brand {
   display: none;
@@ -7282,15 +7288,23 @@ header .collapse.navbar-collapse {
   }
 }
 
-@media (min-width: 992px) {
-  .navbar.navbar-expand-lg .navbar-brand img {
-    width: 170px;
+@media (min-width: 1220px) {
+  .navbar.navbar-expand-lg .navbar-brand {
+    width: 300px;
+    height: 117.797px;
+  }
+}
+@media (max-width: 1220px) {
+  .navbar.navbar-expand-lg .navbar-brand {
+    width: 250px;
+    height: 98.156px;
   }
 }
 
 @media (max-width: 992px) {
-  .navbar.navbar-expand-lg .navbar-brand img {
-    width: 120px;
+  .navbar.navbar-expand-lg .navbar-brand {
+    width: 320px;
+    height: 125.641px;
   }
   header {
     max-height: 100px;
@@ -7374,8 +7388,9 @@ header .collapse.navbar-collapse {
   .services_area.main_page .service_item .media-body {
     height: 30px;
   }
-  .navbar.navbar-expand-lg .navbar-brand img {
-    width: 80px;
+  .navbar.navbar-expand-lg .navbar-brand {
+    width: 320px;
+    height: 125.641px;
   }
   .main_slider_area {
     padding-top: 80px !important;
@@ -7400,6 +7415,13 @@ header .collapse.navbar-collapse {
 @media (max-width: 512px) {
   #preloader div {
     font-size: 46px !important;
+  }
+  .navbar.navbar-expand-lg .navbar-brand {
+    width: 180px;
+    height: 70.672px;
+  }
+  .slider-home_page {
+    margin-top: 90px !important;
   }
 }
 
@@ -8411,7 +8433,13 @@ polyline {
   }
   .header_big_logo .navbar-brand + .navbar-brand {
     display: block;
+    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
+    scroll center 0 / cover !important;
   }
+  .navbar-brand.big_logo {
+    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
+    scroll center 0 / cover !important;
+  } 
   .logo_inner {
     justify-content: center !important;
   }
@@ -10803,13 +10831,12 @@ ul.circle_list {
 }
 
 .animated_rotate-logo {
-  transform: rotate(720deg);
-  transition: all 5s ease;
+  z-index: 1;
 }
 
 .is-flipped .front .logo .business_card_logo {
   transform: scaleX(-1) scale(1.5);
-  transition: all 0.5s ease;
+  transition: trasnform 0.5s ease;
 }
 
 .front .logo .business_card_logo {
