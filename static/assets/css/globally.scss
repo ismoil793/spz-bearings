@@ -719,15 +719,24 @@ header + section {
   padding-left: 40px;
   padding-right: 40px;
 }
+.navbar-brand {
+  display: flex;
+  justify-content: right;
+}
+.navbar-brand img:nth-child(1) {
+  width: calc(30%-10px);
+  height: 100%;
+  margin-right: 40px;
+}
+.navbar-brand img:nth-child(2) {
+  width: calc(70%-10px);
+  height: 100%;
+}
 @media (min-width: 991px) {
   .main_menu .navbar .navbar-brand {
-    display: none;
-    
+    display: none; 
   }
-  .main_logo_container .navbar-brand {
-    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
-    scroll center 0 / cover !important;
-  }
+
 }
 .main_menu .navbar .menu > .nav-item > .nav-link {
   color: #b7b9bc;
@@ -928,7 +937,6 @@ header + section {
 .header_big_logo .big_logo {
   padding: 0;
   margin-top: -52px;
-  margin-bottom: -30px;
 }
 .header_big_logo .navbar-brand {
   margin-right: 0;
@@ -7290,14 +7298,14 @@ header .collapse.navbar-collapse {
 
 @media (min-width: 1220px) {
   .navbar.navbar-expand-lg .navbar-brand {
-    width: 300px;
-    height: 117.797px;
+    width: 320px;
+    height: 110.797px;
   }
 }
 @media (max-width: 1220px) {
   .navbar.navbar-expand-lg .navbar-brand {
-    width: 250px;
-    height: 98.156px;
+    width: 270px;
+    height: 90.156px;
   }
 }
 
@@ -7306,6 +7314,13 @@ header .collapse.navbar-collapse {
     width: 320px;
     height: 125.641px;
   }
+  .cropped1  {
+    margin-right: 0 !important;
+  }
+  .animated_rotate-logo {
+    transition: transform 4s linear;
+  }
+
   header {
     max-height: 100px;
   }
@@ -8433,12 +8448,8 @@ polyline {
   }
   .header_big_logo .navbar-brand + .navbar-brand {
     display: block;
-    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
-    scroll center 0 / cover !important;
   }
   .navbar-brand.big_logo {
-    background: url(/static/assets/img/img/home-one/logo.png) no-repeat
-    scroll center 0 / cover !important;
   } 
   .logo_inner {
     justify-content: center !important;
@@ -10832,6 +10843,14 @@ ul.circle_list {
 
 .animated_rotate-logo {
   z-index: 1;
+  transform: rotate(
+    720deg);
+  margin-right: 0 !important;
+  transition: all 4s linear;
+}
+
+.cropped1, .cropped2 {
+  margin-left: 0 !important;
 }
 
 .is-flipped .front .logo .business_card_logo {
