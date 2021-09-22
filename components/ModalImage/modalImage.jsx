@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Magnifier from "react-magnifier";
 
 const ModalImage = (props) => {
+  useEffect(() => {
+    document.body.className = "overflow";
+    return () => {
+      document.body.className = "";
+    }
+  }, [])
   return (
     <>
-      <style jsx global>{`
-        body {
-          overflow: hidden;
-        }
-      `}</style>
       {props.src ? (
         <div className="zoom-modal">
           <button

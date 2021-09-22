@@ -388,7 +388,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <i className="icon-modern-architecture"></i>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png"/>
                         <div className="media-body">
                           {" "}
                           {homeText.[this.props.locale].benefits.descriptions[0]}
@@ -400,7 +400,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <i className="icon-technical"></i>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png"/>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[1]}
                         </div>
@@ -411,7 +411,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <i className="icon-vector"></i>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png"/>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[2]}
                         </div>

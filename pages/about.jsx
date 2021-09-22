@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
+
 import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
-import Link from "next/link";
+
 
 import React, { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
@@ -9,7 +9,7 @@ import axios from "axios";
 import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
 import AboutText from "../static/locales/about";
-// import ModalImage from "../components/ModalImage/modalImage";
+import ModalImage from "../components/ModalImage/modalImage";
 
 export async function getStaticProps({locale}) {
   return {
