@@ -49,32 +49,43 @@ export default function servicesPage(props) {
           href="/static/assets/template/avtech/styles/blog_single_responsive.css"
         />
       </Head>
-      <div className="super_container">
-        <div
-          class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}
-        >
-          <div
-            class="pace-progress"
-            data-progress-text="100%"
-            data-progress="99"
-            style={{ transform: "translate3d(100%, 0px, 0px)" }}
+      <div
+            class={`pace ${
+              props.isLoading ? "pace-active" : "pace-inactive"
+            }`}
           >
-            <div class="pace-progress-inner"></div>
+            <div
+              class="pace-progress"
+              data-progress-text="100%"
+              data-progress="99"
+              style={{ transform: "translate3d(100%, 0px, 0px)" }}
+            >
+              <div class="pace-progress-inner"></div>
+            </div>
+            <div class="pace-activity"></div>
           </div>
-          <div class="pace-activity"></div>
-        </div>
-        <div
-          id={`preloader`}
-          className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
-        >
-          <div class="product_name">SPZ Bearings</div>
-        </div>
+
+          <div className="body_wrapper main_index">
+            <div
+              id={`preloader`}
+              className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
+            >
+              <div
+                class={`product_name ${
+                  props.isLoading ? "" : "load_coplate"
+                }`}
+              >
+               SPZ Bearings
+              </div>
+            </div>
+          </div>
+      <div className="super_container">
         <Layout
           isLoading={props.isLoading}
           compareNumber={compareNumber}
           cartNumber={cartNumber}
-          title={`Сервисы`}
-          pageInfo={["Главная", "Сервисы"]}
+          title={ServicesText.[props.locale].breadcrumb.main}
+          pageInfo={[`${ServicesText.[props.locale].breadcrumb.crumbs[0]}`, `${ServicesText.[props.locale].breadcrumb.crumbs[1]}`]}
           locale={props.locale}
         >
           <main id="content" role="main">

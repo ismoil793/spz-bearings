@@ -364,7 +364,7 @@ class Home extends React.Component {
                                 data-animation="fadeInUp"
                                 data-delay="0.5s"
                               >
-                                О Нас
+                                {homeText.[this.props.locale].slider[index].button}
                               </a>
                             </div>
                           </div>
@@ -420,7 +420,7 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <h6 className="title_top section_video_title">Галлерея</h6>
+            <h6 className="title_top section_video_title">{homeText.[this.props.locale].video_section_title}</h6>
             {this.state.showPlayer ? 
               <div className="modal_youtube_wrapper">
                 <div className="youtube_button_player_wrapper">

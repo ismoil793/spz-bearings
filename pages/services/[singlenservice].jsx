@@ -29,25 +29,38 @@ function PostService({ data, setProductCategory, isLoading, locale }) {
           href="/static/assets/template/avtech/styles/product_responsive.css"
         />
       </Head>
+      <div
+            class={`pace ${
+              isLoading ? "pace-active" : "pace-inactive"
+            }`}
+          >
+            <div
+              class="pace-progress"
+              data-progress-text="100%"
+              data-progress="99"
+              style={{ transform: "translate3d(100%, 0px, 0px)" }}
+            >
+              <div class="pace-progress-inner"></div>
+            </div>
+            <div class="pace-activity"></div>
+          </div>
+
+          <div className="body_wrapper main_index">
+            <div
+              id={`preloader`}
+              className={`preloader ${isLoading ? "" : "load_coplate"}`}
+            >
+              <div
+                class={`product_name ${
+                  isLoading ? "" : "load_coplate"
+                }`}
+              >
+               SPZ Bearings
+              </div>
+            </div>
+          </div>
       <div className="super_container">
         <OverlayComponent isLoading={isLoading} locale={locale} />
-        <div class={`pace ${isLoading ? "pace-active" : "pace-inactive"}`}>
-          <div
-            class="pace-progress"
-            data-progress-text="100%"
-            data-progress="99"
-            style={{ transform: "translate3d(100%, 0px, 0px)" }}
-          >
-            <div class="pace-progress-inner"></div>
-          </div>
-          <div class="pace-activity"></div>
-        </div>
-        <div
-          id={`preloader`}
-          className={`preloader ${isLoading ? "" : "load_coplate"}`}
-        >
-          <div class="product_name">SPZ Bearings</div>
-        </div>
         <Layout
           isLoading={isLoading}
           title={`${ServiceDetailedText.[locale].title}`}

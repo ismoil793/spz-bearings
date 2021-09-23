@@ -1,17 +1,21 @@
 const homeText = {
   ru: {
     pageTitle: 'Ахунбабаевский подшипниковый завод',
+    video_section_title: 'Галлерея',
     slider: [{
         title: "Завод функционирует с 1986-года",
-        description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок"
+        description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок",
+        button: 'О Нас'
       },
       {
         title: "Изготовим подшипники любой сложности",
-        description: "Высочайшее качество, старая закалка и современные технологии подарят вам бесценный опыт работы с настоящими профессионалами Ахунбабаевского подшипникового завода."
+        description: "Высочайшее качество, старая закалка и современные технологии подарят вам бесценный опыт работы с настоящими профессионалами Ахунбабаевского подшипникового завода.",
+        button: 'Подробнее'
       },
       {
         title: "Поможем с консультацией по приобретению",
-        description: "Мы можем оказать вам любую консультацию по приобретении, использовании и замене любой подшипниковой продукции. Наши инженеры с радостью проконсультируют ваших технических специалистов по этому поводу."
+        description: "Мы можем оказать вам любую консультацию по приобретении, использовании и замене любой подшипниковой продукции. Наши инженеры с радостью проконсультируют ваших технических специалистов по этому поводу.",
+        button: 'Контакты'
       },
     ],
     benefits: {
@@ -64,17 +68,21 @@ const homeText = {
 
   uz: {
     pageTitle: "Ohunboboev Podshipnik Zavodi",
+    video_section_title: 'Galereya',
     slider: [{
         title: "Zavod 1986-yilidan faoliyat olib boradi",
-        description: "Zavod o'z mahsuloti bilan nafaqat O'zbekiston ekhtiyojini qondiradi"
+        description: "Zavod o'z mahsuloti bilan nafaqat O'zbekiston ekhtiyojini qondiradi",
+        button: 'Biz Haqimizda'
       },
       {
         title: "Tayyorlanishi qiyinchiligi bo'yicha har qanday podshipniklar tayorlaymiz",
-        description: "Bizning mahsulot sifatliligi, yuqori tehnologiyalarda tayyorlanganligi va ishini ustalari bilan tayyorlangani bilan ajralib turadi"
+        description: "Bizning mahsulot sifatliligi, yuqori tehnologiyalarda tayyorlanganligi va ishini ustalari bilan tayyorlangani bilan ajralib turadi",
+        button: 'Batafsil ma\'lumot'
       },
       {
         title: "Sotib olish bo'yicha maslahat bilan yordamlashamiz",
-        description: "Biz har qanday maslahat bilan yordamlashamiz - podshipnik mahsulotlarini almashtirish, yangi qo'yish bo'yicha Bizning mutahassislar yordam berishadi"
+        description: "Biz har qanday maslahat bilan yordamlashamiz - podshipnik mahsulotlarini almashtirish, yangi qo'yish bo'yicha Bizning mutahassislar yordam berishadi",
+        button: 'Kontaktlar'
       },
     ],
     benefits: {
@@ -125,6 +133,7 @@ const homeText = {
 
   en: {
     pageTitle: 'Akhunbabaevsk Bearing Plant',
+    video_section_title: 'Gallery',
     slider: [{
         title: "The plant has been operating since 1986",
         description: "Provides its products not only to the domestic market of Uzbekistan but also to the foreign market"

@@ -1,6 +1,10 @@
 const ServicesText = {
   ru: {
     pageTitle: 'Сервисы',
+    breadcrumb: {
+      main: "Сервисы",
+      crumbs: ["Главная", "Сервисы"]
+    },
     title_main_section: 'Сервисы',
     business_card: 'Подшипниковый Завод',
     services_array: [
@@ -28,6 +32,10 @@ const ServicesText = {
 
   uz: {
     pageTitle: 'Servislar',
+    breadcrumb: {
+      main: "Servislar",
+      crumbs: ["Bosh Sahifa", "Servislar"]
+    },
     title_main_section: 'Servislar',
     business_card: 'Podshipnik Zavodi',
     services_array: [
@@ -54,6 +62,10 @@ const ServicesText = {
 
   en: {
     pageTitle: 'Services',
+    breadcrumb: {
+      main: "Services",
+      crumbs: ["Home Page", "Services"]
+    },
     title_main_section: 'Services',
     business_card: 'Bearing Factory',
     services_array: [

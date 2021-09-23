@@ -1,6 +1,10 @@
 const TeamText = {
   ru: {
     pageTitle: 'Наша Команда',
+    breadcrumb: {
+      main: "Наша Команда",
+      crumbs: ["Главная", "О Нас", "Наша Команда"]
+    },
     title: 'Наше Руководство',
     colegues_animated: [{
         position: 'Генеральный Директор',
@@ -44,6 +48,10 @@ const TeamText = {
 
   uz: {
     pageTitle: 'Bizning Hodimlar',
+    breadcrumb: {
+      main: "Bizning Hodimlar",
+      crumbs: ["Bosh Sahifa", "Biz Haqimizda", "Bizning Hodimlar"]
+    },
     title: 'Bizning Rahbarlarimiz',
     colegues_animated: [{
         position: 'Bosh direktor',
@@ -85,6 +93,10 @@ const TeamText = {
 
   en: {
     pageTitle: 'Our Team',
+    breadcrumb: {
+      main: "Our Team",
+      crumbs: ["Home Page", "About Us", "Our Team"]
+    },
     title: 'Our Leadership',
     colegues_animated: [{
         position: 'General Director',
