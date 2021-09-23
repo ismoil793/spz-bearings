@@ -79,7 +79,7 @@ export default function teamPage(props) {
           id={`preloader`}
           className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
         >
-          <div class="product_name">Bearings</div>
+          <div class="product_name">SPZ Bearings</div>
         </div>
         <Layout
           isLoading={props.isLoading}

@@ -45,7 +45,7 @@ function PostNews({ data, setProductCategory, isLoading, locale }) {
           id={`preloader`}
           className={`preloader ${isLoading ? "" : "load_coplate"}`}
         >
-          <div class="product_name">Bearings</div>
+          <div class="product_name">SPZ Bearings</div>
         </div>
         <Layout
           isLoading={isLoading}

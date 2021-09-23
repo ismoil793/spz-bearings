@@ -178,6 +178,13 @@ class Header extends React.Component {
             {this.props.isHome ? (
               <div className="header_top">
                 <div className="container">
+                <div class="language_list_wrapper left_side">
+                            <div class="language_list_home">
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/><p>En</p></span></button>
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/><p>Ru</p></span></button>
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/><p>Uz</p></span></button>
+                </div>
+                  </div>
                   <div className="row">
                     <div className="col-md-12">
                       <ul className="list-unstyled menu_contact_info">
@@ -208,25 +215,18 @@ class Header extends React.Component {
 
             <Nav className="navbar navbar-expand-lg" id="header">
               <div className="container main_logo_container">
-                {" "}
-                <Link href="/" locale={this.props.locale}>
-                  <a
-                    className={`navbar-brand big_logo ${
-                      this.props.isHome ? "" : "mt-0"
-                    }`}
-                  ><span><img className={`cropped1 ${this.state.rotate_logo ? 'animated_rotate-logo' : ''}`} src="../../../static/assets/img/img/header_logo/SPZ-1.png"/><img className="cropped2" src="../../../static/assets/img/img/header_logo/SPZ-2.png"/></span>
-                  </a>
-                </Link>{" "}
+              <div class={`language_list_wrapper right_side ${this.props.isHome ? 'home_page_language' : ''}`}>
+                            <div class="language_list_home">
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/><p>En</p></span></button>
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/><p>Ru</p></span></button>
+                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/><p>Uz</p></span></button>
+                </div>
+                  </div>
                 <Link href="/" locale={this.props.locale}>
                   <a className="navbar-brand">
                   <span><img className={`cropped1 ${this.state.rotate_logo ? 'animated_rotate-logo' : ''}`} src="../../../static/assets/img/img/header_logo/SPZ-1.png"/><img className="cropped2" src="../../../static/assets/img/img/header_logo/SPZ-2.png"/></span>
                   </a>
                 </Link>
-                <select value={this.props.locale.toUpperCase()} onChange={(e)=>Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: e.target.value.toLowerCase()})} class={`language_picker ${this.props.isHome ? 'select-language_top-0' : ''}`} data-width="fit">
-                    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>RU</option>
-                    <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>EN</option>
-                    <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>UZ</option>
-                </select>
                 <div className="collapse navbar-collapse">
                   <ul className="navbar-nav menu">
                     <li className="nav-item">

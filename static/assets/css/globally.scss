@@ -273,6 +273,7 @@ h6 {
 }
 .product_name {
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 10px;
   position: absolute;
@@ -440,6 +441,9 @@ header + section {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease-in;
+  }
+  .home_page_language {
+    display: none !important;
   }
 }
 .menu > .nav-item.submenu .dropdown-menu.dropdown_mega_menu {
@@ -7306,13 +7310,16 @@ header .collapse.navbar-collapse {
 }
 
 @media (max-width: 992px) {
+  #preloader div {
+    font-size: 34px !important;
+  }
 
   .navbar-brand {
-    margin-left: 40px;
+    margin-left: 0px;
   }
   .cropped1  {
-    margin-right: 0px !important;
-    margin-left: -40px;
+    margin-right: 40px !important;
+    margin-left: -30px;
   }
   .animated_rotate-logo {
     transition: transform 4s linear;
@@ -8004,6 +8011,7 @@ polyline {
     width: 46%;
   }
 }
+
 @media (max-width: 1340px) {
   .cons_project_slider_three {
     margin-left: 0;
@@ -8021,6 +8029,9 @@ polyline {
   .cons_projects_area_nine .pr_slider_item .hover-content {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  #preloader div {
+    font-size: 50px;
   }
 }
 @media (max-height: 800px) {
@@ -10391,7 +10402,7 @@ ul.circle_list {
 }
 
 .slider-home_page {
-  margin-top: 140px;
+  margin-top: 88px;
 }
 
 .product_item {
@@ -10839,7 +10850,7 @@ ul.circle_list {
   transition: all 4s linear;
 }
 
-.cropped1, .cropped2 {
+.cropped2 {
   margin-left: 0 !important;
 }
 
@@ -10864,3 +10875,55 @@ body.overflow {
   background-color: inherit !important; 
 }
 
+.language_list_wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  user-select: none;
+  z-index: 999999;
+  &.left_side {
+    left: 5%;
+    top: 5%;
+  }
+  &.right_side {
+    right: 40px;
+    top: 0%;  
+    button {
+      padding: 0;
+      img {
+        margin-left: 7px;
+      }
+    }
+  }
+  div.language_list_home {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    button {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.languages_icons {
+  width: 20px;
+  height: 15px;
+}
+
+.language_list {
+  z-index: 99999;
+  cursor: pointer;
+}
