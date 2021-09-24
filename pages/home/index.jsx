@@ -121,9 +121,9 @@ class Home extends React.Component {
     };
 
     const bannersImg = [
-      "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
-      "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
-      "/static/assets/img/img/podshipniki_proizvodstvo.jpg",
+      "/static/assets/img/img/home_slider/bearing1.jpg",
+      "/static/assets/img/img/home_slider/bearings2.jpg",
+      "/static/assets/img/img/home_slider/bearings3.jpg",
     ];
 
     var settings2 = {
@@ -342,13 +342,7 @@ class Home extends React.Component {
                         className="js-slick-carousel"
                         data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0  justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1"
                       >
-                        <div
-                          className="slider_item pt-0 d-flex align-items-center js-slide bg-img-hero-center slider_bg-img-hero-center"
-                          style={{
-                            backgroundImage: `url('/static/assets/img/img/podshipniki_proizvodstvo.jpg')`,
-                          }}
-                        >
-                          <div className="container">
+                          <div className="slider_home_page_image_text-wrapper">
                             <div className="slider_text slider_text_width">
                               <h2 data-animation="fadeInUp" data-delay="0.1s">
                                 {" "}
@@ -368,6 +362,13 @@ class Home extends React.Component {
                               </a>
                             </div>
                           </div>
+                        <div
+                          className={`slider_item pt-0 d-flex align-items-center js-slide bg-img-hero-center slider_bg-img-hero-center ${index === 0 ? 'scalex' : ''}`}
+                          style={{
+                            backgroundImage: `url(${imgEl})`,
+                          }}
+                        >
+
                         </div>
                       </div>
                     );
