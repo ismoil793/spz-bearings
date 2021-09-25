@@ -3,18 +3,18 @@ const homeText = {
     pageTitle: 'Ахунбабаевский подшипниковый завод',
     video_section_title: 'Галлерея',
     slider: [{
-        title: "Завод функционирует с 1986-года",
-        description: "Обеспечивает своей продукцией не только внутренний рынок Узбекистана, а также внешний рынок",
+        title: "У нас большой опыт",
+        description: "Завод на рынке более 35 лет - функционирует с 1986-года.",
         button: 'О Нас'
       },
       {
-        title: "Изготовим подшипники любой сложности",
-        description: "Высочайшее качество, старая закалка и современные технологии подарят вам бесценный опыт работы с настоящими профессионалами Ахунбабаевского подшипникового завода.",
+        title: "Качество и доступность",
+        description: "Изготовим подшипники любой сложности, качество будет соответсвующим к ГОСТ, цена обрадует Вас.",
         button: 'Подробнее'
       },
       {
-        title: "Поможем с консультацией по приобретению",
-        description: "Мы можем оказать вам любую консультацию по приобретении, использовании и замене любой подшипниковой продукции. Наши инженеры с радостью проконсультируют ваших технических специалистов по этому поводу.",
+        title: "Поможем с консультацией",
+        description: "Мы можем оказать вам любую консультацию по приобретению.",
         button: 'Контакты'
       },
     ],
@@ -70,18 +70,18 @@ const homeText = {
     pageTitle: "Ohunboboev Podshipnik Zavodi",
     video_section_title: 'Galereya',
     slider: [{
-        title: "Zavod 1986-yilidan faoliyat olib boradi",
-        description: "Zavod o'z mahsuloti bilan nafaqat O'zbekiston ekhtiyojini qondiradi",
+        title: "Bizda katta tajriba bor",
+        description: "Zavod 35 yildan ortiq bozorda - 1986 yildan beri faoliyat olib boradi",
         button: 'Biz Haqimizda'
       },
       {
-        title: "Tayyorlanishi qiyinchiligi bo'yicha har qanday podshipniklar tayorlaymiz",
-        description: "Bizning mahsulot sifatliligi, yuqori tehnologiyalarda tayyorlanganligi va ishini ustalari bilan tayyorlangani bilan ajralib turadi",
+        title: "Sifat va hamyonboplik",
+        description: "Biz har qanday murakkablikdagi podshipniklar ishlab chiqaramiz, sifati GOSTga mos keladi, narx sizga yoqadi.",
         button: 'Batafsil ma\'lumot'
       },
       {
-        title: "Sotib olish bo'yicha maslahat bilan yordamlashamiz",
-        description: "Biz har qanday maslahat bilan yordamlashamiz - podshipnik mahsulotlarini almashtirish, yangi qo'yish bo'yicha Bizning mutahassislar yordam berishadi",
+        title: "Maslahat bilan yordamlashamiz",
+        description: "Sizga sotib olish bo'yicha maslahat bera olamiz.",
         button: 'Kontaktlar'
       },
     ],
@@ -135,16 +135,19 @@ const homeText = {
     pageTitle: 'Akhunbabaevsk Bearing Plant',
     video_section_title: 'Gallery',
     slider: [{
-        title: "The plant has been operating since 1986",
-        description: "Provides its products not only to the domestic market of Uzbekistan but also to the foreign market"
+        title: "We have a lot of experience",
+        description: "The plant has been on the market for over 35 years - it has been operating since 1986.",
+        button: 'About us'
       },
       {
-        title: "We will make bearings of any complexity",
-        description: "The highest quality, old schooling and, modern technologies will give you invaluable experience working with real professionals of the Akhunbabaevsk Bearing Plant."
+        title: "Quality and availability",
+        description: "We will produce bearings of any complexity, the quality will correspond to quality standards, the price will please you.",
+        button: 'More details'
       },
       {
         title: "We will help with purchase advice",
-        description: "We can provide you with any advice on the purchase, use and, replacement of any bearing products. Our engineers will be happy to advise your technicians on this matter."
+        description: "We can provide you with any purchase advice.",
+        button: 'Contacts'
       },
     ],
     benefits: {

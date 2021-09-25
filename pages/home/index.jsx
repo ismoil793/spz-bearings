@@ -344,6 +344,7 @@ class Home extends React.Component {
                       >
                           <div className="slider_home_page_image_text-wrapper">
                             <div className="slider_text slider_text_width">
+                              <div className="vertical-align-center_wrapper">
                               <h2 data-animation="fadeInUp" data-delay="0.1s">
                                 {" "}
                                 {homeText.[this.props.locale].slider[index].title}
@@ -360,6 +361,7 @@ class Home extends React.Component {
                               >
                                 {homeText.[this.props.locale].slider[index].button}
                               </a>
+                              </div>
                             </div>
                           </div>
                         <div
