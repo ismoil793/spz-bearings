@@ -1,14 +1,11 @@
 import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
+import Link from 'next/link'
 
 import React, { useState, useEffect } from "react";
-import Cookies from "universal-cookie";
-import axios from "axios";
-import url from "../components/url";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
 export default function servicesPage(props) {
-  const [cartNumber, setCartNumber] = React.useState(0);
-  const [compareNumber, setCompareNumber] = React.useState(0);
+
   const [checkedArray, setCheckedArray] = React.useState([true, false, false, false, false])
 
   const SetChecked = (id) => {
@@ -99,9 +96,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
-                          <a class="theme_btn_two hover_style1" href="#">
+                          <Link href={`/product/sharikovyiy-radialnyiy`}>
+                          <a class="theme_btn_two hover_style1" >
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник радиально упорный</h4>

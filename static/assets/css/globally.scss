@@ -10960,6 +10960,8 @@ body.overflow {
   .tabs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     width: 100vw;
     box-shadow: 0 48px 80px -32px rgba(0, 0, 0, 0.25);
   }
@@ -11017,4 +11019,32 @@ body.overflow {
   .input:checked + .label + .panel {
     display: block;
   }
+}
+
+.description_product_content {
+  text-align: center;
+  .centered {
+    display: flex;
+    justify-content: center;
+  }
+  td {
+    padding: 5px;
+    border: 1px solid black;
+    color: #2554a4;
+    text-align: center;
+  }
+}
+
+.description_title {
+  margin-top: 50px;
+  color: #2554a4 !important;
+}
+
+.product_description_section_img {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.description_gost_images {
+  padding-top: 20px;
 }
