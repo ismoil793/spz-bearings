@@ -61,8 +61,6 @@ export default function servicesPage(props) {
       <div className="super_container">
         <Layout
           isLoading={props.isLoading}
-          compareNumber={compareNumber}
-          cartNumber={cartNumber}
           title={`Магазин`}
           pageInfo={["Главная", "Магазин"]}
           locale={props.locale}
