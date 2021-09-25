@@ -3,6 +3,133 @@ import Head from "next/head";
 import React from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
+const dataArray = {
+  podshipniki: {
+    "sharikovyiy-radialnyiy": {
+      content: [
+        {
+          type: "table",
+          contentTable: (
+            <tbody>
+              <tr class="tabletop">
+                <td>Название</td>
+                <td>Символ</td>
+                <td>Описание</td>
+              </tr>
+              <tr>
+                <td rowspan="4">Тип уплотнения</td>
+                <td>ZZ</td>
+                <td>Металлические пыльники с обеих сторон</td>
+              </tr>
+              <tr>
+                <td>2RS</td>
+                <td>Резиновое уплотнение с обеих сторон</td>
+              </tr>
+              <tr>
+                <td>Z</td>
+                <td>Металлический пыльник с одной стороны</td>
+              </tr>
+              <tr>
+                <td>RS</td>
+                <td>Резиновое уплотнение с одной стороны</td>
+              </tr>
+              <tr>
+                <td rowspan="5">Радиальный внутренний зазор</td>
+                <td>C2</td>
+                <td>Зазор подшипника меньше нормального</td>
+              </tr>
+              <tr>
+                <td>CN</td>
+                <td>Нормальный зазор</td>
+              </tr>
+              <tr>
+                <td>C3</td>
+                <td>Зазор подшипника больше нормального</td>
+              </tr>
+              <tr>
+                <td>C4</td>
+                <td>Зазор подшипника больше чем С3</td>
+              </tr>
+              <tr>
+                <td>C5</td>
+                <td>Зазор подшипника больше чем С4</td>
+              </tr>
+              <tr>
+                <td rowspan="3">Другие технические изменения</td>
+                <td>NR</td>
+                <td>
+                  Канавка с заложенным пружинным кольцом в наружном кольце
+                </td>
+              </tr>
+              <tr>
+                <td>N</td>
+                <td>Канавка пружинного кольца в наружномкольце</td>
+              </tr>
+              <tr>
+                <td>SS</td>
+                <td>Нержавеющая сталь</td>
+              </tr>
+              <tr>
+                <td rowspan="3">Тип сепаратора</td>
+                <td>M</td>
+                <td>Латунный сепаратор, посаженный на шариках</td>
+              </tr>
+              <tr>
+                <td>MB</td>
+                <td>Латунный сепаратор, центрированный повнутреннему кольцу</td>
+              </tr>
+              <tr>
+                <td>MA</td>
+                <td>Латунный сепаратор, центрированный повнешнему кольцу</td>
+              </tr>
+              <tr>
+                <td rowspan="4">Скоростные обороты</td>
+                <td>V</td>
+                <td>Нормальный уровень вибрации</td>
+              </tr>
+              <tr>
+                <td>V2</td>
+                <td>Уровень вибрации ниже нормального</td>
+              </tr>
+              <tr>
+                <td>V3</td>
+                <td>Уровень вибрации ниже, чем V2</td>
+              </tr>
+              <tr>
+                <td>V4</td>
+                <td>Уровень вибрации ниже, чем V3</td>
+              </tr>
+              <tr>
+                <td rowspan="3">Класс точности</td>
+                <td>P0</td>
+                <td>
+                  Нормальный класс точности. Не указывается в качестве стандарта
+                </td>
+              </tr>
+              <tr>
+                <td>P6</td>
+                <td>Более высокий класс точности (чем нормальный)</td>
+              </tr>
+              <tr>
+                <td>P5</td>
+                <td>Более высокий класс точности (чем P6)</td>
+              </tr>
+            </tbody>
+          ),
+        },
+        {
+          type: "image",
+          url: "/static/assets/img/img/product/productbyid/sharikovyiy - radialnyiy/1.jpg",
+        },
+        {
+          type: "image",
+          url: "/static/assets/img/img/product/productbyid/sharikovyiy - radialnyiy/2.jpg",
+        },
+      ],
+    },
+  },
+};
+
 function PostProduct(props) {
   return (
     <>
@@ -28,38 +155,30 @@ function PostProduct(props) {
           href="/static/assets/template/avtech/styles/product_responsive.css"
         />
       </Head>
-      <div
-            class={`pace ${
-              props.isLoading ? "pace-active" : "pace-inactive"
-            }`}
-          >
-            <div
-              class="pace-progress"
-              data-progress-text="100%"
-              data-progress="99"
-              style={{ transform: "translate3d(100%, 0px, 0px)" }}
-            >
-              <div class="pace-progress-inner"></div>
-            </div>
-            <div class="pace-activity"></div>
-          </div>
+      <div class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}>
+        <div
+          class="pace-progress"
+          data-progress-text="100%"
+          data-progress="99"
+          style={{ transform: "translate3d(100%, 0px, 0px)" }}
+        >
+          <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+      </div>
 
-          <div className="body_wrapper main_index">
-            <div
-              id={`preloader`}
-              className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
-            >
-              <div
-                class={`product_name ${
-                  props.isLoading ? "" : "load_coplate"
-                }`}
-              >
-               SPZ Bearings
-              </div>
-            </div>
+      <div className="body_wrapper main_index">
+        <div
+          id={`preloader`}
+          className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
+        >
+          <div class={`product_name ${props.isLoading ? "" : "load_coplate"}`}>
+            SPZ Bearings
           </div>
+        </div>
+      </div>
       <div className="super_container">
-        <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
+        <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
         <Layout
           isLoading={props.isLoading}
           title={"Продукт"}
