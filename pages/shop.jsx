@@ -94,7 +94,7 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
-                          <Link href={`/product/sharikovyiy-radialnyiy`}>
+                          <Link href={`/product/radialno-upornyiy-sharikovyiy`}>
                           <a class="theme_btn_two hover_style1" >
                             Описание
                           </a>
@@ -115,9 +115,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/rolikovyiy-konicheskiy`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник роликовый конический</h4>
@@ -134,9 +136,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/rolikovyiy-radialnyiy-sfericheskiy`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник роликовый радиальный</h4>
@@ -153,9 +157,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/sharikovyiy-radialnyiy`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник шариковый</h4>
@@ -172,9 +178,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник цилиндрический роликовый</h4>
@@ -191,9 +199,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/upornyiy-ili-uporno-radialnyiy-sharikovyiy`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Подшипник упорный или упорно-радиальный</h4>

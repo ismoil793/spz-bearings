@@ -5,77 +5,47 @@ import OverlayComponent from "../../components/Layout/overlay/overlay.component"
 
 const dataArray = {
   podshipniki: {
-    "rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami": {
+    "radialno-upornyiy-sharikovyiy": {
       content: [
         {
           type: "table",
           contentTable: (
-            <tbody>
+<tbody>
 <tr class="tabletop">
 <td>Название</td>
 <td>Символ</td>
 <td>Описание</td>
 </tr>
 <tr>
-<td rowspan="5">Радиальный внутренний зазор</td>
-<td>C2</td>
-<td>Зазор подшипника меньше нормального</td>
-</tr>
-<tr>
-<td>CN</td>
-<td>Нормальный зазор</td>
-</tr>
-<tr>
-<td>C3</td>
-<td>Зазор подшипника больше нормального</td>
-</tr>
-<tr>
-<td>C4</td>
-<td>Зазор подшипника больше чем С3</td>
-</tr>
-<tr>
-<td>C5</td>
-<td>Зазор подшипника больше чем С4</td>
-</tr>
-<tr>
-<td>Другие технические &nbsp;измерения</td>
-<td>K</td>
-<td>Коническое отверстие</td>
-</tr>
-<tr>
 <td rowspan="3">Тип сепаратора</td>
 <td>M</td>
-<td>Латунный сепаратор</td>
+<td>Латунный сепаратор, посаженный на шариках</td>
 </tr>
 <tr>
-<td>S</td>
-<td>Сепаратор из листовой стали</td>
+<td>E</td>
+<td>Полимерный сепаратор</td>
 </tr>
 <tr>
 <td>—</td>
-<td>Заклепочный сепаратор, нестандартный</td>
+<td>Сепаратор из стального листа. Не указывается в &nbsp;качестве стандарта</td>
 </tr>
 <tr>
-<td rowspan="4">Скоростные обороты</td>
-<td>V</td>
-<td>Нормальный уровень вибрации</td>
+<td rowspan="3">Контактный угол</td>
+<td>C</td>
+<td>Контактный угол 15°</td>
 </tr>
 <tr>
-<td>V2</td>
-<td>Уровень вибрации ниже нормального</td>
+<td>AC</td>
+<td>Контактный угол 25°</td>
 </tr>
 <tr>
-<td>V3</td>
-<td>Уровень вибрации ниже, чем V2</td>
-</tr>
-<tr>
-<td>V4</td>
-<td>Уровень вибрации ниже, чем V3</td>
+<td>B</td>
+<td>Контактный угол 40°</td>
 </tr>
 <tr>
 <td rowspan="3">Класс точности</td>
 <td>P0</td>
-<td>Нормальный класс точности. Не указывается в &nbsp;качестве стандарта</td>
+<td>Нормальный класс точности. Не указывается в качестве стандарта</td>
 </tr>
 <tr>
 <td>P6</td>
@@ -90,49 +60,18 @@ const dataArray = {
         },
         {
           type: "image",
-          series: 'Серия: N2… N22… N3…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/1.jpg",
-        },
-        {
-          type: "image",
-          series: 'Серия: N3… N23… NF2…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/2.jpg",
-        },
-        {
-          type: "image",
-          series: 'Серия: NF4… NU10.. NU2… NU22…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/3.jpg",
-        },
-        {
-          type: "image",
-          series: 'Серия: NJ10… NJ2… NJ22…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/4.jpg",
-        },
-        {
-          type: "image",
-          series: 'Серия: NJ3… NJ23… NJ4… NUP2… NUP22…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/5.jpg",
-        },
-        {
-          type: "image",
-          series: 'Серия: NN…',
-          url: "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/6.jpg",
+          series: 'Серия: : 70…',
+          url: "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/1.jpg",
         },
         {type: 'imagesByDescription', decription: ['СЕРИЯ 60', "СЕРИЯ 62... 63...", "Серия: 64… 622… 623…", "Серия: 160…"], imagesSRC: [
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-1.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-2.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-3.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-4.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-5.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-6.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-7.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-8.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-9.jpg",
-          "/static/assets/img/img/product/productbyid/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami/gost-10.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-1.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-2.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-3.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-4.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-5.jpg",
+          "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-6.jpg"
         ], series: [
-          'Серия: N2… N22… N3…', 'Серия: N3… N23… NF2…', 'Серия: NF2… NF22… NF3… NF23… NF4…', 'Серия: NF4… NU10.. NU2… NU22…', 'Серия: NU2… NU22… NU3… NU23…', 
-          'Серия: NU3… NU23… NU4…', 'Серия: NJ10… NJ2… NJ22…', 'Серия: NJ22… NJ3… NJ23…', 'Серия: NJ3… NJ23… NJ4… NUP2… NUP22…', 'Серия: NUP2… NUP22… NUP3… NUP23…',
-          'Серия: NUP3… NUP23… NUP4…', 'Серия: NN…', 'Серия: NN…'
+          'Серия: : 70…', 'Серия: 70… 72…', 'Серия: Серия: 72… 73…', 'Серия: 73…', 'Серия: 73… 74…'
         ]}
       ],
     },
@@ -196,7 +135,7 @@ function PostProduct(props) {
         <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
         <Layout
           isLoading={props.isLoading}
-          title={"Подшипники цилиндрические роликовые"}
+          title={"Подшипник радиально-упорный шариковый"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
           locale={props.locale}
         >
@@ -209,7 +148,7 @@ function PostProduct(props) {
                       {" "}
                       <img
                         class="img-fluid"
-                        src="/static/assets/img/img/product/products/podshipnik-silindricheskiy.png"
+                        src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.png"
                         alt=""
                       />{" "}
                     </div>
@@ -312,7 +251,7 @@ function PostProduct(props) {
                       <div class="row centered">
                         
                         
-                        {dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[0].contentTable}
+                        {dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[0].contentTable}
 
 
 
@@ -328,18 +267,8 @@ function PostProduct(props) {
                     >                 
                         <div class="row centered">
                         <h4 className="description_title">Чертежи</h4>
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[1].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[1].url} />
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[2].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[2].url} />
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[3].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[3].url} />
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[4].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[4].url} />
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[5].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[5].url} />
-                          <h5 className="description_title col-12">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[6].series}</h5>
-                          <img className="product_description_section_img" src={dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[6].url} />
+                          <h5 className="description_title col-12">{dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[1].series}</h5>
+                          <img className="product_description_section_img" src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[1].url} />
                       </div>
                     </div>
 
@@ -353,14 +282,23 @@ function PostProduct(props) {
                         <div class="row centered">
                             <h4 className="description_title col-12">ГОСТЫ</h4>
                         <br/>
-                        {dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[7].imagesSRC.map((item, index) => (
-                          <>
-                          <h5 className="description_title col-10">{dataArray.podshipniki.['rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami'].content[7].series[index]}</h5>
+                          <h5 className="description_title col-10">{dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].series[0]}</h5>
                           <div className="row centered">
-                          <img className="description_gost_images col-12"  src={item} />
+                          <img className="description_gost_images col-6"  src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[0]} />
+                          <img className="description_gost_images col-6"  src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[1]} />
                           </div>
-                          </>
-                        ))}
+                          <h5 className="description_title col-10">{dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].series[1]}</h5>
+                          <div className="row centered">
+                          <img className="description_gost_images col-12"  src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[2]} />
+                          </div>
+                          <h5 className="description_title col-10">{dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].series[2]}</h5>
+                          <div className="row centered">
+                          <img className="description_gost_images col-12"  src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[3]} />
+                          </div>
+                          <h5 className="description_title col-10">{dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].series[3]}</h5>
+                          <div className="row centered">
+                          <img className="description_gost_images col-12"  src={dataArray.podshipniki.['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[4]} />
+                          </div>                        
                       </div>
                     </div>
 

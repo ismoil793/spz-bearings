@@ -196,7 +196,7 @@ function PostProduct(props) {
         <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
         <Layout
           isLoading={props.isLoading}
-          title={"Продукт"}
+          title={"Подшипник шариковый радиальный"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
           locale={props.locale}
         >
@@ -235,7 +235,7 @@ function PostProduct(props) {
                           Тэги:<a href="#"> Подшипники</a>
                         </li>
                       </ul>
-                      <ul class="nav share_icon">
+                      {/* <ul class="nav share_icon">
                         <li>Поделиться:</li>
                         <li>
                           <a href="#">
@@ -252,7 +252,7 @@ function PostProduct(props) {
                             <i class="fab fa-linkedin-in"></i>
                           </a>
                         </li>
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 </div>
@@ -329,7 +329,9 @@ function PostProduct(props) {
                     >                 
                         <div class="row centered">
                         <h4 className="description_title">Чертежи</h4>
+                        <h5 className="description_title col-12">{dataArray.podshipniki.['sharikovyiy-radialnyiy'].content[3].decription[0]}</h5>
                           <img className="product_description_section_img" src={dataArray.podshipniki.['sharikovyiy-radialnyiy'].content[1].url} />
+                        <h5 className="description_title col-12">{dataArray.podshipniki.['sharikovyiy-radialnyiy'].content[3].decription[2]}</h5>
                           <img className="product_description_section_img" src={dataArray.podshipniki.['sharikovyiy-radialnyiy'].content[2].url} />
                       </div>
                     </div>
