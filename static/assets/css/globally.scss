@@ -10965,7 +10965,6 @@ body.overflow {
 .slider_item {
   height: 700px !important;
   width: 100% !important;
-  display: attr();
   &.scalex {
     transform: scaleX(-1);
   }
@@ -11069,4 +11068,43 @@ body.overflow {
   width: 90%;
   flex-direction: column;
   margin: auto 0;
+}
+
+.description_text {
+  display: inline-flex;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.text_divide_row {
+  height: 30px;
+}
+
+.description_ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  li {
+    position: relative;
+    text-align: left;
+    margin-left: 30px;
+  }
+}
+
+.description_ul li:before {
+  content: "\f00c";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: #2554a4;
+}
+
+.products_without_image {
+  justify-content: center;
+  margin: 0 auto;
+  max-width: max-content;
 }

@@ -19,7 +19,7 @@ export default function servicesPage(props) {
   return (
     <>
       <Head>
-        <title>Сервисы</title>
+        <title>Продукция</title>
         <link
           rel="icon"
           href="/static/assets/img/img/favicon.ico"
@@ -283,9 +283,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/valyi`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Валл кулачковый</h4>
@@ -302,9 +304,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/valyi`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Валл коробок передач</h4>
@@ -321,9 +325,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/valyi`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Валл ступенчатый</h4>
@@ -336,9 +342,11 @@ export default function servicesPage(props) {
                     <nav aria-label="Page navigation example">
                       <ul class="pagination">
                         <li class="page-item">
-                          <a class="page-link" href="#">
-                            Пред
+                        <Link href={`/product/valyi`}>
+                          <a class="theme_btn_two hover_style1" href="#">
+                            Описание
                           </a>
+                          </Link>
                         </li>
                         <li class="page-item active">
                           <a class="page-link active" href="#">
@@ -399,9 +407,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/vtulki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Втулка подшипниковая</h4>
@@ -418,9 +428,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/vtulki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Втулка резьбовая</h4>
@@ -437,9 +449,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/vtulki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Втулка шкворня</h4>
@@ -456,9 +470,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/vtulki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Втулка скольжения</h4>
@@ -475,9 +491,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/vtulki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Втулка закрепительная</h4>
@@ -555,9 +573,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/shesterni`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Шестерня коническая</h4>
@@ -574,9 +594,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/shesterni`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Шестерня косозубая</h4>
@@ -593,9 +615,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/shesterni`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Шестерня цилиндрическая с прямым зубом</h4>
@@ -612,9 +636,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/shesterni`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Шестерня валла</h4>
@@ -631,9 +657,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/shesterni`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Шестерня зубчатая</h4>
@@ -712,9 +740,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/konveyernyie-roliki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Конвейерные ролики гладкие</h4>
@@ -731,9 +761,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/konveyernyie-roliki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Конвейерные ролики амортизирующие</h4>
@@ -750,9 +782,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/konveyernyie-roliki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Конвейерные ролики стряхивающие</h4>
@@ -769,9 +803,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/konveyernyie-roliki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Конвейерные ролики очистные</h4>
@@ -788,9 +824,11 @@ export default function servicesPage(props) {
                             alt=""
                           />{" "}
                           <i class="far fa-heart heart_icon"></i>{" "}
+                          <Link href={`/product/konveyernyie-roliki`}>
                           <a class="theme_btn_two hover_style1" href="#">
                             Описание
-                          </a>{" "}
+                          </a>
+                          </Link>
                         </div>
                         <div class="product_text">
                           <h4>Конвейерные ролики гирляндовые</h4>
