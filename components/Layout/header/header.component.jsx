@@ -224,7 +224,7 @@ class Header extends React.Component {
                   </div>
                 <Link href="/" locale={this.props.locale}>
                   <a className="navbar-brand">
-                  <span><img className={`cropped1 ${this.state.rotate_logo ? 'animated_rotate-logo' : ''}`} src="../../../static/assets/img/img/header_logo/SPZ-1.png"/><img className="cropped2" src="../../../static/assets/img/img/header_logo/SPZ-2.png"/></span>
+                  <span><img className={`cropped1 animated_rotate-logo`} src="../../../static/assets/img/img/header_logo/SPZ-1.png"/><img className="cropped2" src="../../../static/assets/img/img/header_logo/SPZ-2.png"/></span>
                   </a>
                 </Link>
                 <div className="collapse navbar-collapse">
