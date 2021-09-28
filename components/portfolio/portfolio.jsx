@@ -11,7 +11,7 @@ export default class Portfolio extends React.Component {
     <div class="card-front">
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="services" loading="lazy"/>
         <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[0].title}</figcaption>
       </figure>
 
@@ -23,7 +23,7 @@ export default class Portfolio extends React.Component {
     <div class="card-back">
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="services" loading="lazy"/>
       </figure>
 
       <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
@@ -49,7 +49,7 @@ export default class Portfolio extends React.Component {
     <div class="card-front">
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/auto.jpg" alt="Image 2"/>
+        <img src="/static/assets/img/img/home-14/auto.jpg" alt="Image 2" loading="lazy"/>
         <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[1].title}</figcaption>
       </figure>
 
@@ -87,7 +87,7 @@ export default class Portfolio extends React.Component {
     <div class="card-front">
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/energy.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/energy.jpg" alt="services" loading="lazy"/>
         <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[2].title}</figcaption>
       </figure>
 
@@ -100,7 +100,7 @@ export default class Portfolio extends React.Component {
 
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/energy.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/energy.jpg" alt="services" loading="lazy"/>
       </figure>
 
       <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
@@ -127,7 +127,7 @@ export default class Portfolio extends React.Component {
     <div class="card-front">
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="services" loading="lazy"/>
         <figcaption>{this.props.homeText.[this.props.locale].product_demand.cards[3].title}</figcaption>
       </figure>
 
@@ -140,7 +140,7 @@ export default class Portfolio extends React.Component {
 
       <figure>
         <div class="img-bg"></div>
-        <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="Brohm Lake"/>
+        <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="services" loading="lazy"/>
       </figure>
 
       <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>

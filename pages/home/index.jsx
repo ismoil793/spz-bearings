@@ -389,7 +389,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png" loading="lazy"/>
                         <div className="media-body">
                           {" "}
                           {homeText.[this.props.locale].benefits.descriptions[0]}
@@ -401,7 +401,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png" loading="lazy"/>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[1]}
                         </div>
@@ -412,7 +412,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png" loading="lazy"/>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[2]}
                         </div>
@@ -450,7 +450,7 @@ class Home extends React.Component {
                 {" "}
                 <img
                   src="/static/assets/img/img/services/video_img.jpg"
-                  alt=""
+                  alt="" loading="lazy"
                 />{" "}
                 <a onClick={(e)=>{e.preventDefault(); this.setState({showPlayer: true})}} href="#" class="video_icon">
                   <span>
