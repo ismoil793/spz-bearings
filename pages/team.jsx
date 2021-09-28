@@ -94,6 +94,7 @@ export default function teamPage(props) {
       <div className="super_container">
         <Layout
           isLoading={props.isLoading}
+          videoPreloader={props.videoPreloader}
           compareNumber={compareNumber}
           cartNumber={cartNumber}
           title={TeamText.[props.locale].breadcrumb.main}

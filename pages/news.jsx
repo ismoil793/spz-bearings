@@ -95,6 +95,7 @@ export default function NewsPage(props) {
           </div>
       <div className="super_container">
         <Layout
+          videoPreloader={props.videoPreloader}
           isLoading={props.isLoading}
           compareNumber={compareNumber}
           cartNumber={cartNumber}

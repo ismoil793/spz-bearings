@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 import ServiceDetailedText from "../../static/locales/services_details";
 
-function PostService({ data, setProductCategory, isLoading, locale }) {
+function PostService({ data, setProductCategory, isLoading, locale, videoPreloader }) {
   return (
     <>
       <Head>
@@ -62,6 +62,7 @@ function PostService({ data, setProductCategory, isLoading, locale }) {
       <div className="super_container">
         <OverlayComponent isLoading={isLoading} locale={locale} />
         <Layout
+          videoPreloader={videoPreloader}
           isLoading={isLoading}
           title={`${ServiceDetailedText.[locale].title}`}
           pageInfo={["Главная", "Сервисы", "Технический Центр"]}

@@ -1,13 +1,10 @@
 import App from "next/app";
 import React from "react";
 import Router from "next/router";
-import NProgress from "nprogress"; //nprogress module
-import "nprogress/nprogress.css"; //styles of nprogress
+import NProgress from "nprogress";
+import "nprogress/nprogress.css"; 
 import "../static/assets/css/globals.css";
 import "../static/assets/css/globally.scss";
-import YouTube from "react-youtube";
-// import * as gtag from '../lib/gtag'
-// import ReactGA from 'react-ga'
 import video from '../static/assets/video/preload_spz.mp4'
 
 //Binding events.
@@ -20,6 +17,7 @@ class MyApp extends App {
     super(props);
     this.state = {
       isLoading: true,
+      videoPreloader: true
     };
     Router.events.on("routeChangeStart", () => {
       this.changeLoadingStatus(true);
@@ -59,18 +57,6 @@ class MyApp extends App {
     //Anything returned here can be accessed by the client
     return { ...pageProps };
   }
-  opts = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
        
 
   render() {
@@ -79,16 +65,12 @@ class MyApp extends App {
 
     return (
       <>
-          {/* <YouTube
-            className="youtube_player"
-            videoId="mg0_R-eB3_w"
-            opts={this.opts}
-            onReady={this._onReady}
-          /> */}
-          <video autoplay="true" preload="auto" muted="muted">
+         {this.state.videoPreloader ? <div className="video_player">
+          <video onPlay={()=>setTimeout(()=>this.setState({videoPreloader:false}), 12000)} autoplay="true" preload="auto" muted="muted">
             <source src={video} type="video/mp4"></source>
           </video>
-        <Component locale={this.props.router.locale} isLoading={this.state.isLoading} {...pageProps}/>  
+          </div> :
+         <Component locale={this.props.router.locale} isLoading={this.state.isLoading} videoPreloader={this.state.videoPreloader} {...pageProps}/>   }
       </>
     );
   }

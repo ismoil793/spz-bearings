@@ -107,6 +107,7 @@ export default function aboutPage(props) {
 
         <Layout
           isLoading={props.isLoading}
+          videoPreloader={props.videoPreloader}
           compareNumber={compareNumber}
           cartNumber={cartNumber}
           title={AboutText.[props.locale].breadcrumb.main}

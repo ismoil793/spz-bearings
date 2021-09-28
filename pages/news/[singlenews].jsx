@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 
-function PostNews({ data, setProductCategory, isLoading, locale }) {
+function PostNews({ data, setProductCategory, isLoading, locale, videoPreloader }) {
   return (
     <>
       <Head>
@@ -49,6 +49,7 @@ function PostNews({ data, setProductCategory, isLoading, locale }) {
         </div>
         <Layout
           isLoading={isLoading}
+          videoPreloader={videoPreloader}
           title={"Технический Центр"}
           pageInfo={["Главная", "Новости", "Технический Центр"]}
           locale={locale}

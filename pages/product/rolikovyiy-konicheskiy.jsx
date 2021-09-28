@@ -117,6 +117,7 @@ function PostProduct(props) {
       <div className="super_container">
         <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
         <Layout
+          videoPreloader={props.videoPreloader}
           isLoading={props.isLoading}
           title={"Подшипники роликовый конический"}
           pageInfo={["Главная", "Магазин", "Продукт"]}

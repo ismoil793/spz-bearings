@@ -109,6 +109,7 @@ export default function Contact(props) {
 
         <Layout
           isLoading={props.isLoading}
+          videoPreloader={props.videoPreloader}
           compareNumber={compareNumber}
           cartNumber={cartNumber}
           title={ContactsText.[props.locale].breadcrumb.main}

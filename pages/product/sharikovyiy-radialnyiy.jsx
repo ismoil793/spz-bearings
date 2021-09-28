@@ -196,6 +196,7 @@ function PostProduct(props) {
         <OverlayComponent isLoading={props.isLoading} locale={props.locale} />
         <Layout
           isLoading={props.isLoading}
+          videoPreloader={props.videoPreloader}
           title={"Подшипник шариковый радиальный"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
           locale={props.locale}

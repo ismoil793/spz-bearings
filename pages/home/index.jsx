@@ -333,7 +333,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <Layout locale={this.props.locale} isLoading={this.props.isLoading} isHome={true}>
+          <Layout locale={this.props.locale} isLoading={this.props.isLoading} videoPreloader={this.props.videoPreloader} isHome={true}>
             <Slider className="slider-home_page" {...settings2}>
               {bannersImg
                 ? bannersImg.map((imgEl, index) => {

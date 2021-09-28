@@ -82,6 +82,7 @@ export default function servicesPage(props) {
       <div className="super_container">
         <Layout
           isLoading={props.isLoading}
+          videoPreloader={props.videoPreloader}
           compareNumber={compareNumber}
           cartNumber={cartNumber}
           title={ServicesText.[props.locale].breadcrumb.main}
