@@ -321,11 +321,11 @@ class Home extends React.Component {
           <div className="body_wrapper main_index">
             <div
               id={`preloader`}
-              className={`preloader ${this.props.isLoading && this.state.imagesLoaded !== 7 ? "" : "load_coplate"}`}
+              className={`preloader ${this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"}`}
             >
               <div
                 class={`product_name ${
-                  this.props.isLoading && this.state.imagesLoaded !== 7 ? "" : "load_coplate"
+                  this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"
                 }`}
               >
                SPZ Bearings
