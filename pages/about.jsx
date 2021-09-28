@@ -125,6 +125,7 @@ export default function aboutPage(props) {
                   <div class="about_img">
                     {" "}
                     <img
+                      loading="lazy"
                       class="img-fluid"
                       src="/static/assets/img/img/factoryAbout.jpg"
                       alt=""
@@ -157,6 +158,7 @@ export default function aboutPage(props) {
                       {" "}
                       <a href="#" class="img_shadow">
                         <img
+                          loading="lazy"
                           src="/static/assets/img/img/podshipniki_proizvodstvo.jpg"
                           alt=""
                         />
@@ -176,6 +178,7 @@ export default function aboutPage(props) {
                       {" "}
                       <a href="#" class="img_shadow">
                         <img
+                          loading="lazy"
                           src="/static/assets/img/img/bearing_640.jpg"
                           alt=""
                         />
@@ -200,6 +203,7 @@ export default function aboutPage(props) {
                     <div class="service_img">
                       {" "}
                       <img
+                        loading="lazy"
                         class="img-fluid"
                         src="/static/assets/img/img/about/service4.jpg"
                         alt=""
@@ -238,6 +242,7 @@ export default function aboutPage(props) {
                     <div class="service_img">
                       {" "}
                       <img
+                        loading="lazy"
                         class="img-fluid"
                         src="/static/assets/img/img/about/service4.jpg"
                         alt=""
@@ -248,6 +253,7 @@ export default function aboutPage(props) {
                     <div class="col-md-3 col-sm-6 order-md-2 order-sm-4 item-sertificates clearfix image_item_wrapper">
                       {" "}
                       <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate4.jpg")}
+                        loading="lazy"
                         class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate4.jpg"
                         alt=""
@@ -256,6 +262,7 @@ export default function aboutPage(props) {
                     <div class="col-md-3 col-sm-6 order-md-4 order-sm-1 item-sertificates clearfix image_item_wrapper">
                       {" "}
                       <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate1.jpg")}
+                        loading="lazy"
                         class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate1.jpg"
                         alt=""
@@ -264,6 +271,7 @@ export default function aboutPage(props) {
                     <div class="col-md-3 col-sm-6 order-md-1 order-sm-2 item-sertificates clearfix image_item_wrapper">
                       {" "}
                       <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate2.jpg")}
+                        loading="lazy"
                         class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate2.jpg"
                         alt=""
@@ -272,6 +280,7 @@ export default function aboutPage(props) {
                     <div class="col-md-3 col-sm-6  order-md-3 order-sm-3 item-sertificates clearfix image_item_wrapper">
                       {" "}
                       <img onClick={()=>setModalImgUrl("/static/assets/img/img/about/sertificate3.jpg")}
+                        loading="lazy"
                         class="img-fluid sertificate_pre-modal"
                         src="/static/assets/img/img/about/sertificate3.jpg"
                         alt=""
