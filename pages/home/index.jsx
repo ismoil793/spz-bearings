@@ -54,11 +54,10 @@ class Home extends React.Component {
       home_data: [],
       tabIndex: 0,
       tabNew: 0,
-      cartNumber: 0,
-      compareNumber: 0,
       width: null,
       news: [],
-      showPlayer: false
+      showPlayer: false,
+      imagesLoaded: 0
     };
   }
   componentWillMount() {
@@ -322,11 +321,11 @@ class Home extends React.Component {
           <div className="body_wrapper main_index">
             <div
               id={`preloader`}
-              className={`preloader ${this.props.isLoading ? "" : "load_coplate"}`}
+              className={`preloader ${this.props.isLoading && this.state.imagesLoaded !== 7 ? "" : "load_coplate"}`}
             >
               <div
                 class={`product_name ${
-                  this.props.isLoading ? "" : "load_coplate"
+                  this.props.isLoading && this.state.imagesLoaded !== 7 ? "" : "load_coplate"
                 }`}
               >
                SPZ Bearings
@@ -383,13 +382,16 @@ class Home extends React.Component {
               <div className="container">
                 <div className="div_title_one title_two text-center">
                   <h6 className="title_top">{homeText.[this.props.locale].benefits.title}</h6>
+                  <button onClick={()=>console.log(this.state)}>state</button>
                 </div>
                 <div className="row services_inner">
                   <div className="col-md-4">
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png" loading="lazy"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png" loading="lazy"
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
+                        />
                         <div className="media-body">
                           {" "}
                           {homeText.[this.props.locale].benefits.descriptions[0]}
@@ -401,7 +403,9 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png" loading="lazy"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png" loading="lazy"
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
+                        />
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[1]}
                         </div>
@@ -412,7 +416,9 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png" loading="lazy"/>
+                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png" loading="lazy"
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
+                        />
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[2]}
                         </div>
@@ -449,6 +455,7 @@ class Home extends React.Component {
               <div class="cons_work_right">
                 {" "}
                 <img
+                  onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
                   src="/static/assets/img/img/services/video_img.jpg"
                   alt="" loading="lazy"
                 />{" "}
@@ -586,7 +593,7 @@ class Home extends React.Component {
                       {" "}
                       <img
                         loading="lazy"
-                        onLoad={()=>console.log('inovation image loaded')}
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
                         src="/static/assets/img/img/home-14/inovation_img.jpg"
                         alt=""
                       />{" "}
@@ -626,6 +633,7 @@ class Home extends React.Component {
                       <a href="#" className="img_hover">
                         {" "}
                         <img
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
                           loading="lazy"
                           src="/static/assets/img/img/home-14/blog_2.jpg"
                           alt=""
@@ -645,6 +653,7 @@ class Home extends React.Component {
                       <a href="#" className="img_hover">
                         {" "}
                         <img
+                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
                         loading="lazy"
                           src="/static/assets/img/img/home-14/blog_2.jpg"
                           alt=""
