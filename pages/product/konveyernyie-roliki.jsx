@@ -78,7 +78,7 @@ function PostProduct(props) {
         <Layout
           isLoading={props.isLoading}
           videoPreloader={props.videoPreloader}
-          title={"Подшипник радиально-упорный шариковый"}
+          title={"Конвейерные ролики"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
           locale={props.locale}
         >
@@ -89,7 +89,7 @@ function PostProduct(props) {
                 
                   <div class="col-lg-12">
                     <div class="p_details_text products_without_image">
-                      <h3>Шестерня</h3>
+                      <h3>Конвейерные ролики</h3>
 
                       <a class="theme_btn_two hover_style1" href="#">
                         Контакты
@@ -99,10 +99,10 @@ function PostProduct(props) {
                           Номенклатура:<a href="#"> 3009829</a>
                         </li>
                         <li>
-                          Категория:<a href="#">Шестерня</a>
+                          Категория:<a href="#">Конвейерные ролики</a>
                         </li>
                         <li>
-                          Тэги:<a href="#">Шестерня</a>
+                          Тэги:<a href="#">Конвейерные ролики</a>
                         </li>
                       </ul>
                       {/*

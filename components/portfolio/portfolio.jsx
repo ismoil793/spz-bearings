@@ -1,4 +1,6 @@
 import React from "react";
+import Link from 'next/link'
+
 
 
 export default class Portfolio extends React.Component {
@@ -26,7 +28,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/pr_img1.jpg" alt="services" loading="lazy"/>
       </figure>
 
-      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
+      <button className="portfolio_order_button"><Link href={`/shop`}><a>{this.props.homeText.[this.props.locale].product_demand.button}</a></Link></button>
 
       <div class="design-container">
         <span class="design design--1"></span>
@@ -64,7 +66,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/auto.jpg" alt="image-2"/>
       </figure>
 
-      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
+      <button className="portfolio_order_button"><Link href={`/shop`}><a>{this.props.homeText.[this.props.locale].product_demand.button}</a></Link></button>
 
       <div class="design-container">
         <span class="design design--1"></span>
@@ -103,7 +105,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/energy.jpg" alt="services" loading="lazy"/>
       </figure>
 
-      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
+      <button className="portfolio_order_button"><Link href={`/shop`}><a>{this.props.homeText.[this.props.locale].product_demand.button}</a></Link></button>
 
 
       <div class="design-container">
@@ -143,7 +145,7 @@ export default class Portfolio extends React.Component {
         <img src="/static/assets/img/img/home-14/pr_img4.jpg" alt="services" loading="lazy"/>
       </figure>
 
-      <button>{this.props.homeText.[this.props.locale].product_demand.button}</button>
+      <button className="portfolio_order_button"><Link href={`/shop`}><a>{this.props.homeText.[this.props.locale].product_demand.button}</a></Link></button>
 
 
       <div class="design-container">

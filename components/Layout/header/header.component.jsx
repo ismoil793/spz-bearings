@@ -178,13 +178,6 @@ class Header extends React.Component {
             {this.props.isHome ? (
               <div className="header_top">
                 <div className="container">
-                <div class="language_list_wrapper left_side">
-                            <div class="language_list_home">
-                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/><p>En</p></span></button>
-                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/><p>Ru</p></span></button>
-                                <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/><p>Uz</p></span></button>
-                </div>
-                  </div>
                   <div className="row">
                     <div className="col-md-12">
                       <ul className="list-unstyled menu_contact_info">
@@ -215,16 +208,16 @@ class Header extends React.Component {
 
             <Nav className="navbar navbar-expand-lg" id="header">
               <div className="container main_logo_container">
-              <div class={`language_list_wrapper right_side ${this.props.isHome ? 'home_page_language' : ''}`}>
+              {/* <div class={`language_list_wrapper right_side ${this.props.isHome ? 'home_page_language' : ''}`}>
                             <div class="language_list_home">
                                 <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/><p>En</p></span></button>
                                 <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/><p>Ru</p></span></button>
                                 <button className="btn btn-sucess"><span onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}}><img className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/><p>Uz</p></span></button>
                 </div>
-                  </div>
+                  </div> */}
                 <Link href="/" locale={this.props.locale}>
                   <a className="navbar-brand">
-                  <span><img className={`cropped1 animated_rotate-logo`} src="../../../static/assets/img/img/header_logo/SPZ-1.png"/><img className="cropped2" src="../../../static/assets/img/img/header_logo/SPZ-2.png"/></span>
+                  <span><img className={`cropped1 animated_rotate-logo`} src="../../../static/assets/img/img/header_logo/logo.png"/></span>
                   </a>
                 </Link>
                 <div className="collapse navbar-collapse">
@@ -294,6 +287,13 @@ class Header extends React.Component {
                 </div>
               </div>
               <ul className="list-unstyled navbar-nav navright cart_navbar wrapper_list_dropdown">
+                <li className="list_language_item">
+                    <div id="dropdown">
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/></button>
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/></button>
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/></button>
+                    </div>
+                </li>
                 <li
                   onClick={() =>
                     this.setState({
@@ -338,83 +338,6 @@ class Header extends React.Component {
             </Nav>
           </div>
         </header>
-        {/* {this.state.isLogin || this.state.isRegister ? (
-        <aside id="sidebarContent" className="u-sidebar u-sidebar__lg" aria-labelledby="sidebarNavToggler">
-            <div className="u-sidebar__scroller">
-                <div className="u-sidebar__container">
-                    <div className="js-scrollbar u-header-sidebar__footer-offset pb-3">
-            
-                        <div className="d-flex align-items-center pt-4 px-7">
-                            <button type="button" className="close ml-auto"
-                                aria-controls="sidebarContent"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-unfold-event="click"
-                                data-unfold-hide-on-scroll="false"
-                                data-unfold-target="#sidebarContent"
-                                data-unfold-type="css-animation"
-                                data-unfold-animation-in="fadeInRight"
-                                data-unfold-animation-out="fadeOutRight"
-                                data-unfold-duration="500">
-                                <i className="ec ec-close-remove"></i>
-                            </button>
-                        </div>
-                       
-                        <div className="js-scrollbar u-sidebar__body">
-                            <div className="u-sidebar__content u-header-sidebar__content">
-                                <form className="js-validate">
-                                
-                                {this.state.isRegister ? <Register hide={this.HideRegister} /> : null}
-                                {this.state.isLogin ? <Login hide={this.HideLogin}/> : null} 
-                                    {/* <div id="forgotPassword" style={{display: 'none', opacity: '0'}} data-target-group="idForm">
-                                 
-                                        <header className="text-center mb-7">
-                                            <h2 className="h4 mb-0">Восстановить пароль.</h2>
-                                            <p>Enter your email address and an email with instructions will be sent to you.</p>
-                                        </header>
-                                       
-
-                                        
-                                        <div className="form-group">
-                                            <div className="js-form-message js-focus-state">
-                                                <label className="sr-only" for="recoverEmail">Your email</label>
-                                                <div className="input-group">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text" id="recoverEmailLabel">
-                                                            <span className="fas fa-user"></span>
-                                                        </span>
-                                                    </div>
-                                                    <input type="email" className="form-control" name="email" id="recoverEmail" placeholder="Your email" aria-label="Your email" aria-describedby="recoverEmailLabel" required
-                                                    data-msg="Please enter a valid email address."
-                                                    data-error-className="u-has-error"
-                                                    data-success-className="u-has-success"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                      
-
-                                        <div className="mb-2">
-                                            <button type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover">Recover Password</button>
-                                        </div>
-
-                                        <div className="text-center mb-4">
-                                            <span className="small text-muted">Remember your password?</span>
-                                            <a className="js-animation-link small" href="javascript:;"
-                                               data-target="#login"
-                                               data-link-group="idForm"
-                                               data-animation-in="slideInUp">Login
-                                            </a>
-                                        </div>
-                                    </div>
-                                   */}
-        {/* </form>
-                            </div>
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
-        </aside>) : null} */}
       </>
     );
   }

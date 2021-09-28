@@ -66,7 +66,7 @@ class MyApp extends App {
     return (
       <>
          {this.state.videoPreloader ? <div className="video_player">
-          <video onPlay={()=>setTimeout(()=>this.setState({videoPreloader:false}), 12000)} autoplay="true" preload="auto" muted="muted">
+          <video onPlay={()=>setTimeout(()=>this.setState({videoPreloader:false}), 2300)} autoplay="true" preload="auto" muted="muted">
             <source src={video} type="video/mp4"></source>
           </video>
           </div> :

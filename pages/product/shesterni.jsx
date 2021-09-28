@@ -75,7 +75,7 @@ function PostProduct(props) {
         <Layout
           isLoading={props.isLoading}
           videoPreloader={props.videoPreloader}
-          title={"Подшипник радиально-упорный шариковый"}
+          title={"Шестерня"}
           pageInfo={["Главная", "Магазин", "Продукт"]}
           locale={props.locale}
         >
