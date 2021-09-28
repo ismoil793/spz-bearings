@@ -586,6 +586,7 @@ class Home extends React.Component {
                       {" "}
                       <img
                         loading="lazy"
+                        onLoad={()=>console.log('inovation image loaded')}
                         src="/static/assets/img/img/home-14/inovation_img.jpg"
                         alt=""
                       />{" "}

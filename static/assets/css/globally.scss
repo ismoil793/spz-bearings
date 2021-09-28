@@ -11112,13 +11112,12 @@ body.overflow {
   height: 100vh;
   z-index: 999999;
   display: flex;
-  background-color: black;
+  background-color: white;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   video {
-    width: 100%;
-    height: auto;
-    background-color: white;
+    width: auto;
+    height: 100%;
   }
 }
