@@ -87,7 +87,7 @@ const homeText = {
     ],
     benefits: {
       title: 'Bizning ustunliklarimiz',
-      descriptions: ['Faqatgina sifatli mahsulot', "Yuqori sifat ishonchlilik va maqbul narh uyg'unligi", "To'liq tehnologik tsikl"]
+      descriptions: ['Faqatgina sifatli mahsulotdan foydalanamiz', "Yuqori sifat ishonchlilik va maqbul narh uyg'unligi", "To'liq tehnologik tsikl bilan ta'minlashga qodirmiz"]
     },
     product_demand: {
       mainTitle: "Maxsulotlarimizga talab katta bo'lgan sektorlar",
@@ -152,7 +152,7 @@ const homeText = {
     ],
     benefits: {
       title: 'Our advantages',
-      descriptions: ['Only high-quality components','Combination of high quality, reliability and reasonable price','Full technological cycle']
+      descriptions: ['We use only high quality components for production','Combination of high quality, reliability and reasonable price','We can provide a full technological production cycle']
     },
     product_demand: {
       mainTitle: "Products are in demand in sectors",

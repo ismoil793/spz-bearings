@@ -388,9 +388,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-1.png" loading="lazy"
-                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
-                        />
+                        <i class="list-icon fas fa-award"></i>
                         <div className="media-body">
                           {" "}
                           {homeText.[this.props.locale].benefits.descriptions[0]}
@@ -402,9 +400,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-2.png" loading="lazy"
-                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
-                        />
+                        <i class="list-icon fas fa-thumbs-up"></i>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[1]}
                         </div>
@@ -415,9 +411,7 @@ class Home extends React.Component {
                     <div className="service_item">
                       <div className="media service_icon">
                         {" "}
-                        <img className="home_service_img" src="/static/assets/img/img/services/services_home-3.png" loading="lazy"
-                        onLoad={()=>this.setState(({imagesLoaded})=> { return {imagesLoaded: imagesLoaded+1}})}
-                        />
+                        <i class="list-icon fas fa-recycle"></i>
                         <div className="media-body">
                         {homeText.[this.props.locale].benefits.descriptions[2]}
                         </div>

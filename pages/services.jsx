@@ -160,10 +160,7 @@ export default function servicesPage(props) {
                     <div class="service_item">
                       <div class="media service_icon">
                         {" "}
-                        <img
-                          class="icon-modern-architecture"
-                          src="/static/assets/img/img/services/drawing.png"
-                        />
+                        <i class="list-icon fas fa-file-image"></i>
                         <div class="media-body">
                           {" "}
                           {ServicesText.[props.locale].services_array[1]}{" "}
@@ -182,10 +179,7 @@ export default function servicesPage(props) {
                     <div class="service_item">
                       <div class="media service_icon">
                         {" "}
-                        <img
-                          class="icon-modern-architecture"
-                          src="/static/assets/img/img/services/2431398_calculater_calculation_calculator_finance_math_icon.png"
-                        />
+                        <i class="list-icon fas fa-calculator"></i>
                         <div class="media-body"> {ServicesText.[props.locale].services_array[0]} </div>
                       </div>
                       <a
@@ -201,10 +195,7 @@ export default function servicesPage(props) {
                     <div class="service_item">
                       <div class="media service_icon">
                         {" "}
-                        <img
-                          class="icon-modern-architecture"
-                          src="/static/assets/img/img/services/3d-printer.png"
-                        />
+                        <i class="list-icon fas fa-cogs"></i>
                         <div class="media-body">
                           {" "}
                           {ServicesText.[props.locale].services_array[2]}
@@ -223,10 +214,7 @@ export default function servicesPage(props) {
                     <div class="service_item">
                       <div class="media service_icon">
                         {" "}
-                        <img
-                          class="icon-modern-architecture"
-                          src="/static/assets/img/img/services/1054949_truck_delivery_shipping_transportation_icon.png"
-                        />
+                        <i class="list-icon fas fa-truck"></i>
                         <div class="media-body">
                         {ServicesText.[props.locale].services_array[3]}
                         </div>

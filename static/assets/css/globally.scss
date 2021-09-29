@@ -5262,6 +5262,7 @@ header + section {
   transition: all 0.3s linear 0s;
   background: #fff;
   margin-bottom: 60px;
+  height: 90%;
 }
 .service_item .service_icon {
   font-size: 24px;
@@ -5279,6 +5280,8 @@ header + section {
 .service_item .theme_btn_two {
   min-width: 220px;
   margin-top: 44px;
+  position: absolute;
+  bottom: 20%;
 }
 .service_item .theme_btn_two:after {
   background: #2554a4;
