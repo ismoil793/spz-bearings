@@ -10,6 +10,13 @@ import Cookies from "universal-cookie";
 
 import url from "../../url";
 import { Nav } from "reactstrap";
+
+const srcLang ={
+  ru: '../../../static/assets/img/img/language_choose/russia.png',
+  uz: '../../../static/assets/img/img/language_choose/uzbekistan-1.png',
+  en: '../../../static/assets/img/img/language_choose/england.png'
+}
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -289,9 +296,9 @@ class Header extends React.Component {
               <ul className="list-unstyled navbar-nav navright cart_navbar wrapper_list_dropdown">
                 <li className="list_language_item">
                     <div id="dropdown">
-                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'en'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/england.png"/></button>
-                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'ru'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/russia.png"/></button>
-                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: 'uz'})}} className="languages_icons" src="../../../static/assets/img/img/language_choose/uzbekistan-1.png"/></button>
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: this.props.locale === 'ru' ? 'ru' : this.props.locale === 'en' ? 'en' : 'uz'})}} className="languages_icons" src={ this.props.locale === 'ru' ? srcLang.ru : this.props.locale === 'en' ? srcLang.en : srcLang.uz }/></button>
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: this.props.locale === 'ru' ? 'uz' : this.props.locale === 'en' ? 'ru' : 'en'})}} className="languages_icons" src={ this.props.locale === 'ru' ? srcLang.uz : this.props.locale === 'en' ? srcLang.ru : srcLang.en }/></button>
+                      <button><img onClick={(e)=>{e.preventDefault(); Router.push(`${Router.router.asPath}`, `${Router.router.asPath}`, {locale: this.props.locale === 'ru' ? 'en' : this.props.locale === 'en' ? 'uz' : 'ru'})}} className="languages_icons" src={ this.props.locale === 'ru' ? srcLang.en : this.props.locale === 'en' ? srcLang.uz : srcLang.ru }/></button>
                     </div>
                 </li>
                 <li

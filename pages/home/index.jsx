@@ -382,7 +382,6 @@ class Home extends React.Component {
               <div className="container">
                 <div className="div_title_one title_two text-center">
                   <h6 className="title_top">{homeText.[this.props.locale].benefits.title}</h6>
-                  <button onClick={()=>console.log(this.state)}>state</button>
                 </div>
                 <div className="row services_inner">
                   <div className="col-md-4">
