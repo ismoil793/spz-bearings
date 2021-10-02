@@ -527,6 +527,8 @@ header + section {
 }
 .navright li:first-child {
   margin-left: 0;
+  width: 98px;
+  position: relative;
 }
 .navright li.shoping-cart > a {
   position: relative;
@@ -2462,6 +2464,12 @@ header + section {
   border-radius: 2px;
   box-shadow: 0 45px 150px 0 rgba(30, 34, 40, 0.2);
   overflow: hidden;
+}
+.service_img.bg-fixed {
+  background-image: url("/static/assets/img/img/home-14/inovation_img.jpg");
+  background-attachment: fixed;
+  height: 950px;
+  background-size: contain;
 }
 .cons_service_area_two {
   padding: 50px 0;
@@ -11140,7 +11148,7 @@ a.navbar-brand {
 
 #dropdown {
 	width: 100px;
-	position: relative;
+	position: absolute;
 	top: 30px;
 	left: 30px;
   button {
