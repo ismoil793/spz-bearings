@@ -115,7 +115,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.4}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -138,7 +138,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.6}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -161,7 +161,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.8}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -184,7 +184,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -208,7 +208,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1.2}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -318,7 +318,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.4}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -341,7 +341,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.6}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -452,7 +452,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.4}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -475,7 +475,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.6}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -498,7 +498,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.8}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -521,7 +521,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1.0}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -632,7 +632,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.4}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -655,7 +655,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.6}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -678,7 +678,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -701,7 +701,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1.2}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -812,7 +812,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.4}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -835,7 +835,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.6}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -858,7 +858,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={0.8}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}
@@ -881,7 +881,7 @@ export default function servicesPage(props) {
                                      </Fade>
                                   </div>
                                   <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
+                                     <Fade scale={0.5} delay={1}>
                                         <div class="product_item">
                                            <div class="product_img">
                                               {" "}

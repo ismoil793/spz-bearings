@@ -141,11 +141,11 @@ class Home extends React.Component {
          autoplaySpeed: 10000000,
          nextArrow: (
              <button class="arrow left">
-                <svg width="60px" height="80px" viewBox="0 0 50 80">
+                <svg width="60px" height="70px" viewBox="0 0 50 80">
                    <polyline
                        fill="none"
-                       stroke="#FFFFFF"
-                       stroke-width="1"
+                       stroke="#000000"
+                       stroke-width="2"
                        stroke-linecap="round"
                        stroke-linejoin="round"
                        points="
@@ -156,11 +156,11 @@ class Home extends React.Component {
          ),
          prevArrow: (
              <button class="arrow right">
-                <svg width="60px" height="80px" viewBox="0 0 50 80">
+                <svg width="60px" height="70px" viewBox="0 0 50 80">
                    <polyline
                        fill="none"
-                       stroke="#FFFFFF"
-                       stroke-width="1"
+                       stroke="#000000"
+                       stroke-width="2"
                        stroke-linecap="round"
                        stroke-linejoin="round"
                        points="
@@ -649,17 +649,17 @@ class Home extends React.Component {
                             <div className="col-lg-6 col-md-7">
                                <div className="cons_about_content pr_100">
                                   <h6 className="title_top">
-                                     <FadeLeft delay={0.5}>
+                                     <FadeLeft delay={0.3}>
                                         {homeText[this.props.locale].technologies_section.sectionTitle}
                                      </FadeLeft>
                                   </h6>
                                   <h2 className="title_head">
-                                     <FadeLeft delay={0.8}>
+                                     <FadeLeft delay={0.5}>
                                         {homeText[this.props.locale].technologies_section.title}
                                      </FadeLeft>
                                   </h2>
                                   <p>
-                                     <FadeLeft delay={1.1}>
+                                     <FadeLeft delay={0.8}>
                                         {homeText[this.props.locale].technologies_section.description}
                                      </FadeLeft>
                                   </p>{" "}
@@ -668,7 +668,7 @@ class Home extends React.Component {
                                       className="text_btn"
                                       data-text="Подробнее ..."
                                   >
-                                     <FadeLeft delay={1.4}>
+                                     <FadeLeft delay={1}>
                                         {homeText[this.props.locale].technologies_section.button}
                                      </FadeLeft>
                                   </a>
@@ -711,7 +711,7 @@ class Home extends React.Component {
                             </div>
                             <div className="col-md-6">
                                <div className="cons_blog_item">
-                                  <FadeTop delay={0.9}>
+                                  <FadeTop delay={0.5}>
                                      <a href="#" className="img_hover">
                                         <img
                                             onLoad={() => this.setState(({imagesLoaded}) => {

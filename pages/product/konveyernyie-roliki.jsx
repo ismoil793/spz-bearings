@@ -106,7 +106,7 @@ function PostProduct(props) {
                         </li>
                       </ul>
                       {/*
-                      {dataArray.podshipniki.['konveyernyie-roliki'].content[2].series[0]}
+                      {dataArray.podshipniki['konveyernyie-roliki'].content[2].series[0]}
                       <ul class="nav share_icon">
                         <li>Поделиться:</li>
                         <li>
@@ -156,19 +156,19 @@ function PostProduct(props) {
                       <div class="row">
                         
                         <div className="description_text">
-                          <p><b>{dataArray.['konveyernyie-roliki'].content[0].textsArray[0].title}</b>{dataArray.['konveyernyie-roliki'].content[0].textsArray[0].text}</p>
+                          <p><b>{dataArray['konveyernyie-roliki'].content[0].textsArray[0].title}</b>{dataArray['konveyernyie-roliki'].content[0].textsArray[0].text}</p>
                         </div>
                         <div className="description_text">
-                          <p>{dataArray.['konveyernyie-roliki'].content[0].textsArray[2].text}</p>
+                          <p>{dataArray['konveyernyie-roliki'].content[0].textsArray[2].text}</p>
                         </div>
                         <div className="description_text">
-                          <p>{dataArray.['konveyernyie-roliki'].content[0].textsArray[3].text}</p>
+                          <p>{dataArray['konveyernyie-roliki'].content[0].textsArray[3].text}</p>
                         </div>
                         <div className="description_text">
-                          <p>{dataArray.['konveyernyie-roliki'].content[0].textsArray[4].text}</p>
+                          <p>{dataArray['konveyernyie-roliki'].content[0].textsArray[4].text}</p>
                         </div>
                         <div className="description_text">
-                          <p>{dataArray.['konveyernyie-roliki'].content[0].textsArray[5].text}</p>
+                          <p>{dataArray['konveyernyie-roliki'].content[0].textsArray[5].text}</p>
                         </div>
                       
 

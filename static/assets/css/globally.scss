@@ -7113,6 +7113,15 @@ nav.navbar.navbar-expand-lg .nav-link {
   margin: 40px 0 40px 0;
 }
 
+.about_page .about_img.parallax {
+  background-image: url("/static/assets/img/img/factoryAbout.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 500px;
+}
+
 .about_page .vision_item img {
   width: 100%;
   height: 300px;
