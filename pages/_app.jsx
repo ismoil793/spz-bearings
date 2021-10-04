@@ -80,7 +80,7 @@ class MyApp extends App {
         return (
             <Provider store={store}>
                 <Component {...pageProps}/>
-           </Provider>
+            </Provider>
         );
     }
 }
