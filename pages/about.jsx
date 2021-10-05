@@ -158,7 +158,7 @@ export default function aboutPage(props) {
                                          alt=""
                                      />
                                   </a>
-                                  <div class="content pr_100">
+                                  <div class="container">
                                      <h3 class="page_head">
                                         {AboutText[props.locale].specificity_section.elements[0].title}
                                      </h3>
@@ -179,7 +179,7 @@ export default function aboutPage(props) {
                                          alt=""
                                      />
                                   </a>
-                                  <div class="content">
+                                  <div class="container">
                                      <h3 class="page_head">
                                         {AboutText[props.locale].specificity_section.elements[1].title}
                                      </h3>
