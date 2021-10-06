@@ -119,7 +119,7 @@ export default function NewsPage(props) {
                                          <Fade scale={0.5} delay={index === 0 ? 1.8 : 0.2 + index / 10}>
                                             <img
                                                 class="img-fluid"
-                                                src={`/static/assets/img/img/blog/blog-${index <= 2 ? (index + 1) : 1}.jpg`}
+                                                src={`/static/assets/img/img/blog/blog-${index+1}.jpg`}
                                                 alt=""
                                             />
                                          </Fade>

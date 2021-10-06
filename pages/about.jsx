@@ -242,7 +242,7 @@ export default function aboutPage(props) {
                                      <img
                                          loading="lazy"
                                          class="img-fluid"
-                                         src="/static/assets/img/img/about/service4.jpg"
+                                         src="/static/assets/img/img/about/fire-worker.jpg"
                                          alt=""
                                      />
                                   </div>

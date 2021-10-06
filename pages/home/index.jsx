@@ -694,7 +694,7 @@ class Home extends React.Component {
                                                return {imagesLoaded: imagesLoaded + 1}
                                             })}
                                             loading="lazy"
-                                            src="/static/assets/img/img/home-14/blog_2.jpg"
+                                            src="/static/assets/img/img/home-14/dark-liquid.jpg"
                                             alt=""
                                         />
                                      </a>
