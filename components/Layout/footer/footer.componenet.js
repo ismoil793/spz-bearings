@@ -103,7 +103,7 @@ class Footer extends React.Component {
                          </FadeTop>
                       </div>
                       <div className="col-lg-4">
-                         <FadeTop delay={0.8}>
+                         <FadeTop delay={0.4}>
                             <div className="f_widget f_subscribe_widget">
                                <h3 className="f_title">{HeaderText[this.props.locale].footer[1]}</h3>
                                <form action="#" className="f_subscribe">

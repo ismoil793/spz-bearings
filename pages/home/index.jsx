@@ -68,8 +68,10 @@ class Home extends React.Component {
       };
    }
 
-   componentWillMount() {
-      console.log('mount home', this.props)
+   componentDidMount() {
+      setTimeout(() => {
+         window.scrollTo(0, 0);
+      }, 1800)
    }
 
    handleGrand = () => {
@@ -311,7 +313,7 @@ class Home extends React.Component {
              </Head>
              <div>
                 <div
-                    class={`pace ${
+                    className={`pace ${
                         this.props.isLoading ? "pace-active" : "pace-inactive"
                     }`}
                 >
@@ -329,17 +331,28 @@ class Home extends React.Component {
                 <div className="body_wrapper main_index">
                    <div
                        id={`preloader`}
-                       className={`preloader ${this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"}`}
+                       className={`preloader ${this.props.isLoading ? "" : "load_coplate"}`}
                    >
-                      <div
-                          class={`product_name ${
-                              this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"
-                          }`}
-                      >
+                      <div className={`product_name ${this.props.isLoading ? "" : "load_coplate"}`}>
                          SPZ Bearings
                       </div>
                    </div>
                 </div>
+
+                {/*<div className="body_wrapper main_index">*/}
+                {/*   <div*/}
+                {/*       id={`preloader`}*/}
+                {/*       className={`preloader ${this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"}`}*/}
+                {/*   >*/}
+                {/*      <div*/}
+                {/*          class={`product_name ${*/}
+                {/*              this.props.isLoading && this.state.imagesLoaded === 7 ? "" : "load_coplate"*/}
+                {/*          }`}*/}
+                {/*      >*/}
+                {/*         SPZ Bearings*/}
+                {/*      </div>*/}
+                {/*   </div>*/}
+                {/*</div>*/}
                 <Layout locale={this.props.locale} isLoading={this.props.isLoading}
                         videoPreloader={this.props.videoPreloader} isHome={true}>
                    <Slider className="slider-home_page" {...settings2}>
