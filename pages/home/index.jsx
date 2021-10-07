@@ -447,7 +447,7 @@ class Home extends React.Component {
                              <button onClick={() => this.setState({showPlayer: false})}
                                      className="youtube_close_button">X
                              </button>
-                             <YouTube className="youtube_player" videoId="qrG0N3bC9iU" opts={opts}
+                             <YouTube className="youtube_player" videoId="qNYN73CpBFQ" opts={opts}
                                       onReady={this._onReady}/>
                           </div>
                        </div> : null}
