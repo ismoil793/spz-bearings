@@ -11,10 +11,8 @@ import YouTube from 'react-youtube';
 import ServicesText from "../../static/locales/services";
 import FadeLeftWhenVisible from "../../components/Animations/FadeLeft";
 import Fade from "../../components/Animations/Fade";
-import Rotate from "../../components/Animations/Rotate";
 import {motion} from "framer-motion"
 import FadeLeft from "../../components/Animations/FadeLeft";
-import FadeRight from "../../components/Animations/FadeRight";
 import FadeTop from "../../components/Animations/FadeTop";
 
 const opts = {
