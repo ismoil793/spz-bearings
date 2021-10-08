@@ -156,7 +156,7 @@ function PostProduct(props) {
                                   <Fade scale={0.5} delay={1.8}>
                                      <img
                                          class="img-fluid"
-                                         src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.png"
+                                         src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.jpg"
                                          alt=""
                                      />
                                   </Fade>

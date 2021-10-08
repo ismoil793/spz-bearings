@@ -95,12 +95,11 @@ export default function servicesPage(props) {
                                      <Fade scale={0.5} delay={0.2}>
                                         <div class="product_item">
                                            <div class="product_img">
-                                              {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.jpg"
                                                   alt=""
-                                              />{" "}
+                                              />
                                               <i class="far fa-heart heart_icon"></i>{" "}
                                               <Link href={`/product/radialno-upornyiy-sharikovyiy`}>
                                                  <a class="theme_btn_two hover_style1">
@@ -121,7 +120,7 @@ export default function servicesPage(props) {
                                               {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-konicheskiy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-konicheskiy.jpg"
                                                   alt=""
                                               />{" "}
                                               <i class="far fa-heart heart_icon"></i>{" "}
@@ -144,7 +143,7 @@ export default function servicesPage(props) {
                                               {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-radialniy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-radialniy.jpg"
                                                   alt=""
                                               />{" "}
                                               <i class="far fa-heart heart_icon"></i>{" "}
@@ -167,7 +166,7 @@ export default function servicesPage(props) {
                                               {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-sharikoviy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-sharikoviy.jpg"
                                                   alt=""
                                               />{" "}
                                               <i class="far fa-heart heart_icon"></i>{" "}
@@ -190,7 +189,7 @@ export default function servicesPage(props) {
                                               {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-silindricheskiy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-silindricheskiy.jpg"
                                                   alt=""
                                               />{" "}
                                               <i class="far fa-heart heart_icon"></i>{" "}
@@ -214,7 +213,7 @@ export default function servicesPage(props) {
                                               {" "}
                                               <img
                                                   class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-uporniy ili uporno-radialniy.png"
+                                                  src="/static/assets/img/img/product/products/podshipnik-uporniy-ili-uporno-radialniy.jpg"
                                                   alt=""
                                               />{" "}
                                               <i class="far fa-heart heart_icon"></i>{" "}
@@ -232,52 +231,27 @@ export default function servicesPage(props) {
                                   </div>
                                </div>
 
-                               <div class="pagination_area">
-                                  <nav aria-label="Page navigation example">
-                                     <ul class="pagination">
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              Пред
-                                           </a>
-                                        </li>
-                                        <li class="page-item active">
-                                           <a class="page-link active" href="#">
-                                              1
-                                           </a>
-                                        </li>
-                                        {/* <li class="page-item">
-                          <a class="page-link" href="#">
-                            2
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            3
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            4
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            ...
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            18
-                          </a>
-                        </li> */}
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              След
-                                           </a>
-                                        </li>
-                                     </ul>
-                                  </nav>
-                               </div>
+                               {/*<div class="pagination_area">*/}
+                               {/*   <nav aria-label="Page navigation example">*/}
+                               {/*      <ul class="pagination">*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <a class="page-link" href="#">*/}
+                               {/*               Пред*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item active">*/}
+                               {/*            <a class="page-link active" href="#">*/}
+                               {/*               1*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <a class="page-link" href="#">*/}
+                               {/*               След*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*      </ul>*/}
+                               {/*   </nav>*/}
+                               {/*</div>*/}
                             </div>
                          </div>
 
@@ -365,54 +339,32 @@ export default function servicesPage(props) {
                                   </div>
 
                                </div>
-                               <div class="pagination_area">
-                                  <nav aria-label="Page navigation example">
-                                     <ul class="pagination">
-                                        <li class="page-item">
-                                           <Link href={`/product/valyi`}>
-                                              <a class="theme_btn_two hover_style1" href="#">
-                                                 Описание
-                                              </a>
-                                           </Link>
-                                        </li>
-                                        <li class="page-item active">
-                                           <a class="page-link active" href="#">
-                                              1
-                                           </a>
-                                        </li>
-                                        {/* <li class="page-item">
-                          <a class="page-link" href="#">
-                            2
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            3
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            4
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            ...
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            18
-                          </a>
-                        </li> */}
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              След
-                                           </a>
-                                        </li>
-                                     </ul>
-                                  </nav>
-                               </div>
+
+                               {/*<div class="pagination_area">*/}
+                               {/*   <nav aria-label="Page navigation example">*/}
+                               {/*      <ul class="pagination">*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <Link href={`/product/valyi`}>*/}
+                               {/*               <a class="theme_btn_two hover_style1" href="#">*/}
+                               {/*                  Описание*/}
+                               {/*               </a>*/}
+                               {/*            </Link>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item active">*/}
+                               {/*            <a class="page-link active" href="#">*/}
+                               {/*               1*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <a class="page-link" href="#">*/}
+                               {/*               След*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*      </ul>*/}
+                               {/*   </nav>*/}
+                               {/*</div>*/}
+
+
                             </div>
                          </div>
 
@@ -546,52 +498,27 @@ export default function servicesPage(props) {
 
 
                                </div>
-                               <div class="pagination_area">
-                                  <nav aria-label="Page navigation example">
-                                     <ul class="pagination">
-                                        <li class="page-item">
-                                           <a class="page-link active" href="#">
-                                              Пред
-                                           </a>
-                                        </li>
-                                        <li class="page-item active">
-                                           <a class="page-link" href="#">
-                                              1
-                                           </a>
-                                        </li>
-                                        {/* <li class="page-item">
-                          <a class="page-link" href="#">
-                            2
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            3
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            4
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            ...
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            18
-                          </a>
-                        </li> */}
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              След
-                                           </a>
-                                        </li>
-                                     </ul>
-                                  </nav>
-                               </div>
+                               {/*<div class="pagination_area">*/}
+                               {/*   <nav aria-label="Page navigation example">*/}
+                               {/*      <ul class="pagination">*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <a class="page-link active" href="#">*/}
+                               {/*               Пред*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item active">*/}
+                               {/*            <a class="page-link" href="#">*/}
+                               {/*               1*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*         <li class="page-item">*/}
+                               {/*            <a class="page-link" href="#">*/}
+                               {/*               След*/}
+                               {/*            </a>*/}
+                               {/*         </li>*/}
+                               {/*      </ul>*/}
+                               {/*   </nav>*/}
+                               {/*</div>*/}
                             </div>
                          </div>
 
@@ -726,52 +653,6 @@ export default function servicesPage(props) {
 
 
                                </div>
-                               <div class="pagination_area">
-                                  <nav aria-label="Page navigation example">
-                                     <ul class="pagination">
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              Пред
-                                           </a>
-                                        </li>
-                                        <li class="page-item active">
-                                           <a class="page-link" href="#">
-                                              1
-                                           </a>
-                                        </li>
-                                        {/* <li class="page-item">
-                          <a class="page-link" href="#">
-                            2
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            3
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            4
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            ...
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            18
-                          </a>
-                        </li> */}
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              След
-                                           </a>
-                                        </li>
-                                     </ul>
-                                  </nav>
-                               </div>
                             </div>
                          </div>
 
@@ -905,52 +786,6 @@ export default function servicesPage(props) {
                                   </div>
 
 
-                               </div>
-                               <div class="pagination_area">
-                                  <nav aria-label="Page navigation example">
-                                     <ul class="pagination">
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              Пред
-                                           </a>
-                                        </li>
-                                        <li class="page-item active">
-                                           <a class="page-link" href="#">
-                                              1
-                                           </a>
-                                        </li>
-                                        {/* <li class="page-item">
-                          <a class="page-link" href="#">
-                            2
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            3
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            4
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            ...
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">
-                            18
-                          </a>
-                        </li> */}
-                                        <li class="page-item">
-                                           <a class="page-link" href="#">
-                                              След
-                                           </a>
-                                        </li>
-                                     </ul>
-                                  </nav>
                                </div>
                             </div>
                          </div>

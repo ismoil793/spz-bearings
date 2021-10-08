@@ -145,48 +145,48 @@ export default function NewsPage(props) {
                          </div>
                          <div class="pagination_area">
                             <nav aria-label="Page navigation example">
-                               <ul class="pagination">
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        {NewsText[props.locale].pagination[0]}
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        1
-                                     </a>
-                                  </li>
-                                  <li class="page-item active">
-                                     <a class="page-link" href="#">
-                                        2
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        3
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        4
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        ...
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        18
-                                     </a>
-                                  </li>
-                                  <li class="page-item">
-                                     <a class="page-link" href="#">
-                                        {NewsText[props.locale].pagination[1]}
-                                     </a>
-                                  </li>
-                               </ul>
+                               {/*<ul class="pagination">*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         {NewsText[props.locale].pagination[0]}*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         1*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item active">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         2*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         3*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         4*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         ...*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         18*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*   <li class="page-item">*/}
+                               {/*      <a class="page-link" href="#">*/}
+                               {/*         {NewsText[props.locale].pagination[1]}*/}
+                               {/*      </a>*/}
+                               {/*   </li>*/}
+                               {/*</ul>*/}
                             </nav>
                          </div>
                       </div>

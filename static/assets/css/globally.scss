@@ -2466,7 +2466,7 @@ header + section {
   overflow: hidden;
 }
 .service_img.bg-fixed {
-  background-image: url("/static/assets/img/img/home-14/inovation_img.jpg");
+  background-image: url("/static/assets/img/img/home-14/innovation.jpg");
   background-attachment: fixed;
   height: 950px;
   background-size: contain;
@@ -5270,7 +5270,7 @@ header + section {
   transition: all 0.3s linear 0s;
   background: #fff;
   margin-bottom: 60px;
-  height: 90%;
+  height: 295px;
 }
 .service_item .service_icon {
   font-size: 24px;
@@ -6149,7 +6149,7 @@ header + section {
   margin-bottom: 80px;
 }
 .product_area .product_inner {
-  margin-bottom: -100px;
+  margin-bottom: 100px;
 }
 .product_area .pagination_area {
   margin-top: 115px;
@@ -6532,6 +6532,7 @@ header + section {
 }
 .cons_contact_area_two .map {
   margin-bottom: -150px;
+   margin-top: 100px;
 }
 .map_dot .map_marker {
   background: rgba(78, 96, 212, 0);
@@ -9420,7 +9421,7 @@ polyline {
     margin-top: 50px;
   }
   .product_area .product_inner {
-    margin-bottom: -50px;
+    margin-bottom: 50px;
   }
   .product_area .product_item {
     margin-bottom: 50px;

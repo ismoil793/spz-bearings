@@ -146,7 +146,6 @@ export default class Product extends React.Component {
       sort_value: null,
       sort_name: "",
       send_filters: true,
-      selectedFeatures: []
     };
   }
 
@@ -530,7 +529,7 @@ export default class Product extends React.Component {
             Покупайте выгодно с Kitmach Premium
           </div>
           <ul className="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-            {this.createPaging()}
+            {/*{this.createPaging()}*/}
           </ul>
         </nav>
       </div>

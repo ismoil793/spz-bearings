@@ -1,7 +1,6 @@
 import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
-
-
+import Link  from "next/link"
 import React, {useState, useEffect} from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
@@ -302,9 +301,11 @@ export default function aboutPage(props) {
                             <div class="cons_contact_info_two bg_gradient text-center">
                                <h4>{AboutText[props.locale].redirect_card.mainTitle}</h4>
                                <p>{AboutText[props.locale].redirect_card.title}</p>{" "}
-                               <a class="theme_btn theme_btn_three hover_style1" href="#">
-                                  {AboutText[props.locale].redirect_card.button}
-                               </a>
+                               <Link href={"/contacts"}>
+                                  <a className="theme_btn theme_btn_three hover_style1">
+                                     {AboutText[props.locale].redirect_card.button}
+                                  </a>
+                               </Link>
                             </div>
                          </div>
                       </Fade>

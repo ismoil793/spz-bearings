@@ -214,7 +214,7 @@ function PostProduct(props) {
                                   {" "}
                                   <img
                                       class="img-fluid"
-                                      src="/static/assets/img/img/product/products/podshipnik-sharikoviy.png"
+                                      src="/static/assets/img/img/product/products/podshipnik-sharikoviy.jpg"
                                       alt=""
                                   />{" "}
                                </div>

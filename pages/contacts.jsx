@@ -124,16 +124,16 @@ export default function Contact(props) {
                       {" "}
                       <img
                           class="map img-fluid"
-                          src="/static/assets/img/img/home-six/spz-bg.jpg"
+                          src="/static/assets/img/img/home-six/map.png"
                           alt=""
                       />
                       <div class="container">
                          <div class="row cons_contact_info_two">
-                            {/*<div class="map_dot">*/}
-                            {/*   <div class="map_marker one">*/}
-                            {/*      <span></span>*/}
-                            {/*   </div>*/}
-                            {/*</div>*/}
+                            <div class="map_dot">
+                               <div class="map_marker one">
+                                  <span></span>
+                               </div>
+                            </div>
                             <div class="col-lg-6">
                                <div class="cons_about_content pr_100">
                                   <FadeLeft>

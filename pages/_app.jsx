@@ -46,10 +46,6 @@ class MyApp extends App {
          }, 300);
    };
 
-   componentWillMount() {
-      console.log("app mount");
-   }
-
    static async getInitialProps({Component, ctx}) {
       const pageProps = Component.getInitialProps
           ? await Component.getInitialProps(ctx)

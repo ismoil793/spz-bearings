@@ -1,6 +1,6 @@
 import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
-
+import Link from "next/link"
 import React, {useState, useEffect} from "react";
 import YouTube from 'react-youtube';
 
@@ -162,82 +162,77 @@ export default function servicesPage(props) {
                             <div class="col-md-6">
 
                                <Fade delay={0.5} scale={0.5}>
-                                  <div class="service_item">
+                                  <div class="service_item hover_style1">
                                      <div class="media service_icon">
-                                        {" "}
                                         <i class="list-icon fas fa-file-image"></i>
                                         <div class="media-body">
-                                           {" "}
                                            {ServicesText[props.locale].services_array[1]}{" "}
                                         </div>
                                      </div>
-                                     <a
-                                         href="#"
-                                         class="theme_btn_two hover_style1"
-                                         tabindex="0"
-                                     >
-                                        {ServicesText[props.locale].services_array_button}
-                                     </a>
+                                     {/*<a*/}
+                                     {/*    href="#"*/}
+                                     {/*    class="theme_btn_two hover_style1"*/}
+                                     {/*    tabindex="0"*/}
+                                     {/*>*/}
+                                     {/*   {ServicesText[props.locale].services_array_button}*/}
+                                     {/*</a>*/}
                                   </div>
                                </Fade>
 
                             </div>
                             <div class="col-md-6">
                                <Fade delay={0.8} scale={0.5}>
-                                  <div class="service_item">
+                                  <div class="service_item hover_style1">
                                      <div class="media service_icon">
-                                        {" "}
                                         <i class="list-icon fas fa-calculator"></i>
                                         <div class="media-body"> {ServicesText[props.locale].services_array[0]} </div>
                                      </div>
-                                     <a
-                                         href="#"
-                                         class="theme_btn_two hover_style1"
-                                         tabindex="0"
-                                     >
-                                        {ServicesText[props.locale].services_array_button}
-                                     </a>
+                                     {/*<a*/}
+                                     {/*    href="#"*/}
+                                     {/*    class="theme_btn_two hover_style1"*/}
+                                     {/*    tabindex="0"*/}
+                                     {/*>*/}
+                                     {/*   {ServicesText[props.locale].services_array_button}*/}
+                                     {/*</a>*/}
                                   </div>
                                </Fade>
                             </div>
                             <div class="col-md-6">
                                <Fade delay={1.1} scale={0.5}>
-                                  <div class="service_item">
+                                  <div class="service_item hover_style1">
                                      <div class="media service_icon">
-                                        {" "}
                                         <i class="list-icon fas fa-cogs"></i>
                                         <div class="media-body">
                                            {" "}
                                            {ServicesText[props.locale].services_array[2]}
                                         </div>
                                      </div>
-                                     <a
-                                         href="#"
-                                         class="theme_btn_two hover_style1"
-                                         tabindex="0"
-                                     >
-                                        {ServicesText[props.locale].services_array_button}
-                                     </a>
+                                     {/*<a*/}
+                                     {/*    href="#"*/}
+                                     {/*    class="theme_btn_two hover_style1"*/}
+                                     {/*    tabindex="0"*/}
+                                     {/*>*/}
+                                     {/*   {ServicesText[props.locale].services_array_button}*/}
+                                     {/*</a>*/}
                                   </div>
                                </Fade>
                             </div>
                             <div class="col-md-6">
                                <Fade delay={1.4} scale={0.5}>
-                                  <div class="service_item">
+                                  <div class="service_item hover_style1">
                                      <div class="media service_icon">
-                                        {" "}
                                         <i class="list-icon fas fa-truck"></i>
                                         <div class="media-body">
                                            {ServicesText[props.locale].services_array[3]}
                                         </div>
                                      </div>
-                                     <a
-                                         href="#"
-                                         class="theme_btn_two hover_style1"
-                                         tabindex="0"
-                                     >
-                                        {ServicesText[props.locale].services_array_button}
-                                     </a>
+                                     {/*<a*/}
+                                     {/*    href="#"*/}
+                                     {/*    class="theme_btn_two hover_style1"*/}
+                                     {/*    tabindex="0"*/}
+                                     {/*>*/}
+                                     {/*   {ServicesText[props.locale].services_array_button}*/}
+                                     {/*</a>*/}
                                   </div>
                                </Fade>
                             </div>
@@ -370,9 +365,11 @@ export default function servicesPage(props) {
                             <div class="cons_contact_info_two bg_gradient text-center">
                                <h4>{ServicesText[props.locale].redirect_card_title}</h4>
                                <p>{ServicesText[props.locale].redirect_card_title_second}</p>
-                               <a class="theme_btn theme_btn_three hover_style1" href="#">
-                                  {ServicesText[props.locale].redirect_card_button}
-                               </a>
+                               <Link href="/contacts">
+                                  <a className="theme_btn theme_btn_three hover_style1">
+                                     {ServicesText[props.locale].redirect_card_button}
+                                  </a>
+                               </Link>
                             </div>
                          </Fade>
                       </div>
