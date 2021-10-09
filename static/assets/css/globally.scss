@@ -7485,6 +7485,16 @@ header .collapse.navbar-collapse {
   .services_area.pt_200 {
     padding-top: 100px;
   }
+  .youtube_button_player_wrapper {
+    max-width: 90%;
+
+    iframe {
+      width: 100%;
+    }
+  }
+  .youtube_close_button {
+
+  }
 }
 
 @media (max-width: 360px) {
