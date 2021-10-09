@@ -11,7 +11,8 @@ const ContactsText = {
       {position: "Бухгалтерия"},
       {position: "Экономический отдел и отдел продаж"}
     ]},
-    form_section: ["Имя", "Э-Почта", "Сообщение", "Отправить Сообщение"]
+    form_section: ["Имя", "Э-Почта", "Сообщение", "Отправить Сообщение"],
+    contactSuccess: "Ваш запрос был получен"
   },
 
 
@@ -29,7 +30,8 @@ const ContactsText = {
       {position: "Buxgalteriya"},
       {position: "Iqtisodiy bo'lim va savdo bo'limi"}
     ]},
-    form_section: ["Ism", "E-pochta", "Xabar", "Xabarni Jo'natish"]
+    form_section: ["Ism", "E-pochta", "Xabar", "Xabarni Jo'natish"],
+    contactSuccess: "Sizning murojaatingiz qabul qilindi"
   },
 
 
@@ -45,7 +47,8 @@ const ContactsText = {
       {position: "Accounting department"},
       {position: "Economic and sales departments"}
     ]},
-    form_section: ["Name", "Email", "Message", "Send a message"]
+    form_section: ["Name", "Email", "Message", "Send a message"],
+    contactSuccess: "Your request is accepted"
   },
 
 

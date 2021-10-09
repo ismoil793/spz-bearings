@@ -1,17 +1,13 @@
-import {useRouter} from "next/router";
 import Layout from "../components/Layout/layout/layout.component";
 import Head from "next/head";
-import Link from "next/link";
-
-import React, {useState, useEffect} from "react";
-import Cookies from "universal-cookie";
-import axios from "axios";
-import url from "../components/url";
+import React, {useState} from "react";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
-
 import ContactsText from '../static/locales/contacts'
 import FadeLeft from "../components/Animations/FadeLeft";
 import Fade from "../components/Animations/Fade";
+import {Notyf} from "notyf";
+import 'notyf/notyf.min.css';
+import axios from "axios";
 
 export function getStaticProps({locale}) {
    return {
@@ -23,40 +19,34 @@ export function getStaticProps({locale}) {
 
 
 export default function Contact(props) {
-   const [cartNumber, setCartNumber] = React.useState(0);
-   const [compareNumber, setCompareNumber] = React.useState(0);
 
+   const initialState = {
+      name: '',
+      email: '',
+      message: ''
+   }
 
-   useEffect(() => {
-      const cookies = new Cookies();
-      axios
-          .get(`${url}/api/cart/show`, {
-             params: {
-                device_token: cookies.get("device_token"),
-                device_type: cookies.get("device_type"),
-             },
-          })
-          .then((response) => {
-             setCartNumber(response.data.data.items.length);
-          })
-          .catch((error) => {
-             console.log(error);
-          });
+   const [formData, setFormData] = useState(initialState)
 
-      axios
-          .get(`${url}/api/comparison/features`, {
-             params: {
-                device_token: cookies.get("device_token"),
-                device_type: cookies.get("device_type"),
-             },
+   const contactSubmit = e => {
+      e.preventDefault()
+      const {name, message, email} = formData
+      const token = "2098100893:AAHDgyzZQy7Ia3X4TOUurjSLsQxRHXOdmas"
+      const chat_id = "-703301534"
+      const text = "Client: " + name + "%0AEmail: " + email + "%0A%0A" + message
+
+      axios.get(`https://api.telegram.org/bot${token}/sendMessage?text=${text}&chat_id=${chat_id}`)
+          .then((r) => {
+             const notyf = new Notyf()
+             notyf.success(ContactsText[props.locale].contactSuccess)
+             setFormData(initialState)
           })
-          .then((response) => {
-             setCompareNumber(response.data.data.products.length);
-          })
-          .catch((error) => {
-             console.log(error);
-          });
-   }, []);
+   }
+
+   const onFormDataChange = e => {
+      setFormData({...formData, [e.target.name]: e.target.value})
+   }
+
    return (
        <>
           <Head>
@@ -66,31 +56,33 @@ export default function Contact(props) {
                  href="/static/assets/img/img/favicon.ico"
                  type="image/x-icon"
              />
-             <meta charset="utf-8"/>
-             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+             <meta charSet="utf-8"/>
+             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
              <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
              <link
                  rel="stylesheet"
                  type="text/css"
-                 href="/static/assets/template/avtech/styles/blog_single_responsive.css"
+                 href={"/static/assets/template/avtech/styles/blog_single_responsive.css"}
              />
           </Head>
           <div
-              class={`pace ${
+              className={`pace ${
                   props.isLoading ? "pace-active" : "pace-inactive"
               }`}
           >
              <div
-                 class="pace-progress"
+                 className="pace-progress"
                  data-progress-text="100%"
                  data-progress="99"
                  style={{transform: "translate3d(100%, 0px, 0px)"}}
              >
-                <div class="pace-progress-inner"></div>
+                <div className="pace-progress-inner">
+                </div>
              </div>
-             <div class="pace-activity"></div>
+             <div className="ace-activity">
+             </div>
           </div>
 
           <div className="body_wrapper main_index">
@@ -99,7 +91,7 @@ export default function Contact(props) {
                  className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
              >
                 <div
-                    class={`product_name ${
+                    className={`product_name ${
                         props.isLoading ? "" : "load_coplate"
                     }`}
                 >
@@ -112,33 +104,32 @@ export default function Contact(props) {
              <Layout
                  isLoading={props.isLoading}
                  videoPreloader={props.videoPreloader}
-                 compareNumber={compareNumber}
-                 cartNumber={cartNumber}
                  title={ContactsText[props.locale].breadcrumb.main}
                  pageInfo={[`${ContactsText[props.locale].breadcrumb.crumbs[0]}`, `${ContactsText[props.locale].breadcrumb.crumbs[1]}`]}
                  locale={props.locale}
              >
                 <main id="content" role="main">
                    <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
-                   <section class="cons_contact_area_two map_area">
+                   <section className="cons_contact_area_two map_area">
                       {" "}
                       <img
-                          class="map img-fluid"
+                          className="map img-fluid"
                           src="/static/assets/img/img/home-six/map.png"
                           alt=""
                       />
-                      <div class="container">
-                         <div class="row cons_contact_info_two">
-                            <div class="map_dot">
-                               <div class="map_marker one">
-                                  <span></span>
+                      <div className="container">
+                         <div className="row cons_contact_info_two">
+                            <div className="map_dot">
+                               <div className="map_marker one">
+                                  <span>
+                                  </span>
                                </div>
                             </div>
-                            <div class="col-lg-6">
-                               <div class="cons_about_content pr_100">
+                            <div className="col-lg-6">
+                               <div className="cons_about_content pr_100">
                                   <FadeLeft>
-                                     <h6 class="title_top">{ContactsText[props.locale].adress_section.title}</h6>
-                                     <h2 class="title_head">
+                                     <h6 className="title_top">{ContactsText[props.locale].adress_section.title}</h6>
+                                     <h2 className="title_head">
                                         {ContactsText[props.locale].adress_section.adress}
                                      </h2>
                                      <h6 className="title_top">{ContactsText[props.locale].phone_section.title}</h6>
@@ -154,32 +145,43 @@ export default function Contact(props) {
                                         <li className="contacts_li_phones text_btn">+(99899) 557-77-75</li>
                                      </ul>
                                      <p>
-                                        <i class="far fa-clock"></i> 7/7: 9:00 - 18:00
+                                        <i className="far fa-clock"/> 7/7: 9:00 - 18:00
                                      </p>
                                   </FadeLeft>
                                </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div className="col-lg-6">
                                <Fade scale={0.5}>
-                                  <form action="#" class="contact_form">
-                                     <div class="form-group">
+                                  <form onSubmit={contactSubmit} className="contact_form">
+                                     <div className="form-group">
                                         <input
                                             type="text"
-                                            class="form-control"
+                                            name={'name'}
+                                            value={formData.name}
+                                            onChange={onFormDataChange}
+                                            required
+                                            className="form-control"
                                             placeholder={`${ContactsText[props.locale].form_section[0]}`}
                                         />
                                      </div>
-                                     <div class="form-group">
+                                     <div className="form-group">
                                         <input
                                             type="email"
-                                            class="form-control"
+                                            name={'email'}
+                                            value={formData.email}
+                                            onChange={onFormDataChange}
+                                            required
+                                            className="form-control"
                                             placeholder={`${ContactsText[props.locale].form_section[1]}`}
                                         />
                                      </div>
-                                     <div class="form-group">
+                                     <div className="form-group">
                                      <textarea
-                                         class="form-control"
-                                         name="Сообщение"
+                                         className="form-control"
+                                         name="message"
+                                         value={formData.message}
+                                         onChange={onFormDataChange}
+                                         required
                                          id="message"
                                          cols="30"
                                          rows="10"
@@ -187,10 +189,10 @@ export default function Contact(props) {
                                      >
                                      </textarea>
                                      </div>
-                                     <div class="form-group">
+                                     <div className="form-group">
                                         <button
                                             type="submit"
-                                            class="theme_btn theme_btn_three hover_style1"
+                                            className="theme_btn theme_btn_three hover_style1"
                                         >
                                            {`${ContactsText[props.locale].form_section[3]}`}
                                         </button>

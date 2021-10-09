@@ -20581,21 +20581,21 @@ table th {
 ------------------------------------*/
 ::-moz-selection {
   color: #fff;
-  background-color: #C8BE63;
+  background-color: #2C56A4;
 }
 
 ::selection {
   color: #fff;
-  background-color: #C8BE63;
+  background-color: #2C56A4;
 }
 
 .bg-primary ::-moz-selection {
-  color: #C8BE63;
+  color: #2C56A4;
   background-color: #fff;
 }
 
 .bg-primary ::selection {
-  color: #C8BE63;
+  color: #2C56A4;
   background-color: #fff;
 }
 

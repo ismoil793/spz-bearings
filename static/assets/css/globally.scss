@@ -7495,6 +7495,9 @@ header .collapse.navbar-collapse {
   .youtube_close_button {
 
   }
+  .service_item:hover {
+    background-position: bottom;
+  }
 }
 
 @media (max-width: 360px) {
