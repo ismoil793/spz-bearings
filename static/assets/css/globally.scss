@@ -7464,7 +7464,7 @@ header .collapse.navbar-collapse {
 
 @media (max-width: 512px) {
   #preloader div {
-    font-size: 46px !important;
+    font-size: 26px !important;
   }
   .arrow.right, .arrow.left {
     display: none !important;
@@ -7472,6 +7472,18 @@ header .collapse.navbar-collapse {
 
   .slider-home_page {
     margin-top: 90px !important;
+  }
+  .slider-home_page .slick-arrow {
+    display: none !important;
+  }
+  .services-business_card {
+    display: none !important;
+  }
+  .business_card.pt_100 {
+    display: none;
+  }
+  .services_area.pt_200 {
+    padding-top: 100px;
   }
 }
 

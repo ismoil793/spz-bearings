@@ -359,35 +359,34 @@ class Header extends React.Component {
                                </button>
                             </div>
                          </li>
-                         <li
-                             onClick={() =>
-                                 this.setState({
-                                    search_is_open: !this.state.search_is_open,
-                                 })
-                             }
-                             className={`search ${
-                                 this.state.search_is_open ? "open" : ""
-                             }`}
-                         >
-                            {" "}
-                            <a href="javascript:void(0);">
-                               <i class="fas fa-search"></i>
-                            </a>
-                            <form action="#" method="get" className="search-form">
-                               <div className="input-group">
-                                  {" "}
-                                  <input
-                                      type="search"
-                                      className="form-control"
-                                      placeholder="Searching for..."
-                                  />{" "}
-                                  <button type="submit">
-                                     <i className="fas fa-search"></i>
-                                  </button>
-                                  {" "}
-                               </div>
-                            </form>
-                         </li>
+                         {/*<li*/}
+                         {/*    onClick={() =>*/}
+                         {/*        this.setState({*/}
+                         {/*           search_is_open: !this.state.search_is_open,*/}
+                         {/*        })*/}
+                         {/*    }*/}
+                         {/*    className={`search ${*/}
+                         {/*        this.state.search_is_open ? "open" : ""*/}
+                         {/*    }`}*/}
+                         {/*>*/}
+                         {/*   <a href="javascript:void(0);">*/}
+                         {/*      <i class="fas fa-search"></i>*/}
+                         {/*   </a>*/}
+                         {/*   <form action="#" method="get" className="search-form">*/}
+                         {/*      <div className="input-group">*/}
+                         {/*         {" "}*/}
+                         {/*         <input*/}
+                         {/*             type="search"*/}
+                         {/*             className="form-control"*/}
+                         {/*             placeholder="Searching for..."*/}
+                         {/*         />{" "}*/}
+                         {/*         <button type="submit">*/}
+                         {/*            <i className="fas fa-search"></i>*/}
+                         {/*         </button>*/}
+                         {/*         {" "}*/}
+                         {/*      </div>*/}
+                         {/*   </form>*/}
+                         {/*</li>*/}
                          <li
                              onClick={() =>
                                  this.setState({
