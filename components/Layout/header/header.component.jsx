@@ -4,6 +4,7 @@ import "../../../plugins/axios";
 import Link from "next/link";
 import Router from "next/router";
 import HeaderText from "../../../static/locales/header";
+import onClickOutside from "react-onclickoutside";
 
 const uuidv1 = require("uuid/v1");
 
@@ -19,6 +20,49 @@ const srcLang = {
    uz: '../../../static/assets/img/img/language_choose/uzbekistan-1.png',
    en: '../../../static/assets/img/img/language_choose/england.png'
 }
+
+const searchResults = [
+   {
+      name: "Конвейерные ролики",
+      link: "/product/konveyernyie-roliki",
+   },
+   {
+      name: "Радиально-упорный шариковый",
+      link: "/product/radialno-upornyiy-sharikovyiy",
+   },
+   {
+      name: "Роликовый конический подшипник",
+      link: "/product/rolikovyiy-konicheskiy",
+   },
+   {
+      name: "Роликовый радиальный с короткими цилиндрическими роликами",
+      link: "/product/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami",
+   },
+   {
+      name: "Радиальный роликовый сферический",
+      link: "/product/rolikovyiy-radialnyiy-sfericheskiy",
+   },
+   {
+      name: "Шариковый радиальный подшипник",
+      link: "/product/sharikovyiy-radialnyiy",
+   },
+   {
+      name: "Шестерни",
+      link: "/product/shesterni",
+   },
+   {
+      name: "Упорный или упорно радиальный шариковый подшипник",
+      link: "/product/upornyiy-ili-uporno-radialnyiy-sharikovyiy",
+   },
+   {
+      name: "Валлы",
+      link: "/product/valyi",
+   },
+   {
+      name: "Втулки",
+      link: "/product/vtulki",
+   },
+]
 
 class Header extends React.Component {
    constructor(props) {
@@ -38,7 +82,8 @@ class Header extends React.Component {
          userInfo: {},
          search_is_open: false,
          menu_is_opened: false,
-         rotate_logo: false
+         rotate_logo: false,
+         searchProducts: []
       };
    }
 
@@ -78,6 +123,12 @@ class Header extends React.Component {
       });
    };
 
+   handleClickOutside = evt => {
+      this.setState({
+         search_is_open: false,
+      })
+   };
+
    Search = () => {
       axios
           .get(`${url}/api/search`, {
@@ -115,6 +166,20 @@ class Header extends React.Component {
              : null;
       }
    };
+
+   handleSearchChange = e => {
+      let filteredSearch = []
+      if (e.target.value.trim().length) {
+         filteredSearch = searchResults.filter(s => {
+           return s.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+               s.link.toLowerCase().includes(e.target.value.toLowerCase())
+         })
+      }
+      this.setState({
+         search_id: e.target.value,
+         searchProducts: filteredSearch
+      })
+   }
 
    Register = (e) => {
       this.setState((prevState) => ({
@@ -194,7 +259,7 @@ class Header extends React.Component {
                                       <li>
                                          <a href="mailto:gpz-uz@mail.ru">
                                             <FadeTop delay={0.3}>
-                                               <i className="far fa-envelope-open"></i>
+                                               <i className="far fa-envelope-open"/>
                                                gpz-uz@mail.ru
                                             </FadeTop>
                                          </a>
@@ -202,7 +267,7 @@ class Header extends React.Component {
                                       <li>
                                          <a href="tell:451951127851">
                                             <FadeTop delay={0.6}>
-                                               <i className="fas fa-phone"></i>+(99874) 755-23-59,
+                                               <i className="fas fa-phone"/>+(99874) 755-23-59,
                                                755-18-57
                                             </FadeTop>
                                          </a>
@@ -210,7 +275,7 @@ class Header extends React.Component {
                                       <li>
                                          <a href="#">
                                             <FadeTop delay={0.9}>
-                                               <i className="far fa-clock"></i>7/7: 9:00 - 18:00
+                                               <i className="far fa-clock"/>7/7: 9:00 - 18:00
                                             </FadeTop>
                                          </a>
                                       </li>
@@ -234,7 +299,7 @@ class Header extends React.Component {
                             <Fade scale={0.5}>
                                <a className="navbar-brand">
                                   <span>
-                                     <img className={`cropped1 animated_rotate-logo`}
+                                     <img className={`cropped1 animated_rotate-logo`} alt={"SPZ Bearings"}
                                           src="../../../static/assets/img/img/header_logo/logo.png"/>
                                   </span>
                                </a>
@@ -243,19 +308,17 @@ class Header extends React.Component {
                          <div className="collapse navbar-collapse">
                             <ul className="navbar-nav menu">
                                <li className="nav-item">
-                                  {" "}
-                                  <Link href="/" locale={this.props.locale}>
+                                  <Link href={"/"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.1}>
                                            {HeaderText[this.props.locale].nav[0]}
                                         </FadeTop>
                                      </a>
-                                  </Link>{" "}
+                                  </Link>
                                </li>
 
                                <li className="nav-item dropdown submenu">
-                                  {" "}
-                                  <Link href="/about" locale={this.props.locale}>
+                                  <Link href={"/about"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.2}>
                                            {HeaderText[this.props.locale].nav[1].dropdown}
@@ -264,38 +327,29 @@ class Header extends React.Component {
                                   </Link>
                                   <ul className="dropdown-menu">
                                      <li className="nav-item active">
-                                        {" "}
-                                        <Link href="/about" locale={this.props.locale}>
+                                        <Link href={"/about"} locale={this.props.locale}>
                                            <a className="nav-link">
                                               {HeaderText[this.props.locale].nav[1].elements[0]}
                                            </a>
                                         </Link>
                                      </li>
                                      <li className="nav-item">
-                                        {" "}
-                                        <Link href="/team" locale={this.props.locale}>
+                                        <Link href={"/team"} locale={this.props.locale}>
                                            <a className="nav-link">
                                               {HeaderText[this.props.locale].nav[1].elements[1]}
                                            </a>
-                                        </Link>{" "}
+                                        </Link>
                                      </li>
                                      <li className="nav-item">
-                                        {" "}
-                                        <Link
-                                            href={{
-                                               pathname: "/services/[singlenservice]",
-                                            }}
-                                            as={`/services/1`}
-                                        >
+                                        <Link href={{pathname: "/services/[singlenservice]"}} as={`/services/1`}>
                                            <a className="nav-link">{HeaderText[this.props.locale].nav[1].elements[2]}</a>
-                                        </Link>{" "}
+                                        </Link>
                                      </li>
                                   </ul>
                                </li>
 
                                <li className="nav-item">
-                                  {" "}
-                                  <Link href="/services" locale={this.props.locale}>
+                                  <Link href={"/services"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.3}>
                                            {HeaderText[this.props.locale].nav[2]}
@@ -304,8 +358,7 @@ class Header extends React.Component {
                                   </Link>
                                </li>
                                <li className="nav-item">
-                                  {" "}
-                                  <Link href="/news" locale={this.props.locale}>
+                                  <Link href={"/news"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.4}>
                                            {HeaderText[this.props.locale].nav[3]}
@@ -314,8 +367,7 @@ class Header extends React.Component {
                                   </Link>
                                </li>
                                <li className="nav-item dropdown submenu">
-                                  {" "}
-                                  <Link href="/shop" locale={this.props.locale}>
+                                  <Link href={"/shop"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.5}>
                                            {HeaderText[this.props.locale].nav[4]}
@@ -324,14 +376,13 @@ class Header extends React.Component {
                                   </Link>
                                </li>
                                <li className="nav-item">
-                                  {" "}
-                                  <Link href="/contacts" locale={this.props.locale}>
+                                  <Link href={"/contacts"} locale={this.props.locale}>
                                      <a className="nav-link">
                                         <FadeTop delay={0.6}>
                                            {HeaderText[this.props.locale].nav[5]}
                                         </FadeTop>
                                      </a>
-                                  </Link>{" "}
+                                  </Link>
                                </li>
                             </ul>
                          </div>
@@ -359,34 +410,48 @@ class Header extends React.Component {
                                </button>
                             </div>
                          </li>
-                         {/*<li*/}
-                         {/*    onClick={() =>*/}
-                         {/*        this.setState({*/}
-                         {/*           search_is_open: !this.state.search_is_open,*/}
-                         {/*        })*/}
-                         {/*    }*/}
-                         {/*    className={`search ${*/}
-                         {/*        this.state.search_is_open ? "open" : ""*/}
-                         {/*    }`}*/}
-                         {/*>*/}
-                         {/*   <a href="javascript:void(0);">*/}
-                         {/*      <i class="fas fa-search"></i>*/}
-                         {/*   </a>*/}
-                         {/*   <form action="#" method="get" className="search-form">*/}
-                         {/*      <div className="input-group">*/}
-                         {/*         {" "}*/}
-                         {/*         <input*/}
-                         {/*             type="search"*/}
-                         {/*             className="form-control"*/}
-                         {/*             placeholder="Searching for..."*/}
-                         {/*         />{" "}*/}
-                         {/*         <button type="submit">*/}
-                         {/*            <i className="fas fa-search"></i>*/}
-                         {/*         </button>*/}
-                         {/*         {" "}*/}
-                         {/*      </div>*/}
-                         {/*   </form>*/}
-                         {/*</li>*/}
+                         <li
+                             onClick={() =>
+                                 this.setState({
+                                    search_is_open: true,
+                                 })
+                             }
+                             className={`search ${
+                                 this.state.search_is_open ? "open" : ""
+                             }`}
+                         >
+                            <a href="javascript:void(0);">
+                               <i className="fas fa-search"/>
+                            </a>
+                            <form onSubmit={e => e.preventDefault()} className="search-form">
+                               <div className="input-group">
+                                  <input
+                                      type="search"
+                                      className="form-control"
+                                      value={this.state.search_id}
+                                      onChange={this.handleSearchChange}
+                                      placeholder={HeaderText[this.props.locale].searchPlaceHolder}
+                                  />
+                                  <button type="submit">
+                                     <i className="fas fa-search"/>
+                                  </button>
+                               </div>
+
+                               <ul className="search-results">
+                                  {
+                                     this.state.searchProducts.map(product => (
+                                         <Link href={product.link}>
+                                            <a>
+                                               <li>{product.name}</li>
+                                            </a>
+                                         </Link>
+                                     ))
+                                  }
+                               </ul>
+
+
+                            </form>
+                         </li>
                          <li
                              onClick={() =>
                                  this.setState({
@@ -394,10 +459,9 @@ class Header extends React.Component {
                                  })
                              }
                          >
-                            {" "}
                             <a href="#" className="menu_btn">
-                               <i class="fas fa-align-justify"></i>
-                            </a>{" "}
+                               <i className="fas fa-align-justify"/>
+                            </a>
                          </li>
                       </ul>
                    </Nav>
@@ -409,4 +473,4 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+export default onClickOutside(Header);

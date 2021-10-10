@@ -30,6 +30,7 @@ export default function Contact(props) {
 
    const contactSubmit = e => {
       e.preventDefault()
+      // https://api.telegram.org/bot1918916703:AAG5YeCqYZuB_j7g0swevqzQ1UvvmrB-mmY/getUpdates
       const {name, message, email} = formData
       const token = "2098100893:AAHDgyzZQy7Ia3X4TOUurjSLsQxRHXOdmas"
       const chat_id = "-703301534"

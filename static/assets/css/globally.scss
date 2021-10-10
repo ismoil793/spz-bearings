@@ -711,6 +711,25 @@ header + section {
   padding-right: 20px;
   color: #2554a4;
 }
+.search-results {
+  background-color: #fafafa;
+  padding-left: 0;
+}
+
+.search-results a li {
+  width: 100% !important;
+  margin-left: 0;
+  padding: 15px 0 15px 35px;
+  font-size: 15px;
+  transition: all 250ms ease;
+  list-style: none;
+}
+
+.search-results a li:hover {
+  background-color: #457BD6;
+  color: #fff;
+}
+
 .navright li.search.open .search-form {
   transform: translateY(0);
   opacity: 1;
