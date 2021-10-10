@@ -7514,8 +7514,14 @@ header .collapse.navbar-collapse {
       width: 100%;
     }
   }
-  .youtube_close_button {
 
+  .youtube_button_player_wrapper > div iframe{
+    height: 50% !important;
+    margin-top: 50%;
+  }
+
+  .youtube_close_button {
+    right: 0 !important;
   }
   .service_item:hover {
     background-position: bottom;
