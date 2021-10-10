@@ -41,7 +41,7 @@ const homeText = {
           details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         }
       ],
-      button: "Заказать"
+      button: "Продукты"
     },
     redirect_card: {
       title: "Наша продукция восстребована и в других секторах.",
@@ -108,7 +108,7 @@ const homeText = {
           details: ["Podshipniklar", "Vallar", "SHesternyalar", "Gaykalar", "Boltlar"]
         }
       ],
-      button: 'Buyurtma qilish'
+      button: 'Mahsulotlar'
     },
     redirect_card: {
       title: "Mahsulotlarimizga boshqa sektorlardayam talab bor",
@@ -165,7 +165,7 @@ const homeText = {
           details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         },
         {
-          title: 'Energy Produce Industry',
+          title: 'Energy Industry',
           details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         },
         {
@@ -173,7 +173,7 @@ const homeText = {
           details: ["Bearings","Shafts","Gears","Nuts","Bolts"]
         }
       ],
-      button: "Order"
+      button: "Products"
     },
     redirect_card: {
       title: "Our products are in demand in other sectors as well.",

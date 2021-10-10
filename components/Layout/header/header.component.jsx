@@ -453,6 +453,7 @@ class Header extends React.Component {
                             </form>
                          </li>
                          <li
+                             className={"burger-menu-btn"}
                              onClick={() =>
                                  this.setState({
                                     menu_is_opened: !this.state.menu_is_opened,

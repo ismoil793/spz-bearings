@@ -6,27 +6,11 @@ import url from "../../url";
 import HeaderText from "../../../static/locales/header";
 import FadeTop from "../../Animations/FadeTop";
 import Fade from "../../Animations/Fade";
-
-const PopularLink = props => (
-    <Link
-        href={{
-           pathname: "/shop/[id]",
-        }}
-        as={`/shop/${props.slug}`}
-    >
-       <li>
-          {" "}
-          <a>{props.name}</a>
-       </li>
-    </Link>
-);
+import {withRouter} from "next/router";
 
 class Footer extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-         categories: []
-      };
+   state = {
+      categories: []
    }
 
    componentDidMount() {
@@ -45,7 +29,7 @@ class Footer extends React.Component {
    }
 
    render() {
-      const {categories} = this.state;
+
       return (
           <footer className="footer_area">
              <div className="footer_top">
@@ -54,7 +38,7 @@ class Footer extends React.Component {
                       <div className="col-lg-4 col-md-6">
                          <div className="f_widget f_about_widget pr_100">
                             <Fade scale={0.6} delay={0.3}>
-                               <a href="/" locale={this.props.locale} className="f_logo">
+                               <a href="/" className="f_logo">
                                   <img className="footer-logo_main"
                                        src="/static/assets/img/img/home-one/logo_footer.png"
                                        alt=""
@@ -74,27 +58,27 @@ class Footer extends React.Component {
                                      </Link>
                                   </li>
                                   <li>
-                                     <Link href="/shop" locale={this.props.locale}>
+                                     <Link href={"/shop"} locale={this.props.locale}>
                                         <a>{HeaderText[this.props.locale].nav[4]}</a>
                                      </Link>
                                   </li>
                                   <li>
-                                     <Link href="/about" locale={this.props.locale}>
+                                     <Link href={"/about"} locale={this.props.locale}>
                                         <a>{HeaderText[this.props.locale].nav[1].dropdown}</a>
                                      </Link>
                                   </li>
                                   <li>
-                                     <Link href="/services" locale={this.props.locale}>
+                                     <Link href={"/services"} locale={this.props.locale}>
                                         <a>{HeaderText[this.props.locale].nav[2]}</a>
                                      </Link>
                                   </li>
                                   <li>
-                                     <Link href="contacts" locale={this.props.locale}>
+                                     <Link href={"/contacts"} locale={this.props.locale}>
                                         <a>{HeaderText[this.props.locale].nav[5]}</a>
                                      </Link>
                                   </li>
                                   <li>
-                                     <Link href="news" locale={this.props.locale}>
+                                     <Link href={"/news"} locale={this.props.locale}>
                                         <a>{HeaderText[this.props.locale].nav[3]}</a>
                                      </Link>
                                   </li>
@@ -106,14 +90,22 @@ class Footer extends React.Component {
                          <FadeTop delay={0.4}>
                             <div className="f_widget f_subscribe_widget">
                                <h3 className="f_title">{HeaderText[this.props.locale].footer[1]}</h3>
-                               <form action="#" className="f_subscribe">
+                               <form
+                                   onSubmit={e => e.preventDefault()}
+                                   onClick={() => {
+                                      this.props.router.push('/contacts')
+                                   }}
+                                   className="f_subscribe"
+                               >
                                   <input
                                       type="text"
                                       className="form-control"
+                                      disabled={true}
+                                      value={`${HeaderText[this.props.locale].footer[2]}`}
                                       placeholder={`${HeaderText[this.props.locale].footer[2]}`}
                                   />
                                   <button type="submit" className="s_btn">
-                                     <i className="icon-email"></i>
+                                     <i className="icon-email"/>
                                   </button>
                                </form>
                                <p>{HeaderText[this.props.locale].footer[3]}</p>
@@ -134,10 +126,8 @@ class Footer extends React.Component {
                          </p>
                       </div>
                       <div className="col-sm-5 text-right">
-                         {" "}
-
                          <a href="#" className="go_top">
-                            {HeaderText[this.props.locale].footer[4]}<i className="fas fa-angle-up"></i>
+                            {HeaderText[this.props.locale].footer[4]}<i className="fas fa-angle-up"/>
                          </a>
                       </div>
                    </div>
@@ -148,10 +138,4 @@ class Footer extends React.Component {
    }
 }
 
-const mapStateToProps = ({userInfo}) => {
-   return {
-      user: userInfo
-   }
-}
-
-export default Footer;
+export default withRouter(Footer);

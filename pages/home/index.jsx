@@ -14,6 +14,7 @@ import Fade from "../../components/Animations/Fade";
 import {motion} from "framer-motion"
 import FadeLeft from "../../components/Animations/FadeLeft";
 import FadeTop from "../../components/Animations/FadeTop";
+import Link from "next/link"
 
 const opts = {
    height: '390',
@@ -377,14 +378,16 @@ class Home extends React.Component {
                                                 </FadeLeftWhenVisible>
                                              </p>{" "}
                                              <Fade delay={0.3}>
-                                                <a
-                                                    href="#"
-                                                    className="theme_btn theme_btn_three hover_style1"
-                                                    data-animation="fadeInUp"
-                                                    data-delay="0.5s"
-                                                >
-                                                   {homeText[this.props.locale].slider[index].button}
-                                                </a>
+                                                <Link
+                                                    href={index === 0 ? '/about' : index === 1 ? '/shop' : '/contacts'}>
+                                                   <a
+                                                       className="theme_btn theme_btn_three hover_style1"
+                                                       data-animation="fadeInUp"
+                                                       data-delay="0.5s"
+                                                   >
+                                                      {homeText[this.props.locale].slider[index].button}
+                                                   </a>
+                                                </Link>
                                              </Fade>
                                           </div>
                                        </div>
@@ -427,8 +430,7 @@ class Home extends React.Component {
                                <div className="col-md-4">
                                   <div className="service_item">
                                      <div className="media service_icon">
-                                        {" "}
-                                        <i class="list-icon fas fa-thumbs-up"></i>
+                                        <i class="list-icon fas fa-thumbs-up"/>
                                         <div className="media-body">
                                            {homeText[this.props.locale].benefits.descriptions[1]}
                                         </div>
@@ -438,8 +440,7 @@ class Home extends React.Component {
                                <div className="col-md-4">
                                   <div className="service_item">
                                      <div className="media service_icon">
-                                        {" "}
-                                        <i class="list-icon fas fa-recycle"></i>
+                                        <i class="list-icon fas fa-recycle"/>
                                         <div className="media-body">
                                            {homeText[this.props.locale].benefits.descriptions[2]}
                                         </div>
@@ -462,15 +463,15 @@ class Home extends React.Component {
                                       onReady={this._onReady}/>
                           </div>
                        </div> : null}
-                   <section class="cons_work_area cons_video_area p-0">
-                      <div class="cons_work_left">
-                         <div class="cons_about_content">
-                            <h6 class="title_top">
+                   <section className="cons_work_area cons_video_area p-0">
+                      <div className="cons_work_left">
+                         <div className="cons_about_content">
+                            <h6 className="title_top">
                                <FadeLeft>
                                   {ServicesText[this.props.locale].video_section_title}
                                </FadeLeft>
                             </h6>
-                            <h2 class="title_head">
+                            <h2 className="title_head">
                                <FadeLeft delay={0.5}>
                                   {ServicesText[this.props.locale].video_section_title_not_main}
                                </FadeLeft>
@@ -480,14 +481,14 @@ class Home extends React.Component {
                                   {ServicesText[this.props.locale].video_section_description}
                                </FadeLeft>
                             </p>
-                            <a href="#" class="text_btn" data-text="Контакты">
+                            <a href="#" className="text_btn" data-text="Контакты">
                                <FadeLeft delay={1.1}>
                                   {ServicesText[this.props.locale].video_section_button}
                                </FadeLeft>
                             </a>
                          </div>
                       </div>
-                      <div class="cons_work_right">
+                      <div className="cons_work_right">
                          <Fade duration={0.5} delay={0.5} scale={0.5}>
                             <img
                                 onLoad={() => this.setState(({imagesLoaded}) => {
@@ -510,7 +511,7 @@ class Home extends React.Component {
                                    whileHover={{scale: 1.1}}
                                    whileTap={{scale: 0.9}}
                                >
-                                  <i className="fas fa-play"></i>
+                                  <i className="fas fa-play"/>
                                </motion.span>
                                <span> </span>
                             </Fade>
@@ -626,16 +627,13 @@ class Home extends React.Component {
                          <div className="container">
                             <div className="cons_action_info cons_action_info_white justify-content-between">
                                <div className="text">
-                                  {" "}
                                   {homeText[this.props.locale].redirect_card.title}
                                </div>
-                               {" "}
-                               <a
-                                   href="#"
-                                   className="theme_btn theme_btn_three hover_style1"
-                               >
-                                  {homeText[this.props.locale].redirect_card.button}
-                               </a>
+                               <Link href={"/shop"}>
+                                  <a className="theme_btn theme_btn_three hover_style1">
+                                     {homeText[this.props.locale].redirect_card.button}
+                                  </a>
+                               </Link>
                             </div>
                          </div>
                       </div>
