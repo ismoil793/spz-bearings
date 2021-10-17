@@ -171,8 +171,8 @@ class Header extends React.Component {
       let filteredSearch = []
       if (e.target.value.trim().length) {
          filteredSearch = searchResults.filter(s => {
-           return s.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-               s.link.toLowerCase().includes(e.target.value.toLowerCase())
+            return s.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+                s.link.toLowerCase().includes(e.target.value.toLowerCase())
          })
       }
       this.setState({
@@ -286,6 +286,26 @@ class Header extends React.Component {
                        </div>
                    ) : null}
 
+
+                   <div id="fixed-social">
+                      <div>
+                         <a href="https://www.instagram.com/spzbearings/" className="fixed-facebook" target="_blank">
+                            <i className="fab fa-facebook"/>
+                            <span>Facebook</span></a>
+                      </div>
+                      <div>
+                         <a href="https://www.instagram.com/spzbearings/" className="fixed-instagram" target="_blank">
+                            <i className="fab fa-instagram"/>
+                            <span>Instagram</span></a>
+                      </div>
+                      <div>
+                         <a href="https://t.me/spzbearings" className="fixed-telegram" target="_blank">
+                            <i className="fab fa-telegram"/>
+                            <span>Telegram</span></a>
+                      </div>
+                   </div>
+
+
                    <Nav className="navbar navbar-expand-lg" id="header">
                       <div className="container main_logo_container">
                          {/* <div class={`language_list_wrapper right_side ${this.props.isHome ? 'home_page_language' : ''}`}>
@@ -296,14 +316,14 @@ class Header extends React.Component {
                 </div>
                   </div> */}
                          <Link href="/" locale={this.props.locale}>
-                            <Fade scale={0.5}>
-                               <a className="navbar-brand">
+                            <a className="navbar-brand">
+                               <Fade scale={0.5}>
                                   <span>
                                      <img className={`cropped1 animated_rotate-logo`} alt={"SPZ Bearings"}
                                           src="../../../static/assets/img/img/header_logo/logo.png"/>
                                   </span>
-                               </a>
-                            </Fade>
+                               </Fade>
+                            </a>
                          </Link>
                          <div className="collapse navbar-collapse">
                             <ul className="navbar-nav menu">
