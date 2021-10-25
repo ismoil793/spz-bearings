@@ -9124,6 +9124,9 @@ polyline {
   .main_slider_area_five .main_slider .slider_text {
     margin-right: 0;
   }
+  .burger-menu-btn {
+    display: inline-block;
+  }
 }
 @media (max-width: 767px) {
   .header_top .menu_contact_info li a i {
@@ -9131,9 +9134,6 @@ polyline {
   }
   .header_top .text-right {
     text-align: center !important;
-  }
-  .burger-menu-btn {
-    display: inline-block;
   }
   header + div,
   header + section {

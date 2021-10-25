@@ -353,13 +353,13 @@ class Header extends React.Component {
                                            </a>
                                         </Link>
                                      </li>
-                                     <li className="nav-item">
-                                        <Link href={"/team"} locale={this.props.locale}>
-                                           <a className="nav-link">
-                                              {HeaderText[this.props.locale].nav[1].elements[1]}
-                                           </a>
-                                        </Link>
-                                     </li>
+                                     {/*<li className="nav-item">*/}
+                                     {/*   <Link href={"/team"} locale={this.props.locale}>*/}
+                                     {/*      <a className="nav-link">*/}
+                                     {/*         {HeaderText[this.props.locale].nav[1].elements[1]}*/}
+                                     {/*      </a>*/}
+                                     {/*   </Link>*/}
+                                     {/*</li>*/}
                                      <li className="nav-item">
                                         <Link href={{pathname: "/services/[singlenservice]"}} as={`/services/1`}>
                                            <a className="nav-link">{HeaderText[this.props.locale].nav[1].elements[2]}</a>

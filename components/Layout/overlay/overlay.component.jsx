@@ -88,13 +88,13 @@ class OverlayComponent extends React.Component {
                   </a>
                   </Link>
                 </li>
-                <li>
-                  <Link locale={this.props.locale} href="/team">
-                  <a>
-                    {HeaderText[this.props.locale].nav[1].elements[1]}
-                  </a>
-                  </Link>
-                </li>
+                {/*<li>*/}
+                {/*  <Link locale={this.props.locale} href="/team">*/}
+                {/*  <a>*/}
+                {/*    {HeaderText[this.props.locale].nav[1].elements[1]}*/}
+                {/*  </a>*/}
+                {/*  </Link>*/}
+                {/*</li>*/}
                 <li>
                   <Link locale={this.props.locale} href="/services/1">
                   <a>
