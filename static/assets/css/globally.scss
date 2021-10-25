@@ -6553,8 +6553,9 @@ header + section {
   position: relative;
 }
 .cons_contact_area_two .map {
-  margin-bottom: -150px;
-   margin-top: 100px;
+  max-width: 80%;
+  margin: 50px auto 0 auto;
+  display: block;
 }
 .map_dot .map_marker {
   background: rgba(78, 96, 212, 0);

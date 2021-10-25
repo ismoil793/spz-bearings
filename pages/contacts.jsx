@@ -112,20 +112,19 @@ export default function Contact(props) {
                 <main id="content" role="main">
                    <OverlayComponent isLoading={props.isLoading} locale={props.locale}/>
                    <section className="cons_contact_area_two map_area">
-                      {" "}
                       <img
                           className="map img-fluid"
-                          src="/static/assets/img/img/home-six/map.png"
+                          src="/static/assets/img/img/home-six/uzb-map.png"
                           alt=""
                       />
                       <div className="container">
                          <div className="row cons_contact_info_two">
-                            <div className="map_dot">
-                               <div className="map_marker one">
-                                  <span>
-                                  </span>
-                               </div>
-                            </div>
+                            {/*<div className="map_dot">*/}
+                            {/*   <div className="map_marker one">*/}
+                            {/*      <span>*/}
+                            {/*      </span>*/}
+                            {/*   </div>*/}
+                            {/*</div>*/}
                             <div className="col-lg-6">
                                <div className="cons_about_content pr_100">
                                   <FadeLeft>

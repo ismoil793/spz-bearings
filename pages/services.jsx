@@ -283,81 +283,77 @@ export default function servicesPage(props) {
                       </div>
                    </section>
 
-                   <section class="cons_logo_area_four pt_200">
-                      <div class="container">
-                         <div class="section_title_three title_three text-center">
-                            <h6 class="title_top services_title_margin">{ServicesText[props.locale].partners_title}</h6>
-                            <div class="clients_logo_inner">
-                               {" "}
-                               <a href="#" class="clients_logo">
-                                  {" "}
-                                  <img
-                                      src="/static/assets/img/img/home-three/01.png"
-                                      alt=""
-                                  />{" "}
-                                  <img
-                                      src="/static/assets/img/img/home-three/01-yellow.png"
-                                      alt=""
-                                  />{" "}
-                               </a>{" "}
-                               <a href="#" class="clients_logo">
-                                  {" "}
+                   {/*
+                   <section className="cons_logo_area_four pt_200">
+                      <div className="container">
+                         <div className="section_title_three title_three text-center">
+                            <h6 className="title_top services_title_margin">{ServicesText[props.locale].partners_title}</h6>
+                            <div className="clients_logo_inner">
+                               <a href="#" className="clients_logo">
                                   <img
                                       src="/static/assets/img/img/home-three/02.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                   <img
                                       src="/static/assets/img/img/home-three/02-yellow.png"
                                       alt=""
-                                  />{" "}
-                               </a>{" "}
-                               <a href="#" class="clients_logo">
-                                  {" "}
+                                  />
+                               </a>
+                               <a href="#" className="clients_logo">
+                                  <img
+                                      src="/static/assets/img/img/home-three/02.png"
+                                      alt=""
+                                  />
+                                  <img
+                                      src="/static/assets/img/img/home-three/02-yellow.png"
+                                      alt=""
+                                  />
+                               </a>
+                               <a href="#" className="clients_logo">
                                   <img
                                       src="/static/assets/img/img/home-three/03.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                   <img
                                       src="/static/assets/img/img/home-three/03-yellow.png"
                                       alt=""
-                                  />{" "}
-                               </a>{" "}
-                               <a href="#" class="clients_logo">
+                                  />
+                               </a>
+                               <a href="#" className="clients_logo">
                                   <img
                                       src="/static/assets/img/img/home-three/06.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                   <img
                                       src="/static/assets/img/img/home-three/06-yellow.png"
                                       alt=""
-                                  />{" "}
-                               </a>{" "}
-                               <a href="#" class="clients_logo">
-                                  {" "}
+                                  />
+                               </a>
+                               <a href="#" className="clients_logo">
                                   <img
                                       src="/static/assets/img/img/home-three/03.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                   <img
                                       src="/static/assets/img/img/home-three/03-yellow.png"
                                       alt=""
-                                  />{" "}
-                               </a>{" "}
-                               <a href="#" class="clients_logo">
-                                  {" "}
+                                  />
+                               </a>
+                               <a href="#" className="clients_logo">
                                   <img
                                       src="/static/assets/img/img/home-three/06.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                   <img
                                       src="/static/assets/img/img/home-three/06-yellow.png"
                                       alt=""
-                                  />{" "}
+                                  />
                                </a>
                             </div>
                          </div>
                       </div>
                    </section>
+                   */}
 
                    <section class="cons_contact_area_four work_offers">
                       <div class="container">
