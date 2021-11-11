@@ -8,7 +8,63 @@ import Fade from "../components/Animations/Fade";
 
 export default function servicesPage(props) {
 
-   const [checkedArray, setCheckedArray] = React.useState([true, false, false, false, false])
+   const [animation, setAnimation] = useState(true)
+   const [checkedArray, setCheckedArray] = useState([true, false, false, false, false])
+   const [bearingsData, setBearingsData] = useState({
+      byNumber: '',
+      bySize: ''
+   })
+   const defaultBearings = [
+      {
+         name: 'Подшипник радиально упорный',
+         slug: '/product/radialno-upornyiy-sharikovyiy',
+         src: '/static/assets/img/img/product/products/podshipnik-radialno-uporniy.jpg',
+         delay: 0.2,
+         number: "100200",
+         size: "100x90"
+      },
+      {
+         name: 'Подшипник роликовый конический',
+         slug: '/product/rolikovyiy-konicheskiy',
+         src: '/static/assets/img/img/product/products/podshipnik-rolikoviy-konicheskiy.jpg',
+         delay: 0.4,
+         number: "3009829",
+         size: "90x100"
+      },
+      {
+         name: 'Подшипник роликовый радиальный',
+         slug: '/product/rolikovyiy-radialnyiy-sfericheskiy',
+         src: '/static/assets/img/img/product/products/podshipnik-rolikoviy-radialniy.jpg',
+         delay: 0.6,
+         number: "400599",
+         size: "50x100"
+      },
+      {
+         name: 'Подшипник шариковый',
+         slug: '/product/sharikovyiy-radialnyiy',
+         src: '/static/assets/img/img/product/products/podshipnik-sharikoviy.jpg',
+         delay: 0.8,
+         number: "12345156",
+         size: "45x100"
+      },
+      {
+         name: 'Подшипник цилиндрический роликовый',
+         slug: '/product/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami',
+         src: '/static/assets/img/img/product/products/podshipnik-silindricheskiy.jpg',
+         delay: 1,
+         number: "123123123",
+         size: "75x100"
+      },
+      {
+         name: 'Подшипник упорный или упорно-радиальный',
+         slug: '/product/upornyiy-ili-uporno-radialnyiy-sharikovyiy',
+         src: '/static/assets/img/img/product/products/podshipnik-uporniy-ili-uporno-radialniy.jpg',
+         delay: 1.2,
+         number: "883459",
+         size: "90x100"
+      },
+   ]
+   const [bearings, setBearings] = useState(defaultBearings)
 
    const SetChecked = (id) => {
       const array = checkedArray.map((item, index) => {
@@ -18,6 +74,58 @@ export default function servicesPage(props) {
       setCheckedArray(array)
    }
 
+   const renderBearings = () => (
+       bearings.map(ring => {
+          const bearing = (
+              <div className="product_item">
+                 <div className="product_img">
+                    <img
+                        className="img-fluid shop_fluid_img"
+                        src={ring.src}
+                        alt=""
+                    />
+                    <i className="far fa-heart heart_icon"></i>
+                    <Link href={ring.slug}>
+                       <a className="theme_btn_two hover_style1">
+                          Описание
+                       </a>
+                    </Link>
+                 </div>
+                 <div className="product_text">
+                    <h4>{ring.name}</h4>
+                 </div>
+              </div>
+          )
+          return (
+              <div key={ring.slug} className="col-lg-4 col-sm-6">
+                 {
+                    animation ?
+                        <Fade scale={0.5} delay={ring.delay}>
+                           {bearing}
+                        </Fade>
+                        : bearing
+                 }
+              </div>
+          )
+       })
+   )
+
+   const bearingsFilterChange = e => {
+      setAnimation(false)
+      if (e.target.value.trim()) {
+         if (e.target.name === 'byNumber') {
+            setBearings([...defaultBearings.filter(f => f.number.includes(e.target.value))])
+         } else if (e.target.name === 'bySize') {
+            setBearings([...defaultBearings.filter(f => f.size.includes(e.target.value))])
+         }
+      } else {
+         setBearings(defaultBearings)
+      }
+      setBearingsData({
+         ...bearingsData,
+         [e.target.name]: e.target.value
+      })
+   }
 
    return (
        <>
@@ -74,161 +182,55 @@ export default function servicesPage(props) {
                        isLoading={props.isLoading}
                        locale={props.locale}
                    />
-                   <section class="product_area pt_200 shops_catalogs_page-section">
+
+                   <section className="product_area pt-5 shops_catalogs_page-section">
+
+                      <div className="row mb-5 mt-5">
+                         {
+                            checkedArray[0] ?
+                                <div className="col-md-8 col-10 offset-1 offset-md-2">
+                                   <form className={"contact_form"}>
+                                      <div className={"form-group row"}>
+                                         <div className={"col-md-3"}>
+                                            Поиск подшипника по номеру
+                                         </div>
+                                         <input
+                                             type="text"
+                                             name={"byNumber"}
+                                             onChange={bearingsFilterChange}
+                                             className={"form-control col"}
+                                         />
+                                      </div>
+                                      <div className={"form-group row"}>
+                                         <div className={"col-md-3"}>
+                                            Поиск подшипника по размеру
+                                         </div>
+                                         <input
+                                             type="text"
+                                             name={"bySize"}
+                                             onChange={bearingsFilterChange}
+                                             className={"form-control col"}
+                                         />
+                                      </div>
+                                   </form>
+                                </div>
+                                : null
+                         }
+                      </div>
 
                       <div className="tabs">
-
-
-                         <input name="tabs" type="radio" id="tab-1" checked={checkedArray[0]} class="input"
+                         <input name="tabs" type="radio" id="tab-1" checked={checkedArray[0]} className="input"
                                 onClick={(e) => {
                                    SetChecked(0);
-                                   console.log(checkedArray)
                                 }}/>
                          <label for="tab-1" class="label">Подшипники</label>
-                         <div class="panel">
-                            <div class="container">
-                               <div class="section_title_one">
-                                  <h2 class="title_head">Показано 1-6 из 6 результатов Подшипники</h2>
+                         <div className="panel">
+                            <div className="container">
+                               <div className="section_title_one">
+                                  <h2 className="title_head">Показано {bearings.length} из 6 результатов Подшипники</h2>
                                </div>
                                <div class="row product_inner">
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.2}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.jpg"
-                                                  alt=""
-                                              />
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link href={`/product/radialno-upornyiy-sharikovyiy`}>
-                                                 <a class="theme_btn_two hover_style1">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник радиально упорный</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.4}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              {" "}
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-konicheskiy.jpg"
-                                                  alt=""
-                                              />{" "}
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link href={`/product/rolikovyiy-konicheskiy`}>
-                                                 <a class="theme_btn_two hover_style1" href="#">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник роликовый конический</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.6}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              {" "}
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-rolikoviy-radialniy.jpg"
-                                                  alt=""
-                                              />{" "}
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link href={`/product/rolikovyiy-radialnyiy-sfericheskiy`}>
-                                                 <a class="theme_btn_two hover_style1" href="#">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник роликовый радиальный</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={0.8}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              {" "}
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-sharikoviy.jpg"
-                                                  alt=""
-                                              />{" "}
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link href={`/product/sharikovyiy-radialnyiy`}>
-                                                 <a class="theme_btn_two hover_style1" href="#">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник шариковый</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={1}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              {" "}
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-silindricheskiy.jpg"
-                                                  alt=""
-                                              />{" "}
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link
-                                                  href={`/product/rolikovyiy-radialnyiy-s-korotkimi-tsilindricheskimi-rolikami`}>
-                                                 <a class="theme_btn_two hover_style1" href="#">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник цилиндрический роликовый</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
-                                  <div class="col-lg-4 col-sm-6">
-                                     <Fade scale={0.5} delay={1.2}>
-                                        <div class="product_item">
-                                           <div class="product_img">
-                                              {" "}
-                                              <img
-                                                  class="img-fluid shop_fluid_img"
-                                                  src="/static/assets/img/img/product/products/podshipnik-uporniy-ili-uporno-radialniy.jpg"
-                                                  alt=""
-                                              />{" "}
-                                              <i class="far fa-heart heart_icon"></i>{" "}
-                                              <Link href={`/product/upornyiy-ili-uporno-radialnyiy-sharikovyiy`}>
-                                                 <a class="theme_btn_two hover_style1" href="#">
-                                                    Описание
-                                                 </a>
-                                              </Link>
-                                           </div>
-                                           <div class="product_text">
-                                              <h4>Подшипник упорный или упорно-радиальный</h4>
-                                           </div>
-                                        </div>
-                                     </Fade>
-                                  </div>
+                                  {renderBearings()}
                                </div>
 
                                {/*<div class="pagination_area">*/}
@@ -256,10 +258,9 @@ export default function servicesPage(props) {
                          </div>
 
 
-                         <input name="tabs" checked={checkedArray[1]} type="radio" id="tab-2" class="input"
+                         <input name="tabs" checked={checkedArray[1]} type="radio" id="tab-2" className="input"
                                 onClick={(e) => {
                                    SetChecked(1);
-                                   console.log(checkedArray)
                                 }}/>
                          <label for="tab-2" class="label">Валлы</label>
                          <div class="panel">
