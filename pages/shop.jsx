@@ -61,7 +61,7 @@ export default function servicesPage(props) {
          src: '/static/assets/img/img/product/products/podshipnik-uporniy-ili-uporno-radialniy.jpg',
          delay: 1.2,
          number: "883459",
-         size: "90x100"
+         size: "30x40"
       },
    ]
    const [bearings, setBearings] = useState(defaultBearings)
