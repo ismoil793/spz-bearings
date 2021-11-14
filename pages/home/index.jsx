@@ -366,17 +366,15 @@ class Home extends React.Component {
                                        <div className="slider_text slider_text_width">
                                           <div className="vertical-align-center_wrapper">
                                              <h2 data-animation="fadeInUp" data-delay="0.1s">
-                                                {" "}
                                                 <FadeLeftWhenVisible delay={0.05}>
                                                    {homeText[this.props.locale].slider[index].title}
                                                 </FadeLeftWhenVisible>
                                              </h2>
                                              <p data-animation="fadeInUp" data-delay="0.3s">
-                                                {" "}
                                                 <FadeLeftWhenVisible delay={0.1}>
                                                    {homeText[this.props.locale].slider[index].description}
                                                 </FadeLeftWhenVisible>
-                                             </p>{" "}
+                                             </p>
                                              <Fade delay={0.3}>
                                                 <Link
                                                     href={index === 0 ? '/about' : index === 1 ? '/shop' : '/contacts'}>

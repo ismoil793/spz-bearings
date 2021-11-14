@@ -5,6 +5,9 @@ import Link from 'next/link'
 import React, {useState, useEffect} from "react";
 import OverlayComponent from "../components/Layout/overlay/overlay.component";
 import Fade from "../components/Animations/Fade";
+import FadeTop from "../components/Animations/FadeTop";
+import FadeLeft from "../components/Animations/FadeLeft";
+import FadeRight from "../components/Animations/FadeRight";
 
 export default function servicesPage(props) {
 
@@ -790,10 +793,98 @@ export default function servicesPage(props) {
                                </div>
                             </div>
                          </div>
-
-
                       </div>
 
+
+                      <div className={"row mb-5 pb-5"}>
+                         <div className="col-md-8 offset-md-2 offset-1">
+                            <FadeTop delay={0.5}>
+                               <h4 className={"text-center mb-5 pb-5"}>
+                                  <strong>
+                                     Разработка конструкторских чертежей деталей. Разработка конструкторских чертежей и
+                                     изготовление нестандартного оборудования. Разработка технической документации.
+                                  </strong>
+                               </h4>
+                            </FadeTop>
+                            <div className="row">
+                               <div className="col-lg-6 mb-5 d-flex align-items-center">
+                                  <FadeRight>
+                                     <div>
+                                        <h5><strong>РАЗРАБОТКА КОНСТРУКТОРСКОЙ ДОКУМЕНТАЦИИ</strong></h5>
+                                        <ul>
+                                           <li>Разработка чертежей деталей и узлов</li>
+                                           <li>Разработка схем</li>
+                                           <li>Создание эксплуатационной документации</li>
+                                           <li>Оцифровка КД</li>
+                                           <li>Разработка чертежей по образцу изделия (Реверс-инжиниринг)</li>
+                                        </ul>
+                                     </div>
+                                  </FadeRight>
+                               </div>
+                               <div className="col-lg-6 mb-5">
+                                  <FadeLeft>
+                                     <img
+                                         src="/static/assets/img/img/shop/construct1.jpg"
+                                         alt="Construct"
+                                         className={"img-fluid"}
+                                     />
+                                  </FadeLeft>
+                               </div>
+                               <div className="col-lg-6 mb-5">
+                                  <FadeRight>
+                                     <img
+                                         src="/static/assets/img/img/shop/project.jpg"
+                                         alt="Project"
+                                         className={"img-fluid"}
+                                     />
+                                  </FadeRight>
+                               </div>
+                               <div className="col-lg-6 mb-5 d-flex align-items-center">
+                                  <FadeLeft>
+                                     <div>
+                                        <h5 className={"text-right"}><strong>ПРОЕКТИРОВАНИЕ ОБОРУДОВАНИЯ</strong></h5>
+                                        <ul>
+                                           <li>Формирование внешнего вида изделий (промышленный дизайн)</li>
+                                           <li>Разработка конструкции</li>
+                                           <li>Подбор компонентов и комплектующих</li>
+                                           <li>Оформление конструкторской и технической документации</li>
+                                           <li>Доработка существующих проектов</li>
+                                        </ul>
+                                     </div>
+                                  </FadeLeft>
+                               </div>
+                               <div className="col-12 my-5">
+                                  <Fade delay={0.5}>
+                                     <h5 className={"text-center mb-5"}>
+                                        <strong>РАЗРАБОТКА ТЕХНИЧЕСКОЙ ДОКУМЕНТАЦИИ</strong>
+                                     </h5>
+                                     <img
+                                         src="/static/assets/img/img/shop/documentation.jpg"
+                                         alt="Documentation"
+                                         className={"d-block w-100 mb-5"}
+                                     />
+                                     <div className={"d-flex justify-content-around"}>
+                                        <ul>
+                                           <p><strong>Эксплуатационная документация:</strong></p>
+                                           <li>Паспорт изделия (ПС)</li>
+                                           <li>Руководство по эксплуатации (РЭ)</li>
+                                           <li>Программы и методики испытаний (ПМ)</li>
+                                           <li>Формуляры</li>
+                                        </ul>
+
+                                        <ul>
+                                           <p><strong>Нормативная документация:</strong></p>
+                                           <li>Технические условия (ТУ)</li>
+                                           <li>Технические инструкции (ТИ)</li>
+                                           <li>Регламенты</li>
+                                           <li>Рабочие инструкции</li>
+                                        </ul>
+                                     </div>
+                                  </Fade>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
 
                    </section>
                 </main>
