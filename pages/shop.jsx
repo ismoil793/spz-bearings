@@ -797,7 +797,7 @@ export default function servicesPage(props) {
 
 
                       <div className={"row mb-5 pb-5"}>
-                         <div className="col-md-8 offset-md-2 offset-1">
+                         <div className="col-md-8 offset-md-2 col-10 offset-1">
                             <FadeTop delay={0.5}>
                                <h4 className={"text-center mb-5 pb-5"}>
                                   <strong>
@@ -810,7 +810,9 @@ export default function servicesPage(props) {
                                <div className="col-lg-6 mb-5 d-flex align-items-center">
                                   <FadeRight>
                                      <div>
-                                        <h5><strong>РАЗРАБОТКА КОНСТРУКТОРСКОЙ ДОКУМЕНТАЦИИ</strong></h5>
+                                        <h5 className={"text-lg-left text-center"}>
+                                           <strong>РАЗРАБОТКА КОНСТРУКТОРСКОЙ ДОКУМЕНТАЦИИ</strong>
+                                        </h5>
                                         <ul>
                                            <li>Разработка чертежей деталей и узлов</li>
                                            <li>Разработка схем</li>
@@ -842,7 +844,8 @@ export default function servicesPage(props) {
                                <div className="col-lg-6 mb-5 d-flex align-items-center">
                                   <FadeLeft>
                                      <div>
-                                        <h5 className={"text-right"}><strong>ПРОЕКТИРОВАНИЕ ОБОРУДОВАНИЯ</strong></h5>
+                                        <h5 className={"text-lg-right text-center"}><strong>ПРОЕКТИРОВАНИЕ
+                                           ОБОРУДОВАНИЯ</strong></h5>
                                         <ul>
                                            <li>Формирование внешнего вида изделий (промышленный дизайн)</li>
                                            <li>Разработка конструкции</li>
@@ -863,7 +866,7 @@ export default function servicesPage(props) {
                                          alt="Documentation"
                                          className={"d-block w-100 mb-5"}
                                      />
-                                     <div className={"d-flex justify-content-around"}>
+                                     <div className={"d-md-flex justify-content-around d-block"}>
                                         <ul>
                                            <p><strong>Эксплуатационная документация:</strong></p>
                                            <li>Паспорт изделия (ПС)</li>
