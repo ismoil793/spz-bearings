@@ -822,20 +822,25 @@ export default function servicesPage(props) {
                                   </FadeRight>
                                </div>
                                <div className="col-lg-6 mb-5">
+                                  <FadeLeft>
                                      <img
                                          src="/static/assets/img/img/shop/construct1.jpg"
                                          alt="Construct"
                                          className={"img-fluid"}
                                      />
+                                  </FadeLeft>
                                </div>
                                <div className="col-lg-6 mb-5">
+                                  <FadeRight>
                                      <img
                                          src="/static/assets/img/img/shop/project.jpg"
                                          alt="Project"
                                          className={"img-fluid"}
                                      />
+                                  </FadeRight>
                                </div>
                                <div className="col-lg-6 mb-5 d-flex align-items-center">
+                                  <FadeLeft>
                                      <div>
                                         <h5 className={"text-right"}><strong>ПРОЕКТИРОВАНИЕ ОБОРУДОВАНИЯ</strong></h5>
                                         <ul>
@@ -846,8 +851,10 @@ export default function servicesPage(props) {
                                            <li>Доработка существующих проектов</li>
                                         </ul>
                                      </div>
+                                  </FadeLeft>
                                </div>
                                <div className="col-12 my-5">
+                                  <Fade delay={0.5}>
                                      <h5 className={"text-center mb-5"}>
                                         <strong>РАЗРАБОТКА ТЕХНИЧЕСКОЙ ДОКУМЕНТАЦИИ</strong>
                                      </h5>
@@ -873,6 +880,7 @@ export default function servicesPage(props) {
                                            <li>Рабочие инструкции</li>
                                         </ul>
                                      </div>
+                                  </Fade>
                                </div>
                             </div>
                          </div>
