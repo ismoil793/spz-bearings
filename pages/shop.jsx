@@ -854,7 +854,7 @@ export default function servicesPage(props) {
                                   </FadeLeft>
                                </div>
                                <div className="col-12 my-5">
-                                  <Fade delay={0.5}>
+                                  <Fade delay={0.3}>
                                      <h5 className={"text-center mb-5"}>
                                         <strong>РАЗРАБОТКА ТЕХНИЧЕСКОЙ ДОКУМЕНТАЦИИ</strong>
                                      </h5>
