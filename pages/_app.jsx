@@ -63,7 +63,8 @@ class MyApp extends App {
       return (
           <>
              {this.state.videoPreloader ?
-                 <Component locale={this.props.router.locale} isLoading={this.state.isLoading} videoPreloader={this.state.videoPreloader} {...pageProps}/>
+                 <Component locale={this.props.router.locale} isLoading={this.state.isLoading}
+                            videoPreloader={this.state.videoPreloader} {...pageProps}/>
                  // <div className="video_player">
                  //    <video onPlay={() => setTimeout(() => this.setState({videoPreloader: false}), 2300)} autoplay="true"
                  //           preload="auto" muted="muted">
