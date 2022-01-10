@@ -15,8 +15,8 @@ export default class MyDocument extends Document {
                 <Head>
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" href="/static/assets/vendor/font-awesome/css/fontawesome-all.min.css"/>
-                    <link rel="icon" href="/static/assets/css/images/favicon.png" type="image/x-icon"/>
-      
+                    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
                     <link rel="stylesheet" type="text/css" href="/static/assets/css/theme.css"/>
                     <link rel="stylesheet" href="/static/assets/css/font-electro.css"/>
 
