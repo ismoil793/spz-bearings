@@ -320,7 +320,7 @@ class Header extends React.Component {
                                <Fade scale={0.5}>
                                   <span>
                                      <img className={`cropped1 animated_rotate-logo`} alt={"SPZ Bearings"}
-                                          src="../../../static/assets/img/img/header_logo/logo.png"/>
+                                          src="../../../static/assets/img/img/header_logo/logo.svg"/>
                                   </span>
                                </Fade>
                             </a>
