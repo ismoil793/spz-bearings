@@ -40,7 +40,7 @@ class Footer extends React.Component {
                             <Fade scale={0.6} delay={0.3}>
                                <a href="/" className="f_logo">
                                   <img className="footer-logo_main"
-                                       src="/static/assets/img/img/home-one/logo_footer.png"
+                                       src="/static/assets/img/img/header_logo/logo.svg"
                                        alt=""
                                   />
                                </a>

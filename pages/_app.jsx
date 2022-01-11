@@ -21,15 +21,12 @@ class MyApp extends App {
       };
       Router.events.on("routeChangeStart", () => {
          this.changeLoadingStatus(true);
-         console.log("isLoading", this.state.isLoading);
       });
       Router.events.on("routeChangeComplete", () => {
          this.changeLoadingStatus(false);
-         console.log("isLoading", this.state.isLoading);
       });
       Router.events.on("routeChangeError", () => {
          this.changeLoadingStatus(false);
-         console.log("isLoading", this.state.isLoading);
       });
    }
 
