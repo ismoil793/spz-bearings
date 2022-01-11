@@ -1805,7 +1805,7 @@ a {
 .banner_nine_area {
    height: 100vh;
    min-height: 770px;
-   background: url(/static/assets/img/img/home-nine/banner_img.jpg) no-repeat scroll center 0 / cover;
+   //background: url('./static/assets/img/img/home-nine/banner_img.jpg') no-repeat scroll center 0 / cover;
    position: relative;
    z-index: 1;
    display: flex;
@@ -2973,7 +2973,7 @@ a {
 }
 
 .service_img.bg-fixed {
-   background-image: url("/static/assets/img/img/home-14/innovation.jpg");
+   background-image: url('/static/assets/img/img/home-14/innovation.jpg');
    background-attachment: fixed;
    height: 950px;
    background-size: contain;
@@ -3001,7 +3001,7 @@ a {
 .cons_service_area_two .service_tab ul .nav-item .nav-link h2 {
    font-size: 140px;
    font-weight: 700;
-   background-image: url(/static/assets/img/img/home-three/service1.jpg);
+   //background-image: url('./static/assets/img/img/home-three/service1.jpg');
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -3010,11 +3010,11 @@ a {
 }
 
 .cons_service_area_two .service_tab ul .nav-item:nth-child(2) .nav-link h2 {
-   background-image: url(/static/assets/img/img/home-three/service3.jpg);
+   //background-image: url('./static/assets/img/img/home-three/service3.jpg');
 }
 
 .cons_service_area_two .service_tab ul .nav-item:nth-child(3) .nav-link h2 {
-   background-image: url(/static/assets/img/img/home-three/service2.jpg);
+   //background-image: url('./static/assets/img/img/home-three/service2.jpg');
 }
 
 .cons_service_area_two .service_img {
@@ -5383,7 +5383,7 @@ h5 {
 
 .cons_action_content_five .contact_btn {
    font-size: 18px;
-   background: url(/static/assets/img/img/home-18/btn_bg.png) no-repeat scroll center 0 / cover;
+   //background: url('./static/assets/img/img/home-18/btn_bg.png') no-repeat scroll center 0 / cover;
    display: inline-block;
    font-weight: 600;
    color: #fff;
@@ -5992,7 +5992,7 @@ h5 {
 .exprence_number .number {
    font-size: 350px;
    font-weight: 700;
-   background: url(/static/assets/img/img/home-17/text_img.jpg) no-repeat;
+   //background: url('/static/assets/img/img/home-17/text_img.jpg') no-repeat;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    line-height: 274px;
@@ -6268,7 +6268,7 @@ h5 {
 
 .about_main_area .about_img:before {
    content: "";
-   background: url(/static/assets/img/img/about/about-texture.png) no-repeat;
+   //background: url('./static/assets/img/img/about/about-texture.png') no-repeat;
    height: 270px;
    width: 300px;
    position: absolute;
@@ -6382,7 +6382,7 @@ h5 {
 }
 
 .service_item:hover {
-   background: url(/static/assets/img/img/about/service-item-bg.jpg) no-repeat scroll center center;
+   background: url('/static/assets/img/img/about/service-item-bg.jpg') no-repeat scroll center center;
    background-size: cover;
    transition: all 0.3s linear 0s;
 }
@@ -8004,11 +8004,11 @@ h5 {
 }
 
 .cons_contact_area_three:before {
-   background: url(/static/assets/img/img/home-nine/dot_top.png) no-repeat scroll center top;
+   //background: url('./static/assets/img/img/home-nine/dot_top.png') no-repeat scroll center top;
 }
 
 .cons_contact_area_three:after {
-   background: url(/static/assets/img/img/home-nine/dot_bottom.png) no-repeat scroll center bottom;
+   //background: url('./static/assets/img/img/home-nine/dot_bottom.png') no-repeat scroll center bottom;
 }
 
 .cons_contact_area_three .cons_contact_info_two {
@@ -8023,7 +8023,7 @@ h5 {
 }
 
 .cons_contact_area_four .cons_contact_info_two {
-   background: url(/static/assets/img/img/home-ten/subscribe_bg.jpg) no-repeat scroll center 0 / cover;
+   //background: url('./static/assets/img/img/home-ten/subscribe_bg.jpg') no-repeat scroll center 0 / cover;
 }
 
 .cons_contact_area_four .cons_contact_info_two .overlay_bg {
@@ -8296,7 +8296,7 @@ h5 {
 }
 
 .footer_area_two {
-   background: url(/static/assets/img/img/home-two/footer_bg.png) no-repeat scroll center 0 / cover;
+   //background: url('./static/assets/img/img/home-two/footer_bg.png') no-repeat scroll center 0 / cover;
    position: relative;
    z-index: 1;
 }
@@ -8373,7 +8373,7 @@ h5 {
    position: absolute;
    top: 0;
    left: 0;
-   background: url(/static/assets/img/img/home-three/map.png) no-repeat scroll center right;
+   //background: url('./static/assets/img/img/home-three/map.png') no-repeat scroll center right;
    width: 100%;
    height: 100%;
 }
