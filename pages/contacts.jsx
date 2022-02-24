@@ -33,7 +33,7 @@ export default function Contact(props) {
       // https://api.telegram.org/bot1918916703:AAG5YeCqYZuB_j7g0swevqzQ1UvvmrB-mmY/getUpdates
       const {name, message, email} = formData
       const token = "2098100893:AAHDgyzZQy7Ia3X4TOUurjSLsQxRHXOdmas"
-      const chat_id = "-703301534"
+      const chat_id = "-1001690284508"
       const text = "Client: " + name + "%0AEmail: " + email + "%0A%0A" + message
 
       axios.get(`https://api.telegram.org/bot${token}/sendMessage?text=${text}&chat_id=${chat_id}`)
