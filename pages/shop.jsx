@@ -265,11 +265,11 @@ export default function servicesPage(props) {
                                 onClick={(e) => {
                                    SetChecked(1);
                                 }}/>
-                         <label for="tab-2" class="label">Валлы</label>
+                         <label for="tab-2" class="label">Валы</label>
                          <div class="panel">
                             <div class="container">
                                <div class="section_title_one">
-                                  <h2 class="title_head">Показано 1-3 из 3 результатов Валлы</h2>
+                                  <h2 class="title_head">Показано 1-3 из 3 результатов Валы</h2>
                                </div>
                                <div class="row product_inner">
                                   <div class="col-lg-4 col-sm-6">
@@ -290,7 +290,7 @@ export default function servicesPage(props) {
                                               </Link>
                                            </div>
                                            <div class="product_text">
-                                              <h4>Валл кулачковый</h4>
+                                              <h4>Вал кулачковый</h4>
                                            </div>
                                         </div>
                                      </Fade>
@@ -313,7 +313,7 @@ export default function servicesPage(props) {
                                               </Link>
                                            </div>
                                            <div class="product_text">
-                                              <h4>Валл коробок передач</h4>
+                                              <h4>Вал коробок передач</h4>
                                            </div>
                                         </div>
                                      </Fade>
@@ -336,7 +336,7 @@ export default function servicesPage(props) {
                                               </Link>
                                            </div>
                                            <div class="product_text">
-                                              <h4>Валл ступенчатый</h4>
+                                              <h4>Вал ступенчатый</h4>
                                            </div>
                                         </div>
                                      </Fade>
@@ -626,7 +626,7 @@ export default function servicesPage(props) {
                                               </Link>
                                            </div>
                                            <div class="product_text">
-                                              <h4>Шестерня валла</h4>
+                                              <h4>Шестерня вала</h4>
                                            </div>
                                         </div>
                                      </Fade>

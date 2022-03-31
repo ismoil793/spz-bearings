@@ -91,7 +91,7 @@ function PostProduct(props) {
                 
                   <div class="col-lg-12">
                     <div class="p_details_text products_without_image">
-                      <h3>Валлы</h3>
+                      <h3>Валы</h3>
 
                       <a class="theme_btn_two hover_style1" href="#">
                         Контакты
@@ -101,10 +101,10 @@ function PostProduct(props) {
                           Номенклатура:<a href="#"> 3009829</a>
                         </li>
                         <li>
-                          Категория:<a href="#">Валлы</a>
+                          Категория:<a href="#">Валы</a>
                         </li>
                         <li>
-                          Тэги:<a href="#">Валлы</a>
+                          Тэги:<a href="#">Валы</a>
                         </li>
                       </ul>
                       {/*

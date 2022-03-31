@@ -165,7 +165,7 @@ function PostProduct(props) {
                             <div class="col-lg-6">
                                <FadeTop delay={1.8}>
                                   <div class="p_details_text">
-                                     <h3>Подшипники цилиндрические роликовые</h3>
+                                     <h3>Подшипник радиально упорный</h3>
                                      <p>
                                         Контактный угол C Контактный угол 15°
                                      </p>

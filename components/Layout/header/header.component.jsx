@@ -55,7 +55,7 @@ const searchResults = [
       link: "/product/upornyiy-ili-uporno-radialnyiy-sharikovyiy",
    },
    {
-      name: "Валлы",
+      name: "Валы",
       link: "/product/valyi",
    },
    {

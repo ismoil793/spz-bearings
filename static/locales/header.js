@@ -40,7 +40,7 @@ const HeaderText = {
             link: "/upornyiy-ili-uporno-radialnyiy-sharikovyiy",
          },
          {
-            name: "Валлы",
+            name: "Валы",
             link: "/valyi",
          },
          {
@@ -92,7 +92,7 @@ const HeaderText = {
             link: "/upornyiy-ili-uporno-radialnyiy-sharikovyiy",
          },
          {
-            name: "Валлы",
+            name: "Валы",
             link: "/valyi",
          },
          {
@@ -144,7 +144,7 @@ const HeaderText = {
             link: "/upornyiy-ili-uporno-radialnyiy-sharikovyiy",
          },
          {
-            name: "Валлы",
+            name: "Валы",
             link: "/valyi",
          },
          {
