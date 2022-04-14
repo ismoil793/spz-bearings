@@ -24,7 +24,7 @@
     "next": "^10.2.3",
     "next-i18next": "^8.8.0",
     "next-nprogress": "^1.4.0",
-    "next-redux-wrapper": "^6.0.0-rc.7",
+    "next-redux-wrapper": "^6.0.2",
     "next-seo": "^4.4.0",
     "next-videos": "^1.4.0",
     "nextjs-sitemap-generator": "^0.5.2",

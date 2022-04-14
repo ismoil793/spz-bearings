@@ -1,9 +1,15 @@
-import Layout from "../../components/Layout/layout/layout.component";
+import React, {useEffect, useState} from 'react';
 import Head from "next/head";
-import React, {useState} from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
+import Layout from "../../components/Layout/layout/layout.component";
 import Fade from "../../components/Animations/Fade";
 import FadeTop from "../../components/Animations/FadeTop";
+import axios from 'axios'
+import keys from "../../api-spz/constants";
+import {useRouter} from "next/router";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllCategories} from "../../store/actions/category";
+import {fetchSubCategory} from "../../store/actions/subCategory";
 
 const dataArray = {
    podshipniki: {
@@ -85,13 +91,31 @@ const dataArray = {
    },
 };
 
-function PostProduct(props) {
-
+const ProductPage = (props) => {
    const [descriptionArray, setDescriptionArray] = useState([true, false, false])
    const setDescription = (id) => {
       let array = descriptionArray.map((item, index) => (index === id ? true : false))
       setDescriptionArray(array)
    }
+
+   const products = props.products || []
+
+   const createMarkup = (html) => {
+      return {__html: html};
+   }
+
+   const {query} = useRouter()
+   const dispatch = useDispatch();
+   const {subCategories} = useSelector(state => state.subCategory)
+
+   useEffect(() => {
+      dispatch(fetchSubCategory(query.categoryID))
+   }, [])
+
+   const currentSubCategory = subCategories.find(subCat => subCat.id === +query.id) || {}
+
+   console.log(currentSubCategory)
+
    return (
        <>
           <Head>
@@ -165,10 +189,10 @@ function PostProduct(props) {
                             <div class="col-lg-6">
                                <FadeTop delay={1.8}>
                                   <div class="p_details_text">
-                                     <h3>Подшипник радиально упорный</h3>
-                                     <p>
-                                        Контактный угол C Контактный угол 15°
-                                     </p>
+                                     <h3>{products[0].title_ru}</h3>
+                                     <div
+                                         dangerouslySetInnerHTML={createMarkup(JSON.parse(products[0].description_ru)[1])}>
+                                     </div>
 
                                      <a class="theme_btn_two hover_style1" href="#">
                                         Контакты
@@ -319,6 +343,39 @@ function PostProduct(props) {
           </div>
        </>
    );
+};
+
+
+export const getServerSideProps = async (context) => {
+
+   let data = {};
+
+   await axios.get(`${keys.BASE_URL}/api/get-products/${context.query.id}`,
+       {params: {}})
+       .then(res => data = res.data.data)
+       .catch(e => {
+          // for some reason it is not reaching this line when product is not found
+          context.res.statusCode = 302
+          context.res.setHeader('Location', `/404`)
+          return {props: {}}
+       })
+
+   // same as in catch -> it will redirect to 404
+   if (!Array.isArray(data)) {
+      return {
+         redirect: {
+            permanent: false,
+            destination: "/404",
+         },
+         props: {},
+      };
+   }
+
+   return {
+      props: {
+         products: data
+      }
+   }
 }
 
-export default PostProduct;
+export default ProductPage;

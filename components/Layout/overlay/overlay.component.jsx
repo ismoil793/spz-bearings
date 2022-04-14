@@ -17,10 +17,6 @@ class OverlayComponent extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log('mount overlay')
-  }
-
   changeListOpened = (type) => {
     this.setState({
       lists_is_opened: {

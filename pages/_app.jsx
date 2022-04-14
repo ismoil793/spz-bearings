@@ -6,6 +6,7 @@ import "nprogress/nprogress.css";
 import "../static/assets/css/globals.css";
 import "../static/assets/css/globally.scss";
 import video from '../static/assets/video/preload_spz.mp4'
+import { wrapper } from "../store/store";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -77,5 +78,4 @@ class MyApp extends App {
    }
 }
 
-//withRedux wrapper that passes the store to the App Component
-export default MyApp;
+export default wrapper.withRedux(MyApp); /* connection of redux */
