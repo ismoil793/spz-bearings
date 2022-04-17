@@ -51,7 +51,11 @@ const homeText = {
          sectionTitle: 'МЫ ИСПОЛЬЗУЕМ САМЫЕ СОВРЕМЕННЫЕ ТЕХНОЛОГИИ',
          title: 'Мы в погоне за инновациями',
          description: 'Для поддержания лидерских позиций на рынке мы постоянно стремимся к совершенству так и в технологиях, так и в ассортименте продукции.',
-         button: 'Подробнее'
+         button: 'Подробнее',
+         goToProduct: 'Перейти к товару',
+         blueprint: "Чертежи",
+         certificate: "Госты",
+         tabDescription: "Описание"
       },
       news_section: {
          sectionTitle: 'Новости',
@@ -116,7 +120,11 @@ const homeText = {
          sectionTitle: 'Biz eng zamonaviy tehnologiyalardan foydalanamiz',
          title: 'Biz yangi innovatsiyalar poygasidamiz',
          description: 'Bozordagi yetakchi mavqeimizni saqlab qolish maqsadida doimo ham tekhnologiyalarda, ham mahsulot asortimentida mukamallikka intilamiz.',
-         button: 'Batafsil ma"lumot'
+         button: 'Batafsil ma"lumot',
+         goToProduct: 'Mahsulot sahifasi',
+         blueprint: "Chizmalar",
+         certificate: "Gost standart",
+         tabDescription: "Batafsil ma\'lumot"
       },
       news_section: {
          sectionTitle: 'Habarlar',
@@ -181,7 +189,11 @@ const homeText = {
          sectionTitle: 'WE USE THE MOST MODERN TECHNOLOGIES',
          title: "We are in pursuit of innovation",
          description: 'To maintain our leadership position in the market, we are constantly striving for excellence in technology and the range of products.',
-         button: 'More about it'
+         button: 'More about it',
+         goToProduct: 'Go to Product',
+         blueprint: "Blueprints",
+         certificate: "Standards",
+         tabDescription: "Description"
       },
       news_section: {
          sectionTitle: 'News',

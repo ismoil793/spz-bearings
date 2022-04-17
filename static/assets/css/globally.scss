@@ -471,6 +471,12 @@ header + section {
    padding: 20px 0;
    background: #fff;
    box-shadow: -1px 2px 19px 3px rgba(14, 0, 40, 0.05);
+
+   &.categories {
+      .nav-item {
+         margin-left: 0;
+      }
+   }
 }
 
 @media (min-width: 992px) {
@@ -12941,14 +12947,15 @@ a.navbar-brand {
       right: 0;
       top: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.3);
    }
 
    h1 {
       color: #ffffff;
    }
    .html-paragraph * {
-      color: #ffffff;
+      color: #ffffff !important;
+      background: transparent !important;
    }
 }
 

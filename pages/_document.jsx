@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
+import React from "react";
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {
@@ -13,6 +14,7 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <meta charSet="UTF-8"/>
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" href="/static/assets/vendor/font-awesome/css/fontawesome-all.min.css"/>
                     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

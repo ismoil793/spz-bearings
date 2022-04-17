@@ -14,6 +14,8 @@ import url from "../../url";
 import {Nav} from "reactstrap";
 import Fade from "../../Animations/Fade";
 import FadeTop from "../../Animations/FadeTop";
+import {connect} from "react-redux";
+import {fetchAllCategories} from "../../../store/actions/category";
 
 const srcLang = {
    ru: '../../../static/assets/img/img/language_choose/russia.png',
@@ -218,7 +220,7 @@ class Header extends React.Component {
    };
 
    componentDidMount() {
-
+      this.props.dispatch(fetchAllCategories())
    }
 
    componentDidUpdate(prevProps, prevState) {
@@ -394,6 +396,19 @@ class Header extends React.Component {
                                         </FadeTop>
                                      </a>
                                   </Link>
+                                  <ul className="dropdown-menu categories">
+                                     {
+                                        this.props.categories?.length && this.props.categories.map(cat => (
+                                             <li className="nav-item active" key={cat.title_ru}>
+                                                <Link href={`/shop/${cat.id}`} locale={this.props.locale}>
+                                                   <a className="nav-link">
+                                                      {cat[`title_${this.props.locale}`]}
+                                                   </a>
+                                                </Link>
+                                             </li>
+                                        ))
+                                     }
+                                  </ul>
                                </li>
                                <li className="nav-item">
                                   <Link href={"/contacts"} locale={this.props.locale}>
@@ -493,5 +508,11 @@ class Header extends React.Component {
    }
 }
 
+function mapStateToProps(state) {
+   return {
+      categories: state.category.categories
+   }
+}
 
-export default onClickOutside(Header);
+
+export default connect(mapStateToProps, null)(onClickOutside(Header));

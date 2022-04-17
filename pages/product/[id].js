@@ -8,8 +8,11 @@ import axios from 'axios'
 import keys from "../../api-spz/constants";
 import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllCategories} from "../../store/actions/category";
+import Link from 'next/link'
 import {fetchSubCategory} from "../../store/actions/subCategory";
+import ContactsText from "../../static/locales/contacts";
+import homeText from "../../static/locales/home";
+import ImageFromJSON from "../../helpers/ImageFromJSON";
 
 const dataArray = {
    podshipniki: {
@@ -18,52 +21,7 @@ const dataArray = {
             {
                type: "table",
                contentTable: (
-                   <tbody>
-                   <tr class="tabletop">
-                      <td>Название</td>
-                      <td>Символ</td>
-                      <td>Описание</td>
-                   </tr>
-                   <tr>
-                      <td rowspan="3">Тип сепаратора</td>
-                      <td>M</td>
-                      <td>Латунный сепаратор, посаженный на шариках</td>
-                   </tr>
-                   <tr>
-                      <td>E</td>
-                      <td>Полимерный сепаратор</td>
-                   </tr>
-                   <tr>
-                      <td>—</td>
-                      <td>Сепаратор из стального листа. Не указывается в &nbsp;качестве стандарта</td>
-                   </tr>
-                   <tr>
-                      <td rowspan="3">Контактный угол</td>
-                      <td>C</td>
-                      <td>Контактный угол 15°</td>
-                   </tr>
-                   <tr>
-                      <td>AC</td>
-                      <td>Контактный угол 25°</td>
-                   </tr>
-                   <tr>
-                      <td>B</td>
-                      <td>Контактный угол 40°</td>
-                   </tr>
-                   <tr>
-                      <td rowspan="3">Класс точности</td>
-                      <td>P0</td>
-                      <td>Нормальный класс точности. Не указывается в качестве стандарта</td>
-                   </tr>
-                   <tr>
-                      <td>P6</td>
-                      <td>Более высокий класс точности (чем нормальный)</td>
-                   </tr>
-                   <tr>
-                      <td>P5</td>
-                      <td>Более высокий класс точности (чем P6)</td>
-                   </tr>
-                   </tbody>
+                   <div></div>
                ),
             },
             {
@@ -99,22 +57,48 @@ const ProductPage = (props) => {
    }
 
    const products = props.products || []
-
-   const createMarkup = (html) => {
-      return {__html: html};
-   }
+   const locale = props.locale
 
    const {query} = useRouter()
    const dispatch = useDispatch();
    const {subCategories} = useSelector(state => state.subCategory)
 
    useEffect(() => {
-      dispatch(fetchSubCategory(query.categoryID))
-   }, [])
+      if (query.categoryID)
+         dispatch(fetchSubCategory(query.categoryID))
+   }, [query])
 
-   const currentSubCategory = subCategories.find(subCat => subCat.id === +query.id) || {}
+   const currentSubCategory = subCategories.find(subCat => subCat.id === +query.subCategoryID) || {}
+   const currentProduct = products.find(p => p.sub_category_id === +query.subCategoryID) || {}
 
-   console.log(currentSubCategory)
+   const createMarkup = () => {
+      const description = currentProduct[`description_${locale}`]
+      const html = JSON.parse(description || null)
+
+      if (html && html[1]) {
+         return html[1]
+      }
+      return ''
+   }
+
+   const parsedFeatures = JSON.parse(currentProduct.dynamic_features || null)
+
+   const renderDescriptionTable = () => (
+       <tbody>
+       <tr className="tabletop">
+          <td>Название</td>
+          <td>Значение</td>
+       </tr>
+       {
+          Object.entries(parsedFeatures).map((feat, i) => (
+              <tr key={i}>
+                 <td>{feat[0]}</td>
+                 <td>{feat[1]}</td>
+              </tr>
+          ))
+       }
+       </tbody>
+   )
 
    return (
        <>
@@ -189,23 +173,23 @@ const ProductPage = (props) => {
                             <div class="col-lg-6">
                                <FadeTop delay={1.8}>
                                   <div class="p_details_text">
-                                     <h3>{products[0].title_ru}</h3>
+                                     <h3>{currentProduct[`title_${locale}`]}</h3>
                                      <div
-                                         dangerouslySetInnerHTML={createMarkup(JSON.parse(products[0].description_ru)[1])}>
+                                         key={new Date().getTime()}
+                                         dangerouslySetInnerHTML={{__html: createMarkup()}}>
                                      </div>
 
                                      <a class="theme_btn_two hover_style1" href="#">
-                                        Контакты
+                                        {ContactsText[locale].breadcrumb.main}
                                      </a>
                                      <ul class="nav flex-column team_list">
                                         <li>
-                                           Номенклатура:<a href="#"> 3009829</a>
-                                        </li>
-                                        <li>
-                                           Категория:<a href="#"> Подшипники</a>
-                                        </li>
-                                        <li>
-                                           Тэги:<a href="#"> Подшипники</a>
+                                           Подкатегория:
+                                           <Link
+                                               href={`/shop/sub-category/${currentSubCategory.id}?categoryID=${currentSubCategory.category_id}`}
+                                           >
+                                              <a> {currentSubCategory[`title_${locale}`]}</a>
+                                           </Link>
                                         </li>
                                      </ul>
                                   </div>
@@ -229,7 +213,7 @@ const ProductPage = (props) => {
                                      aria-controls="home"
                                      aria-selected="true"
                                   >
-                                     Описание
+                                     {homeText[locale].technologies_section.tabDescription}
                                   </a>{" "}
                                </li>
                                <li class="nav-item" role="presentation">
@@ -246,7 +230,7 @@ const ProductPage = (props) => {
                                      aria-controls="profile"
                                      aria-selected="false"
                                   >
-                                     Чертежи
+                                     {homeText[locale].technologies_section.blueprint}
                                   </a>{" "}
                                </li>
                                <li class="nav-item" role="presentation">
@@ -263,7 +247,7 @@ const ProductPage = (props) => {
                                      aria-controls="profile"
                                      aria-selected="false"
                                   >
-                                     ГОСТЫ
+                                     {homeText[locale].technologies_section.certificate}
                                   </a>{" "}
                                </li>
                             </ul>
@@ -275,26 +259,25 @@ const ProductPage = (props) => {
                                    aria-labelledby="home-tab"
                                >
                                   <div class="row centered">
-
-
-                                     {dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[0].contentTable}
-
-
+                                     {renderDescriptionTable()}
                                   </div>
                                </div>
 
 
                                <div
-                                   class={`tab-pane fade description_product_content ${descriptionArray[1] ? 'show active' : ''}`}
+                                   className={`tab-pane fade description_product_content ${descriptionArray[1] ? 'show active' : ''}`}
                                    id="profile"
                                    role="tabpanel"
                                    aria-labelledby="profile-tab"
                                >
-                                  <div class="row centered">
-                                     <h4 className="description_title">Чертежи</h4>
-                                     <h5 className="description_title col-12">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[1].series}</h5>
-                                     <img className="product_description_section_img"
-                                          src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[1].url}/>
+                                  <div className="row centered">
+                                     {/*<h4 className="description_title">*/}
+                                     {/*   {homeText[locale].technologies_section.blueprint}*/}
+                                     {/*</h4>*/}
+                                     {/*<h5 className="description_title col-12">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[1].series}</h5>*/}
+
+                                     <ImageFromJSON str={currentSubCategory?.chertej_image} index={0}/>
+                                     <ImageFromJSON str={currentSubCategory?.chertej_image} index={1}/>
                                   </div>
                                </div>
 
@@ -306,30 +289,15 @@ const ProductPage = (props) => {
                                    aria-labelledby="profile-tab"
                                >
                                   <div class="row centered">
-                                     <h4 className="description_title col-12">ГОСТЫ</h4>
-                                     <br/>
-                                     <h5 className="description_title col-10">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].series[0]}</h5>
-                                     <div className="row centered">
-                                        <img className="description_gost_images col-6"
-                                             src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[0]}/>
-                                        <img className="description_gost_images col-6"
-                                             src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[1]}/>
-                                     </div>
-                                     <h5 className="description_title col-10">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].series[1]}</h5>
-                                     <div className="row centered">
-                                        <img className="description_gost_images col-12"
-                                             src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[2]}/>
-                                     </div>
-                                     <h5 className="description_title col-10">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].series[2]}</h5>
-                                     <div className="row centered">
-                                        <img className="description_gost_images col-12"
-                                             src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[3]}/>
-                                     </div>
-                                     <h5 className="description_title col-10">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].series[3]}</h5>
-                                     <div className="row centered">
-                                        <img className="description_gost_images col-12"
-                                             src={dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].imagesSRC[4]}/>
-                                     </div>
+                                     {/*<h4 className="description_title col-12">*/}
+                                     {/*   {homeText[locale].technologies_section.certificate}*/}
+                                     {/*</h4>*/}
+                                     {/*<br/>*/}
+                                     {/*<h5 className="description_title col-10">{dataArray.podshipniki['radialno-upornyiy-sharikovyiy'].content[2].series[0]}</h5>*/}
+
+                                     <ImageFromJSON str={currentSubCategory?.gost_image} index={0}/>
+                                     <ImageFromJSON str={currentSubCategory?.gost_image} index={1}/>
+
                                   </div>
                                </div>
 
@@ -350,7 +318,7 @@ export const getServerSideProps = async (context) => {
 
    let data = {};
 
-   await axios.get(`${keys.BASE_URL}/api/get-products/${context.query.id}`,
+   await axios.get(`${keys.BASE_URL}/api/get-products/${context.query.subCategoryID}`,
        {params: {}})
        .then(res => data = res.data.data)
        .catch(e => {

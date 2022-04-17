@@ -10,23 +10,24 @@ import Fade from "../../components/Animations/Fade";
 import axios from "axios";
 import keys from "../../api-spz/constants";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllCategories} from "../../store/actions/category";
 import {useRouter} from "next/router";
+import {fetchSubCategory} from "../../store/actions/subCategory";
+import homeText from "../../static/locales/home";
 
 export default function servicesPage(props) {
 
    const [animation, setAnimation] = useState(true)
    const {query} = useRouter()
    const dispatch = useDispatch();
-   const {categories} = useSelector(state => state.category)
+   const {subCategories} = useSelector(state => state.subCategory)
 
    useEffect(() => {
-      dispatch(fetchAllCategories())
-   }, [])
+      if (query.id)
+         dispatch(fetchSubCategory(query.id))
+   }, [query])
 
-   const currentCategory = categories.find(cat => cat.id === +query.id) || {}
-
-   const {subCategories, locale} = props
+   const {categories, locale} = props
+   const currentCategory = categories?.find(cat => cat.id === +query.id) || {}
 
    const renderSubCategories = () => (
        subCategories?.length && subCategories.map(subCat => {
@@ -38,9 +39,9 @@ export default function servicesPage(props) {
                         src={`${keys.BASE_URL}/${subCat.image}`}
                         alt=""
                     />
-                    <Link href={`/product/${subCat.id}?categoryID=${currentCategory.id}`}>
+                    <Link href={`/shop/sub-category/${subCat.id}?categoryID=${currentCategory.id}`}>
                        <a className="theme_btn_two hover_style1">
-                          Подробнее
+                          {homeText[locale].technologies_section.button}
                        </a>
                     </Link>
                  </div>
@@ -63,7 +64,7 @@ export default function servicesPage(props) {
        })
    )
 
-   const getCategoryHtml = () => {
+   const getCategoryHtml = (currentCategory) => {
       const description = currentCategory[`description_${locale}`]
       if (description) {
          const parsed = JSON.parse(description)
@@ -75,45 +76,36 @@ export default function servicesPage(props) {
    return (
        <>
           <Head>
-             <title>Продукция</title>
-             <link
-                 rel="icon"
-                 href="/static/assets/img/img/favicon.ico"
-                 type="image/x-icon"
-             />
-             <meta charset="utf-8"/>
-             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-
-             <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-             <link
-                 rel="stylesheet"
-                 type="text/css"
-                 href="/static/assets/template/avtech/styles/blog_single_responsive.css"
-             />
+             <title>{currentCategory[`meta_title_${locale}`]}</title>
+             <meta name="description" content={currentCategory[`meta_description_${locale}`]}/>
+             <meta name="keywords" content={currentCategory[`meta_keyword_${locale}`]}/>
+             <meta property="og:title" content={currentCategory[`meta_title_${locale}`]}/>
+             <meta property="og:description" content={currentCategory[`meta_description_${locale}`]}/>
+             <meta property="og:image" content={`${keys.BASE_URL}/${currentCategory?.image}`}/>
+             <meta property="og:url" content={`https://spz-bearings.uz/shop/${currentCategory?.id}`}/>
           </Head>
-          {/*<div class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}>*/}
-          {/*   <div*/}
-          {/*       class="pace-progress"*/}
-          {/*       data-progress-text="100%"*/}
-          {/*       data-progress="99"*/}
-          {/*       style={{transform: "translate3d(100%, 0px, 0px)"}}*/}
-          {/*   >*/}
-          {/*      <div class="pace-progress-inner"></div>*/}
-          {/*   </div>*/}
-          {/*   <div class="pace-activity"></div>*/}
-          {/*</div>*/}
+          <div className={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}>
+             <div
+                 className="pace-progress"
+                 data-progress-text="100%"
+                 data-progress="99"
+                 style={{transform: "translate3d(100%, 0px, 0px)"}}
+             >
+                <div className="pace-progress-inner"></div>
+             </div>
+             <div className="pace-activity"></div>
+          </div>
 
-          {/*<div className="body_wrapper main_index">*/}
-          {/*   <div*/}
-          {/*       id={`preloader`}*/}
-          {/*       className={`preloader ${props.isLoading ? "" : "load_coplate"}`}*/}
-          {/*   >*/}
-          {/*      <div class={`product_name ${props.isLoading ? "" : "load_coplate"}`}>*/}
-          {/*         SPZ Bearings*/}
-          {/*      </div>*/}
-          {/*   </div>*/}
-          {/*</div>*/}
+          <div className="body_wrapper main_index">
+             <div
+                 id={`preloader`}
+                 className={`preloader ${props.isLoading ? "" : "load_coplate"}`}
+             >
+                <div className={`product_name ${props.isLoading ? "" : "load_coplate"}`}>
+                   SPZ Bearings
+                </div>
+             </div>
+          </div>
           <div className="super_container">
              <Layout
                  isLoading={props.isLoading}
@@ -134,7 +126,9 @@ export default function servicesPage(props) {
                          <div className="row">
                             <div className="col-lg-10">
                                <h1>{currentCategory[`title_${locale}`]}</h1>
-                               <p className={'html-paragraph'} dangerouslySetInnerHTML={{__html: getCategoryHtml()}}/>
+                               <p key={new Date().getTime()} className={'html-paragraph'}
+                                  dangerouslySetInnerHTML={{__html: getCategoryHtml(currentCategory)}}>
+                               </p>
                             </div>
                          </div>
                       </div>
@@ -158,7 +152,8 @@ export const getServerSideProps = async (context) => {
 
    let data = {};
 
-   await axios.get(`${keys.BASE_URL}/api/get-sub-categories/${context.query.id}`,
+   // await axios.get(`${keys.BASE_URL}/api/get-sub-categories/${context.query.id}`,
+   await axios.get(`${keys.BASE_URL}/api/get-categories`,
        {params: {}})
        .then(res => data = res.data.data)
        .catch(e => {
@@ -181,7 +176,7 @@ export const getServerSideProps = async (context) => {
 
    return {
       props: {
-         subCategories: data
+         categories: data
       }
    }
 }
