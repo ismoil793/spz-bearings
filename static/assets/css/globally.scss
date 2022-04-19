@@ -12953,6 +12953,7 @@ a.navbar-brand {
    h1 {
       color: #ffffff;
    }
+
    .html-paragraph * {
       color: #ffffff !important;
       background: transparent !important;
@@ -12961,8 +12962,71 @@ a.navbar-brand {
 
 .product_item.sub-category {
    max-width: 90%;
-   img  {
+
+   img {
       width: 100%;
       object-fit: cover;
+   }
+}
+
+.carousel-product {
+   .project_details_img {
+      img {
+         min-width: 400px;
+         max-width: 400px;
+         object-fit: contain;
+      }
+   }
+
+   .slick-dots {
+      max-width: 400px;
+
+      li {
+         button {
+            width: 15px;
+            height: 15px;
+            background-color: #92ACE2;
+
+            &:before {
+               display: none;
+            }
+         }
+
+         &.slick-active {
+            button {
+               background-color: #2D55A7;
+            }
+         }
+      }
+   }
+
+   .slick-arrow {
+      border: 1px solid #2D55A7;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+         font-family: Font Awesome\ 5 Free;
+         color: #2D55A7;
+         font-size: 14px;
+      }
+
+      &.slick-prev {
+         &:before {
+            content: "\f104";
+         }
+
+         left: -40px;
+      }
+
+      &.slick-next {
+         &:before {
+            content: "\f105";
+         }
+
+         left: 420px;
+      }
    }
 }

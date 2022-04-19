@@ -13,41 +13,10 @@ import {fetchSubCategory} from "../../store/actions/subCategory";
 import ContactsText from "../../static/locales/contacts";
 import homeText from "../../static/locales/home";
 import ImageFromJSON from "../../helpers/ImageFromJSON";
-
-const dataArray = {
-   podshipniki: {
-      "radialno-upornyiy-sharikovyiy": {
-         content: [
-            {
-               type: "table",
-               contentTable: (
-                   <div></div>
-               ),
-            },
-            {
-               type: "image",
-               series: 'Серия: : 70…',
-               url: "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/1.jpg",
-            },
-            {
-               type: 'imagesByDescription',
-               decription: ['СЕРИЯ 60', "СЕРИЯ 62... 63...", "Серия: 64… 622… 623…", "Серия: 160…"],
-               imagesSRC: [
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-1.jpg",
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-2.jpg",
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-3.jpg",
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-4.jpg",
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-5.jpg",
-                  "/static/assets/img/img/product/productbyid/radialno-upornyiy-sharikovyiy/gost-6.jpg"
-               ],
-               series: [
-                  'Серия: : 70…', 'Серия: 70… 72…', 'Серия: Серия: 72… 73…', 'Серия: 73…', 'Серия: 73… 74…'
-               ]
-            }
-         ],
-      },
-   },
-};
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import login from "../../components/Auth/Login";
 
 const ProductPage = (props) => {
    const [descriptionArray, setDescriptionArray] = useState([true, false, false])
@@ -100,28 +69,29 @@ const ProductPage = (props) => {
        </tbody>
    )
 
+   const images = JSON.parse(currentProduct?.image || null)
+   console.log(images)
+
+   const sliderSettings = {
+      dots: true,
+      fade: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+   }
+
    return (
        <>
           <Head>
-             <title>{"Продукт"}</title>
-             <meta charset="UTF-8"/>
-             <meta name="description" content={"Продукт"}/>
-             <meta name="keywords" content={"Продукт"}/>
-
-             <meta
-                 name="google-site-verification"
-                 content="3kTZ1AFA-Ys6DV-oZgCXUqlfNqsP6r2YJ0mpAmcaL-k"
-             />
-             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-             <link
-                 rel="icon"
-                 href="/static/assets/img/img/favicon.ico"
-                 type="image/x-icon"
-             />
-             <link
-                 rel="stylesheet"
-                 type="text/css"
-                 href="/static/assets/template/avtech/styles/product_responsive.css"
+             <title>{currentProduct[`meta_title_${locale}`]}</title>
+             <meta name="description" content={currentProduct[`meta_description_${locale}`]}/>
+             <meta name="keywords" content={currentProduct[`meta_keyword_${locale}`]}/>
+             <meta property="og:title" content={currentProduct[`meta_title_${locale}`]}/>
+             <meta property="og:description" content={currentProduct[`meta_description_${locale}`]}/>
+             <meta property="og:image" content={`${keys.BASE_URL}/${currentSubCategory?.image}`}/>
+             <meta property="og:url"
+                   content={`https://spz-bearings.uz/shop/${currentProduct?.id}?subCategoryID=${query.subCategoryID}&categoryID=${query.categoryID}`}
              />
           </Head>
           <div class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}>
@@ -151,7 +121,7 @@ const ProductPage = (props) => {
              <Layout
                  videoPreloader={props.videoPreloader}
                  isLoading={props.isLoading}
-                 title={"Подшипник радиально-упорный шариковый"}
+                 title={currentProduct[`title_${locale}`]}
                  pageInfo={["Главная", "Магазин", "Продукт"]}
                  locale={props.locale}
              >
@@ -159,16 +129,22 @@ const ProductPage = (props) => {
                    <section class="product_details_area pt_200">
                       <div class="container">
                          <div class="row product_details_inner">
-                            <div class="col-lg-6">
-                               <div class="project_details_img">
-                                  <Fade scale={0.5} delay={1.8}>
-                                     <img
-                                         class="img-fluid"
-                                         src="/static/assets/img/img/product/products/podshipnik-radialno-uporniy.jpg"
-                                         alt=""
-                                     />
-                                  </Fade>
-                               </div>
+                            <div className="col-lg-6">
+                               <Fade scale={0.5} delay={1.8}>
+                                  <Slider className={'carousel-product'} {...sliderSettings}>
+                                     {
+                                        images.map(img => (
+                                            <div className="project_details_img" key={img?.name}>
+                                               <img
+                                                   className="img-fluid"
+                                                   src={`${keys.BASE_URL}/${img?.name}`}
+                                                   alt=""
+                                               />
+                                            </div>
+                                        ))
+                                     }
+                                  </Slider>
+                               </Fade>
                             </div>
                             <div class="col-lg-6">
                                <FadeTop delay={1.8}>
@@ -258,7 +234,7 @@ const ProductPage = (props) => {
                                    role="tabpanel"
                                    aria-labelledby="home-tab"
                                >
-                                  <div class="row centered">
+                                  <div class="row">
                                      {renderDescriptionTable()}
                                   </div>
                                </div>
