@@ -25,31 +25,6 @@ const opts = {
    },
 };
 
-export function getStaticProps({locale}) {
-   return {
-      props: {
-         locale
-      }
-   }
-}
-
-function SampleNextArrow(props) {
-
-   return (
-       <div onClick={() => console.log(props)}>arrow{props.locale}</div>
-   );
-}
-
-function SamplePrevArrow(props) {
-   const {className, style, onClick} = props;
-   return (
-       <div
-           onClick={onClick}
-           className="js-prev d-none d-sm-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9 slick-arrow mr-5 arrow-right"
-       ></div>
-   );
-}
-
 class Home extends React.Component {
    constructor(props) {
       super();
@@ -89,44 +64,6 @@ class Home extends React.Component {
 
 
    render() {
-      const {news} = this.state;
-      const filterPrice = ["5 000 000", "3 000 000", "1 000 000"];
-      var brands = {
-         infinite: true,
-         speed: 2000,
-         slidesToShow: 2,
-         slidesToScroll: 1,
-         autoplay: true,
-         autoplaySpeed: 5000,
-         nextArrow: <SampleNextArrow/>,
-         prevArrow: <SamplePrevArrow/>,
-         responsive: [
-            {
-               breakpoint: 1024,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  infinite: true,
-               },
-            },
-            {
-               breakpoint: 600,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  initialSlide: 1,
-               },
-            },
-            {
-               breakpoint: 480,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  initialSlide: 1,
-               },
-            },
-         ],
-      };
 
       const bannersImg = [
          "/static/assets/img/img/home_slider/bearing1.jpg",
@@ -200,54 +137,6 @@ class Home extends React.Component {
          ],
       };
 
-      var settings = {
-         infinite: true,
-         speed: 2000,
-         slidesToShow: 1,
-         slidesToScroll: 1,
-         autoplay: true,
-         autoplaySpeed: 5000,
-         nextArrow: <SampleNextArrow/>,
-         prevArrow: <SamplePrevArrow/>,
-         dots: true,
-         dotsClass:
-             "d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0 dots-wrapper",
-         customPaging: function (i) {
-            return (
-                <a className="nav-link text-gray-8 dot" href="#">
-                   {filterPrice[i]} сум
-                </a>
-            );
-         },
-         responsive: [
-            {
-               breakpoint: 1024,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  infinite: true,
-               },
-            },
-            {
-               breakpoint: 600,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  initialSlide: 1,
-                  infinite: true,
-               },
-            },
-            {
-               breakpoint: 480,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  initialSlide: 1,
-                  infinite: true,
-               },
-            },
-         ],
-      };
       return (
           <>
              <Head>
