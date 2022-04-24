@@ -91,7 +91,7 @@ const ProductPage = (props) => {
              <meta property="og:description" content={currentProduct[`meta_description_${locale}`]}/>
              <meta property="og:image" content={`${keys.BASE_URL}/${currentSubCategory?.image}`}/>
              <meta property="og:url"
-                   content={`https://spz-bearings.uz/shop/${currentProduct?.id}?subCategoryID=${query.subCategoryID}&categoryID=${query.categoryID}`}
+                   content={`https://spz-bearings.uz/product/${currentProduct?.id}?subCategoryID=${query.subCategoryID}&categoryID=${query.categoryID}`}
              />
           </Head>
           <div class={`pace ${props.isLoading ? "pace-active" : "pace-inactive"}`}>
