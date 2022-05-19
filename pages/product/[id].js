@@ -38,7 +38,7 @@ const ProductPage = (props) => {
    }, [query])
 
    const currentSubCategory = subCategories.find(subCat => subCat.id === +query.subCategoryID) || {}
-   const currentProduct = products.find(p => p.sub_category_id === +query.subCategoryID) || {}
+   const currentProduct = products.find(p => p.id === +query.id) || {}
 
    const createMarkup = () => {
       const description = currentProduct[`description_${locale}`]
@@ -70,7 +70,6 @@ const ProductPage = (props) => {
    )
 
    const images = JSON.parse(currentProduct?.image || null)
-   console.log(images)
 
    const sliderSettings = {
       dots: true,
@@ -80,6 +79,8 @@ const ProductPage = (props) => {
       slidesToShow: 1,
       slidesToScroll: 1
    }
+
+   console.log(currentProduct)
 
    return (
        <>
