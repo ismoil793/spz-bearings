@@ -10,6 +10,7 @@ import FadeRight from "../../components/Animations/FadeRight";
 import axios from "axios";
 import keys from "../../api-spz/constants";
 import homeText from "../../static/locales/home"
+import SearchProducts from "../../components/SearchProducts";
 
 export default function servicesPage(props) {
 
@@ -36,7 +37,7 @@ export default function servicesPage(props) {
                  </div>
                  <div className="product_text">
                     <h4>{cat[`title_${locale}`]}</h4>
-                    <div dangerouslySetInnerHTML={{__html: description[1]}} />
+                    <div dangerouslySetInnerHTML={{__html: description[1]}}/>
                  </div>
               </div>
           )
@@ -110,6 +111,8 @@ export default function servicesPage(props) {
                        locale={props.locale}
                    />
 
+                   <SearchProducts />
+
                    <section className="product_area pt-5 shops_catalogs_page-section">
 
                       <div className="container">
@@ -117,8 +120,6 @@ export default function servicesPage(props) {
                             {renderCategories()}
                          </div>
                       </div>
-
-
 
                       <div className={"row mb-5 pb-5"}>
                          <div className="col-md-8 offset-md-2 col-10 offset-1">
@@ -212,11 +213,6 @@ export default function servicesPage(props) {
                             </div>
                          </div>
                       </div>
-
-
-
-
-
                    </section>
                 </main>
              </Layout>

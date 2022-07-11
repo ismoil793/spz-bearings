@@ -1,0 +1,12 @@
+.search-section {
+    padding: 50px 0;
+}
+
+.search-section form {
+    position: relative;
+}
+
+.search-section .btn-search {
+    position: absolute;
+    right: 5px;
+}
