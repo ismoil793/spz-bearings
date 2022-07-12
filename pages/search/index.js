@@ -4,7 +4,6 @@ import Link from 'next/link'
 import React, {useEffect, useState} from "react";
 import OverlayComponent from "../../components/Layout/overlay/overlay.component";
 import Fade from "../../components/Animations/Fade";
-import axios from "axios";
 import keys from "../../api-spz/constants";
 import homeText from "../../static/locales/home"
 import SearchText from "../../static/locales/search";
@@ -24,12 +23,11 @@ export default function SearchPage(props) {
          q: query.search,
          lang: locale
       }).then(r => {
-         console.log(r.data.data)
          setProducts(r.data.data)
       })
    }, [query])
 
-   const renderCategories = () => (
+   const renderSearchProducts = () => (
        products?.length && products.map(cat => {
           const description = JSON.parse(cat[`description_${locale}`])
           const image = JSON.parse(cat.image)[0]?.name
@@ -42,7 +40,7 @@ export default function SearchPage(props) {
                         src={`${keys.BASE_URL}/${image}`}
                         alt=""
                     />
-                    <Link href={`/shop/${cat.id}`}>
+                    <Link href={`/product/${cat.id}?subCategoryID=${cat.sub_category_id}`}>
                        <a className="theme_btn_two hover_style1">
                           {homeText[locale].technologies_section.button}
                        </a>
@@ -50,7 +48,6 @@ export default function SearchPage(props) {
                  </div>
                  <div className="product_text">
                     <h4>{cat[`title_${locale}`]}</h4>
-                    <div dangerouslySetInnerHTML={{__html: description[1]}}/>
                  </div>
               </div>
           )
@@ -137,7 +134,7 @@ export default function SearchPage(props) {
                          </div>
 
                          <div className="row product_inner spz-categories">
-                            {renderCategories()}
+                            {renderSearchProducts()}
                          </div>
                       </div>
 

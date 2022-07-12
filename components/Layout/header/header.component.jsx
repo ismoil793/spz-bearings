@@ -74,7 +74,7 @@ class Header extends React.Component {
          mobile_menu: false,
          searching: "",
          products: [],
-         search_id: "",
+         searchVal: "",
          isRegister: false,
          isLogin: false,
          isAside: false,
@@ -178,9 +178,14 @@ class Header extends React.Component {
          })
       }
       this.setState({
-         search_id: e.target.value,
+         searchVal: e.target.value,
          searchProducts: filteredSearch
       })
+   }
+
+   handleSearchSubmit = (e) => {
+      e.preventDefault()
+      Router.push(`/search?search=${this.state.searchVal}`)
    }
 
    Register = (e) => {
@@ -458,12 +463,12 @@ class Header extends React.Component {
                             <a href="javascript:void(0);">
                                <i className="fas fa-search"/>
                             </a>
-                            <form onSubmit={e => e.preventDefault()} className="search-form">
+                            <form onSubmit={this.handleSearchSubmit} className="search-form">
                                <div className="input-group">
                                   <input
                                       type="search"
                                       className="form-control"
-                                      value={this.state.search_id}
+                                      value={this.state.searchVal}
                                       onChange={this.handleSearchChange}
                                       placeholder={HeaderText[this.props.locale].searchPlaceHolder}
                                   />
@@ -472,17 +477,17 @@ class Header extends React.Component {
                                   </button>
                                </div>
 
-                               <ul className="search-results">
-                                  {
-                                     this.state.searchProducts.map(product => (
-                                         <Link href={product.link}>
-                                            <a>
-                                               <li>{product.name}</li>
-                                            </a>
-                                         </Link>
-                                     ))
-                                  }
-                               </ul>
+                               {/*<ul className="search-results">*/}
+                               {/*   {*/}
+                               {/*      this.state.searchProducts.map(product => (*/}
+                               {/*          <Link href={product.link}>*/}
+                               {/*             <a>*/}
+                               {/*                <li>{product.name}</li>*/}
+                               {/*             </a>*/}
+                               {/*          </Link>*/}
+                               {/*      ))*/}
+                               {/*   }*/}
+                               {/*</ul>*/}
 
 
                             </form>

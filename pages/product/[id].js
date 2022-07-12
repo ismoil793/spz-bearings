@@ -10,13 +10,13 @@ import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
 import Link from 'next/link'
 import {fetchSubCategory} from "../../store/actions/subCategory";
+import {fetchProducts} from "../../store/actions/product";
 import ContactsText from "../../static/locales/contacts";
 import homeText from "../../static/locales/home";
 import ImageFromJSON from "../../helpers/ImageFromJSON";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import login from "../../components/Auth/Login";
 
 const ProductPage = (props) => {
    const [descriptionArray, setDescriptionArray] = useState([true, false, false])
@@ -31,6 +31,7 @@ const ProductPage = (props) => {
    const {query} = useRouter()
    const dispatch = useDispatch();
    const {subCategories} = useSelector(state => state.subCategory)
+   const {products: clientSideProducts} = useSelector(state => state.product)
 
    useEffect(() => {
       if (query.categoryID)
@@ -38,7 +39,16 @@ const ProductPage = (props) => {
    }, [query])
 
    const currentSubCategory = subCategories.find(subCat => subCat.id === +query.subCategoryID) || {}
-   const currentProduct = products.find(p => p.id === +query.id) || {}
+   const ssrProduct = products.find(p => p.id === +query.id) || {}
+   const clientSideProduct = clientSideProducts.find(p => p.id === +query.id) || {}
+
+   useEffect(() => {
+      if (!currentProduct?.id) {
+         dispatch(fetchProducts(query.subCategoryID))
+      }
+   }, [])
+
+   const currentProduct = ssrProduct.id ? ssrProduct : clientSideProduct
 
    const createMarkup = () => {
       const description = currentProduct[`description_${locale}`]
@@ -59,12 +69,12 @@ const ProductPage = (props) => {
           <td>Значение</td>
        </tr>
        {
-          Object.entries(parsedFeatures).map((feat, i) => (
-              <tr key={i}>
-                 <td>{feat[0]}</td>
-                 <td>{feat[1]}</td>
-              </tr>
-          ))
+           parsedFeatures && Object.entries(parsedFeatures).map((feat, i) => (
+               <tr key={i}>
+                  <td>{feat[0]}</td>
+                  <td>{feat[1]}</td>
+               </tr>
+           ))
        }
        </tbody>
    )
@@ -79,8 +89,6 @@ const ProductPage = (props) => {
       slidesToShow: 1,
       slidesToScroll: 1
    }
-
-   console.log(currentProduct)
 
    return (
        <>
@@ -134,15 +142,15 @@ const ProductPage = (props) => {
                                <Fade scale={0.5} delay={1.8}>
                                   <Slider className={'carousel-product'} {...sliderSettings}>
                                      {
-                                        images.map(img => (
-                                            <div className="project_details_img" key={img?.name}>
-                                               <img
-                                                   className="img-fluid"
-                                                   src={`${keys.BASE_URL}/${img?.name}`}
-                                                   alt=""
-                                               />
-                                            </div>
-                                        ))
+                                         images?.length && images.map(img => (
+                                             <div className="project_details_img" key={img?.name}>
+                                                <img
+                                                    className="img-fluid"
+                                                    src={`${keys.BASE_URL}/${img?.name}`}
+                                                    alt=""
+                                                />
+                                             </div>
+                                         ))
                                      }
                                   </Slider>
                                </Fade>
@@ -160,14 +168,17 @@ const ProductPage = (props) => {
                                         {ContactsText[locale].breadcrumb.main}
                                      </a>
                                      <ul class="nav flex-column team_list">
-                                        <li>
-                                           Подкатегория:
-                                           <Link
-                                               href={`/shop/sub-category/${currentSubCategory.id}?categoryID=${currentSubCategory.category_id}`}
-                                           >
-                                              <a> {currentSubCategory[`title_${locale}`]}</a>
-                                           </Link>
-                                        </li>
+                                        {
+                                            currentSubCategory?.id &&
+                                            <li>
+                                               Подкатегория:
+                                               <Link
+                                                   href={`/shop/sub-category/${currentSubCategory.id}?categoryID=${currentSubCategory.category_id}`}
+                                               >
+                                                  <a> {currentSubCategory[`title_${locale}`]}</a>
+                                               </Link>
+                                            </li>
+                                        }
                                      </ul>
                                   </div>
                                </FadeTop>
