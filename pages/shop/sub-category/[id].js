@@ -14,6 +14,7 @@ import {useRouter} from "next/router";
 import homeText from "../../../static/locales/home";
 import {fetchProducts} from "../../../store/actions/product";
 import ImageFromJSON from "../../../helpers/ImageFromJSON";
+import SearchProducts from "../../../components/SearchProducts";
 
 export default function SubCategoryPage(props) {
 
@@ -139,6 +140,10 @@ export default function SubCategoryPage(props) {
                    </div>
 
                    <section className="product_area pt-5 shops_catalogs_page-section">
+
+
+                      <SearchProducts />
+
                       <div className="container mt-5">
                          <div className="row product_inner">
                             {renderSubCategoryProducts()}

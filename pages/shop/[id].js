@@ -13,6 +13,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {fetchSubCategory} from "../../store/actions/subCategory";
 import homeText from "../../static/locales/home";
+import SearchProducts from "../../components/SearchProducts";
 
 export default function servicesPage(props) {
 
@@ -135,6 +136,9 @@ export default function servicesPage(props) {
                    </div>
 
                    <section className="product_area pt-5 shops_catalogs_page-section">
+
+                      <SearchProducts />
+
                       <div className="container mt-5">
                          <div className="row product_inner">
                             {renderSubCategories()}
