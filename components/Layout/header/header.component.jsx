@@ -16,6 +16,7 @@ import Fade from "../../Animations/Fade";
 import FadeTop from "../../Animations/FadeTop";
 import {connect} from "react-redux";
 import {fetchAllCategories} from "../../../store/actions/category";
+import {API_searchProducts} from "../../../api-spz/requests/search";
 
 const srcLang = {
    ru: '../../../static/assets/img/img/language_choose/russia.png',
@@ -169,17 +170,35 @@ class Header extends React.Component {
       }
    };
 
-   handleSearchChange = e => {
-      let filteredSearch = []
+   handleSearchChange = (e) => {
+      let cancel
       if (e.target.value.trim().length) {
-         filteredSearch = searchResults.filter(s => {
-            return s.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-                s.link.toLowerCase().includes(e.target.value.toLowerCase())
+         API_searchProducts(
+             {
+                q: e.target.value,
+                lang: this.props.locale,
+             },
+             {
+                cancelToken: new axios.CancelToken(c => cancel = c)
+             }
+         ).then(res => {
+            const data = res.data?.data || []
+            if (data.length > 10) {
+               data.length = 10
+            }
+            this.setState({
+               searchProducts: data
+            })
+         }).catch(e => {
+            if (axios.isCancel(e)) return
+         })
+      } else {
+         this.setState({
+            searchProducts: []
          })
       }
       this.setState({
          searchVal: e.target.value,
-         searchProducts: filteredSearch
       })
    }
 
@@ -403,7 +422,7 @@ class Header extends React.Component {
                                   </Link>
                                   <ul className="dropdown-menu categories">
                                      {
-                                        this.props.categories?.length && this.props.categories.map(cat => (
+                                         this.props.categories?.length && this.props.categories.map(cat => (
                                              <li className="nav-item active" key={cat.title_ru}>
                                                 <Link href={`/shop/${cat.id}`} locale={this.props.locale}>
                                                    <a className="nav-link">
@@ -411,7 +430,7 @@ class Header extends React.Component {
                                                    </a>
                                                 </Link>
                                              </li>
-                                        ))
+                                         ))
                                      }
                                   </ul>
                                </li>
@@ -477,17 +496,17 @@ class Header extends React.Component {
                                   </button>
                                </div>
 
-                               {/*<ul className="search-results">*/}
-                               {/*   {*/}
-                               {/*      this.state.searchProducts.map(product => (*/}
-                               {/*          <Link href={product.link}>*/}
-                               {/*             <a>*/}
-                               {/*                <li>{product.name}</li>*/}
-                               {/*             </a>*/}
-                               {/*          </Link>*/}
-                               {/*      ))*/}
-                               {/*   }*/}
-                               {/*</ul>*/}
+                               <ul className="search-results">
+                                  {
+                                     this.state.searchProducts.map(p => (
+                                         <Link href={`/product/${p.id}?subCategoryID=${p.sub_category_id}`}>
+                                            <a>
+                                               <li>{p[`title_${this.props.locale}`]}</li>
+                                            </a>
+                                         </Link>
+                                     ))
+                                  }
+                               </ul>
 
 
                             </form>
